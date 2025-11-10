@@ -5,27 +5,33 @@ Download all PTCG (Pokémon Trading Card Game) related product information from 
 ## Features
 
 - Scrapes product information from multiple official Pokémon TCG websites:
-  - ~~Japan: https://www.pokemon-card.com/products/~~ (Requires Selenium - not yet implemented)
-  - Hong Kong (English): https://asia.pokemon-card.com/hk-en/card-search/ ✓ Working (3 pages, ~41 expansions)
-  - Hong Kong (Chinese): https://asia.pokemon-card.com/hk/card-search/ ✓ Working (7 pages, ~123 expansions)
+  - **Japan**: https://www.pokemon-card.com/products/ ✓ Working (2 pages via "もっと見る" button, ~27 products)
+  - **Hong Kong (English)**: https://asia.pokemon-card.com/hk-en/card-search/ ✓ Working (3 pages, ~41 expansions)
+  - **Hong Kong (Chinese)**: https://asia.pokemon-card.com/hk/card-search/ ✓ Working (7 pages, ~123 expansions)
 
-- **Pagination support**: Automatically scrapes all available pages to get complete product listings
+- **Pagination support**: 
+  - Japan: Clicks "もっと見る" (See More) button to load additional products
+  - Hong Kong: Navigates through multiple pages using `?pageNo=N` parameter
 
 - Extracts the following product information:
   - Country/Region
-  - Product name (series + expansion name)
-  - ~~Price~~ (not available on current pages)
-  - Release date (with datetime attribute)
-  - Product code (extracted from URL)
-  - Link to product details
+  - Product name (with product type/series prefix)
+  - Price (Japan only)
+  - **Release date** (YYYY-MM-DD format, standardized across all sites)
+  - **Product code** (extracted from image filenames or URL parameters)
+  - **Link to product details** (Japan: `https://www.pokemon-card.com/ex/{code}/`, Hong Kong: card listing pages)
   - **Image URL** (expansion package/box art)
-  - ~~Include (what's included in the product)~~ (not available on current pages)
-  - Card only status (set to "Yes" for all expansions)
+  - Include (what's included in the product)
+  - Card only status
+
+- **Date sorting**: Products are automatically sorted by release date (newest first) in the CSV output
+
+- **Japan date formatting**: Converts Japanese dates (e.g., "2025年11月28日（金）") to ISO format (2025-11-28)
 
 - Exports all data to a timestamped CSV file (or custom filename via config)
 
-**Note**: The Japan site loads products dynamically via JavaScript (using `<div id="ProductsApp">`). 
-Selenium WebDriver support is required to scrape it, but is not yet implemented. Currently disabled in config.py.
+**Technical Note**: The Japan site uses Selenium WebDriver to handle JavaScript-rendered content. 
+Product listings are dynamically loaded into `<div class="product-card">` elements after page load.
 
 ## Installation
 
@@ -48,8 +54,11 @@ python scraper.py
 ```
 
 This will:
-1. Scrape product information from all three websites
-2. Generate a CSV file named `ptcg_products_YYYYMMDD_HHMMSS.csv` with all the collected data
+1. Scrape product information from all enabled websites (Japan, Hong Kong EN/ZH)
+2. Sort products by release date (newest first)
+3. Generate a CSV file named `ptcg_products.csv` (or `ptcg_products_YYYYMMDD_HHMMSS.csv` if OUTPUT_FILENAME is None)
+
+**Total products scraped**: ~191 (27 Japan + 41 HK EN + 123 HK ZH)
 
 ### Configuration
 
@@ -58,7 +67,7 @@ You can customize the scraper behavior by editing `config.py`:
 - `OUTPUT_FILENAME` - Set a custom output filename (or use None for auto-timestamped files)
 - `REQUEST_TIMEOUT` - Timeout for HTTP requests in seconds
 - `DELAY_BETWEEN_REQUESTS` - Delay between requests to be respectful to servers
-- `SCRAPE_JAPAN` - Enable/disable Japan site scraping
+- `SCRAPE_JAPAN` - Enable/disable Japan site scraping (requires Selenium)
 - `SCRAPE_HONG_KONG_EN` - Enable/disable Hong Kong EN site scraping
 - `SCRAPE_HONG_KONG_ZH` - Enable/disable Hong Kong ZH site scraping
 - `LOG_LEVEL` - Set logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
@@ -67,13 +76,13 @@ And more configuration options in the file.
 
 ## CSV Output Format
 
-The CSV file contains the following columns:
-- `country` - Source country/region
-- `product_name` - Name of the product (series + expansion name)
-- `price` - Product price (currently not available)
-- `release_date` - Release date (YYYY-MM-DD format)
-- `code` - Product code (expansion code)
-- `link` - URL to the product page
+The CSV file contains the following columns (sorted by release date, newest first):
+- `country` - Source country/region (Japan, Hong Kong (EN), Hong Kong (ZH))
+- `product_name` - Name of the product (includes product type/series prefix)
+- `price` - Product price (Japan only, in format like "550円（税込）")
+- `release_date` - Release date in YYYY-MM-DD format (e.g., "2025-11-28")
+- `code` - Product code (extracted from image filenames or URL parameters)
+- `link` - URL to the product page (Japan: detail pages like `https://www.pokemon-card.com/ex/{code}/`, Hong Kong: card listing pages)
 - `image_url` - URL to product image (package/box art)
 - `include` - What's included in the product (currently not available)
 - `card_only` - Whether it's cards only (typically "Yes" for expansions)
@@ -81,22 +90,26 @@ The CSV file contains the following columns:
 ## Requirements
 
 - Python 3.7+
+- **Selenium WebDriver** (for Japan site scraping)
+- Chrome/Chromium browser (for headless Selenium)
 - See `requirements.txt` for Python package dependencies
 
 ## Notes
 
 - The scraper is designed to be respectful to the servers with appropriate delays between requests
 - **Pagination support**: Automatically discovers and scrapes all available pages
-  - Hong Kong EN: ~3 pages (~41 expansions)
-  - Hong Kong ZH: ~7 pages (~123 expansions)
-- Hong Kong sites: Scrapes expansion/product listings from the card search pages
-  - Extracts: name, series, release date, code, link, and image URL
-- **Japan site currently disabled**: Requires Selenium WebDriver to handle JavaScript-rendered content
-  - The page uses Vue.js or similar framework with `<div id="ProductsApp">` that loads content dynamically
-  - Implementing Selenium support would enable Japan scraping
+  - **Japan**: ~2 pages by clicking "もっと見る" button (~27 products including expansions and accessories)
+  - **Hong Kong EN**: ~3 pages (~41 expansions)
+  - **Hong Kong ZH**: ~7 pages (~123 expansions)
+- **Japan site**: Uses Selenium WebDriver to handle JavaScript-rendered product cards
+  - Extracts: name, type, price, release date (formatted to YYYY-MM-DD), code (from image filename), detail page link, image URL
+  - Product codes derived from image filenames (e.g., `m2a`, `M2`, `mc`)
+  - Detail pages accessible at `https://www.pokemon-card.com/ex/{code}/`
+- **Hong Kong sites**: Uses requests library for static HTML parsing
+  - Extracts: name, series, release date, code (from URL parameter), card listing link, image URL
+- **Date formatting**: All dates standardized to YYYY-MM-DD format regardless of source
+- **CSV sorting**: Output is automatically sorted by release date (newest first)
 - Some fields may be empty if the information is not available on the website
-- Release dates are extracted from `<time>` elements with `datetime` attribute
-- Product images are typically expansion package/box artwork in PNG format
 
 ## License
 

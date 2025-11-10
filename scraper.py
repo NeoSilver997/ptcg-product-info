@@ -12,6 +12,19 @@ import requests
 from bs4 import BeautifulSoup
 import time
 
+# Selenium imports for Japan site
+try:
+    from selenium import webdriver
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
+    from selenium.webdriver.chrome.options import Options
+    SELENIUM_AVAILABLE = True
+except ImportError:
+    SELENIUM_AVAILABLE = False
+    logger = logging.getLogger(__name__)
+    logger.warning("Selenium not available - Japan scraper will be disabled")
+
 # Import configuration
 try:
     from config import (
@@ -56,21 +69,35 @@ class PTCGScraper:
     def scrape(self) -> List[Dict]:
         """Override this method in subclasses"""
         raise NotImplementedError
+    
+    @staticmethod
+    def _format_hong_kong_date(date_str: str) -> str:
+        """
+        Convert Hong Kong date format to YYYY-MM-DD
+        Input: "MM-DD-YYYY" (e.g., "11-14-2025")
+        Output: "YYYY-MM-DD" (e.g., "2025-11-14")
+        """
+        try:
+            import re
+            # Check if it's MM-DD-YYYY format
+            match = re.match(r'(\d{1,2})-(\d{1,2})-(\d{4})', date_str)
+            if match:
+                month = match.group(1).zfill(2)
+                day = match.group(2).zfill(2)
+                year = match.group(3)
+                return f"{year}-{month}-{day}"
+        except Exception as e:
+            logger.warning(f"Error formatting Hong Kong date '{date_str}': {e}")
+        
+        return date_str  # Return original if parsing fails
 
 
 class JapanPTCGScraper(PTCGScraper):
     """
     Scraper for https://www.pokemon-card.com/products/
     
-    NOTE: The Japan site uses JavaScript to dynamically load product listings.
-    The page has a <div id="ProductsApp"> that's populated by JavaScript after page load.
-    This scraper requires Selenium WebDriver to execute JavaScript and wait for content.
-    
-    Current implementation uses requests library, which cannot execute JavaScript,
-    so it will return empty results. To fix this:
-    1. Implement Selenium WebDriver support
-    2. Wait for #ProductsApp to populate with product items
-    3. Parse the dynamically loaded HTML
+    Uses Selenium WebDriver to handle JavaScript-rendered product listings.
+    The site loads products dynamically into `<div class="product-card">` elements.
     """
     
     def __init__(self):
@@ -80,26 +107,166 @@ class JapanPTCGScraper(PTCGScraper):
         self.country = "Japan"
     
     def scrape(self) -> List[Dict]:
-        """Scrape product information from Japanese Pokemon Card website
+        """Scrape product information from Japanese Pokemon Card website using Selenium"""
         
-        WARNING: This method currently returns no products because the Japan site
-        loads content dynamically via JavaScript. Selenium is required.
+        if not SELENIUM_AVAILABLE:
+            logger.error("Selenium is not installed. Cannot scrape Japan site.")
+            logger.error("Install with: pip install selenium")
+            return []
+        
+        products = []
+        driver = None
+        
+        try:
+            # Setup Chrome options
+            chrome_options = Options()
+            chrome_options.add_argument('--headless')
+            chrome_options.add_argument('--no-sandbox')
+            chrome_options.add_argument('--disable-dev-shm-usage')
+            chrome_options.add_argument('--disable-gpu')
+            chrome_options.add_argument(f'user-agent={USER_AGENT}')
+            
+            logger.info(f"Starting Selenium WebDriver for {self.products_url}")
+            driver = webdriver.Chrome(options=chrome_options)
+            driver.get(self.products_url)
+            
+            # Wait for products to load (give JavaScript time to render)
+            time.sleep(5)
+            
+            # Load more products by clicking "もっと見る" button repeatedly
+            page_num = 1
+            while True:
+                html = driver.page_source
+                soup = BeautifulSoup(html, 'html.parser')
+                
+                # Find all product cards on current page
+                product_cards = soup.find_all('div', class_='product-card')
+                current_count = len(products)
+                logger.info(f"Found {len(product_cards)} total products visible (page {page_num})")
+                
+                # Parse all visible cards
+                for card in product_cards:
+                    try:
+                        product = self._parse_product_card(card, driver)
+                        if product and product not in products:
+                            products.append(product)
+                    except Exception as e:
+                        logger.warning(f"Error parsing product card: {e}")
+                        continue
+                
+                new_products = len(products) - current_count
+                logger.info(f"Parsed {new_products} new products on page {page_num}")
+                
+                # Look for "もっと見る" (See More) button
+                try:
+                    more_button = driver.find_element(By.LINK_TEXT, "もっと見る")
+                    # Check if button is visible and clickable
+                    if more_button.is_displayed():
+                        logger.info("Clicking 'もっと見る' button to load more products...")
+                        more_button.click()
+                        time.sleep(3)  # Wait for new products to load
+                        page_num += 1
+                    else:
+                        logger.info("No more pages to load")
+                        break
+                except Exception:
+                    # Button not found or not clickable - no more pages
+                    logger.info(f"No more pages after page {page_num}")
+                    break
+            
+            logger.info(f"Scraped total of {len(products)} products from {page_num} page(s)")
+                    
+        except Exception as e:
+            logger.error(f"Error scraping Japan site: {e}")
+        finally:
+            if driver:
+                driver.quit()
+        
+        return products
+    
+    def _parse_product_card(self, card, driver=None) -> Dict:
+        """Parse a product card element and fetch detail page"""
+        product = {
+            'country': self.country,
+            'product_name': '',
+            'price': '',
+            'release_date': '',
+            'code': '',
+            'link': '',
+            'image_url': '',
+            'include': '',
+            'card_only': ''
+        }
+        
+        # Title
+        title_div = card.find('div', class_='product-title')
+        if title_div:
+            product['product_name'] = title_div.get_text(strip=True)
+        
+        # Product type (拡張パック, 構築デッキ, etc.)
+        type_div = card.find('div', class_='product-type')
+        if type_div:
+            product_type = type_div.get_text(strip=True)
+            # Prepend type to name like Hong Kong scrapers do with series
+            product['product_name'] = f"{product_type} {product['product_name']}"
+        
+        # Extract date and price from tables
+        tables = card.find_all('div', class_='product-table')
+        for table in tables:
+            spans = table.find_all('span')
+            if len(spans) == 2:
+                label = spans[0].get_text(strip=True)
+                value = spans[1].get_text(strip=True)
+                
+                if '販売日' in label:  # Release date
+                    # Format: "2025年11月28日（金）" -> "2025-11-28"
+                    product['release_date'] = self._format_japanese_date(value)
+                elif '希望小売価格' in label or '価格' in label:  # Price
+                    product['price'] = value
+        
+        # Image - extract code from filename
+        img = card.find('img', class_='product-thumbnail')
+        if img and img.get('src'):
+            img_src = img.get('src')
+            if img_src.startswith('http'):
+                product['image_url'] = img_src
+            else:
+                product['image_url'] = self.base_url + img_src
+            
+            # Extract code from image filename (e.g., /products/2025/images/m2a.jpg -> m2a)
+            if '/images/' in img_src:
+                filename = img_src.split('/images/')[-1]
+                code = filename.replace('.jpg', '').replace('.png', '')
+                product['code'] = code
+                
+                # Build detail page link
+                product['link'] = f"{self.base_url}/ex/{code}/"
+        
+        # Return None if no product name (essential field)
+        if not product['product_name']:
+            return None
+            
+        return product
+    
+    def _format_japanese_date(self, date_str: str) -> str:
         """
-        logger.warning(f"Japan scraper is disabled: {self.products_url} requires JavaScript execution (Selenium)")
-        logger.warning("The page uses <div id='ProductsApp'> which is populated dynamically after page load")
-        logger.warning("To enable Japan scraping: implement Selenium WebDriver support")
-        return []
+        Convert Japanese date format to YYYY-MM-DD
+        Input: "2025年11月28日（金）" or "2025年 9月26日（金）"
+        Output: "2025-11-28" or "2025-09-26"
+        """
+        try:
+            import re
+            # Extract year, month, day using regex
+            match = re.search(r'(\d{4})年\s*(\d{1,2})月\s*(\d{1,2})日', date_str)
+            if match:
+                year = match.group(1)
+                month = match.group(2).zfill(2)  # Pad with zero if single digit
+                day = match.group(3).zfill(2)
+                return f"{year}-{month}-{day}"
+        except Exception as e:
+            logger.warning(f"Error formatting date '{date_str}': {e}")
         
-        # Old non-working code kept for reference:
-        # products = []
-        # try:
-        #     response = self.session.get(self.products_url, timeout=30)
-        #     response.raise_for_status()
-        #     soup = BeautifulSoup(response.content, 'html.parser')
-        #     # Product items are loaded via JavaScript, so soup will be empty
-        # except Exception as e:
-        #     logger.error(f"Error scraping Japan site: {e}")
-        # return products
+        return date_str  # Return original if parsing fails
 
 
 class HongKongENPTCGScraper(PTCGScraper):
@@ -233,7 +400,9 @@ class HongKongENPTCGScraper(PTCGScraper):
         date_elem = item.find('time', class_=lambda x: x and 'date' in str(x).lower())
         if date_elem:
             # Try to get datetime attribute first, then text content
-            product['release_date'] = date_elem.get('datetime', '') or date_elem.get_text(strip=True)
+            date_str = date_elem.get('datetime', '') or date_elem.get_text(strip=True)
+            # Convert MM-DD-YYYY to YYYY-MM-DD
+            product['release_date'] = self._format_hong_kong_date(date_str)
         
         # Extract code from link if available (expansionCodes parameter)
         if product['link'] and 'expansionCodes=' in product['link']:
@@ -377,7 +546,9 @@ class HongKongZHPTCGScraper(PTCGScraper):
         date_elem = item.find('time', class_=lambda x: x and 'date' in str(x).lower())
         if date_elem:
             # Try to get datetime attribute first, then text content
-            product['release_date'] = date_elem.get('datetime', '') or date_elem.get_text(strip=True)
+            date_str = date_elem.get('datetime', '') or date_elem.get_text(strip=True)
+            # Convert MM-DD-YYYY to YYYY-MM-DD
+            product['release_date'] = self._format_hong_kong_date(date_str)
         
         # Extract code from link if available (expansionCodes parameter)
         if product['link'] and 'expansionCodes=' in product['link']:
@@ -391,7 +562,7 @@ class HongKongZHPTCGScraper(PTCGScraper):
 
 
 def export_to_csv(products: List[Dict], filename: str = None):
-    """Export products to CSV file"""
+    """Export products to CSV file, sorted by release date"""
     if not filename:
         if OUTPUT_FILENAME:
             filename = OUTPUT_FILENAME
@@ -403,6 +574,28 @@ def export_to_csv(products: List[Dict], filename: str = None):
         logger.warning("No products to export")
         return
     
+    # Sort products by release date (newest first)
+    def get_sort_key(product):
+        date_str = product.get('release_date', '')
+        if not date_str:
+            return '9999-12-31'  # Put items without dates at the end
+        
+        # Try to parse date to ensure consistent sorting
+        try:
+            # Handle YYYY-MM-DD format (Japan and standardized)
+            if '-' in date_str and len(date_str) >= 10:
+                return date_str[:10]
+            # Handle MM-DD-YYYY format (Hong Kong)
+            elif '-' in date_str:
+                parts = date_str.split('-')
+                if len(parts) == 3:
+                    return f"{parts[2]}-{parts[0].zfill(2)}-{parts[1].zfill(2)}"
+        except:
+            pass
+        return date_str
+    
+    products.sort(key=get_sort_key, reverse=True)
+    
     # Define CSV columns - added image_url field
     fieldnames = ['country', 'product_name', 'price', 'release_date', 'code', 'link', 'image_url', 'include', 'card_only']
     
@@ -412,7 +605,7 @@ def export_to_csv(products: List[Dict], filename: str = None):
             writer.writeheader()
             writer.writerows(products)
         
-        logger.info(f"Successfully exported {len(products)} products to {filename}")
+        logger.info(f"Successfully exported {len(products)} products to {filename} (sorted by date)")
     except Exception as e:
         logger.error(f"Error exporting to CSV: {e}")
 
