@@ -1,16 +1,20 @@
 # Copilot Instructions for PTCG Product Info Scraper
 
 ## Project Overview
-Web scraper for Pokémon Trading Card Game product information from official websites. Currently supports Hong Kong EN/ZH sites via `requests` library. Outputs timestamped CSV files with product details: name, release date, code, and link.
+Web scraper for Pokémon Trading Card Game product information from official websites. Currently supports Hong Kong EN/ZH sites via `requests` library with **pagination support**. Outputs timestamped CSV files with product details: name, series, release date, code, link, and image URL.
 
 **Japan site disabled**: Requires Selenium for JavaScript-rendered content (Vue.js app in `<div id="ProductsApp">`).
+
+**Current capabilities**: Scrapes ~164 total products (41 EN + 123 ZH) across multiple pages automatically.
 
 ## Architecture Pattern
 Class-based scraper with inheritance:
 - `PTCGScraper`: Base class with `requests.Session` and shared headers/timeout
 - `HongKongENPTCGScraper` / `HongKongZHPTCGScraper`: Parse `<ul class="expansionList">` with `<li class="expansion">` items
-  - Extract from `<h3 class="expansionTitle">`, `<span class="series">`, `<time>` tags, and URL parameters
+  - **Pagination**: Loop through pages using `?pageNo=N` parameter until no "Next" button found
+  - Extract from `<h3 class="expansionTitle">`, `<span class="series">`, `<time>` tags, `<img>` src, and URL parameters
   - Return `List[Dict]` with standardized schema
+  - Small delay (1s) between pages to be respectful
 - `JapanPTCGScraper`: Currently returns empty list with warning (needs Selenium implementation)
 
 ## Configuration-Driven Behavior
@@ -45,10 +49,21 @@ Generates `test_ptcg_products.csv` using mock data defined in `generate_mock_pro
 ## Critical Patterns
 
 ### Hong Kong Sites: expansionList Parsing
-Hong Kong scrapers target specific structure:
+Hong Kong scrapers target specific structure with pagination:
 ```python
-expansion_list = soup.find('ul', class_='expansionList')
-product_items = expansion_list.find_all('li', class_='expansion')
+# Pagination loop
+while True:
+    page_url = f"{self.products_url}?pageNo={page_number}" if page_number > 1 else self.products_url
+    expansion_list = soup.find('ul', class_='expansionList')
+    product_items = expansion_list.find_all('li', class_='expansion')
+    
+    # Check for next page
+    pagination = soup.find('nav', class_='pagination')
+    next_button = pagination.find('li', class_='paginationItem next')
+    if not (next_button and next_button.find('a')):
+        break
+    page_number += 1
+    time.sleep(1)  # Respectful delay between pages
 ```
 
 Parser extracts:
@@ -57,6 +72,7 @@ Parser extracts:
 - Date: `item.find('time')` with `datetime` attribute fallback to text
 - Code: Extracted from URL param `expansionCodes=XXX`
 - Link: `item.find('a', class_='expansionLink')` with base URL prepending
+- Image: `item.find('img')` src attribute with base URL prepending
 
 **Always**: Return `None` if no product_name or link. Log warnings on parse errors, never raise exceptions.
 
@@ -85,7 +101,7 @@ Japan site (`https://www.pokemon-card.com/products/`) uses `<div id="ProductsApp
 6. Add mock data to `test_scraper.py` for the new region
 
 ## CSV Schema (Fixed Order)
-`['country', 'product_name', 'price', 'release_date', 'code', 'link', 'include', 'card_only']`
+`['country', 'product_name', 'price', 'release_date', 'code', 'link', 'image_url', 'include', 'card_only']`
 
 All fields are strings. Empty strings for missing data (never `None` or omit keys).
 
