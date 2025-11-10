@@ -45,6 +45,20 @@ This will:
 1. Scrape product information from all three websites
 2. Generate a CSV file named `ptcg_products_YYYYMMDD_HHMMSS.csv` with all the collected data
 
+### Configuration
+
+You can customize the scraper behavior by editing `config.py`:
+
+- `OUTPUT_FILENAME` - Set a custom output filename (or use None for auto-timestamped files)
+- `REQUEST_TIMEOUT` - Timeout for HTTP requests in seconds
+- `DELAY_BETWEEN_REQUESTS` - Delay between requests to be respectful to servers
+- `SCRAPE_JAPAN` - Enable/disable Japan site scraping
+- `SCRAPE_HONG_KONG_EN` - Enable/disable Hong Kong EN site scraping
+- `SCRAPE_HONG_KONG_ZH` - Enable/disable Hong Kong ZH site scraping
+- `LOG_LEVEL` - Set logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+
+And more configuration options in the file.
+
 ## CSV Output Format
 
 The CSV file contains the following columns:

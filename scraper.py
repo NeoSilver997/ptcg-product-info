@@ -12,9 +12,32 @@ import requests
 from bs4 import BeautifulSoup
 import time
 
+# Import configuration
+try:
+    from config import (
+        OUTPUT_FILENAME, OUTPUT_ENCODING, REQUEST_TIMEOUT, 
+        DELAY_BETWEEN_REQUESTS, JAPAN_URL, HONG_KONG_EN_URL, 
+        HONG_KONG_ZH_URL, SCRAPE_JAPAN, SCRAPE_HONG_KONG_EN, 
+        SCRAPE_HONG_KONG_ZH, USER_AGENT, LOG_LEVEL
+    )
+except ImportError:
+    # Default configuration if config.py doesn't exist
+    OUTPUT_FILENAME = None
+    OUTPUT_ENCODING = "utf-8"
+    REQUEST_TIMEOUT = 30
+    DELAY_BETWEEN_REQUESTS = 2
+    JAPAN_URL = "https://www.pokemon-card.com/products/"
+    HONG_KONG_EN_URL = "https://asia.pokemon-card.com/hk-en/card-search/"
+    HONG_KONG_ZH_URL = "https://asia.pokemon-card.com/hk/card-search/"
+    SCRAPE_JAPAN = True
+    SCRAPE_HONG_KONG_EN = True
+    SCRAPE_HONG_KONG_ZH = True
+    USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+    LOG_LEVEL = "INFO"
+
 # Configure logging
 logging.basicConfig(
-    level=logging.INFO,
+    level=getattr(logging, LOG_LEVEL),
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
@@ -26,8 +49,9 @@ class PTCGScraper:
     def __init__(self):
         self.session = requests.Session()
         self.session.headers.update({
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            'User-Agent': USER_AGENT
         })
+        self.timeout = REQUEST_TIMEOUT
     
     def scrape(self) -> List[Dict]:
         """Override this method in subclasses"""
@@ -40,7 +64,7 @@ class JapanPTCGScraper(PTCGScraper):
     def __init__(self):
         super().__init__()
         self.base_url = "https://www.pokemon-card.com"
-        self.products_url = f"{self.base_url}/products/"
+        self.products_url = JAPAN_URL
         self.country = "Japan"
     
     def scrape(self) -> List[Dict]:
@@ -128,7 +152,7 @@ class HongKongENPTCGScraper(PTCGScraper):
     def __init__(self):
         super().__init__()
         self.base_url = "https://asia.pokemon-card.com"
-        self.products_url = f"{self.base_url}/hk-en/card-search/"
+        self.products_url = HONG_KONG_EN_URL
         self.country = "Hong Kong (EN)"
     
     def scrape(self) -> List[Dict]:
@@ -137,7 +161,7 @@ class HongKongENPTCGScraper(PTCGScraper):
         products = []
         
         try:
-            response = self.session.get(self.products_url, timeout=30)
+            response = self.session.get(self.products_url, timeout=self.timeout)
             response.raise_for_status()
             soup = BeautifulSoup(response.content, 'html.parser')
             
@@ -211,7 +235,7 @@ class HongKongZHPTCGScraper(PTCGScraper):
     def __init__(self):
         super().__init__()
         self.base_url = "https://asia.pokemon-card.com"
-        self.products_url = f"{self.base_url}/hk/card-search/"
+        self.products_url = HONG_KONG_ZH_URL
         self.country = "Hong Kong (ZH)"
     
     def scrape(self) -> List[Dict]:
@@ -220,7 +244,7 @@ class HongKongZHPTCGScraper(PTCGScraper):
         products = []
         
         try:
-            response = self.session.get(self.products_url, timeout=30)
+            response = self.session.get(self.products_url, timeout=self.timeout)
             response.raise_for_status()
             soup = BeautifulSoup(response.content, 'html.parser')
             
@@ -291,8 +315,11 @@ class HongKongZHPTCGScraper(PTCGScraper):
 def export_to_csv(products: List[Dict], filename: str = None):
     """Export products to CSV file"""
     if not filename:
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"ptcg_products_{timestamp}.csv"
+        if OUTPUT_FILENAME:
+            filename = OUTPUT_FILENAME
+        else:
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            filename = f"ptcg_products_{timestamp}.csv"
     
     if not products:
         logger.warning("No products to export")
@@ -302,7 +329,7 @@ def export_to_csv(products: List[Dict], filename: str = None):
     fieldnames = ['country', 'product_name', 'price', 'release_date', 'code', 'link', 'include', 'card_only']
     
     try:
-        with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
+        with open(filename, 'w', newline='', encoding=OUTPUT_ENCODING) as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(products)
@@ -319,24 +346,27 @@ def main():
     all_products = []
     
     # Scrape Japan site
-    japan_scraper = JapanPTCGScraper()
-    japan_products = japan_scraper.scrape()
-    all_products.extend(japan_products)
-    logger.info(f"Scraped {len(japan_products)} products from Japan site")
-    time.sleep(2)  # Be respectful to the server
+    if SCRAPE_JAPAN:
+        japan_scraper = JapanPTCGScraper()
+        japan_products = japan_scraper.scrape()
+        all_products.extend(japan_products)
+        logger.info(f"Scraped {len(japan_products)} products from Japan site")
+        time.sleep(DELAY_BETWEEN_REQUESTS)  # Be respectful to the server
     
     # Scrape Hong Kong EN site
-    hk_en_scraper = HongKongENPTCGScraper()
-    hk_en_products = hk_en_scraper.scrape()
-    all_products.extend(hk_en_products)
-    logger.info(f"Scraped {len(hk_en_products)} products from Hong Kong EN site")
-    time.sleep(2)  # Be respectful to the server
+    if SCRAPE_HONG_KONG_EN:
+        hk_en_scraper = HongKongENPTCGScraper()
+        hk_en_products = hk_en_scraper.scrape()
+        all_products.extend(hk_en_products)
+        logger.info(f"Scraped {len(hk_en_products)} products from Hong Kong EN site")
+        time.sleep(DELAY_BETWEEN_REQUESTS)  # Be respectful to the server
     
     # Scrape Hong Kong ZH site
-    hk_zh_scraper = HongKongZHPTCGScraper()
-    hk_zh_products = hk_zh_scraper.scrape()
-    all_products.extend(hk_zh_products)
-    logger.info(f"Scraped {len(hk_zh_products)} products from Hong Kong ZH site")
+    if SCRAPE_HONG_KONG_ZH:
+        hk_zh_scraper = HongKongZHPTCGScraper()
+        hk_zh_products = hk_zh_scraper.scrape()
+        all_products.extend(hk_zh_products)
+        logger.info(f"Scraped {len(hk_zh_products)} products from Hong Kong ZH site")
     
     # Export to CSV
     logger.info(f"Total products scraped: {len(all_products)}")
