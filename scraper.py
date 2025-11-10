@@ -112,45 +112,74 @@ class HongKongENPTCGScraper(PTCGScraper):
         self.country = "Hong Kong (EN)"
     
     def scrape(self) -> List[Dict]:
-        """Scrape product information from Hong Kong EN Pokemon Card website"""
+        """Scrape product information from Hong Kong EN Pokemon Card website with pagination support"""
         logger.info(f"Scraping {self.products_url}")
         products = []
+        page_number = 1
         
-        try:
-            response = self.session.get(self.products_url, timeout=self.timeout)
-            response.raise_for_status()
-            soup = BeautifulSoup(response.content, 'html.parser')
-            
-            # Find the expansionList - this is where actual products are listed
-            expansion_list = soup.find('ul', class_='expansionList')
-            
-            if not expansion_list:
-                logger.warning("Could not find expansionList on Hong Kong EN site")
-                return products
-            
-            # Find all expansion/product items
-            product_items = expansion_list.find_all('li', class_='expansion')
-            
-            logger.info(f"Found {len(product_items)} expansion items")
-            
-            # Debug: Log first item structure
-            if product_items and logger.isEnabledFor(logging.DEBUG):
-                logger.debug(f"First HK EN item HTML:\n{product_items[0].prettify()[:500]}")
-            
-            for item in product_items:
-                try:
-                    product_data = self._parse_product_item(item)
-                    if product_data:
-                        products.append(product_data)
+        while True:
+            try:
+                # Construct URL with page parameter
+                if page_number == 1:
+                    page_url = self.products_url
+                else:
+                    page_url = f"{self.products_url}?pageNo={page_number}"
+                
+                logger.info(f"Fetching page {page_number}: {page_url}")
+                response = self.session.get(page_url, timeout=self.timeout)
+                response.raise_for_status()
+                soup = BeautifulSoup(response.content, 'html.parser')
+                
+                # Find the expansionList - this is where actual products are listed
+                expansion_list = soup.find('ul', class_='expansionList')
+                
+                if not expansion_list:
+                    logger.warning(f"Could not find expansionList on page {page_number}")
+                    break
+                
+                # Find all expansion/product items
+                product_items = expansion_list.find_all('li', class_='expansion')
+                
+                if not product_items:
+                    logger.info(f"No products found on page {page_number}, stopping pagination")
+                    break
+                
+                logger.info(f"Found {len(product_items)} expansion items on page {page_number}")
+                
+                # Debug: Log first item structure
+                if product_items and logger.isEnabledFor(logging.DEBUG) and page_number == 1:
+                    logger.debug(f"First HK EN item HTML:\n{product_items[0].prettify()[:500]}")
+                
+                for item in product_items:
+                    try:
+                        product_data = self._parse_product_item(item)
+                        if product_data:
+                            products.append(product_data)
+                        else:
+                            logger.debug(f"HK EN: Parsed product returned None")
+                    except Exception as e:
+                        logger.warning(f"Error parsing product item: {e}")
+                        continue
+                
+                # Check for next page
+                pagination = soup.find('nav', class_='pagination')
+                if pagination:
+                    next_button = pagination.find('li', class_='paginationItem next')
+                    if next_button and next_button.find('a'):
+                        page_number += 1
+                        time.sleep(1)  # Small delay between pages to be respectful
                     else:
-                        logger.debug(f"HK EN: Parsed product returned None")
-                except Exception as e:
-                    logger.warning(f"Error parsing product item: {e}")
-                    continue
-            
-        except Exception as e:
-            logger.error(f"Error scraping Hong Kong EN site: {e}")
+                        logger.info(f"No more pages after page {page_number}")
+                        break
+                else:
+                    # No pagination found, this is the only page
+                    break
+                
+            except Exception as e:
+                logger.error(f"Error scraping Hong Kong EN site page {page_number}: {e}")
+                break
         
+        logger.info(f"Scraped total of {len(products)} products from {page_number} page(s)")
         return products
     
     def _parse_product_item(self, item) -> Dict:
@@ -162,6 +191,7 @@ class HongKongENPTCGScraper(PTCGScraper):
             'release_date': '',
             'code': '',
             'link': '',
+            'image_url': '',
             'include': '',
             'card_only': 'Yes'  # Expansions are typically card packs
         }
@@ -189,6 +219,15 @@ class HongKongENPTCGScraper(PTCGScraper):
                 product['link'] = href
             else:
                 product['link'] = self.base_url + href
+        
+        # Find image URL
+        img_elem = item.find('img', src=True)
+        if img_elem:
+            img_src = img_elem['src']
+            if img_src.startswith('http'):
+                product['image_url'] = img_src
+            else:
+                product['image_url'] = self.base_url + img_src
         
         # Find release date (in <time> tag)
         date_elem = item.find('time', class_=lambda x: x and 'date' in str(x).lower())
@@ -217,45 +256,74 @@ class HongKongZHPTCGScraper(PTCGScraper):
         self.country = "Hong Kong (ZH)"
     
     def scrape(self) -> List[Dict]:
-        """Scrape product information from Hong Kong ZH Pokemon Card website"""
+        """Scrape product information from Hong Kong ZH Pokemon Card website with pagination support"""
         logger.info(f"Scraping {self.products_url}")
         products = []
+        page_number = 1
         
-        try:
-            response = self.session.get(self.products_url, timeout=self.timeout)
-            response.raise_for_status()
-            soup = BeautifulSoup(response.content, 'html.parser')
-            
-            # Find the expansionList - this is where actual products are listed
-            expansion_list = soup.find('ul', class_='expansionList')
-            
-            if not expansion_list:
-                logger.warning("Could not find expansionList on Hong Kong ZH site")
-                return products
-            
-            # Find all expansion/product items
-            product_items = expansion_list.find_all('li', class_='expansion')
-            
-            logger.info(f"Found {len(product_items)} expansion items")
-            
-            # Debug: Log first item structure
-            if product_items and logger.isEnabledFor(logging.DEBUG):
-                logger.debug(f"First HK ZH item HTML:\n{product_items[0].prettify()[:500]}")
-            
-            for item in product_items:
-                try:
-                    product_data = self._parse_product_item(item)
-                    if product_data:
-                        products.append(product_data)
+        while True:
+            try:
+                # Construct URL with page parameter
+                if page_number == 1:
+                    page_url = self.products_url
+                else:
+                    page_url = f"{self.products_url}?pageNo={page_number}"
+                
+                logger.info(f"Fetching page {page_number}: {page_url}")
+                response = self.session.get(page_url, timeout=self.timeout)
+                response.raise_for_status()
+                soup = BeautifulSoup(response.content, 'html.parser')
+                
+                # Find the expansionList - this is where actual products are listed
+                expansion_list = soup.find('ul', class_='expansionList')
+                
+                if not expansion_list:
+                    logger.warning(f"Could not find expansionList on page {page_number}")
+                    break
+                
+                # Find all expansion/product items
+                product_items = expansion_list.find_all('li', class_='expansion')
+                
+                if not product_items:
+                    logger.info(f"No products found on page {page_number}, stopping pagination")
+                    break
+                
+                logger.info(f"Found {len(product_items)} expansion items on page {page_number}")
+                
+                # Debug: Log first item structure
+                if product_items and logger.isEnabledFor(logging.DEBUG) and page_number == 1:
+                    logger.debug(f"First HK ZH item HTML:\n{product_items[0].prettify()[:500]}")
+                
+                for item in product_items:
+                    try:
+                        product_data = self._parse_product_item(item)
+                        if product_data:
+                            products.append(product_data)
+                        else:
+                            logger.debug(f"HK ZH: Parsed product returned None")
+                    except Exception as e:
+                        logger.warning(f"Error parsing product item: {e}")
+                        continue
+                
+                # Check for next page
+                pagination = soup.find('nav', class_='pagination')
+                if pagination:
+                    next_button = pagination.find('li', class_='paginationItem next')
+                    if next_button and next_button.find('a'):
+                        page_number += 1
+                        time.sleep(1)  # Small delay between pages to be respectful
                     else:
-                        logger.debug(f"HK ZH: Parsed product returned None")
-                except Exception as e:
-                    logger.warning(f"Error parsing product item: {e}")
-                    continue
-            
-        except Exception as e:
-            logger.error(f"Error scraping Hong Kong ZH site: {e}")
+                        logger.info(f"No more pages after page {page_number}")
+                        break
+                else:
+                    # No pagination found, this is the only page
+                    break
+                
+            except Exception as e:
+                logger.error(f"Error scraping Hong Kong ZH site page {page_number}: {e}")
+                break
         
+        logger.info(f"Scraped total of {len(products)} products from {page_number} page(s)")
         return products
     
     def _parse_product_item(self, item) -> Dict:
@@ -267,6 +335,7 @@ class HongKongZHPTCGScraper(PTCGScraper):
             'release_date': '',
             'code': '',
             'link': '',
+            'image_url': '',
             'include': '',
             'card_only': 'Yes'  # Expansions are typically card packs
         }
@@ -294,6 +363,15 @@ class HongKongZHPTCGScraper(PTCGScraper):
                 product['link'] = href
             else:
                 product['link'] = self.base_url + href
+        
+        # Find image URL
+        img_elem = item.find('img', src=True)
+        if img_elem:
+            img_src = img_elem['src']
+            if img_src.startswith('http'):
+                product['image_url'] = img_src
+            else:
+                product['image_url'] = self.base_url + img_src
         
         # Find release date (in <time> tag)
         date_elem = item.find('time', class_=lambda x: x and 'date' in str(x).lower())
@@ -325,8 +403,8 @@ def export_to_csv(products: List[Dict], filename: str = None):
         logger.warning("No products to export")
         return
     
-    # Define CSV columns
-    fieldnames = ['country', 'product_name', 'price', 'release_date', 'code', 'link', 'include', 'card_only']
+    # Define CSV columns - added image_url field
+    fieldnames = ['country', 'product_name', 'price', 'release_date', 'code', 'link', 'image_url', 'include', 'card_only']
     
     try:
         with open(filename, 'w', newline='', encoding=OUTPUT_ENCODING) as csvfile:
