@@ -5,21 +5,24 @@ Download all PTCG (Pokémon Trading Card Game) related product information from 
 ## Features
 
 - Scrapes product information from multiple official Pokémon TCG websites:
-  - Japan: https://www.pokemon-card.com/products/
-  - Hong Kong (English): https://asia.pokemon-card.com/hk-en/card-search/
-  - Hong Kong (Chinese): https://asia.pokemon-card.com/hk/card-search/
+  - ~~Japan: https://www.pokemon-card.com/products/~~ (Requires Selenium - not yet implemented)
+  - Hong Kong (English): https://asia.pokemon-card.com/hk-en/card-search/ ✓ Working
+  - Hong Kong (Chinese): https://asia.pokemon-card.com/hk/card-search/ ✓ Working
 
 - Extracts the following product information:
   - Country
-  - Product name
-  - Price
+  - Product name (series + expansion name)
+  - ~~Price~~ (not available on current pages)
   - Release date
-  - Product code
+  - Product code (extracted from URL)
   - Link
-  - Include (what's included in the product)
-  - Card only (whether it's cards only)
+  - ~~Include (what's included in the product)~~ (not available on current pages)
+  - Card only status (set to "Yes" for all expansions)
 
 - Exports all data to a timestamped CSV file
+
+**Note**: The Japan site loads products dynamically via JavaScript (using `<div id="ProductsApp">`). 
+Selenium WebDriver support is required to scrape it, but is not yet implemented. Currently disabled in config.py.
 
 ## Installation
 
@@ -79,8 +82,12 @@ The CSV file contains the following columns:
 ## Notes
 
 - The scraper is designed to be respectful to the servers with appropriate delays between requests
-- The actual structure of the websites may change over time, requiring updates to the scraper
+- Hong Kong sites: Scrapes expansion/product listings from the card search pages
+- **Japan site currently disabled**: Requires Selenium WebDriver to handle JavaScript-rendered content
+  - The page uses Vue.js or similar framework with `<div id="ProductsApp">` that loads content dynamically
+  - Implementing Selenium support would enable Japan scraping
 - Some fields may be empty if the information is not available on the website
+- Release dates are extracted from `<time>` elements and may be in various formats
 
 ## License
 

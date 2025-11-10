@@ -15,7 +15,7 @@ HONG_KONG_EN_URL = "https://asia.pokemon-card.com/hk-en/card-search/"
 HONG_KONG_ZH_URL = "https://asia.pokemon-card.com/hk/card-search/"
 
 # Enable/disable specific scrapers
-SCRAPE_JAPAN = True
+SCRAPE_JAPAN = False  # Temporarily disabled - requires Selenium
 SCRAPE_HONG_KONG_EN = True
 SCRAPE_HONG_KONG_ZH = True
 

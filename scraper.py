@@ -59,7 +59,19 @@ class PTCGScraper:
 
 
 class JapanPTCGScraper(PTCGScraper):
-    """Scraper for https://www.pokemon-card.com/products/"""
+    """
+    Scraper for https://www.pokemon-card.com/products/
+    
+    NOTE: The Japan site uses JavaScript to dynamically load product listings.
+    The page has a <div id="ProductsApp"> that's populated by JavaScript after page load.
+    This scraper requires Selenium WebDriver to execute JavaScript and wait for content.
+    
+    Current implementation uses requests library, which cannot execute JavaScript,
+    so it will return empty results. To fix this:
+    1. Implement Selenium WebDriver support
+    2. Wait for #ProductsApp to populate with product items
+    3. Parse the dynamically loaded HTML
+    """
     
     def __init__(self):
         super().__init__()
@@ -68,82 +80,26 @@ class JapanPTCGScraper(PTCGScraper):
         self.country = "Japan"
     
     def scrape(self) -> List[Dict]:
-        """Scrape product information from Japanese Pokemon Card website"""
-        logger.info(f"Scraping {self.products_url}")
-        products = []
+        """Scrape product information from Japanese Pokemon Card website
         
-        try:
-            response = self.session.get(self.products_url, timeout=30)
-            response.raise_for_status()
-            soup = BeautifulSoup(response.content, 'html.parser')
-            
-            # Find all product items
-            # The structure may vary, so we'll look for common patterns
-            product_items = soup.find_all(['article', 'div'], class_=lambda x: x and ('product' in x.lower() or 'item' in x.lower()))
-            
-            if not product_items:
-                # Try alternative structure
-                product_items = soup.find_all('li', class_=lambda x: x and 'product' in str(x).lower())
-            
-            logger.info(f"Found {len(product_items)} potential product items")
-            
-            for item in product_items:
-                try:
-                    product_data = self._parse_product_item(item)
-                    if product_data:
-                        products.append(product_data)
-                except Exception as e:
-                    logger.warning(f"Error parsing product item: {e}")
-                    continue
-            
-        except Exception as e:
-            logger.error(f"Error scraping Japan site: {e}")
+        WARNING: This method currently returns no products because the Japan site
+        loads content dynamically via JavaScript. Selenium is required.
+        """
+        logger.warning(f"Japan scraper is disabled: {self.products_url} requires JavaScript execution (Selenium)")
+        logger.warning("The page uses <div id='ProductsApp'> which is populated dynamically after page load")
+        logger.warning("To enable Japan scraping: implement Selenium WebDriver support")
+        return []
         
-        return products
-    
-    def _parse_product_item(self, item) -> Dict:
-        """Parse a single product item"""
-        product = {
-            'country': self.country,
-            'product_name': '',
-            'price': '',
-            'release_date': '',
-            'code': '',
-            'link': '',
-            'include': '',
-            'card_only': ''
-        }
-        
-        # Try to find product name
-        name_elem = item.find(['h2', 'h3', 'h4', 'a', 'span'], class_=lambda x: x and ('title' in str(x).lower() or 'name' in str(x).lower()))
-        if name_elem:
-            product['product_name'] = name_elem.get_text(strip=True)
-        
-        # Try to find link
-        link_elem = item.find('a', href=True)
-        if link_elem:
-            href = link_elem['href']
-            if href.startswith('http'):
-                product['link'] = href
-            else:
-                product['link'] = self.base_url + href
-        
-        # Try to find price
-        price_elem = item.find(['span', 'div', 'p'], class_=lambda x: x and 'price' in str(x).lower())
-        if price_elem:
-            product['price'] = price_elem.get_text(strip=True)
-        
-        # Try to find release date
-        date_elem = item.find(['span', 'div', 'p', 'time'], class_=lambda x: x and ('date' in str(x).lower() or 'release' in str(x).lower()))
-        if date_elem:
-            product['release_date'] = date_elem.get_text(strip=True)
-        
-        # Try to find product code
-        code_elem = item.find(['span', 'div', 'p'], class_=lambda x: x and 'code' in str(x).lower())
-        if code_elem:
-            product['code'] = code_elem.get_text(strip=True)
-        
-        return product if product['product_name'] or product['link'] else None
+        # Old non-working code kept for reference:
+        # products = []
+        # try:
+        #     response = self.session.get(self.products_url, timeout=30)
+        #     response.raise_for_status()
+        #     soup = BeautifulSoup(response.content, 'html.parser')
+        #     # Product items are loaded via JavaScript, so soup will be empty
+        # except Exception as e:
+        #     logger.error(f"Error scraping Japan site: {e}")
+        # return products
 
 
 class HongKongENPTCGScraper(PTCGScraper):
@@ -165,16 +121,29 @@ class HongKongENPTCGScraper(PTCGScraper):
             response.raise_for_status()
             soup = BeautifulSoup(response.content, 'html.parser')
             
-            # Find all product/card items
-            product_items = soup.find_all(['article', 'div', 'li'], class_=lambda x: x and ('card' in str(x).lower() or 'product' in str(x).lower()))
+            # Find the expansionList - this is where actual products are listed
+            expansion_list = soup.find('ul', class_='expansionList')
             
-            logger.info(f"Found {len(product_items)} potential product items")
+            if not expansion_list:
+                logger.warning("Could not find expansionList on Hong Kong EN site")
+                return products
+            
+            # Find all expansion/product items
+            product_items = expansion_list.find_all('li', class_='expansion')
+            
+            logger.info(f"Found {len(product_items)} expansion items")
+            
+            # Debug: Log first item structure
+            if product_items and logger.isEnabledFor(logging.DEBUG):
+                logger.debug(f"First HK EN item HTML:\n{product_items[0].prettify()[:500]}")
             
             for item in product_items:
                 try:
                     product_data = self._parse_product_item(item)
                     if product_data:
                         products.append(product_data)
+                    else:
+                        logger.debug(f"HK EN: Parsed product returned None")
                 except Exception as e:
                     logger.warning(f"Error parsing product item: {e}")
                     continue
@@ -185,7 +154,7 @@ class HongKongENPTCGScraper(PTCGScraper):
         return products
     
     def _parse_product_item(self, item) -> Dict:
-        """Parse a single product item"""
+        """Parse a single expansion item from Hong Kong site"""
         product = {
             'country': self.country,
             'product_name': '',
@@ -194,16 +163,26 @@ class HongKongENPTCGScraper(PTCGScraper):
             'code': '',
             'link': '',
             'include': '',
-            'card_only': ''
+            'card_only': 'Yes'  # Expansions are typically card packs
         }
         
-        # Try to find product name
-        name_elem = item.find(['h2', 'h3', 'h4', 'a', 'span'], class_=lambda x: x and ('title' in str(x).lower() or 'name' in str(x).lower()))
-        if name_elem:
-            product['product_name'] = name_elem.get_text(strip=True)
+        # Find product/expansion title (in h3 with class expansionTitle)
+        title_elem = item.find('h3', class_='expansionTitle')
+        if title_elem:
+            product['product_name'] = title_elem.get_text(strip=True)
         
-        # Try to find link
-        link_elem = item.find('a', href=True)
+        # Find series name
+        series_elem = item.find('span', class_='series')
+        if series_elem:
+            series_name = series_elem.get_text(strip=True)
+            # Prepend series to product name
+            if product['product_name']:
+                product['product_name'] = f"{series_name} - {product['product_name']}"
+            else:
+                product['product_name'] = series_name
+        
+        # Find link
+        link_elem = item.find('a', class_='expansionLink', href=True)
         if link_elem:
             href = link_elem['href']
             if href.startswith('http'):
@@ -211,20 +190,19 @@ class HongKongENPTCGScraper(PTCGScraper):
             else:
                 product['link'] = self.base_url + href
         
-        # Try to find price
-        price_elem = item.find(['span', 'div', 'p'], class_=lambda x: x and 'price' in str(x).lower())
-        if price_elem:
-            product['price'] = price_elem.get_text(strip=True)
-        
-        # Try to find release date
-        date_elem = item.find(['span', 'div', 'p', 'time'], class_=lambda x: x and ('date' in str(x).lower() or 'release' in str(x).lower()))
+        # Find release date (in <time> tag)
+        date_elem = item.find('time', class_=lambda x: x and 'date' in str(x).lower())
         if date_elem:
-            product['release_date'] = date_elem.get_text(strip=True)
+            # Try to get datetime attribute first, then text content
+            product['release_date'] = date_elem.get('datetime', '') or date_elem.get_text(strip=True)
         
-        # Try to find product code
-        code_elem = item.find(['span', 'div', 'p'], class_=lambda x: x and 'code' in str(x).lower())
-        if code_elem:
-            product['code'] = code_elem.get_text(strip=True)
+        # Extract code from link if available (expansionCodes parameter)
+        if product['link'] and 'expansionCodes=' in product['link']:
+            try:
+                code = product['link'].split('expansionCodes=')[1].split('&')[0]
+                product['code'] = code
+            except:
+                pass
         
         return product if product['product_name'] or product['link'] else None
 
@@ -248,16 +226,29 @@ class HongKongZHPTCGScraper(PTCGScraper):
             response.raise_for_status()
             soup = BeautifulSoup(response.content, 'html.parser')
             
-            # Find all product/card items
-            product_items = soup.find_all(['article', 'div', 'li'], class_=lambda x: x and ('card' in str(x).lower() or 'product' in str(x).lower()))
+            # Find the expansionList - this is where actual products are listed
+            expansion_list = soup.find('ul', class_='expansionList')
             
-            logger.info(f"Found {len(product_items)} potential product items")
+            if not expansion_list:
+                logger.warning("Could not find expansionList on Hong Kong ZH site")
+                return products
+            
+            # Find all expansion/product items
+            product_items = expansion_list.find_all('li', class_='expansion')
+            
+            logger.info(f"Found {len(product_items)} expansion items")
+            
+            # Debug: Log first item structure
+            if product_items and logger.isEnabledFor(logging.DEBUG):
+                logger.debug(f"First HK ZH item HTML:\n{product_items[0].prettify()[:500]}")
             
             for item in product_items:
                 try:
                     product_data = self._parse_product_item(item)
                     if product_data:
                         products.append(product_data)
+                    else:
+                        logger.debug(f"HK ZH: Parsed product returned None")
                 except Exception as e:
                     logger.warning(f"Error parsing product item: {e}")
                     continue
@@ -268,7 +259,7 @@ class HongKongZHPTCGScraper(PTCGScraper):
         return products
     
     def _parse_product_item(self, item) -> Dict:
-        """Parse a single product item"""
+        """Parse a single expansion item from Hong Kong site"""
         product = {
             'country': self.country,
             'product_name': '',
@@ -277,16 +268,26 @@ class HongKongZHPTCGScraper(PTCGScraper):
             'code': '',
             'link': '',
             'include': '',
-            'card_only': ''
+            'card_only': 'Yes'  # Expansions are typically card packs
         }
         
-        # Try to find product name
-        name_elem = item.find(['h2', 'h3', 'h4', 'a', 'span'], class_=lambda x: x and ('title' in str(x).lower() or 'name' in str(x).lower()))
-        if name_elem:
-            product['product_name'] = name_elem.get_text(strip=True)
+        # Find product/expansion title (in h3 with class expansionTitle)
+        title_elem = item.find('h3', class_='expansionTitle')
+        if title_elem:
+            product['product_name'] = title_elem.get_text(strip=True)
         
-        # Try to find link
-        link_elem = item.find('a', href=True)
+        # Find series name
+        series_elem = item.find('span', class_='series')
+        if series_elem:
+            series_name = series_elem.get_text(strip=True)
+            # Prepend series to product name
+            if product['product_name']:
+                product['product_name'] = f"{series_name} - {product['product_name']}"
+            else:
+                product['product_name'] = series_name
+        
+        # Find link
+        link_elem = item.find('a', class_='expansionLink', href=True)
         if link_elem:
             href = link_elem['href']
             if href.startswith('http'):
@@ -294,20 +295,19 @@ class HongKongZHPTCGScraper(PTCGScraper):
             else:
                 product['link'] = self.base_url + href
         
-        # Try to find price
-        price_elem = item.find(['span', 'div', 'p'], class_=lambda x: x and 'price' in str(x).lower())
-        if price_elem:
-            product['price'] = price_elem.get_text(strip=True)
-        
-        # Try to find release date
-        date_elem = item.find(['span', 'div', 'p', 'time'], class_=lambda x: x and ('date' in str(x).lower() or 'release' in str(x).lower()))
+        # Find release date (in <time> tag)
+        date_elem = item.find('time', class_=lambda x: x and 'date' in str(x).lower())
         if date_elem:
-            product['release_date'] = date_elem.get_text(strip=True)
+            # Try to get datetime attribute first, then text content
+            product['release_date'] = date_elem.get('datetime', '') or date_elem.get_text(strip=True)
         
-        # Try to find product code
-        code_elem = item.find(['span', 'div', 'p'], class_=lambda x: x and 'code' in str(x).lower())
-        if code_elem:
-            product['code'] = code_elem.get_text(strip=True)
+        # Extract code from link if available (expansionCodes parameter)
+        if product['link'] and 'expansionCodes=' in product['link']:
+            try:
+                code = product['link'].split('expansionCodes=')[1].split('&')[0]
+                product['code'] = code
+            except:
+                pass
         
         return product if product['product_name'] or product['link'] else None
 
