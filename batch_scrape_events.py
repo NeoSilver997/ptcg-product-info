@@ -17,39 +17,64 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 def get_event_ids_from_list(max_events=20):
-    """Get real event IDs from the event list page"""
+    """Get real event IDs from the event list page with pagination support"""
     chrome_options = Options()
     chrome_options.add_argument('--headless')
     driver = webdriver.Chrome(options=chrome_options)
     
-    print("Fetching event list from website...")
-    driver.get('https://players.pokemon-card.com/event/result/list')
-    time.sleep(5)
-    
-    soup = BeautifulSoup(driver.page_source, 'html.parser')
-    
-    # Find all event links
-    event_links = soup.find_all('a', href=lambda x: x and '/event/detail/' in str(x))
-    
     event_ids = []
-    for link in event_links:
-        href = link.get('href', '')
-        match = re.search(r'/event/detail/(\d+)', href)
-        if match:
-            event_id = match.group(1)
-            if event_id not in event_ids:
-                event_ids.append(event_id)
-                if len(event_ids) >= max_events:
-                    break
+    offset = 0
+    page = 1
+    
+    while len(event_ids) < max_events:
+        url = f'https://players.pokemon-card.com/event/result/list?offset={offset}'
+        print(f"Fetching event list page {page} (offset={offset})...")
+        driver.get(url)
+        time.sleep(5)
+        
+        soup = BeautifulSoup(driver.page_source, 'html.parser')
+        
+        # Find all event links
+        event_links = soup.find_all('a', href=lambda x: x and '/event/detail/' in str(x))
+        
+        # Track how many new IDs we found on this page
+        initial_count = len(event_ids)
+        
+        for link in event_links:
+            href = link.get('href', '')
+            match = re.search(r'/event/detail/(\d+)', href)
+            if match:
+                event_id = match.group(1)
+                if event_id not in event_ids:
+                    event_ids.append(event_id)
+                    if len(event_ids) >= max_events:
+                        break
+        
+        # If no new events found, we've reached the end
+        if len(event_ids) == initial_count:
+            print(f"No more events found. Total: {len(event_ids)} events")
+            break
+        
+        print(f"  → Found {len(event_ids) - initial_count} new events (total: {len(event_ids)})")
+        
+        # Stop if we have enough events
+        if len(event_ids) >= max_events:
+            break
+        
+        # Move to next page (20 events per page)
+        offset += 20
+        page += 1
+        time.sleep(2)  # Be respectful between page requests
     
     driver.quit()
+    print(f"Total event IDs collected: {len(event_ids)}")
     return event_ids
 
 def main():
     scraper = EventDeckScraper(output_dir="event_data")
     
-    # Get real event IDs from the list page
-    events_to_scrape = get_event_ids_from_list(max_events=20)
+    # Get real event IDs from the list page (can fetch more than 20 with pagination)
+    events_to_scrape = get_event_ids_from_list(max_events=50)  # Fetch 50 event IDs
     
     successful_events = []
     
@@ -57,7 +82,7 @@ def main():
     print("BATCH EVENT SCRAPING")
     print("=" * 80)
     print(f"Found {len(events_to_scrape)} event IDs from list page")
-    print(f"Will scrape up to 10 events")
+    print(f"Will scrape up to 50 events (skipping already downloaded)")
     print()
     
     for idx, event_id in enumerate(events_to_scrape, 1):
@@ -91,9 +116,9 @@ def main():
                         print(f"⊙ Event {event_id}: Already downloaded with {actual_decks} decks, skipping...")
                         successful_events.append(event_id)
                         
-                        # Stop after 10 successful events
-                        if len(successful_events) >= 10:
-                            print(f"\n✓ Reached target of 10 events!")
+                        # Stop after 50 successful events
+                        if len(successful_events) >= 50:
+                            print(f"\n✓ Reached target of 50 events!")
                             break
                         continue
                     else:
@@ -160,9 +185,9 @@ def main():
             
             successful_events.append(event_id)
             
-            # Stop after 10 successful events
-            if len(successful_events) >= 10:
-                print(f"\n✓ Reached target of 10 events!")
+            # Stop after 50 successful events
+            if len(successful_events) >= 50:
+                print(f"\n✓ Reached target of 50 events!")
                 break
             
             # Be respectful to server
