@@ -186,14 +186,13 @@ class JapanPTCGScraper(PTCGScraper):
         products = []
         
         try:
-            # Use the API endpoint for expansion packs
+            # Use the API endpoint for ALL products (no filter)
             api_url = "https://www.pokemon-card.com/products/resultAPI.php"
             params = {
-                'productType': 'expansion',
                 'page': 1
             }
             
-            logger.info(f"Fetching Japan products from API: {api_url}")
+            logger.info(f"Fetching ALL Japan products from API: {api_url}")
             
             # First request to get total pages
             response = self.session.get(api_url, params=params, timeout=self.timeout)
@@ -240,7 +239,7 @@ class JapanPTCGScraper(PTCGScraper):
         return products
     
     def _parse_api_product(self, item: Dict) -> Dict:
-        """Parse a product from API response"""
+        """Parse a product from API response - saves ALL available fields"""
         product = {
             'country': self.country,
             'product_name': '',
@@ -250,12 +249,20 @@ class JapanPTCGScraper(PTCGScraper):
             'link': '',
             'image_url': '',
             'include': '',
-            'card_only': ''
+            'card_only': '',
+            # Additional API fields
+            'product_type': '',
+            'beginner_flag': '',
+            'stores_available': '',
+            'link_card_list': '',
+            'link_pokemon_center': ''
         }
         
         # Title and type
         product_type = item.get('productType', '')
         product_title = item.get('productTitle', '')
+        product['product_type'] = product_type  # Save original type
+        
         if product_type and product_title:
             product['product_name'] = f"{product_type} {product_title}"
         elif product_title:
@@ -296,6 +303,26 @@ class JapanPTCGScraper(PTCGScraper):
         if description:
             # Clean up the description (remove newlines and extra spaces)
             product['include'] = description.replace('\n', ' ').strip()
+        
+        # Additional API fields
+        product['beginner_flag'] = str(item.get('beginnerFlg', ''))
+        product['stores_available'] = item.get('storesAvailable', '')
+        
+        # Card list link
+        card_list = item.get('link_cardList', '')
+        if card_list:
+            if card_list.startswith('http'):
+                product['link_card_list'] = card_list
+            else:
+                product['link_card_list'] = self.base_url + card_list if card_list else ''
+        
+        # Pokemon Center link
+        pokemon_center = item.get('link_pokemonCenter', '')
+        if pokemon_center:
+            if pokemon_center.startswith('http'):
+                product['link_pokemon_center'] = pokemon_center
+            else:
+                product['link_pokemon_center'] = self.base_url + pokemon_center if pokemon_center else ''
         
         # Return None if no product name (essential field)
         if not product['product_name']:
@@ -663,8 +690,12 @@ def export_to_csv(products: List[Dict], filename: str = None):
     
     products.sort(key=get_sort_key, reverse=True)
     
-    # Define CSV columns - added image_url field
-    fieldnames = ['country', 'product_name', 'price', 'release_date', 'code', 'link', 'image_url', 'include', 'card_only']
+    # Define CSV columns - includes all API fields
+    fieldnames = [
+        'country', 'product_name', 'price', 'release_date', 'code', 'link', 
+        'image_url', 'include', 'card_only', 'product_type', 'beginner_flag', 
+        'stores_available', 'link_card_list', 'link_pokemon_center'
+    ]
     
     try:
         with open(filename, 'w', newline='', encoding=OUTPUT_ENCODING) as csvfile:
