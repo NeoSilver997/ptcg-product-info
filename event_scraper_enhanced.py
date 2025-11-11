@@ -75,7 +75,7 @@ class EventDeckScraper:
                 event_data['event_id'] = event_id_match.group(1)
             
             driver.get(event_url)
-            time.sleep(5)  # Wait for JavaScript to render
+            time.sleep(2)  # Reduced from 5 to 2 seconds
             
             html = driver.page_source
             soup = BeautifulSoup(html, 'html.parser')
@@ -217,7 +217,7 @@ class EventDeckScraper:
                         logger.info("Next button is not enabled, reached last page")
                         break
                     next_btn_elem.click()
-                    time.sleep(3)
+                    time.sleep(1.5)  # Reduced from 3 to 1.5 seconds
                     page += 1
                 except Exception as e:
                     logger.warning(f"Could not navigate to next page: {e}")
@@ -262,7 +262,7 @@ class EventDeckScraper:
         
         try:
             driver.get(deck_url)
-            time.sleep(3)  # Wait for page to load
+            time.sleep(1.5)  # Reduced from 3 to 1.5 seconds
             
             html = driver.page_source
             soup = BeautifulSoup(html, 'html.parser')
@@ -389,7 +389,7 @@ class EventDeckScraper:
                 logger.info(f"[{i}/{len(event_data['results'])}] Scraping deck {deck_id}")
                 deck_data = self.scrape_deck_by_id(deck_id)
                 self.save_deck_data(deck_data, event_folder)
-                time.sleep(2)  # Be respectful to the server
+                time.sleep(1)  # Reduced from 2 to 1 second
         
         logger.info(f"✓ Event scraping completed! Data saved to: {event_folder}")
         return event_folder

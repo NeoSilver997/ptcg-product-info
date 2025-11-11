@@ -20,6 +20,9 @@ def get_event_ids_from_list(max_events=20):
     """Get real event IDs from the event list page with pagination support"""
     chrome_options = Options()
     chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
     driver = webdriver.Chrome(options=chrome_options)
     
     event_ids = []
@@ -30,7 +33,7 @@ def get_event_ids_from_list(max_events=20):
         url = f'https://players.pokemon-card.com/event/result/list?offset={offset}'
         print(f"Fetching event list page {page} (offset={offset})...")
         driver.get(url)
-        time.sleep(5)
+        time.sleep(2)  # Reduced from 5 to 2 seconds
         
         soup = BeautifulSoup(driver.page_source, 'html.parser')
         
@@ -64,7 +67,7 @@ def get_event_ids_from_list(max_events=20):
         # Move to next page (20 events per page)
         offset += 20
         page += 1
-        time.sleep(2)  # Be respectful between page requests
+        time.sleep(1)  # Reduced from 2 to 1 second
     
     driver.quit()
     print(f"Total event IDs collected: {len(event_ids)}")
