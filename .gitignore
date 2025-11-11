@@ -27,7 +27,7 @@ wheels/
 venv/
 ENV/
 env/
-
+event_data/
 # IDE
 .vscode/
 .idea/
@@ -38,6 +38,9 @@ env/
 # Output files
 *.csv
 output/
+
+# Archive folder (temporary and debug files)
+archive/
 
 # Selenium
 chromedriver
