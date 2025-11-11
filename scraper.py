@@ -90,6 +90,81 @@ class PTCGScraper:
             logger.warning(f"Error formatting Hong Kong date '{date_str}': {e}")
         
         return date_str  # Return original if parsing fails
+    
+    def _fetch_price_from_detail_page(self, code: str, language: str = 'hk') -> str:
+        """
+        Fetch price from Hong Kong special detail page
+        Args:
+            code: Product code (e.g., 'm1', 'm2', 'sv10')
+            language: 'hk' for Chinese or 'hk-en' for English
+        Returns:
+            Price string (e.g., '12元') or empty string if not found
+        """
+        import re
+        
+        if not code:
+            return ''
+        
+        # Convert code to lowercase for URL
+        code_lower = code.lower()
+        detail_url = f"https://asia.pokemon-card.com/{language}/archive/special/card/{code_lower}/"
+        
+        try:
+            response = self.session.get(detail_url, timeout=self.timeout)
+            
+            # Check if page exists
+            if response.status_code == 404:
+                logger.debug(f"No detail page found for code {code}")
+                return ''
+            
+            response.raise_for_status()
+            response.encoding = 'utf-8'
+            
+            soup = BeautifulSoup(response.text, 'html.parser')
+            
+            # Find the product section
+            section = soup.find('section', class_='section-product')
+            if not section:
+                logger.debug(f"No product section found on detail page for {code}")
+                return ''
+            
+            # Try Method 1: Look for data-product div (M2 style)
+            data_product = section.find('div', class_='data-product')
+            if data_product:
+                text = data_product.get_text()
+                price_match = re.search(r'建議零售價[：:]\s*(\d+)元', text)
+                if price_match:
+                    price = f"{price_match.group(1)}元"
+                    logger.info(f"Found price for {code}: {price}")
+                    return price
+            
+            # Try Method 2: Look for box-red containers (SV10 style)
+            box_red = section.find('div', class_='box-red')
+            if box_red:
+                # Look for <p> tag with price
+                p_tags = box_red.find_all('p')
+                for p in p_tags:
+                    text = p.get_text()
+                    price_match = re.search(r'建議零售價[：:]\s*(\d+)元', text)
+                    if price_match:
+                        price = f"{price_match.group(1)}元"
+                        logger.info(f"Found price for {code}: {price}")
+                        return price
+            
+            # Try Method 3: Search entire section for first price mention
+            section_text = section.get_text()
+            price_match = re.search(r'建議零售價[：:]\s*(\d+)元', section_text)
+            if price_match:
+                price = f"{price_match.group(1)}元"
+                logger.info(f"Found price for {code}: {price}")
+                return price
+            
+            logger.debug(f"No price found on detail page for {code}")
+            return ''
+            
+        except Exception as e:
+            logger.debug(f"Error fetching detail page for {code}: {e}")
+            return ''
 
 
 class JapanPTCGScraper(PTCGScraper):
@@ -409,6 +484,12 @@ class HongKongENPTCGScraper(PTCGScraper):
             try:
                 code = product['link'].split('expansionCodes=')[1].split('&')[0]
                 product['code'] = code
+                
+                # Try to fetch price from detail page (EN site uses 'hk-en')
+                price = self._fetch_price_from_detail_page(code, 'hk-en')
+                if price:
+                    product['price'] = price
+                    
             except:
                 pass
         
@@ -555,6 +636,12 @@ class HongKongZHPTCGScraper(PTCGScraper):
             try:
                 code = product['link'].split('expansionCodes=')[1].split('&')[0]
                 product['code'] = code
+                
+                # Try to fetch price from detail page (ZH site uses 'hk')
+                price = self._fetch_price_from_detail_page(code, 'hk')
+                if price:
+                    product['price'] = price
+                    
             except:
                 pass
         
