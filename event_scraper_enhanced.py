@@ -18,6 +18,7 @@ import re
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 
 # Configure logging
@@ -61,6 +62,8 @@ class EventDeckScraper:
             'event_id': '',
             'event_title': '',
             'event_date': '',
+            'event_host': '',
+            'event_address': '',
             'event_location': '',
             'results': []
         }
@@ -95,6 +98,21 @@ class EventDeckScraper:
                     year, month, day = date_match.groups()
                     event_data['event_date'] = f"{year}-{month.zfill(2)}-{day.zfill(2)}"
             
+            # Extract event host (主催者：)
+            all_text = soup.get_text()
+            host_match = re.search(r'主催者：([^\n〒]+)', all_text)
+            if host_match:
+                event_data['event_host'] = host_match.group(1).strip()
+            
+            # Extract address (〒) - only the address line
+            address_match = re.search(r'(〒\d{3}-\d{4}\s+[^\n]+)', all_text)
+            if address_match:
+                # Clean up the address - stop at certain keywords
+                address = address_match.group(1).strip()
+                # Remove extra content after store/venue name
+                address = re.sub(r'(イベント|結果|順位|ユーザー).*$', '', address).strip()
+                event_data['event_address'] = address
+            
             # Look for location/store name in various possible places
             # Try to find store name or venue in the page
             location_patterns = [
@@ -113,27 +131,57 @@ class EventDeckScraper:
             # If no location found yet, try to extract from title or other text
             if not event_data['event_location']:
                 # Sometimes location is in the page text
-                all_text = soup.get_text()
                 # Look for common store chains
                 store_match = re.search(r'(カードラボ[^\s]+|ポケモンセンター[^\s]+|トレカ[^\s]+店)', all_text)
                 if store_match:
                     event_data['event_location'] = store_match.group(1)
             
-            # Extract results table
-            table = soup.find('table')
-            if table:
+            # Extract results table (handle pagination)
+            page = 1
+            while True:
+                logger.info(f"Processing page {page}...")
+                
+                # Get current page HTML
+                html = driver.page_source
+                soup = BeautifulSoup(html, 'html.parser')
+                
+                table = soup.find('table')
+                if not table:
+                    break
+                    
                 rows = table.find_all('tr')[1:]  # Skip header
+                page_results = 0
                 
                 for row in rows:
                     cells = row.find_all('td')
                     if len(cells) < 5:
                         continue
                     
+                    # Parse username (format: "nameプレイヤーID：idエリア：area")
+                    username_text = cells[2].get_text(strip=True)
+                    player_name = ''
+                    player_id = ''
+                    player_area = ''
+                    
+                    # Split by "プレイヤーID：" and "エリア："
+                    name_match = re.match(r'^([^プ]+)', username_text)
+                    if name_match:
+                        player_name = name_match.group(1).strip()
+                    
+                    id_match = re.search(r'プレイヤーID：(\d+)', username_text)
+                    if id_match:
+                        player_id = id_match.group(1)
+                    
+                    area_match = re.search(r'エリア：(.+)', username_text)
+                    if area_match:
+                        player_area = area_match.group(1).strip()
+                    
                     result = {
                         'rank': cells[0].get_text(strip=True),
                         'points': cells[1].get_text(strip=True),
-                        'username': cells[2].get_text(strip=True),
-                        'area': cells[3].get_text(strip=True),
+                        'player_name': player_name,
+                        'player_id': player_id,
+                        'player_area': player_area,
                         'deck_url': '',
                         'deck_id': ''
                     }
@@ -148,8 +196,32 @@ class EventDeckScraper:
                             result['deck_id'] = deck_id_match.group(1)
                     
                     event_data['results'].append(result)
+                    page_results += 1
                 
-                logger.info(f"Extracted {len(event_data['results'])} results")
+                logger.info(f"Found {page_results} results on page {page} (total: {len(event_data['results'])})")
+                
+                # Check for next page button (must not be disabled)
+                next_button = soup.find('button', class_='next')
+                if not next_button:
+                    logger.info("No next button found, ending pagination")
+                    break
+                    
+                if next_button.get('disabled') is not None:
+                    logger.info("Next button is disabled, reached last page")
+                    break
+                
+                # Click next page button
+                try:
+                    next_btn_elem = driver.find_element(By.CSS_SELECTOR, 'button.next')
+                    if not next_btn_elem.is_enabled():
+                        logger.info("Next button is not enabled, reached last page")
+                        break
+                    next_btn_elem.click()
+                    time.sleep(3)
+                    page += 1
+                except Exception as e:
+                    logger.warning(f"Could not navigate to next page: {e}")
+                    break
             
         except Exception as e:
             logger.error(f"Error scraping event: {e}")
@@ -240,9 +312,20 @@ class EventDeckScraper:
                         quantity = int(parts[1])
                         
                         if card_id in card_names:
+                            full_name = card_names[card_id]
+                            
+                            # Split card name and code (format: "name(code)")
+                            card_name = full_name
+                            card_code = ''
+                            code_match = re.match(r'^(.+)\(([^)]+)\)$', full_name)
+                            if code_match:
+                                card_name = code_match.group(1).strip()
+                                card_code = code_match.group(2).strip()
+                            
                             card_data = {
                                 'card_id': card_id,
-                                'name': card_names[card_id],
+                                'card_name': card_name,
+                                'card_code': card_code,
                                 'quantity': quantity,
                                 'image_url': card_images.get(card_id, '')
                             }
