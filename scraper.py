@@ -182,85 +182,65 @@ class JapanPTCGScraper(PTCGScraper):
         self.country = "Japan"
     
     def scrape(self) -> List[Dict]:
-        """Scrape product information from Japanese Pokemon Card website using Selenium"""
-        
-        if not SELENIUM_AVAILABLE:
-            logger.error("Selenium is not installed. Cannot scrape Japan site.")
-            logger.error("Install with: pip install selenium")
-            return []
-        
+        """Scrape products from Japan site using API endpoint"""
         products = []
-        driver = None
         
         try:
-            # Setup Chrome options
-            chrome_options = Options()
-            chrome_options.add_argument('--headless')
-            chrome_options.add_argument('--no-sandbox')
-            chrome_options.add_argument('--disable-dev-shm-usage')
-            chrome_options.add_argument('--disable-gpu')
-            chrome_options.add_argument(f'user-agent={USER_AGENT}')
+            # Use the API endpoint for expansion packs
+            api_url = "https://www.pokemon-card.com/products/resultAPI.php"
+            params = {
+                'productType': 'expansion',
+                'page': 1
+            }
             
-            logger.info(f"Starting Selenium WebDriver for {self.products_url}")
-            driver = webdriver.Chrome(options=chrome_options)
-            driver.get(self.products_url)
+            logger.info(f"Fetching Japan products from API: {api_url}")
             
-            # Wait for products to load (give JavaScript time to render)
-            time.sleep(5)
+            # First request to get total pages
+            response = self.session.get(api_url, params=params, timeout=self.timeout)
+            response.raise_for_status()
+            data = response.json()
             
-            # Load more products by clicking "もっと見る" button repeatedly
-            page_num = 1
-            while True:
-                html = driver.page_source
-                soup = BeautifulSoup(html, 'html.parser')
+            max_page = data.get('maxPage', 1)
+            logger.info(f"Total pages available: {max_page}")
+            
+            # Loop through all pages
+            for page_num in range(1, max_page + 1):
+                params['page'] = page_num
+                logger.info(f"Fetching page {page_num}/{max_page}...")
                 
-                # Find all product cards on current page
-                product_cards = soup.find_all('div', class_='product-card')
-                current_count = len(products)
-                logger.info(f"Found {len(product_cards)} total products visible (page {page_num})")
+                response = self.session.get(api_url, params=params, timeout=self.timeout)
+                response.raise_for_status()
+                data = response.json()
                 
-                # Parse all visible cards
-                for card in product_cards:
+                if data.get('result') != 1:
+                    logger.warning(f"API returned error on page {page_num}: {data.get('errMsg')}")
+                    continue
+                
+                page_products = data.get('products', [])
+                logger.info(f"Page {page_num}: Found {len(page_products)} products")
+                
+                for item in page_products:
                     try:
-                        product = self._parse_product_card(card, driver)
-                        if product and product not in products:
+                        product = self._parse_api_product(item)
+                        if product:
                             products.append(product)
                     except Exception as e:
-                        logger.warning(f"Error parsing product card: {e}")
+                        logger.warning(f"Error parsing product: {e}")
                         continue
                 
-                new_products = len(products) - current_count
-                logger.info(f"Parsed {new_products} new products on page {page_num}")
-                
-                # Look for "もっと見る" (See More) button
-                try:
-                    more_button = driver.find_element(By.LINK_TEXT, "もっと見る")
-                    # Check if button is visible and clickable
-                    if more_button.is_displayed():
-                        logger.info("Clicking 'もっと見る' button to load more products...")
-                        more_button.click()
-                        time.sleep(3)  # Wait for new products to load
-                        page_num += 1
-                    else:
-                        logger.info("No more pages to load")
-                        break
-                except Exception:
-                    # Button not found or not clickable - no more pages
-                    logger.info(f"No more pages after page {page_num}")
-                    break
+                # Small delay between requests
+                if page_num < max_page:
+                    time.sleep(1)
             
-            logger.info(f"Scraped total of {len(products)} products from {page_num} page(s)")
+            logger.info(f"Scraped total of {len(products)} products from {max_page} page(s)")
                     
         except Exception as e:
             logger.error(f"Error scraping Japan site: {e}")
-        finally:
-            if driver:
-                driver.quit()
         
         return products
     
-    def _parse_product_card(self, card, driver=None) -> Dict:
-        """Parse a product card element and fetch detail page"""
+    def _parse_api_product(self, item: Dict) -> Dict:
+        """Parse a product from API response"""
         product = {
             'country': self.country,
             'product_name': '',
@@ -273,49 +253,49 @@ class JapanPTCGScraper(PTCGScraper):
             'card_only': ''
         }
         
-        # Title
-        title_div = card.find('div', class_='product-title')
-        if title_div:
-            product['product_name'] = title_div.get_text(strip=True)
+        # Title and type
+        product_type = item.get('productType', '')
+        product_title = item.get('productTitle', '')
+        if product_type and product_title:
+            product['product_name'] = f"{product_type} {product_title}"
+        elif product_title:
+            product['product_name'] = product_title
         
-        # Product type (拡張パック, 構築デッキ, etc.)
-        type_div = card.find('div', class_='product-type')
-        if type_div:
-            product_type = type_div.get_text(strip=True)
-            # Prepend type to name like Hong Kong scrapers do with series
-            product['product_name'] = f"{product_type} {product['product_name']}"
+        # Price
+        product['price'] = item.get('priceTxt', '')
         
-        # Extract date and price from tables
-        tables = card.find_all('div', class_='product-table')
-        for table in tables:
-            spans = table.find_all('span')
-            if len(spans) == 2:
-                label = spans[0].get_text(strip=True)
-                value = spans[1].get_text(strip=True)
-                
-                if '販売日' in label:  # Release date
-                    # Format: "2025年11月28日（金）" -> "2025-11-28"
-                    product['release_date'] = self._format_japanese_date(value)
-                elif '希望小売価格' in label or '価格' in label:  # Price
-                    product['price'] = value
+        # Release date - format: "2025年11月28日（金）"
+        release_date = item.get('releaseDate', '')
+        if release_date:
+            product['release_date'] = self._format_japanese_date(release_date)
         
-        # Image - extract code from filename
-        img = card.find('img', class_='product-thumbnail')
-        if img and img.get('src'):
-            img_src = img.get('src')
-            if img_src.startswith('http'):
-                product['image_url'] = img_src
+        # Image URL
+        thumbs_img = item.get('tumbsImg', '')
+        if thumbs_img:
+            if thumbs_img.startswith('http'):
+                product['image_url'] = thumbs_img
             else:
-                product['image_url'] = self.base_url + img_src
+                product['image_url'] = self.base_url + thumbs_img
             
             # Extract code from image filename (e.g., /products/2025/images/m2a.jpg -> m2a)
-            if '/images/' in img_src:
-                filename = img_src.split('/images/')[-1]
+            if '/images/' in thumbs_img:
+                filename = thumbs_img.split('/images/')[-1]
                 code = filename.replace('.jpg', '').replace('.png', '')
                 product['code'] = code
-                
-                # Build detail page link
-                product['link'] = f"{self.base_url}/ex/{code}/"
+        
+        # Detail page link
+        detail_link = item.get('link_detailPage', '')
+        if detail_link:
+            if detail_link.startswith('http'):
+                product['link'] = detail_link
+            else:
+                product['link'] = self.base_url + detail_link
+        
+        # Include (description)
+        description = item.get('description', '')
+        if description:
+            # Clean up the description (remove newlines and extra spaces)
+            product['include'] = description.replace('\n', ' ').strip()
         
         # Return None if no product name (essential field)
         if not product['product_name']:
