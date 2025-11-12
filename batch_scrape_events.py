@@ -76,8 +76,8 @@ def get_event_ids_from_list(max_events=20):
 def main():
     scraper = EventDeckScraper(output_dir="event_data")
     
-    # Get real event IDs from the list page (can fetch more than 20 with pagination)
-    events_to_scrape = get_event_ids_from_list(max_events=50)  # Fetch 50 event IDs
+    # Get real event IDs from the list page (fetch 100 to get next 50 after first 50)
+    events_to_scrape = get_event_ids_from_list(max_events=100)  # Fetch 100 event IDs
     
     successful_events = []
     
@@ -85,7 +85,7 @@ def main():
     print("BATCH EVENT SCRAPING")
     print("=" * 80)
     print(f"Found {len(events_to_scrape)} event IDs from list page")
-    print(f"Will scrape up to 50 events (skipping already downloaded)")
+    print(f"Will scrape up to 50 NEW events (skipping already downloaded)")
     print()
     
     for idx, event_id in enumerate(events_to_scrape, 1):
@@ -117,12 +117,7 @@ def main():
                     
                     if actual_decks >= expected_decks and actual_decks > 0:
                         print(f"⊙ Event {event_id}: Already downloaded with {actual_decks} decks, skipping...")
-                        successful_events.append(event_id)
-                        
-                        # Stop after 50 successful events
-                        if len(successful_events) >= 50:
-                            print(f"\n✓ Reached target of 50 events!")
-                            break
+                        # Don't count already downloaded events toward the 50 target
                         continue
                     else:
                         print(f"⊙ Event {event_id}: Found but missing decks ({actual_decks}/{expected_decks}), re-downloading decks...")
@@ -187,10 +182,11 @@ def main():
                     continue
             
             successful_events.append(event_id)
+            print(f"✓ Downloaded event {event_id} ({len(successful_events)}/50 new events)")
             
-            # Stop after 50 successful events
+            # Stop after 50 NEW successful events
             if len(successful_events) >= 50:
-                print(f"\n✓ Reached target of 50 events!")
+                print(f"\n✓ Reached target of 50 NEW events!")
                 break
             
             # Be respectful to server
