@@ -16,8 +16,13 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-def get_event_ids_from_list(max_events=20):
-    """Get real event IDs from the event list page with pagination support"""
+def get_event_ids_from_list(max_events=20, start_offset=0):
+    """Get real event IDs from the event list page with pagination support
+    
+    Args:
+        max_events: Maximum number of events to fetch
+        start_offset: Offset to start from (e.g., 100 to skip first 100 events)
+    """
     chrome_options = Options()
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--disable-gpu')
@@ -26,8 +31,8 @@ def get_event_ids_from_list(max_events=20):
     driver = webdriver.Chrome(options=chrome_options)
     
     event_ids = []
-    offset = 0
-    page = 1
+    offset = start_offset
+    page = (start_offset // 20) + 1
     
     while len(event_ids) < max_events:
         url = f'https://players.pokemon-card.com/event/result/list?offset={offset}'
@@ -73,11 +78,16 @@ def get_event_ids_from_list(max_events=20):
     print(f"Total event IDs collected: {len(event_ids)}")
     return event_ids
 
-def main():
+def main(start_offset=0):
+    """Main function with optional start offset
+    
+    Args:
+        start_offset: Offset to start from (e.g., 100 to skip first 100 events)
+    """
     scraper = EventDeckScraper(output_dir="event_data")
     
-    # Get real event IDs from the list page (fetch 100 to get next 50 after first 50)
-    events_to_scrape = get_event_ids_from_list(max_events=100)  # Fetch 100 event IDs
+    # Get real event IDs from the list page (fetch more to find new events)
+    events_to_scrape = get_event_ids_from_list(max_events=200, start_offset=start_offset)  # Fetch 200 event IDs to find more new events
     
     successful_events = []
     
@@ -205,4 +215,15 @@ def main():
     print()
 
 if __name__ == "__main__":
-    main()
+    import sys
+    
+    # Check for command line argument to start at specific offset
+    start_offset = 0
+    if len(sys.argv) > 1:
+        try:
+            start_offset = int(sys.argv[1])
+            print(f"Starting at offset: {start_offset}")
+        except ValueError:
+            print("Invalid offset provided. Using default offset 0.")
+    
+    main(start_offset)
