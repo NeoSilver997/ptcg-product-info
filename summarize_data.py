@@ -5,6 +5,7 @@ Summarize deck and user data from downloaded events
 import os
 import json
 import glob
+import sqlite3
 from collections import defaultdict, Counter
 
 def load_all_events(event_data_dir="event_data"):
@@ -15,10 +16,17 @@ def load_all_events(event_data_dir="event_data"):
     for folder in event_folders:
         event_info_file = os.path.join(folder, "event_info.json")
         if os.path.exists(event_info_file):
-            with open(event_info_file, 'r', encoding='utf-8') as f:
-                event_data = json.load(f)
-                event_data['folder'] = folder
-                events.append(event_data)
+            try:
+                with open(event_info_file, 'r', encoding='utf-8') as f:
+                    event_data = json.load(f)
+                    event_data['folder'] = folder
+                    events.append(event_data)
+            except json.JSONDecodeError as e:
+                print(f"Warning: Skipping invalid JSON file {event_info_file}: {e}")
+                continue
+            except Exception as e:
+                print(f"Warning: Error loading event file {event_info_file}: {e}")
+                continue
     
     return events
 
@@ -28,16 +36,49 @@ def load_all_decks(event_data_dir="event_data"):
     deck_files = glob.glob(f"{event_data_dir}/event_*/deck_*.json")
     
     for deck_file in deck_files:
-        with open(deck_file, 'r', encoding='utf-8') as f:
-            deck_data = json.load(f)
-            # Extract event_id from path
-            folder = os.path.dirname(deck_file)
-            event_id = folder.split('event_')[1].split('_')[0] if 'event_' in folder else ''
-            deck_data['event_id'] = event_id
-            deck_data['deck_file'] = deck_file
-            decks.append(deck_data)
+        try:
+            with open(deck_file, 'r', encoding='utf-8') as f:
+                deck_data = json.load(f)
+                # Extract event_id from path
+                folder = os.path.dirname(deck_file)
+                event_id = folder.split('event_')[1].split('_')[0] if 'event_' in folder else ''
+                deck_data['event_id'] = event_id
+                deck_data['deck_file'] = deck_file
+                decks.append(deck_data)
+        except json.JSONDecodeError as e:
+            print(f"Warning: Skipping invalid JSON file {deck_file}: {e}")
+            continue
+        except Exception as e:
+            print(f"Warning: Error loading deck file {deck_file}: {e}")
+            continue
     
     return decks
+
+def get_chinese_card_names(event_db_path='ptcg_events.db'):
+    """Get mapping of Japanese card names to Chinese card names"""
+    chinese_names = {}
+    
+    try:
+        conn = sqlite3.connect(event_db_path)
+        cursor = conn.cursor()
+        
+        # Get mappings from card_mappings table
+        cursor.execute("""
+            SELECT event_card_name, main_card_name
+            FROM card_mappings
+            WHERE main_card_name IS NOT NULL AND main_card_name != ''
+        """)
+        
+        for row in cursor.fetchall():
+            japanese_name, chinese_name = row
+            chinese_names[japanese_name] = chinese_name
+            
+        conn.close()
+        
+    except Exception as e:
+        print(f"Warning: Could not load Chinese card names from database: {e}")
+    
+    return chinese_names
 
 def summarize_events(events):
     """Summarize event statistics"""
@@ -51,7 +92,7 @@ def summarize_events(events):
     dates = [e.get('event_date', 'Unknown') for e in events]
     date_counts = Counter(dates)
     print(f"Events by Date:")
-    for date, count in sorted(date_counts.items(), reverse=True)[:10]:
+    for date, count in sorted(date_counts.items(), reverse=True)[:50]:
         print(f"  {date}: {count} event(s)")
     print()
     
@@ -132,7 +173,7 @@ def summarize_players(events):
         print(f"{i:<6} {pid:<15} {name_display:<25} {area_display:<15} {count:<12}")
     print()
 
-def summarize_decks(decks):
+def summarize_decks(decks, chinese_names=None):
     """Summarize deck statistics"""
     print("=" * 80)
     print("DECK SUMMARY")
@@ -161,6 +202,12 @@ def summarize_decks(decks):
     for i, (card_key, count) in enumerate(sorted(card_usage.items(), key=lambda x: x[1], reverse=True)[:30], 1):
         card_display = card_key[:49] if len(card_key) > 49 else card_key
         print(f"{i:<6} {card_display:<50} {count:<12}")
+        
+        # Show Chinese name if available
+        japanese_name = card_names.get(card_key, '')
+        if chinese_names and japanese_name in chinese_names:
+            chinese_name = chinese_names[japanese_name]
+            print(f"{'':<6} → {chinese_name}")
     print()
     
     # Deck size statistics
@@ -218,12 +265,16 @@ def main():
     print("Loading deck data...")
     decks = load_all_decks()
     print(f"Loaded {len(decks)} decks")
+    
+    print("Loading Chinese card names...")
+    chinese_names = get_chinese_card_names()
+    print(f"Loaded {len(chinese_names)} Chinese card name mappings")
     print()
     
     # Generate summaries
     summarize_events(events)
     summarize_players(events)
-    summarize_decks(decks)
+    summarize_decks(decks, chinese_names)
     summarize_deck_archetypes(decks)
     
     print("=" * 80)

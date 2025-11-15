@@ -4,6 +4,9 @@ Batch scrape multiple events
 """
 import time
 import re
+import os
+import glob
+import json
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
@@ -105,8 +108,6 @@ def main(start_offset=0):
             print(f"\n[{idx}/{len(events_to_scrape)}] Checking event {event_id}...")
             
             # Check if event already exists
-            import os
-            import glob
             existing_folders = glob.glob(f"{scraper.output_dir}/event_{event_id}_*")
             
             if existing_folders:
@@ -118,7 +119,6 @@ def main(start_offset=0):
                 
                 # If event info exists, check if we need to download decks
                 if os.path.exists(event_info_file):
-                    import json
                     with open(event_info_file, 'r', encoding='utf-8') as f:
                         event_data = json.load(f)
                     
