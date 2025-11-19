@@ -1,0 +1,2114 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>未對應卡片分析報告</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Microsoft JhengHei', 'PingFang TC', 'Noto Sans TC', sans-serif;
+            background: linear-gradient(135deg, #fc466b 0%, #3f5efb 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #4a5568;
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .warning-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #fc466b 0%, #e74c3c 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-left: 15px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        .stat-card {
+            padding: 30px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        .stat-card.warning {
+            background: linear-gradient(135deg, #fc466b 0%, #e74c3c 100%);
+        }
+        .stat-card.info {
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+        }
+        .stat-value {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .section {
+            margin: 50px 0;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #fc466b 0%, #e74c3c 100%);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .section-header.breakdown {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .section-header.expansion {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .section-title {
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+        .section-count {
+            font-size: 1.5em;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 20px;
+            border-radius: 20px;
+        }
+        .table-container {
+            overflow-x: auto;
+            border: 2px solid #e2e8f0;
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        th {
+            background: #2d3748;
+            color: white;
+            padding: 15px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95em;
+            border-bottom: 2px solid #4a5568;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.95em;
+        }
+        tr:hover td {
+            background-color: #fff5f5;
+        }
+        .rank {
+            font-weight: bold;
+            color: #e53e3e;
+            text-align: center;
+            width: 60px;
+        }
+        .card-name {
+            color: #2d3748;
+            font-weight: 600;
+            min-width: 200px;
+        }
+        .card-code {
+            font-family: 'Courier New', monospace;
+            background: #fed7d7;
+            color: #c53030;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+        .count {
+            text-align: center;
+            font-weight: 600;
+            color: #4a5568;
+        }
+        .percentage {
+            text-align: center;
+            font-weight: 600;
+            color: #e53e3e;
+        }
+        .priority-high {
+            background: linear-gradient(90deg, #fee 0%, #fff 100%);
+        }
+        .priority-high .rank {
+            color: #c53030;
+            font-size: 1.3em;
+        }
+        .priority-medium {
+            background: linear-gradient(90deg, #fffbeb 0%, #fff 100%);
+        }
+        .breakdown-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .breakdown-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .breakdown-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px;
+            margin: 8px 0;
+            background: #f7fafc;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        .breakdown-item:hover {
+            background: #edf2f7;
+        }
+        .breakdown-label {
+            font-weight: 500;
+            color: #4a5568;
+        }
+        .breakdown-value {
+            font-weight: 600;
+            color: #e53e3e;
+        }
+        .alert-box {
+            background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+            border-left: 5px solid #e53e3e;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        .alert-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #c53030;
+            margin-bottom: 10px;
+        }
+        .alert-text {
+            color: #742a2a;
+            line-height: 1.6;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+            color: #718096;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            ⚠️ 未對應卡片分析報告
+            <span class="warning-badge">需要處理</span>
+        </h1>
+        <p class="subtitle">
+            日文錦標賽卡片 - 尚未對應至中文資料庫<br>
+            生成時間: 2025年11月19日 21:14:49
+        </p>
+        
+        <div class="stats-grid">
+            <div class="stat-card warning">
+                <div class="stat-label">未對應卡片種類</div>
+                <div class="stat-value">179</div>
+                <div class="stat-label">佔總卡片 5.4%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">已對應卡片種類</div>
+                <div class="stat-value">3,116</div>
+                <div class="stat-label">佔總卡片 94.6%</div>
+            </div>
+            <div class="stat-card warning">
+                <div class="stat-label">未對應使用次數</div>
+                <div class="stat-value">-10,495</div>
+                <div class="stat-label">佔總使用 -1.1%</div>
+            </div>
+            <div class="stat-card info">
+                <div class="stat-label">總卡片種類</div>
+                <div class="stat-value">3,295</div>
+                <div class="stat-label">全部錦標賽卡片</div>
+            </div>
+        </div>
+        
+        <div class="alert-box">
+            <div class="alert-title">📋 優先處理建議</div>
+            <div class="alert-text">
+                <strong>高優先級 (Top 50):</strong> 在 500+ 套牌中出現的卡片，對競技環境影響最大<br>
+                <strong>中優先級 (51-200):</strong> 在 100-499 套牌中出現的卡片，常見於特定構築<br>
+                <strong>低優先級 (201+):</strong> 較少使用的卡片，可以稍後處理
+            </div>
+        </div>
+        
+        <!-- TYPE BREAKDOWN -->
+        <div class="section">
+            <div class="section-header breakdown">
+                <div class="section-title">📊 卡片類型分佈</div>
+            </div>
+            <div class="breakdown-grid">
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Regular Card</div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">卡片種類數</span>
+                        <span class="breakdown-value">126 種 (70.4%)</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">總使用次數</span>
+                        <span class="breakdown-value">362 次</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">平均使用</span>
+                        <span class="breakdown-value">2.9 次/卡</span>
+                    </div>
+                </div>
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Unknown Type</div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">卡片種類數</span>
+                        <span class="breakdown-value">34 種 (19.0%)</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">總使用次數</span>
+                        <span class="breakdown-value">101 次</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">平均使用</span>
+                        <span class="breakdown-value">3.0 次/卡</span>
+                    </div>
+                </div>
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Special Pokemon</div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">卡片種類數</span>
+                        <span class="breakdown-value">26 種 (14.5%)</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">總使用次數</span>
+                        <span class="breakdown-value">104 次</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">平均使用</span>
+                        <span class="breakdown-value">4.0 次/卡</span>
+                    </div>
+                </div>
+                <div class="breakdown-card">
+                    <div class="breakdown-title">Basic Energy</div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">卡片種類數</span>
+                        <span class="breakdown-value">21 種 (11.7%)</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">總使用次數</span>
+                        <span class="breakdown-value">76 次</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">平均使用</span>
+                        <span class="breakdown-value">3.6 次/卡</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- EXPANSION BREAKDOWN -->
+        <div class="section">
+            <div class="section-header expansion">
+                <div class="section-title">📦 擴充包分佈 (Top 20)</div>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="rank">#</th>
+                            <th>擴充包代碼</th>
+                            <th class="count">卡片種類數</th>
+                            <th class="count">總使用次數</th>
+                            <th class="percentage">平均使用</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="rank">1</td>
+                            <td class="card-name">SV2D</td>
+                            <td class="count">11</td>
+                            <td class="count">32</td>
+                            <td class="percentage">2.9</td>
+                        </tr>
+                        <tr>
+                            <td class="rank">2</td>
+                            <td class="card-name">SV2P</td>
+                            <td class="count">10</td>
+                            <td class="count">20</td>
+                            <td class="percentage">2.0</td>
+                        </tr>
+                        <tr>
+                            <td class="rank">3</td>
+                            <td class="card-name">SV-P</td>
+                            <td class="count">10</td>
+                            <td class="count">58</td>
+                            <td class="percentage">5.8</td>
+                        </tr>
+                        <tr>
+                            <td class="rank">4</td>
+                            <td class="card-name">SV8a</td>
+                            <td class="count">7</td>
+                            <td class="count">13</td>
+                            <td class="percentage">1.9</td>
+                        </tr>
+                        <tr>
+                            <td class="rank">5</td>
+                            <td class="card-name">SV4a</td>
+                            <td class="count">7</td>
+                            <td class="count">11</td>
+                            <td class="percentage">1.6</td>
+                        </tr>
+                        <tr>
+                            <td class="rank">6</td>
+                            <td class="card-name">SV1V</td>
+                            <td class="count">7</td>
+                            <td class="count">51</td>
+                            <td class="percentage">7.3</td>
+                        </tr>
+                        <tr>
+                            <td class="rank">7</td>
+                            <td class="card-name">SVG</td>
+                            <td class="count">5</td>
+                            <td class="count">12</td>
+                            <td class="percentage">2.4</td>
+                        </tr>
+                        <tr>
+                            <td class="rank">8</td>
+                            <td class="card-name">SV4K</td>
+                            <td class="count">5</td>
+                            <td class="count">26</td>
+                            <td class="percentage">5.2</td>
+                        </tr>
+                        <tr>
+                            <td class="rank">9</td>
+                            <td class="card-name">SV3</td>
+                            <td class="count">4</td>
+                            <td class="count">6</td>
+                            <td class="percentage">1.5</td>
+                        </tr>
+                        <tr>
+                            <td class="rank">10</td>
+                            <td class="card-name">SV1a</td>
+                            <td class="count">4</td>
+                            <td class="count">6</td>
+                            <td class="percentage">1.5</td>
+                        </tr>
+                        <tr>
+                            <td class="rank">11</td>
+                            <td class="card-name">SVJP</td>
+                            <td class="count">3</td>
+                            <td class="count">12</td>
+                            <td class="percentage">4.0</td>
+                        </tr>
+                        <tr>
+                            <td class="rank">12</td>
+                            <td class="card-name">SV2a</td>
+                            <td class="count">3</td>
+                            <td class="count">4</td>
+                            <td class="percentage">1.3</td>
+                        </tr>
+                        <tr>
+                            <td class="rank">13</td>
+                            <td class="card-name">SMN</td>
+                            <td class="count">3</td>
+                            <td class="count">10</td>
+                            <td class="percentage">3.3</td>
+                        </tr>
+                        <tr>
+                            <td class="rank">14</td>
+                            <td class="card-name">M-P</td>
+                            <td class="count">3</td>
+                            <td class="count">33</td>
+                            <td class="percentage">11.0</td>
+                        </tr>
+                        <tr>
+                            <td class="rank">15</td>
+                            <td class="card-name">XY7-B</td>
+                            <td class="count">2</td>
+                            <td class="count">4</td>
+                            <td class="percentage">2.0</td>
+                        </tr>
+                        <tr>
+                            <td class="rank">16</td>
+                            <td class="card-name">XY</td>
+                            <td class="count">2</td>
+                            <td class="count">4</td>
+                            <td class="percentage">2.0</td>
+                        </tr>
+                        <tr>
+                            <td class="rank">17</td>
+                            <td class="card-name">WCS23</td>
+                            <td class="count">2</td>
+                            <td class="count">3</td>
+                            <td class="percentage">1.5</td>
+                        </tr>
+                        <tr>
+                            <td class="rank">18</td>
+                            <td class="card-name">SVM</td>
+                            <td class="count">2</td>
+                            <td class="count">2</td>
+                            <td class="percentage">1.0</td>
+                        </tr>
+                        <tr>
+                            <td class="rank">19</td>
+                            <td class="card-name">SVI</td>
+                            <td class="count">2</td>
+                            <td class="count">3</td>
+                            <td class="percentage">1.5</td>
+                        </tr>
+                        <tr>
+                            <td class="rank">20</td>
+                            <td class="card-name">SVEL</td>
+                            <td class="count">2</td>
+                            <td class="count">4</td>
+                            <td class="percentage">2.0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- UNMAPPED CARDS LIST -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-title">🔍 未對應卡片清單 (全部 194 張)</div>
+                <div class="section-count">179 種</div>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="rank">#</th>
+                            <th>卡片名稱 (日文)</th>
+                            <th>卡片代碼</th>
+                            <th class="count">套牌數</th>
+                            <th class="count">總數量</th>
+                            <th class="percentage">套牌占比</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="">
+                            <td class="rank">1</td>
+                            <td class="card-name">トドロクツキex</td>
+                            <td><span class="card-code">SV4K 093/066</span></td>
+                            <td class="count">14</td>
+                            <td class="count">21</td>
+                            <td class="percentage">0.09%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">2</td>
+                            <td class="card-name">ヤドン</td>
+                            <td><span class="card-code">SV1V 082/078</span></td>
+                            <td class="count">12</td>
+                            <td class="count">32</td>
+                            <td class="percentage">0.08%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">3</td>
+                            <td class="card-name">ホウオウ</td>
+                            <td><span class="card-code">SVLS 003/022</span></td>
+                            <td class="count">12</td>
+                            <td class="count">12</td>
+                            <td class="percentage">0.08%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">4</td>
+                            <td class="card-name">ブレイブバングル</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">11</td>
+                            <td class="count">15</td>
+                            <td class="percentage">0.07%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">5</td>
+                            <td class="card-name">エレズン</td>
+                            <td><span class="card-code">M-P 047/M-P</span></td>
+                            <td class="count">9</td>
+                            <td class="count">27</td>
+                            <td class="percentage">0.06%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">6</td>
+                            <td class="card-name">せいなるはい</td>
+                            <td><span class="card-code">XY2 073/080</span></td>
+                            <td class="count">8</td>
+                            <td class="count">8</td>
+                            <td class="percentage">0.05%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">7</td>
+                            <td class="card-name">ナンジャモのカイデン</td>
+                            <td><span class="card-code">SV-P 232/SV-P</span></td>
+                            <td class="count">7</td>
+                            <td class="count">16</td>
+                            <td class="percentage">0.05%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">8</td>
+                            <td class="card-name">ハッサムex</td>
+                            <td><span class="card-code">SV-P 210/SV-P</span></td>
+                            <td class="count">7</td>
+                            <td class="count">7</td>
+                            <td class="percentage">0.05%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">9</td>
+                            <td class="card-name">テクノレーダー</td>
+                            <td><span class="card-code">SVHM 025/053</span></td>
+                            <td class="count">6</td>
+                            <td class="count">26</td>
+                            <td class="percentage">0.04%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">10</td>
+                            <td class="card-name">デカヌチャンex</td>
+                            <td><span class="card-code">SV2D 093/071</span></td>
+                            <td class="count">6</td>
+                            <td class="count">10</td>
+                            <td class="percentage">0.04%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">11</td>
+                            <td class="card-name">デカヌチャンex</td>
+                            <td><span class="card-code">SV2D 087/071</span></td>
+                            <td class="count">6</td>
+                            <td class="count">6</td>
+                            <td class="percentage">0.04%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">12</td>
+                            <td class="card-name">マリルリ</td>
+                            <td><span class="card-code">SVLN 004/022</span></td>
+                            <td class="count">5</td>
+                            <td class="count">12</td>
+                            <td class="percentage">0.03%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">13</td>
+                            <td class="card-name">テーブルシティ</td>
+                            <td><span class="card-code">SVG 047/049</span></td>
+                            <td class="count">5</td>
+                            <td class="count">7</td>
+                            <td class="percentage">0.03%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">14</td>
+                            <td class="card-name">月明かりの丘</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">5</td>
+                            <td class="count">5</td>
+                            <td class="percentage">0.03%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">15</td>
+                            <td class="card-name">スコヴィランex</td>
+                            <td><span class="card-code">SV-P 089/SV-P</span></td>
+                            <td class="count">4</td>
+                            <td class="count">16</td>
+                            <td class="percentage">0.03%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">16</td>
+                            <td class="card-name">ロケット団のサカキ</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">4</td>
+                            <td class="count">11</td>
+                            <td class="percentage">0.03%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">17</td>
+                            <td class="card-name">セゴール</td>
+                            <td><span class="card-code">SVJP 005/019</span></td>
+                            <td class="count">4</td>
+                            <td class="count">7</td>
+                            <td class="percentage">0.03%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">18</td>
+                            <td class="card-name">ホシガリス</td>
+                            <td><span class="card-code">SV1V 090/078</span></td>
+                            <td class="count">4</td>
+                            <td class="count">5</td>
+                            <td class="percentage">0.03%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">19</td>
+                            <td class="card-name">マツバの確信</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">4</td>
+                            <td class="count">5</td>
+                            <td class="percentage">0.03%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">20</td>
+                            <td class="card-name">ケロマツ</td>
+                            <td><span class="card-code">SV-P 073/SV-P</span></td>
+                            <td class="count">3</td>
+                            <td class="count">6</td>
+                            <td class="percentage">0.02%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">21</td>
+                            <td class="card-name">クヌギダマ</td>
+                            <td><span class="card-code">SV-P 050/SV-P</span></td>
+                            <td class="count">3</td>
+                            <td class="count">5</td>
+                            <td class="percentage">0.02%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">22</td>
+                            <td class="card-name">ルチアのアピール</td>
+                            <td><span class="card-code">SV7a 091/064</span></td>
+                            <td class="count">3</td>
+                            <td class="count">5</td>
+                            <td class="percentage">0.02%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">23</td>
+                            <td class="card-name">タギングル</td>
+                            <td><span class="card-code">SV2D 080/071</span></td>
+                            <td class="count">3</td>
+                            <td class="count">4</td>
+                            <td class="percentage">0.02%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">24</td>
+                            <td class="card-name">エネルギーリサイクル</td>
+                            <td><span class="card-code">SM1p 043/051</span></td>
+                            <td class="count">3</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.02%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">25</td>
+                            <td class="card-name">イーユイex</td>
+                            <td><span class="card-code">SV2D 092/071</span></td>
+                            <td class="count">3</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.02%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">26</td>
+                            <td class="card-name">ロトりぼう</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">3</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.02%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">27</td>
+                            <td class="card-name">ザマゼンタ</td>
+                            <td><span class="card-code">SV10 075/098</span></td>
+                            <td class="count">3</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.02%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">28</td>
+                            <td class="card-name">クラッシュハンマー</td>
+                            <td><span class="card-code">SMN 004/029</span></td>
+                            <td class="count">2</td>
+                            <td class="count">12</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">29</td>
+                            <td class="card-name">基本炎エネルギー</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">2</td>
+                            <td class="count">10</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">30</td>
+                            <td class="card-name">クラッシュハンマー</td>
+                            <td><span class="card-code">SM1S 053/060</span></td>
+                            <td class="count">2</td>
+                            <td class="count">7</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">31</td>
+                            <td class="card-name">ワナイダーex</td>
+                            <td><span class="card-code">SV1V 101/078</span></td>
+                            <td class="count">2</td>
+                            <td class="count">7</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">32</td>
+                            <td class="card-name">ダークボール</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">2</td>
+                            <td class="count">6</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">33</td>
+                            <td class="card-name">ゴツゴツメット</td>
+                            <td><span class="card-code">MG 013/016</span></td>
+                            <td class="count">2</td>
+                            <td class="count">5</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">34</td>
+                            <td class="card-name">ゴツゴツメット</td>
+                            <td><span class="card-code">KLD 012/015</span></td>
+                            <td class="count">2</td>
+                            <td class="count">4</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">35</td>
+                            <td class="card-name">基本超エネルギー</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">2</td>
+                            <td class="count">4</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">36</td>
+                            <td class="card-name">セグレイブ</td>
+                            <td><span class="card-code">SV2P 077/071</span></td>
+                            <td class="count">2</td>
+                            <td class="count">4</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">37</td>
+                            <td class="card-name">セグレイブ</td>
+                            <td><span class="card-code">SVJP 006/019</span></td>
+                            <td class="count">2</td>
+                            <td class="count">4</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">38</td>
+                            <td class="card-name">ジャッジマン</td>
+                            <td><span class="card-code">SVAL 018/021</span></td>
+                            <td class="count">2</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">39</td>
+                            <td class="card-name">ミモザ</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">2</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">40</td>
+                            <td class="card-name">グルーシャ</td>
+                            <td><span class="card-code">SV2P 068/071</span></td>
+                            <td class="count">2</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">41</td>
+                            <td class="card-name">セゴール</td>
+                            <td><span class="card-code">SV-P 051/SV-P</span></td>
+                            <td class="count">2</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">42</td>
+                            <td class="card-name">マリル</td>
+                            <td><span class="card-code">SV2P 073/071</span></td>
+                            <td class="count">2</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">43</td>
+                            <td class="card-name">パオジアンex</td>
+                            <td><span class="card-code">SV2P 085/071</span></td>
+                            <td class="count">2</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">44</td>
+                            <td class="card-name">鬼の仮面</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">2</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">45</td>
+                            <td class="card-name">エーフィex</td>
+                            <td><span class="card-code">SV8a 063/187</span></td>
+                            <td class="count">2</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">46</td>
+                            <td class="card-name">ラッキーメット</td>
+                            <td><span class="card-code">XY7-B 072/081</span></td>
+                            <td class="count">2</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">47</td>
+                            <td class="card-name">トゲキッス</td>
+                            <td><span class="card-code">SV3 045/108</span></td>
+                            <td class="count">2</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">48</td>
+                            <td class="card-name">フシギダネ</td>
+                            <td><span class="card-code">SVG 001/049</span></td>
+                            <td class="count">2</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">49</td>
+                            <td class="card-name">シガロコ</td>
+                            <td><span class="card-code">SV4a 209/190</span></td>
+                            <td class="count">2</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">50</td>
+                            <td class="card-name">テツノカシラex</td>
+                            <td><span class="card-code">SV5M 099/071</span></td>
+                            <td class="count">2</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">51</td>
+                            <td class="card-name">タロ</td>
+                            <td><span class="card-code">SV8a 171/187</span></td>
+                            <td class="count">2</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">52</td>
+                            <td class="card-name">チヲハウハネ</td>
+                            <td><span class="card-code">SV8a 087/187</span></td>
+                            <td class="count">2</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">53</td>
+                            <td class="card-name">ロケット団のガルーラex</td>
+                            <td><span class="card-code">SV-P 265/SV-P</span></td>
+                            <td class="count">2</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">54</td>
+                            <td class="card-name">メガシグナル</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">2</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">55</td>
+                            <td class="card-name">ダブル無色エネルギー</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">8</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">56</td>
+                            <td class="card-name">タッグコール</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">8</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">57</td>
+                            <td class="card-name">基本超エネルギー</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">7</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">58</td>
+                            <td class="card-name">基本草エネルギー</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">6</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">59</td>
+                            <td class="card-name">基本炎エネルギー</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">5</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">60</td>
+                            <td class="card-name">基本炎エネルギー</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">5</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">61</td>
+                            <td class="card-name">クラッシュハンマー</td>
+                            <td><span class="card-code">BW1-Bb 049/053</span></td>
+                            <td class="count">1</td>
+                            <td class="count">4</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">62</td>
+                            <td class="card-name">基本悪エネルギー</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">4</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">63</td>
+                            <td class="card-name">隠密フード</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">4</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">64</td>
+                            <td class="card-name">グズマ</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">4</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">65</td>
+                            <td class="card-name">グズマ&amp;ハラ</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">4</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">66</td>
+                            <td class="card-name">キャプチャーエネルギー</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">4</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">67</td>
+                            <td class="card-name">クラッシュハンマー</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">4</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">68</td>
+                            <td class="card-name">クラベル</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">4</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">69</td>
+                            <td class="card-name">エレキジェネレーター</td>
+                            <td><span class="card-code">SVHK 020/053</span></td>
+                            <td class="count">1</td>
+                            <td class="count">4</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">70</td>
+                            <td class="card-name">クラッシュハンマー</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">4</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">71</td>
+                            <td class="card-name">ノココッチ</td>
+                            <td><span class="card-code">M-P 048/M-P</span></td>
+                            <td class="count">1</td>
+                            <td class="count">4</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">72</td>
+                            <td class="card-name">ホルビー</td>
+                            <td><span class="card-code">XY 107/171</span></td>
+                            <td class="count">1</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">73</td>
+                            <td class="card-name">クラッシュハンマー</td>
+                            <td><span class="card-code">SMH 108/131</span></td>
+                            <td class="count">1</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">74</td>
+                            <td class="card-name">ナゾノクサ</td>
+                            <td><span class="card-code">SM11b 001/049</span></td>
+                            <td class="count">1</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">75</td>
+                            <td class="card-name">ヤルキモノ</td>
+                            <td><span class="card-code">S7D 051/067</span></td>
+                            <td class="count">1</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">76</td>
+                            <td class="card-name">基本闘エネルギー</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">77</td>
+                            <td class="card-name">ワナイダーex</td>
+                            <td><span class="card-code">SV1V 091/078</span></td>
+                            <td class="count">1</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">78</td>
+                            <td class="card-name">グラードン</td>
+                            <td><span class="card-code">SV8a 080/187</span></td>
+                            <td class="count">1</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">79</td>
+                            <td class="card-name">アイリスの闘志</td>
+                            <td><span class="card-code">MBD 018/021</span></td>
+                            <td class="count">1</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">80</td>
+                            <td class="card-name">基本雷エネルギー</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">3</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">81</td>
+                            <td class="card-name">基本超エネルギー</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">82</td>
+                            <td class="card-name">ラフレシア</td>
+                            <td><span class="card-code">XY7-B 003/081</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">83</td>
+                            <td class="card-name">エネルギーリサイクル</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">84</td>
+                            <td class="card-name">基本超エネルギー</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">85</td>
+                            <td class="card-name">カリン</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">86</td>
+                            <td class="card-name">クサイハナ</td>
+                            <td><span class="card-code">SM10 003/095</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">87</td>
+                            <td class="card-name">基本草エネルギー</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">88</td>
+                            <td class="card-name">ザオボー</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">89</td>
+                            <td class="card-name">ポケモンセンターのお姉さん</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">90</td>
+                            <td class="card-name">エネルギーリサイクル</td>
+                            <td><span class="card-code">S5R 062/070</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">91</td>
+                            <td class="card-name">オリーニョ</td>
+                            <td><span class="card-code">SV1S 079/078</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">92</td>
+                            <td class="card-name">マスカーニャex</td>
+                            <td><span class="card-code">SV1a 086/073</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">93</td>
+                            <td class="card-name">ヒトデマン</td>
+                            <td><span class="card-code">SV2a 120/165</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">94</td>
+                            <td class="card-name">コジオ</td>
+                            <td><span class="card-code">SV2D 078/071</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">95</td>
+                            <td class="card-name">フォレトスex</td>
+                            <td><span class="card-code">SV2D 084/071</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">96</td>
+                            <td class="card-name">サワロ</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">97</td>
+                            <td class="card-name">パオジアンex</td>
+                            <td><span class="card-code">SV2P 093/071</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">98</td>
+                            <td class="card-name">ポピー</td>
+                            <td><span class="card-code">SV3 105/108</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">99</td>
+                            <td class="card-name">コイル</td>
+                            <td><span class="card-code">WCS23 002/030</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">100</td>
+                            <td class="card-name">ラウドボーンex</td>
+                            <td><span class="card-code">SVEL 008/020</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">101</td>
+                            <td class="card-name">博士の研究</td>
+                            <td><span class="card-code">SVEL 018/020</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">102</td>
+                            <td class="card-name">レパルダス</td>
+                            <td><span class="card-code">SV4K 048/066</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">103</td>
+                            <td class="card-name">フシギソウ</td>
+                            <td><span class="card-code">SVG 002/049</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">104</td>
+                            <td class="card-name">スターミー</td>
+                            <td><span class="card-code">SV4a 039/190</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">105</td>
+                            <td class="card-name">ガブリアスex</td>
+                            <td><span class="card-code">SV3a 090/062</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">106</td>
+                            <td class="card-name">ホゲータ</td>
+                            <td><span class="card-code">SV4a 215/190</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">107</td>
+                            <td class="card-name">パオジアンex</td>
+                            <td><span class="card-code">SV4a 357/190</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">108</td>
+                            <td class="card-name">博士の研究</td>
+                            <td><span class="card-code">SVI 063/066</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">109</td>
+                            <td class="card-name">ビリオとネア</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">110</td>
+                            <td class="card-name">ポケモンレンジャー</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">111</td>
+                            <td class="card-name">カキツバタ</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">112</td>
+                            <td class="card-name">オリーニョ</td>
+                            <td><span class="card-code">SV10 011/098</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">113</td>
+                            <td class="card-name">チョロネコ</td>
+                            <td><span class="card-code">SV11W 052/086</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">114</td>
+                            <td class="card-name">ロケット団のミュウツーex</td>
+                            <td><span class="card-code">M-P 043/M-P</span></td>
+                            <td class="count">1</td>
+                            <td class="count">2</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">115</td>
+                            <td class="card-name">ポケモンいれかえ</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">116</td>
+                            <td class="card-name">ポケモンいれかえ</td>
+                            <td><span class="card-code">DPt-GBpi 013/015</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">117</td>
+                            <td class="card-name">ポケモンいれかえ</td>
+                            <td><span class="card-code">DPt2-Sg 013/018</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">118</td>
+                            <td class="card-name">ポケモンいれかえ</td>
+                            <td><span class="card-code">BKc 010/014</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">119</td>
+                            <td class="card-name">ゴツゴツメット</td>
+                            <td><span class="card-code">BW2-B 064/066</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">120</td>
+                            <td class="card-name">ポケモンいれかえ</td>
+                            <td><span class="card-code">HSPp 032/034</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">121</td>
+                            <td class="card-name">基本水エネルギー</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">122</td>
+                            <td class="card-name">ポケモンいれかえ</td>
+                            <td><span class="card-code">BKW 012/018</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">123</td>
+                            <td class="card-name">ポケモンいれかえ</td>
+                            <td><span class="card-code">HXY 036/039</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">124</td>
+                            <td class="card-name">エネルギーリサイクル</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">125</td>
+                            <td class="card-name">ポケモンいれかえ</td>
+                            <td><span class="card-code">MMB-P 032/049</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">126</td>
+                            <td class="card-name">エネルギーリサイクル</td>
+                            <td><span class="card-code">SMN 002/029</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">127</td>
+                            <td class="card-name">ジャッジマン</td>
+                            <td><span class="card-code">SMN 023/029</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">128</td>
+                            <td class="card-name">ジャッジマン</td>
+                            <td><span class="card-code">SH 048/053</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">129</td>
+                            <td class="card-name">ポケモンいれかえ</td>
+                            <td><span class="card-code">SK 018/030</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">130</td>
+                            <td class="card-name">モンスターボール</td>
+                            <td><span class="card-code">S8a-G 002/015</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">131</td>
+                            <td class="card-name">ノノクラゲ</td>
+                            <td><span class="card-code">SV1V 009/078</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">132</td>
+                            <td class="card-name">ジャッジマン</td>
+                            <td><span class="card-code">SVAW 020/023</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">133</td>
+                            <td class="card-name">マクノシタ</td>
+                            <td><span class="card-code">SV1a 047/073</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">134</td>
+                            <td class="card-name">スコヴィラン</td>
+                            <td><span class="card-code">SV1V 081/078</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">135</td>
+                            <td class="card-name">シガロコ</td>
+                            <td><span class="card-code">SV2P 014/071</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">136</td>
+                            <td class="card-name">チオンジェンex</td>
+                            <td><span class="card-code">SV2P 015/071</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">137</td>
+                            <td class="card-name">ヤルキモノ</td>
+                            <td><span class="card-code">SV2P 061/071</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">138</td>
+                            <td class="card-name">ニャローテ</td>
+                            <td><span class="card-code">SV1a 076/073</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">139</td>
+                            <td class="card-name">エビワラー</td>
+                            <td><span class="card-code">SV2a 107/165</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">140</td>
+                            <td class="card-name">エネルギーシール</td>
+                            <td><span class="card-code">SV2a 152/165</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">141</td>
+                            <td class="card-name">カヌチャン</td>
+                            <td><span class="card-code">SV2D 076/071</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">142</td>
+                            <td class="card-name">ナカヌチャン</td>
+                            <td><span class="card-code">SV2D 077/071</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">143</td>
+                            <td class="card-name">バンギラス</td>
+                            <td><span class="card-code">SV2D 079/071</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">144</td>
+                            <td class="card-name">イーユイex</td>
+                            <td><span class="card-code">SV2D 085/071</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">145</td>
+                            <td class="card-name">セゴール</td>
+                            <td><span class="card-code">SV2P 076/071</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">146</td>
+                            <td class="card-name">ピーニャ</td>
+                            <td><span class="card-code">SV2P 096/071</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">147</td>
+                            <td class="card-name">ブロロローム</td>
+                            <td><span class="card-code">SVD 087/139</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">148</td>
+                            <td class="card-name">クラッシュハンマー</td>
+                            <td><span class="card-code">SVD 116/139</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">149</td>
+                            <td class="card-name">シルシュルー</td>
+                            <td><span class="card-code">SV-P 087/SV-P</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">150</td>
+                            <td class="card-name">チルタリス</td>
+                            <td><span class="card-code">SV3 086/108</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">151</td>
+                            <td class="card-name">ジャッジマン</td>
+                            <td><span class="card-code">WCS23 025/030</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">152</td>
+                            <td class="card-name">ブロロロームex</td>
+                            <td><span class="card-code">SV3 135/108</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">153</td>
+                            <td class="card-name">グレンアルマex</td>
+                            <td><span class="card-code">SV4K 015/066</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">154</td>
+                            <td class="card-name">ジオヅム</td>
+                            <td><span class="card-code">SV4K 039/066</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">155</td>
+                            <td class="card-name">カビゴンドール</td>
+                            <td><span class="card-code">SV4K 059/066</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">156</td>
+                            <td class="card-name">バケッチャ</td>
+                            <td><span class="card-code">SV4M 029/066</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">157</td>
+                            <td class="card-name">パンプジン</td>
+                            <td><span class="card-code">SV4M 030/066</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">158</td>
+                            <td class="card-name">トロピウス</td>
+                            <td><span class="card-code">SVG 005/049</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">159</td>
+                            <td class="card-name">カルボウ</td>
+                            <td><span class="card-code">SVG 012/049</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">160</td>
+                            <td class="card-name">カプサイジ</td>
+                            <td><span class="card-code">SV4a 020/190</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">161</td>
+                            <td class="card-name">タギングル</td>
+                            <td><span class="card-code">SV4a 128/190</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">162</td>
+                            <td class="card-name">かるいし</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">163</td>
+                            <td class="card-name">オドリドリ</td>
+                            <td><span class="card-code">SV4a 214/190</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">164</td>
+                            <td class="card-name">イルカマン</td>
+                            <td><span class="card-code">SV5K 023/071</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">165</td>
+                            <td class="card-name">ウミトリオex</td>
+                            <td><span class="card-code">SV5K 025/071</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">166</td>
+                            <td class="card-name">モグリュー</td>
+                            <td><span class="card-code">SV5M 039/071</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">167</td>
+                            <td class="card-name">博士の研究</td>
+                            <td><span class="card-code">SVI 064/066</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">168</td>
+                            <td class="card-name">チャデス</td>
+                            <td><span class="card-code">SV5a 068/066</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">169</td>
+                            <td class="card-name">ゴヨウ</td>
+                            <td><span class="card-code">SV5a 086/066</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">170</td>
+                            <td class="card-name">ヤバソチャ</td>
+                            <td><span class="card-code">SV6 014/101</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">171</td>
+                            <td class="card-name">ピクシー</td>
+                            <td><span class="card-code">SV6 046/101</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">172</td>
+                            <td class="card-name">セビエ</td>
+                            <td><span class="card-code">SVJP 004/019</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">173</td>
+                            <td class="card-name">オーガポン みどりのめん</td>
+                            <td><span class="card-code">SV-P 148/SV-P</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">174</td>
+                            <td class="card-name">タロ</td>
+                            <td><span class="card-code">SV7 131/102</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">175</td>
+                            <td class="card-name">パラダイスリゾート</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">176</td>
+                            <td class="card-name">ハギギシリ</td>
+                            <td><span class="card-code">SV7a 068/064</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">177</td>
+                            <td class="card-name">ソウブレイズ</td>
+                            <td><span class="card-code">SV8 022/106</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">178</td>
+                            <td class="card-name">希望のアミュレット</td>
+                            <td><span class="card-code">ACE SPEC</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">179</td>
+                            <td class="card-name">ワカシャモ</td>
+                            <td><span class="card-code">SVM 015/175</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">180</td>
+                            <td class="card-name">ルギアex</td>
+                            <td><span class="card-code">SVM 097/175</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">181</td>
+                            <td class="card-name">ソウブレイズ</td>
+                            <td><span class="card-code">SV8a 070/187</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">182</td>
+                            <td class="card-name">チヲハウハネ</td>
+                            <td><span class="card-code">SV8a 087/187</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">183</td>
+                            <td class="card-name">トレジャーガジェット</td>
+                            <td><span class="card-code">ACE SPEC</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">184</td>
+                            <td class="card-name">ハスボー</td>
+                            <td><span class="card-code">SV9 021/100</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">185</td>
+                            <td class="card-name">ルンパッパ</td>
+                            <td><span class="card-code">SV9 023/100</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">186</td>
+                            <td class="card-name">グレイシアex</td>
+                            <td><span class="card-code">SV8a 206/187</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">187</td>
+                            <td class="card-name">ポケモンセンターのお姉さん</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">188</td>
+                            <td class="card-name">オーガポン みどりのめん</td>
+                            <td><span class="card-code">SV9a 012/063</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">189</td>
+                            <td class="card-name">モンメン</td>
+                            <td><span class="card-code">SV11W 004/086</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">190</td>
+                            <td class="card-name">ビクティニ</td>
+                            <td><span class="card-code">SV-P 288/SV-P</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">191</td>
+                            <td class="card-name">セレビィ</td>
+                            <td><span class="card-code">M1L 006/063</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">192</td>
+                            <td class="card-name">メガシグナル</td>
+                            <td><span class="card-code">MA 025/043</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">193</td>
+                            <td class="card-name">ナッシー</td>
+                            <td><span class="card-code">M1L 066/063</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                        <tr class="">
+                            <td class="rank">194</td>
+                            <td class="card-name">逆境ほけん</td>
+                            <td><span class="card-code">無代碼</span></td>
+                            <td class="count">1</td>
+                            <td class="count">1</td>
+                            <td class="percentage">0.01%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>未對應卡片分析系統</strong></p>
+            <p style="margin: 10px 0;">
+                <strong>未對應:</strong> 179 種卡片 (5.4%)<br>
+                <strong>未對應使用:</strong> -10,495 次 (-1.1%)
+            </p>
+            <p style="font-size: 0.9em; margin-top: 15px; color: #a0aec0;">
+                資料庫: ptcg_events.db<br>
+                優先處理高使用率卡片以提升覆蓋率
+            </p>
+        </div>
+    </div>
+</body>
+</html>

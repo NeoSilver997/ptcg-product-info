@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTCG 賽事日曆</title>
+    <link rel="stylesheet" href="calendar-styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <!-- Left Side: Header + Calendar & Event List -->
+            <div class="left-panel">
+                <!-- Header moved here -->
+                <header>
+                    <h1>🗓️ Pokemon TCG 賽事日曆</h1>
+                    <div class="header-actions">
+                        <button onclick="previousMonth()" class="nav-btn">←</button>
+                        <h2 id="currentMonth"></h2>
+                        <button onclick="nextMonth()" class="nav-btn">→</button>
+                    </div>
+                    <div class="stats">
+                        <span id="totalEvents">載入中...</span>
+                        <span>|</span>
+                        <span id="totalDecks">載入中...</span>
+                    </div>
+                </header>
+
+                <!-- Calendar Grid -->
+                <div class="calendar-section">
+                    <div class="calendar-grid" id="calendarGrid"></div>
+                </div>
+
+                <!-- Event List -->
+                <div class="event-list-section">
+                    <div id="eventsList"></div>
+                </div>
+            </div>
+
+            <!-- Right Side: Deck Details (Full Height) -->
+            <div class="deck-details-section" id="deckDetailsSection" style="display: none;">
+                <div class="deck-header">
+                    <div class="deck-title-section">
+                        <h3>🎴 牌組詳情</h3>
+                        <select id="sortSelect" onchange="sortDeckCards()">
+                            <option value="type">按類型排序</option>
+                            <option value="name">按名稱排序</option>
+                            <option value="quantity">按數量排序</option>
+                            <option value="rarity">按稀有度排序</option>
+                        </select>
+                    </div>
+                    <div class="deck-controls">
+                        <input type="text" id="cardSearch" placeholder="🔍 搜尋卡片..." oninput="filterDeckCards()" style="padding: 8px 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 0.9em; width: 200px;">
+                        <button onclick="closeDeckDetails()" class="close-btn">✕</button>
+                    </div>
+                </div>
+                <!-- Event List moved here -->
+                <div class="deck-event-list-section">
+                    <h3>📅 選擇日期的賽事</h3>
+                    <div id="deckEventsList"></div>
+                </div>
+                <div id="deckInfo"></div>
+                <div id="deckCards"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="calendar.js"></script>
+</body>
+</html>

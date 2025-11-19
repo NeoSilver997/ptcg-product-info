@@ -194,7 +194,7 @@ def main():
         
         # Be respectful to server
         if not args.dry_run and i < min(args.max_reload, len(empty_decks)):
-            time.sleep(2)
+            time.sleep(1)
     
     print()
     print("=" * 80)

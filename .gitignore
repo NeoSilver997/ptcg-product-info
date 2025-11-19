@@ -45,3 +45,7 @@ archive/
 # Selenium
 chromedriver
 geckodriver
+
+*/node_modules/*
+check_*.py
+test_*.py

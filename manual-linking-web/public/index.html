@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手動卡片對應系統 - Node.js</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 手動卡片對應系統</h1>
+        <p class="subtitle">
+            日文錦標賽卡片 ↔ 中文資料庫對應<br>
+            <span class="tech-badge">Powered by Node.js + Express</span>
+        </p>
+        
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-value" id="totalCards">-</div>
+                <div class="stat-label">總卡片</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="mappedCards">-</div>
+                <div class="stat-label">已對應</div>
+            </div>
+            <div class="stat-box warning">
+                <div class="stat-value" id="unmappedCards">-</div>
+                <div class="stat-label">待對應</div>
+            </div>
+            <div class="stat-box success">
+                <div class="stat-value" id="manualLinks">-</div>
+                <div class="stat-label">手動連結</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="coverage">-</div>
+                <div class="stat-label">覆蓋率</div>
+            </div>
+        </div>
+        
+        <div id="message"></div>
+        
+        <div class="main-grid">
+            <!-- Left Panel: Unmapped Japanese Cards -->
+            <div class="panel">
+                <div class="panel-header">
+                    🇯🇵 未對應日文卡片
+                    <button class="refresh-btn" onclick="loadUnmappedCards()">🔄 重新載入</button>
+                </div>
+                <div class="panel-content">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" onclick="filterUnmapped('all')">全部</button>
+                        <button class="filter-btn" onclick="filterUnmapped('high')">高優先級 (500+)</button>
+                        <button class="filter-btn" onclick="filterUnmapped('medium')">中優先級 (100-499)</button>
+                        <button class="filter-btn" onclick="filterUnmapped('low')">低優先級 (&lt;100)</button>
+                    </div>
+                    <div id="unmappedList" class="loading">載入中...</div>
+                </div>
+            </div>
+            
+            <!-- Right Panel: Chinese Card Search -->
+            <div class="panel">
+                <div class="panel-header chinese">
+                    🇨🇳 中文卡片搜尋
+                </div>
+                <div class="panel-content">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="輸入卡片名稱、擴充包代碼或編號..." onkeypress="handleSearchKey(event)">
+                        <button onclick="searchChineseCards()">🔍 搜尋</button>
+                    </div>
+                    <div id="searchResults" class="empty">請輸入搜尋條件...</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="selection-preview" id="selectionPreview" style="display: none;">
+            <h3>📋 當前選擇</h3>
+            <div class="preview-grid">
+                <div class="preview-item">
+                    <div class="preview-label">日文卡片</div>
+                    <div class="preview-value" id="previewJapanese">-</div>
+                </div>
+                <div class="preview-arrow">→</div>
+                <div class="preview-item">
+                    <div class="preview-label">中文卡片</div>
+                    <div class="preview-value" id="previewChinese">-</div>
+                </div>
+            </div>
+            <div class="chinese-name-input">
+                <label for="chineseNameInput">✏️ 更新中文名稱（選填）:</label>
+                <input type="text" id="chineseNameInput" placeholder="輸入正確的中文卡片名稱...">
+                <small>此欄位用於更新翻譯字典，留空則使用資料庫名稱</small>
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <button class="btn btn-primary" id="linkButton" onclick="linkCards()" disabled>
+                ✅ 建立對應連結
+            </button>
+            <button class="btn btn-secondary" onclick="clearSelection()">
+                🔄 清除選擇
+            </button>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

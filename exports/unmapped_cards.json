@@ -1,0 +1,4714 @@
+[
+  {
+    "card_id": "47878",
+    "card_name": "ネストボール",
+    "card_code": "MA 019/043",
+    "usage_count": 1355,
+    "expansion": "MA",
+    "number": "019"
+  },
+  {
+    "card_id": "47216",
+    "card_name": "ボウルタウン",
+    "card_code": "SVN 041/045",
+    "usage_count": 1331,
+    "expansion": "SVN",
+    "number": "041"
+  },
+  {
+    "card_id": "47895",
+    "card_name": "ナンジャモ",
+    "card_code": "MA 036/043",
+    "usage_count": 1217,
+    "expansion": "MA",
+    "number": "036"
+  },
+  {
+    "card_id": "47897",
+    "card_name": "ペパー",
+    "card_code": "MA 038/043",
+    "usage_count": 1119,
+    "expansion": "MA",
+    "number": "038"
+  },
+  {
+    "card_id": "47874",
+    "card_name": "すごいつりざお",
+    "card_code": "MA 015/043",
+    "usage_count": 1085,
+    "expansion": "MA",
+    "number": "015"
+  },
+  {
+    "card_id": "47875",
+    "card_name": "大地の器",
+    "card_code": "MA 016/043",
+    "usage_count": 1077,
+    "expansion": "MA",
+    "number": "016"
+  },
+  {
+    "card_id": "47873",
+    "card_name": "カウンターキャッチャー",
+    "card_code": "MA 014/043",
+    "usage_count": 1019,
+    "expansion": "MA",
+    "number": "014"
+  },
+  {
+    "card_id": "47492",
+    "card_name": "コダック",
+    "card_code": "SV-P 262/SV-P",
+    "usage_count": 1000,
+    "expansion": "SV-P",
+    "number": "262"
+  },
+  {
+    "card_id": "47211",
+    "card_name": "フトゥー博士のシナリオ",
+    "card_code": "SVN 036/045",
+    "usage_count": 945,
+    "expansion": "SVN",
+    "number": "036"
+  },
+  {
+    "card_id": "47862",
+    "card_name": "キチキギスex",
+    "card_code": "MA 003/043",
+    "usage_count": 809,
+    "expansion": "MA",
+    "number": "003"
+  },
+  {
+    "card_id": "43659",
+    "card_name": "ナンジャモ",
+    "card_code": "SV2D 091/071",
+    "usage_count": 760,
+    "expansion": "SV2D",
+    "number": "091"
+  },
+  {
+    "card_id": "44964",
+    "card_name": "ボウルタウン",
+    "card_code": "SV3 140/108",
+    "usage_count": 586,
+    "expansion": "SV3",
+    "number": "140"
+  },
+  {
+    "card_id": "47892",
+    "card_name": "ワザマシン エヴォリューション",
+    "card_code": "MA 033/043",
+    "usage_count": 572,
+    "expansion": "MA",
+    "number": "033"
+  },
+  {
+    "card_id": "47187",
+    "card_name": "スーパーエネルギー回収",
+    "card_code": "SVN 012/045",
+    "usage_count": 548,
+    "expansion": "SVN",
+    "number": "012"
+  },
+  {
+    "card_id": "43086",
+    "card_name": "ペパー",
+    "card_code": "SV1V 099/078",
+    "usage_count": 542,
+    "expansion": "SV1V",
+    "number": "099"
+  },
+  {
+    "card_id": "47217",
+    "card_name": "ジェットエネルギー",
+    "card_code": "SVN 042/045",
+    "usage_count": 515,
+    "expansion": "SVN",
+    "number": "042"
+  },
+  {
+    "card_id": "47177",
+    "card_name": "キチキギスex",
+    "card_code": "SVN 002/045",
+    "usage_count": 471,
+    "expansion": "SVN",
+    "number": "002"
+  },
+  {
+    "card_id": "47219",
+    "card_name": "ルミナスエネルギー",
+    "card_code": "SVN 044/045",
+    "usage_count": 454,
+    "expansion": "SVN",
+    "number": "044"
+  },
+  {
+    "card_id": "43300",
+    "card_name": "ボスの指令",
+    "card_code": "SV1a 095/073",
+    "usage_count": 442,
+    "expansion": "SV1a",
+    "number": "095"
+  },
+  {
+    "card_id": "47891",
+    "card_name": "勇気のおまもり",
+    "card_code": "MA 032/043",
+    "usage_count": 439,
+    "expansion": "MA",
+    "number": "032"
+  },
+  {
+    "card_id": "44973",
+    "card_name": "カウンターキャッチャー",
+    "card_code": "SV4M 094/066",
+    "usage_count": 418,
+    "expansion": "SV4M",
+    "number": "094"
+  },
+  {
+    "card_id": "38062",
+    "card_name": "ボスの指令",
+    "card_code": "S2 106/096",
+    "usage_count": 405,
+    "expansion": "S2",
+    "number": "106"
+  },
+  {
+    "card_id": "47186",
+    "card_name": "カウンターキャッチャー",
+    "card_code": "SVN 011/045",
+    "usage_count": 405,
+    "expansion": "SVN",
+    "number": "011"
+  },
+  {
+    "card_id": "47189",
+    "card_name": "大地の器",
+    "card_code": "SVN 014/045",
+    "usage_count": 392,
+    "expansion": "SVN",
+    "number": "014"
+  },
+  {
+    "card_id": "47198",
+    "card_name": "夜のタンカ",
+    "card_code": "SVN 023/045",
+    "usage_count": 391,
+    "expansion": "SVN",
+    "number": "023"
+  },
+  {
+    "card_id": "47214",
+    "card_name": "ジャミングタワー",
+    "card_code": "SVN 039/045",
+    "usage_count": 390,
+    "expansion": "SVN",
+    "number": "039"
+  },
+  {
+    "card_id": "47192",
+    "card_name": "ネストボール",
+    "card_code": "SVN 017/045",
+    "usage_count": 380,
+    "expansion": "SVN",
+    "number": "017"
+  },
+  {
+    "card_id": "45875",
+    "card_name": "なかよしポフィン",
+    "card_code": "SV6 133/101",
+    "usage_count": 377,
+    "expansion": "SV6",
+    "number": "133"
+  },
+  {
+    "card_id": "46188",
+    "card_name": "カルボウ",
+    "card_code": "SVLS 005/022",
+    "usage_count": 369,
+    "expansion": "SVLS",
+    "number": "005"
+  },
+  {
+    "card_id": "45801",
+    "card_name": "ヒトカゲ",
+    "card_code": "SVJL 001/021",
+    "usage_count": 342,
+    "expansion": "SVJL",
+    "number": "001"
+  },
+  {
+    "card_id": "44955",
+    "card_name": "すごいつりざお",
+    "card_code": "SV2P 098/071",
+    "usage_count": 337,
+    "expansion": "SV2P",
+    "number": "098"
+  },
+  {
+    "card_id": "47900",
+    "card_name": "リーリエの決心",
+    "card_code": "MA 041/043",
+    "usage_count": 304,
+    "expansion": "MA",
+    "number": "041"
+  },
+  {
+    "card_id": "44861",
+    "card_name": "ハイパーボール",
+    "card_code": "S9 126/100",
+    "usage_count": 301,
+    "expansion": "S9",
+    "number": "126"
+  },
+  {
+    "card_id": "47212",
+    "card_name": "ペパー",
+    "card_code": "SVN 037/045",
+    "usage_count": 301,
+    "expansion": "SVN",
+    "number": "037"
+  },
+  {
+    "card_id": "47215",
+    "card_name": "タウンデパート",
+    "card_code": "SVN 040/045",
+    "usage_count": 294,
+    "expansion": "SVN",
+    "number": "040"
+  },
+  {
+    "card_id": "47204",
+    "card_name": "ワザマシン エヴォリューション",
+    "card_code": "SVN 029/045",
+    "usage_count": 276,
+    "expansion": "SVN",
+    "number": "029"
+  },
+  {
+    "card_id": "48249",
+    "card_name": "マシマシラ",
+    "card_code": "M-P 003/M-P",
+    "usage_count": 270,
+    "expansion": "M-P",
+    "number": "003"
+  },
+  {
+    "card_id": "44949",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SV1V 107/078",
+    "usage_count": 267,
+    "expansion": "SV1V",
+    "number": "107"
+  },
+  {
+    "card_id": "46189",
+    "card_name": "ソウブレイズex",
+    "card_code": "SVLS 006/022",
+    "usage_count": 255,
+    "expansion": "SVLS",
+    "number": "006"
+  },
+  {
+    "card_id": "47861",
+    "card_name": "ミュウex",
+    "card_code": "MA 002/043",
+    "usage_count": 252,
+    "expansion": "MA",
+    "number": "002"
+  },
+  {
+    "card_id": "47206",
+    "card_name": "暗号マニアの解読",
+    "card_code": "SVN 031/045",
+    "usage_count": 243,
+    "expansion": "SVN",
+    "number": "031"
+  },
+  {
+    "card_id": "46182",
+    "card_name": "勇気のおまもり",
+    "card_code": "SV7 134/102",
+    "usage_count": 240,
+    "expansion": "SV7",
+    "number": "134"
+  },
+  {
+    "card_id": "36307",
+    "card_name": "ハイパーボール",
+    "card_code": "SM9b 051/054",
+    "usage_count": 237,
+    "expansion": "SM9b",
+    "number": "051"
+  },
+  {
+    "card_id": "47218",
+    "card_name": "ミストエネルギー",
+    "card_code": "SVN 043/045",
+    "usage_count": 228,
+    "expansion": "SVN",
+    "number": "043"
+  },
+  {
+    "card_id": "44946",
+    "card_name": "ネストボール",
+    "card_code": "SV1S 107/078",
+    "usage_count": 227,
+    "expansion": "SV1S",
+    "number": "107"
+  },
+  {
+    "card_id": "36592",
+    "card_name": "ネストボール",
+    "card_code": "SM10a 052/054",
+    "usage_count": 225,
+    "expansion": "SM10a",
+    "number": "052"
+  },
+  {
+    "card_id": "35574",
+    "card_name": "カウンターキャッチャー",
+    "card_code": "SM8b 114/150",
+    "usage_count": 218,
+    "expansion": "SM8b",
+    "number": "114"
+  },
+  {
+    "card_id": "43305",
+    "card_name": "ボスの指令",
+    "card_code": "SV1a 100/073",
+    "usage_count": 218,
+    "expansion": "SV1a",
+    "number": "100"
+  },
+  {
+    "card_id": "47871",
+    "card_name": "エネルギーつけかえ",
+    "card_code": "MA 012/043",
+    "usage_count": 216,
+    "expansion": "MA",
+    "number": "012"
+  },
+  {
+    "card_id": "41096",
+    "card_name": "ボスの指令",
+    "card_code": "S8b 268/184",
+    "usage_count": 213,
+    "expansion": "S8b",
+    "number": "268"
+  },
+  {
+    "card_id": "47860",
+    "card_name": "シェイミ",
+    "card_code": "MA 001/043",
+    "usage_count": 210,
+    "expansion": "MA",
+    "number": "001"
+  },
+  {
+    "card_id": "47208",
+    "card_name": "ゼイユ",
+    "card_code": "SVN 033/045",
+    "usage_count": 190,
+    "expansion": "SVN",
+    "number": "033"
+  },
+  {
+    "card_id": "47220",
+    "card_name": "レガシーエネルギー",
+    "card_code": "SVN 045/045",
+    "usage_count": 190,
+    "expansion": "SVN",
+    "number": "045"
+  },
+  {
+    "card_id": "47867",
+    "card_name": "ホーホー",
+    "card_code": "MA 008/043",
+    "usage_count": 187,
+    "expansion": "MA",
+    "number": "008"
+  },
+  {
+    "card_id": "47869",
+    "card_name": "イキリンコex",
+    "card_code": "MA 010/043",
+    "usage_count": 184,
+    "expansion": "MA",
+    "number": "010"
+  },
+  {
+    "card_id": "47864",
+    "card_name": "ポッポ",
+    "card_code": "MA 005/043",
+    "usage_count": 183,
+    "expansion": "MA",
+    "number": "005"
+  },
+  {
+    "card_id": "40144",
+    "card_name": "博士の研究",
+    "card_code": "S8a 029/028",
+    "usage_count": 169,
+    "expansion": "S8a",
+    "number": "029"
+  },
+  {
+    "card_id": "47179",
+    "card_name": "ポッポ",
+    "card_code": "SVN 004/045",
+    "usage_count": 167,
+    "expansion": "SVN",
+    "number": "004"
+  },
+  {
+    "card_id": "47879",
+    "card_name": "ハイパーボール",
+    "card_code": "MA 020/043",
+    "usage_count": 163,
+    "expansion": "MA",
+    "number": "020"
+  },
+  {
+    "card_id": "45691",
+    "card_name": "ルミナスエネルギー",
+    "card_code": "SV5a 096/066",
+    "usage_count": 161,
+    "expansion": "SV5a",
+    "number": "096"
+  },
+  {
+    "card_id": "47885",
+    "card_name": "夜のタンカ",
+    "card_code": "MA 026/043",
+    "usage_count": 161,
+    "expansion": "MA",
+    "number": "026"
+  },
+  {
+    "card_id": "47865",
+    "card_name": "ピジョン",
+    "card_code": "MA 006/043",
+    "usage_count": 159,
+    "expansion": "MA",
+    "number": "006"
+  },
+  {
+    "card_id": "47896",
+    "card_name": "博士の研究",
+    "card_code": "MA 037/043",
+    "usage_count": 157,
+    "expansion": "MA",
+    "number": "037"
+  },
+  {
+    "card_id": "47866",
+    "card_name": "ピジョットex",
+    "card_code": "MA 007/043",
+    "usage_count": 152,
+    "expansion": "MA",
+    "number": "007"
+  },
+  {
+    "card_id": "43052",
+    "card_name": "サーナイトex",
+    "card_code": "SV1S 092/078",
+    "usage_count": 151,
+    "expansion": "SV1S",
+    "number": "092"
+  },
+  {
+    "card_id": "44958",
+    "card_name": "スーパーエネルギー回収",
+    "card_code": "SV2D 098/071",
+    "usage_count": 148,
+    "expansion": "SV2D",
+    "number": "098"
+  },
+  {
+    "card_id": "47182",
+    "card_name": "ホーホー",
+    "card_code": "SVN 007/045",
+    "usage_count": 148,
+    "expansion": "SVN",
+    "number": "007"
+  },
+  {
+    "card_id": "46183",
+    "card_name": "ゼロの大空洞",
+    "card_code": "SV7 135/102",
+    "usage_count": 146,
+    "expansion": "SV7",
+    "number": "135"
+  },
+  {
+    "card_id": "47898",
+    "card_name": "ボスの指令",
+    "card_code": "MA 039/043",
+    "usage_count": 144,
+    "expansion": "MA",
+    "number": "039"
+  },
+  {
+    "card_id": "47295",
+    "card_name": "ガチグマ アカツキex",
+    "card_code": "SV-P 258/SV-P",
+    "usage_count": 142,
+    "expansion": "SV-P",
+    "number": "258"
+  },
+  {
+    "card_id": "47893",
+    "card_name": "ワザマシン デヴォリューション",
+    "card_code": "MA 034/043",
+    "usage_count": 138,
+    "expansion": "MA",
+    "number": "034"
+  },
+  {
+    "card_id": "36611",
+    "card_name": "ネストボール",
+    "card_code": "SMJ 017/035",
+    "usage_count": 137,
+    "expansion": "SMJ",
+    "number": "017"
+  },
+  {
+    "card_id": "43687",
+    "card_name": "イキリンコex",
+    "card_code": "SV2P 094/071",
+    "usage_count": 137,
+    "expansion": "SV2P",
+    "number": "094"
+  },
+  {
+    "card_id": "41126",
+    "card_name": "ふうせん",
+    "card_code": "SK 021/030",
+    "usage_count": 134,
+    "expansion": "SK",
+    "number": "021"
+  },
+  {
+    "card_id": "47203",
+    "card_name": "勇気のおまもり",
+    "card_code": "SVN 028/045",
+    "usage_count": 132,
+    "expansion": "SVN",
+    "number": "028"
+  },
+  {
+    "card_id": "48317",
+    "card_name": "ラティアスex",
+    "card_code": "M-P 032/M-P",
+    "usage_count": 129,
+    "expansion": "M-P",
+    "number": "032"
+  },
+  {
+    "card_id": "47877",
+    "card_name": "なかよしポフィン",
+    "card_code": "MA 018/043",
+    "usage_count": 123,
+    "expansion": "MA",
+    "number": "018"
+  },
+  {
+    "card_id": "44965",
+    "card_name": "基本炎エネルギー",
+    "card_code": "SV3 141/108",
+    "usage_count": 122,
+    "expansion": "SV3",
+    "number": "141"
+  },
+  {
+    "card_id": "46218",
+    "card_name": "ネストボール",
+    "card_code": "SVLN 013/022",
+    "usage_count": 120,
+    "expansion": "SVLN",
+    "number": "013"
+  },
+  {
+    "card_id": "27853",
+    "card_name": "すごいつりざお",
+    "card_code": "DS 018/020",
+    "usage_count": 119,
+    "expansion": "DS",
+    "number": "018"
+  },
+  {
+    "card_id": "38821",
+    "card_name": "ボスの指令",
+    "card_code": "S4a 176/190",
+    "usage_count": 119,
+    "expansion": "S4a",
+    "number": "176"
+  },
+  {
+    "card_id": "41094",
+    "card_name": "博士の研究",
+    "card_code": "S8b 266/184",
+    "usage_count": 119,
+    "expansion": "S8b",
+    "number": "266"
+  },
+  {
+    "card_id": "47209",
+    "card_name": "ナンジャモ",
+    "card_code": "SVN 034/045",
+    "usage_count": 119,
+    "expansion": "SVN",
+    "number": "034"
+  },
+  {
+    "card_id": "45313",
+    "card_name": "大地の器",
+    "card_code": "SVHK 025/053",
+    "usage_count": 113,
+    "expansion": "SVHK",
+    "number": "025"
+  },
+  {
+    "card_id": "47880",
+    "card_name": "ふしぎなアメ",
+    "card_code": "MA 021/043",
+    "usage_count": 112,
+    "expansion": "MA",
+    "number": "021"
+  },
+  {
+    "card_id": "43091",
+    "card_name": "ペパー",
+    "card_code": "SV1V 104/078",
+    "usage_count": 111,
+    "expansion": "SV1V",
+    "number": "104"
+  },
+  {
+    "card_id": "46295",
+    "card_name": "シャリタツ",
+    "card_code": "SV-P 201/SV-P",
+    "usage_count": 111,
+    "expansion": "SV-P",
+    "number": "201"
+  },
+  {
+    "card_id": "47193",
+    "card_name": "ハイパーボール",
+    "card_code": "SVN 018/045",
+    "usage_count": 111,
+    "expansion": "SVN",
+    "number": "018"
+  },
+  {
+    "card_id": "47876",
+    "card_name": "ツールスクラッパー",
+    "card_code": "MA 017/043",
+    "usage_count": 109,
+    "expansion": "MA",
+    "number": "017"
+  },
+  {
+    "card_id": "47889",
+    "card_name": "ふうせん",
+    "card_code": "MA 030/043",
+    "usage_count": 109,
+    "expansion": "MA",
+    "number": "030"
+  },
+  {
+    "card_id": "43682",
+    "card_name": "イキリンコex",
+    "card_code": "SV2P 089/071",
+    "usage_count": 107,
+    "expansion": "SV2P",
+    "number": "089"
+  },
+  {
+    "card_id": "44962",
+    "card_name": "基本超エネルギー",
+    "card_code": "SV2a 210/165",
+    "usage_count": 106,
+    "expansion": "SV2a",
+    "number": "210"
+  },
+  {
+    "card_id": "37667",
+    "card_name": "ふうせん",
+    "card_code": "S1W 057/060",
+    "usage_count": 105,
+    "expansion": "S1W",
+    "number": "057"
+  },
+  {
+    "card_id": "37976",
+    "card_name": "ボスの指令",
+    "card_code": "S2 092/096",
+    "usage_count": 102,
+    "expansion": "S2",
+    "number": "092"
+  },
+  {
+    "card_id": "45382",
+    "card_name": "ナンジャモ",
+    "card_code": "SVHM 041/053",
+    "usage_count": 102,
+    "expansion": "SVHM",
+    "number": "041"
+  },
+  {
+    "card_id": "46219",
+    "card_name": "ハイパーボール",
+    "card_code": "SVLN 014/022",
+    "usage_count": 101,
+    "expansion": "SVLN",
+    "number": "014"
+  },
+  {
+    "card_id": "35139",
+    "card_name": "ネストボール",
+    "card_code": "SMH 110/131",
+    "usage_count": 100,
+    "expansion": "SMH",
+    "number": "110"
+  },
+  {
+    "card_id": "36838",
+    "card_name": "ともだちてちょう",
+    "card_code": "SM11 091/094",
+    "usage_count": 100,
+    "expansion": "SM11",
+    "number": "091"
+  },
+  {
+    "card_id": "34175",
+    "card_name": "カウンターキャッチャー",
+    "card_code": "SM4S 046/050",
+    "usage_count": 98,
+    "expansion": "SM4S",
+    "number": "046"
+  },
+  {
+    "card_id": "34320",
+    "card_name": "ネストボール",
+    "card_code": "SM4p 092/114",
+    "usage_count": 96,
+    "expansion": "SM4p",
+    "number": "092"
+  },
+  {
+    "card_id": "25709",
+    "card_name": "ふしぎなアメ",
+    "card_code": "L2-B 071/080",
+    "usage_count": 94,
+    "expansion": "L2-B",
+    "number": "071"
+  },
+  {
+    "card_id": "43664",
+    "card_name": "ナンジャモ",
+    "card_code": "SV2D 096/071",
+    "usage_count": 94,
+    "expansion": "SV2D",
+    "number": "096"
+  },
+  {
+    "card_id": "45369",
+    "card_name": "ハイパーボール",
+    "card_code": "SVHM 028/053",
+    "usage_count": 94,
+    "expansion": "SVHM",
+    "number": "028"
+  },
+  {
+    "card_id": "46127",
+    "card_name": "メタモン",
+    "card_code": "SV-P 166/SV-P",
+    "usage_count": 94,
+    "expansion": "SV-P",
+    "number": "166"
+  },
+  {
+    "card_id": "47868",
+    "card_name": "ヨルノズク",
+    "card_code": "MA 009/043",
+    "usage_count": 92,
+    "expansion": "MA",
+    "number": "009"
+  },
+  {
+    "card_id": "48259",
+    "card_name": "ラルトス",
+    "card_code": "M-P 021/M-P",
+    "usage_count": 91,
+    "expansion": "M-P",
+    "number": "021"
+  },
+  {
+    "card_id": "47176",
+    "card_name": "ミュウex",
+    "card_code": "SVN 001/045",
+    "usage_count": 90,
+    "expansion": "SVN",
+    "number": "001"
+  },
+  {
+    "card_id": "38375",
+    "card_name": "げんきのハチマキ",
+    "card_code": "SD 103/127",
+    "usage_count": 89,
+    "expansion": "SD",
+    "number": "103"
+  },
+  {
+    "card_id": "46227",
+    "card_name": "ボスの指令",
+    "card_code": "SVLN 022/022",
+    "usage_count": 89,
+    "expansion": "SVLN",
+    "number": "022"
+  },
+  {
+    "card_id": "44928",
+    "card_name": "エネルギーつけかえ",
+    "card_code": "S11a 093/068",
+    "usage_count": 86,
+    "expansion": "S11a",
+    "number": "093"
+  },
+  {
+    "card_id": "47191",
+    "card_name": "なかよしポフィン",
+    "card_code": "SVN 016/045",
+    "usage_count": 85,
+    "expansion": "SVN",
+    "number": "016"
+  },
+  {
+    "card_id": "46221",
+    "card_name": "ポケギア3.0",
+    "card_code": "SVLN 016/022",
+    "usage_count": 84,
+    "expansion": "SVLN",
+    "number": "016"
+  },
+  {
+    "card_id": "33274",
+    "card_name": "ハイパーボール",
+    "card_code": "SM1p 045/051",
+    "usage_count": 81,
+    "expansion": "SM1p",
+    "number": "045"
+  },
+  {
+    "card_id": "47213",
+    "card_name": "ボスの指令",
+    "card_code": "SVN 038/045",
+    "usage_count": 80,
+    "expansion": "SVN",
+    "number": "038"
+  },
+  {
+    "card_id": "27420",
+    "card_name": "すごいつりざお",
+    "card_code": "BW2-B 060/066",
+    "usage_count": 79,
+    "expansion": "BW2-B",
+    "number": "060"
+  },
+  {
+    "card_id": "45689",
+    "card_name": "ガチグマ アカツキex",
+    "card_code": "SV5a 094/066",
+    "usage_count": 78,
+    "expansion": "SV5a",
+    "number": "094"
+  },
+  {
+    "card_id": "47183",
+    "card_name": "ヨルノズク",
+    "card_code": "SVN 008/045",
+    "usage_count": 78,
+    "expansion": "SVN",
+    "number": "008"
+  },
+  {
+    "card_id": "47205",
+    "card_name": "ワザマシン デヴォリューション",
+    "card_code": "SVN 030/045",
+    "usage_count": 78,
+    "expansion": "SVN",
+    "number": "030"
+  },
+  {
+    "card_id": "36839",
+    "card_name": "ポケギア3.0",
+    "card_code": "SM11 092/094",
+    "usage_count": 76,
+    "expansion": "SM11",
+    "number": "092"
+  },
+  {
+    "card_id": "44971",
+    "card_name": "基本悪エネルギー",
+    "card_code": "SV4K 095/066",
+    "usage_count": 75,
+    "expansion": "SV4K",
+    "number": "095"
+  },
+  {
+    "card_id": "45387",
+    "card_name": "ボスの指令",
+    "card_code": "SVHM 046/053",
+    "usage_count": 74,
+    "expansion": "SVHM",
+    "number": "046"
+  },
+  {
+    "card_id": "45806",
+    "card_name": "リザードンex",
+    "card_code": "SVJL 006/021",
+    "usage_count": 74,
+    "expansion": "SVJL",
+    "number": "006"
+  },
+  {
+    "card_id": "46115",
+    "card_name": "ルミナスエネルギー",
+    "card_code": "SVK 044/044",
+    "usage_count": 74,
+    "expansion": "SVK",
+    "number": "044"
+  },
+  {
+    "card_id": "36440",
+    "card_name": "ネストボール",
+    "card_code": "SMN 007/029",
+    "usage_count": 73,
+    "expansion": "SMN",
+    "number": "007"
+  },
+  {
+    "card_id": "40294",
+    "card_name": "ふうせん",
+    "card_code": "S8b 145/184",
+    "usage_count": 73,
+    "expansion": "S8b",
+    "number": "145"
+  },
+  {
+    "card_id": "43059",
+    "card_name": "博士の研究",
+    "card_code": "SV1S 099/078",
+    "usage_count": 72,
+    "expansion": "SV1S",
+    "number": "099"
+  },
+  {
+    "card_id": "44961",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "SV2a 209/165",
+    "usage_count": 72,
+    "expansion": "SV2a",
+    "number": "209"
+  },
+  {
+    "card_id": "44947",
+    "card_name": "基本闘エネルギー",
+    "card_code": "SV1S 108/078",
+    "usage_count": 71,
+    "expansion": "SV1S",
+    "number": "108"
+  },
+  {
+    "card_id": "45397",
+    "card_name": "クレッフィ",
+    "card_code": "SV-P 123/SV-P",
+    "usage_count": 71,
+    "expansion": "SV-P",
+    "number": "123"
+  },
+  {
+    "card_id": "45386",
+    "card_name": "ペパー",
+    "card_code": "SVHM 045/053",
+    "usage_count": 68,
+    "expansion": "SVHM",
+    "number": "045"
+  },
+  {
+    "card_id": "47894",
+    "card_name": "スグリ",
+    "card_code": "MA 035/043",
+    "usage_count": 68,
+    "expansion": "MA",
+    "number": "035"
+  },
+  {
+    "card_id": "46192",
+    "card_name": "ホーホー",
+    "card_code": "SVLS 009/022",
+    "usage_count": 63,
+    "expansion": "SVLS",
+    "number": "009"
+  },
+  {
+    "card_id": "45393",
+    "card_name": "リバーサルエネルギー",
+    "card_code": "SVHM 052/053",
+    "usage_count": 62,
+    "expansion": "SVHM",
+    "number": "052"
+  },
+  {
+    "card_id": "46224",
+    "card_name": "ナンジャモ",
+    "card_code": "SVLN 019/022",
+    "usage_count": 62,
+    "expansion": "SVLN",
+    "number": "019"
+  },
+  {
+    "card_id": "36858",
+    "card_name": "ハイパーボール",
+    "card_code": "SMM 017/031",
+    "usage_count": 60,
+    "expansion": "SMM",
+    "number": "017"
+  },
+  {
+    "card_id": "45874",
+    "card_name": "改造ハンマー",
+    "card_code": "SV6 132/101",
+    "usage_count": 60,
+    "expansion": "SV6",
+    "number": "132"
+  },
+  {
+    "card_id": "45368",
+    "card_name": "ネストボール",
+    "card_code": "SVHM 027/053",
+    "usage_count": 59,
+    "expansion": "SVHM",
+    "number": "027"
+  },
+  {
+    "card_id": "47184",
+    "card_name": "イキリンコex",
+    "card_code": "SVN 009/045",
+    "usage_count": 58,
+    "expansion": "SVN",
+    "number": "009"
+  },
+  {
+    "card_id": "34322",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SM4p 094/114",
+    "usage_count": 56,
+    "expansion": "SM4p",
+    "number": "094"
+  },
+  {
+    "card_id": "39232",
+    "card_name": "ボスの指令",
+    "card_code": "SF 020/033",
+    "usage_count": 56,
+    "expansion": "SF",
+    "number": "020"
+  },
+  {
+    "card_id": "46226",
+    "card_name": "博士の研究",
+    "card_code": "SVLN 021/022",
+    "usage_count": 56,
+    "expansion": "SVLN",
+    "number": "021"
+  },
+  {
+    "card_id": "44974",
+    "card_name": "基本鋼エネルギー",
+    "card_code": "SV4M 095/066",
+    "usage_count": 55,
+    "expansion": "SV4M",
+    "number": "095"
+  },
+  {
+    "card_id": "47190",
+    "card_name": "テラスタルオーブ",
+    "card_code": "SVN 015/045",
+    "usage_count": 55,
+    "expansion": "SVN",
+    "number": "015"
+  },
+  {
+    "card_id": "44960",
+    "card_name": "ミュウex",
+    "card_code": "SV2a 208/165",
+    "usage_count": 54,
+    "expansion": "SV2a",
+    "number": "208"
+  },
+  {
+    "card_id": "37726",
+    "card_name": "げんきのハチマキ",
+    "card_code": "S1H 056/060",
+    "usage_count": 53,
+    "expansion": "S1H",
+    "number": "056"
+  },
+  {
+    "card_id": "39572",
+    "card_name": "ポケギア3.0",
+    "card_code": "SGI 014/022",
+    "usage_count": 53,
+    "expansion": "SGI",
+    "number": "014"
+  },
+  {
+    "card_id": "45326",
+    "card_name": "オーリム博士の気迫",
+    "card_code": "SVHK 038/053",
+    "usage_count": 52,
+    "expansion": "SVHK",
+    "number": "038"
+  },
+  {
+    "card_id": "48250",
+    "card_name": "マクノシタ",
+    "card_code": "M-P 004/M-P",
+    "usage_count": 52,
+    "expansion": "M-P",
+    "number": "004"
+  },
+  {
+    "card_id": "44011",
+    "card_name": "ハイパーボール",
+    "card_code": "WCS23 019/030",
+    "usage_count": 51,
+    "expansion": "WCS23",
+    "number": "019"
+  },
+  {
+    "card_id": "46204",
+    "card_name": "博士の研究",
+    "card_code": "SVLS 021/022",
+    "usage_count": 51,
+    "expansion": "SVLS",
+    "number": "021"
+  },
+  {
+    "card_id": "25117",
+    "card_name": "エネルギーつけかえ",
+    "card_code": "L1-Bhg 063/070",
+    "usage_count": 50,
+    "expansion": "L1-Bhg",
+    "number": "063"
+  },
+  {
+    "card_id": "37874",
+    "card_name": "博士の研究",
+    "card_code": "S1W 067/060",
+    "usage_count": 50,
+    "expansion": "S1W",
+    "number": "067"
+  },
+  {
+    "card_id": "47194",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SVN 019/045",
+    "usage_count": 50,
+    "expansion": "SVN",
+    "number": "019"
+  },
+  {
+    "card_id": "48321",
+    "card_name": "シェイミ",
+    "card_code": "M-P 034/M-P",
+    "usage_count": 50,
+    "expansion": "M-P",
+    "number": "034"
+  },
+  {
+    "card_id": "46133",
+    "card_name": "ヨルノズク",
+    "card_code": "SV-P 173/SV-P",
+    "usage_count": 48,
+    "expansion": "SV-P",
+    "number": "173"
+  },
+  {
+    "card_id": "36955",
+    "card_name": "エネルギーつけかえ",
+    "card_code": "SM11a 051/064",
+    "usage_count": 47,
+    "expansion": "SM11a",
+    "number": "051"
+  },
+  {
+    "card_id": "44959",
+    "card_name": "基本草エネルギー",
+    "card_code": "SV2D 099/071",
+    "usage_count": 47,
+    "expansion": "SV2D",
+    "number": "099"
+  },
+  {
+    "card_id": "46196",
+    "card_name": "ネストボール",
+    "card_code": "SVLS 013/022",
+    "usage_count": 47,
+    "expansion": "SVLS",
+    "number": "013"
+  },
+  {
+    "card_id": "46216",
+    "card_name": "すごいつりざお",
+    "card_code": "SVLN 011/022",
+    "usage_count": 47,
+    "expansion": "SVLN",
+    "number": "011"
+  },
+  {
+    "card_id": "44226",
+    "card_name": "コレクレー",
+    "card_code": "SV-P 099/SV-P",
+    "usage_count": 46,
+    "expansion": "SV-P",
+    "number": "099"
+  },
+  {
+    "card_id": "47171",
+    "card_name": "シャリタツ",
+    "card_code": "SV-P 236/SV-P",
+    "usage_count": 46,
+    "expansion": "SV-P",
+    "number": "236"
+  },
+  {
+    "card_id": "47180",
+    "card_name": "ピジョン",
+    "card_code": "SVN 005/045",
+    "usage_count": 46,
+    "expansion": "SVN",
+    "number": "005"
+  },
+  {
+    "card_id": "43061",
+    "card_name": "サーナイトex",
+    "card_code": "SV1S 101/078",
+    "usage_count": 45,
+    "expansion": "SV1S",
+    "number": "101"
+  },
+  {
+    "card_id": "43081",
+    "card_name": "ミライドンex",
+    "card_code": "SV1V 094/078",
+    "usage_count": 44,
+    "expansion": "SV1V",
+    "number": "094"
+  },
+  {
+    "card_id": "45385",
+    "card_name": "フトゥー博士のシナリオ",
+    "card_code": "SVHM 044/053",
+    "usage_count": 43,
+    "expansion": "SVHM",
+    "number": "044"
+  },
+  {
+    "card_id": "38366",
+    "card_name": "ともだちてちょう",
+    "card_code": "SD 094/127",
+    "usage_count": 42,
+    "expansion": "SD",
+    "number": "094"
+  },
+  {
+    "card_id": "43127",
+    "card_name": "ルチャブル",
+    "card_code": "SV-P 034/SV-P",
+    "usage_count": 42,
+    "expansion": "SV-P",
+    "number": "034"
+  },
+  {
+    "card_id": "47181",
+    "card_name": "ピジョットex",
+    "card_code": "SVN 006/045",
+    "usage_count": 42,
+    "expansion": "SVN",
+    "number": "006"
+  },
+  {
+    "card_id": "33119",
+    "card_name": "ネストボール",
+    "card_code": "SM1M 055/060",
+    "usage_count": 41,
+    "expansion": "SM1M",
+    "number": "055"
+  },
+  {
+    "card_id": "47188",
+    "card_name": "すごいつりざお",
+    "card_code": "SVN 013/045",
+    "usage_count": 41,
+    "expansion": "SVN",
+    "number": "013"
+  },
+  {
+    "card_id": "31968",
+    "card_name": "ハイパーボール",
+    "card_code": "CP4 103/131",
+    "usage_count": 40,
+    "expansion": "CP4",
+    "number": "103"
+  },
+  {
+    "card_id": "34638",
+    "card_name": "すごいつりざお",
+    "card_code": "XY 014/041",
+    "usage_count": 40,
+    "expansion": "XY",
+    "number": "014"
+  },
+  {
+    "card_id": "38816",
+    "card_name": "ふうせん",
+    "card_code": "S4a 171/190",
+    "usage_count": 40,
+    "expansion": "S4a",
+    "number": "171"
+  },
+  {
+    "card_id": "43060",
+    "card_name": "ボタン",
+    "card_code": "SV1S 100/078",
+    "usage_count": 40,
+    "expansion": "SV1S",
+    "number": "100"
+  },
+  {
+    "card_id": "45873",
+    "card_name": "オーガポン みどりのめんex",
+    "card_code": "SV6 131/101",
+    "usage_count": 39,
+    "expansion": "SV6",
+    "number": "131"
+  },
+  {
+    "card_id": "41090",
+    "card_name": "ジャッジマン",
+    "card_code": "S8b 262/184",
+    "usage_count": 38,
+    "expansion": "S8b",
+    "number": "262"
+  },
+  {
+    "card_id": "44950",
+    "card_name": "基本雷エネルギー",
+    "card_code": "SV1V 108/078",
+    "usage_count": 38,
+    "expansion": "SV1V",
+    "number": "108"
+  },
+  {
+    "card_id": "45570",
+    "card_name": "テツノイサハex",
+    "card_code": "SV5M 098/071",
+    "usage_count": 38,
+    "expansion": "SV5M",
+    "number": "098"
+  },
+  {
+    "card_id": "46198",
+    "card_name": "ハイパーボール",
+    "card_code": "SVLS 015/022",
+    "usage_count": 38,
+    "expansion": "SVLS",
+    "number": "015"
+  },
+  {
+    "card_id": "37476",
+    "card_name": "基本悪エネルギー",
+    "card_code": "SM12a 208/173",
+    "usage_count": 37,
+    "expansion": "SM12a",
+    "number": "208"
+  },
+  {
+    "card_id": "47902",
+    "card_name": "プリズムエネルギー",
+    "card_code": "MA 043/043",
+    "usage_count": 37,
+    "expansion": "MA",
+    "number": "043"
+  },
+  {
+    "card_id": "37471",
+    "card_name": "基本炎エネルギー",
+    "card_code": "SM12a 203/173",
+    "usage_count": 35,
+    "expansion": "SM12a",
+    "number": "203"
+  },
+  {
+    "card_id": "46193",
+    "card_name": "ヨルノズク",
+    "card_code": "SVLS 010/022",
+    "usage_count": 35,
+    "expansion": "SVLS",
+    "number": "010"
+  },
+  {
+    "card_id": "46205",
+    "card_name": "ボスの指令",
+    "card_code": "SVLS 022/022",
+    "usage_count": 35,
+    "expansion": "SVLS",
+    "number": "022"
+  },
+  {
+    "card_id": "48480",
+    "card_name": "リザード",
+    "card_code": "M-P 045/M-P",
+    "usage_count": 35,
+    "expansion": "M-P",
+    "number": "045"
+  },
+  {
+    "card_id": "33275",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SM1p 046/051",
+    "usage_count": 33,
+    "expansion": "SM1p",
+    "number": "046"
+  },
+  {
+    "card_id": "37474",
+    "card_name": "基本超エネルギー",
+    "card_code": "SM12a 206/173",
+    "usage_count": 33,
+    "expansion": "SM12a",
+    "number": "206"
+  },
+  {
+    "card_id": "45831",
+    "card_name": "スーパーエネルギー回収",
+    "card_code": "SVJP 010/019",
+    "usage_count": 33,
+    "expansion": "SVJP",
+    "number": "010"
+  },
+  {
+    "card_id": "36615",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SMJ 021/035",
+    "usage_count": 32,
+    "expansion": "SMJ",
+    "number": "021"
+  },
+  {
+    "card_id": "43085",
+    "card_name": "博士の研究",
+    "card_code": "SV1V 098/078",
+    "usage_count": 32,
+    "expansion": "SV1V",
+    "number": "098"
+  },
+  {
+    "card_id": "46223",
+    "card_name": "アカマツ",
+    "card_code": "SVLN 018/022",
+    "usage_count": 32,
+    "expansion": "SVLN",
+    "number": "018"
+  },
+  {
+    "card_id": "37475",
+    "card_name": "基本闘エネルギー",
+    "card_code": "SM12a 207/173",
+    "usage_count": 31,
+    "expansion": "SM12a",
+    "number": "207"
+  },
+  {
+    "card_id": "45832",
+    "card_name": "ネストボール",
+    "card_code": "SVJP 011/019",
+    "usage_count": 31,
+    "expansion": "SVJP",
+    "number": "011"
+  },
+  {
+    "card_id": "35140",
+    "card_name": "ハイパーボール",
+    "card_code": "SMH 111/131",
+    "usage_count": 30,
+    "expansion": "SMH",
+    "number": "111"
+  },
+  {
+    "card_id": "45837",
+    "card_name": "ナンジャモ",
+    "card_code": "SVJP 016/019",
+    "usage_count": 30,
+    "expansion": "SVJP",
+    "number": "016"
+  },
+  {
+    "card_id": "47210",
+    "card_name": "博士の研究",
+    "card_code": "SVN 035/045",
+    "usage_count": 30,
+    "expansion": "SVN",
+    "number": "035"
+  },
+  {
+    "card_id": "25252",
+    "card_name": "ポケギア3.0",
+    "card_code": "L1-Bss 064/070",
+    "usage_count": 29,
+    "expansion": "L1-Bss",
+    "number": "064"
+  },
+  {
+    "card_id": "28560",
+    "card_name": "スーパーエネルギー回収",
+    "card_code": "BW8-Brf 047/051",
+    "usage_count": 29,
+    "expansion": "BW8-Brf",
+    "number": "047"
+  },
+  {
+    "card_id": "35921",
+    "card_name": "ネストボール",
+    "card_code": "SMI 024/038",
+    "usage_count": 29,
+    "expansion": "SMI",
+    "number": "024"
+  },
+  {
+    "card_id": "44963",
+    "card_name": "リザードンex",
+    "card_code": "SV3 139/108",
+    "usage_count": 29,
+    "expansion": "SV3",
+    "number": "139"
+  },
+  {
+    "card_id": "45371",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SVHM 030/053",
+    "usage_count": 29,
+    "expansion": "SVHM",
+    "number": "030"
+  },
+  {
+    "card_id": "45812",
+    "card_name": "ネストボール",
+    "card_code": "SVJL 012/021",
+    "usage_count": 28,
+    "expansion": "SVJL",
+    "number": "012"
+  },
+  {
+    "card_id": "46202",
+    "card_name": "ナンジャモ",
+    "card_code": "SVLS 019/022",
+    "usage_count": 28,
+    "expansion": "SVLS",
+    "number": "019"
+  },
+  {
+    "card_id": "47178",
+    "card_name": "シャリタツ",
+    "card_code": "SVN 003/045",
+    "usage_count": 28,
+    "expansion": "SVN",
+    "number": "003"
+  },
+  {
+    "card_id": "28662",
+    "card_name": "ハイパーボール",
+    "card_code": "KK 009/018",
+    "usage_count": 27,
+    "expansion": "KK",
+    "number": "009"
+  },
+  {
+    "card_id": "39548",
+    "card_name": "ポケギア3.0",
+    "card_code": "SGG 011/019",
+    "usage_count": 27,
+    "expansion": "SGG",
+    "number": "011"
+  },
+  {
+    "card_id": "45390",
+    "card_name": "ボウルタウン",
+    "card_code": "SVHM 049/053",
+    "usage_count": 27,
+    "expansion": "SVHM",
+    "number": "049"
+  },
+  {
+    "card_id": "41119",
+    "card_name": "ツールスクラッパー",
+    "card_code": "SK 014/030",
+    "usage_count": 26,
+    "expansion": "SK",
+    "number": "014"
+  },
+  {
+    "card_id": "43089",
+    "card_name": "ミライドンex",
+    "card_code": "SV1V 102/078",
+    "usage_count": 26,
+    "expansion": "SV1V",
+    "number": "102"
+  },
+  {
+    "card_id": "46448",
+    "card_name": "テツノツツミ",
+    "card_code": "SV-P 185/SV-P",
+    "usage_count": 26,
+    "expansion": "SV-P",
+    "number": "185"
+  },
+  {
+    "card_id": "44956",
+    "card_name": "基本水エネルギー",
+    "card_code": "SV2P 099/071",
+    "usage_count": 25,
+    "expansion": "SV2P",
+    "number": "099"
+  },
+  {
+    "card_id": "45543",
+    "card_name": "タケルライコex",
+    "card_code": "SV5K 100/071",
+    "usage_count": 25,
+    "expansion": "SV5K",
+    "number": "100"
+  },
+  {
+    "card_id": "45817",
+    "card_name": "ナンジャモ",
+    "card_code": "SVJL 017/021",
+    "usage_count": 25,
+    "expansion": "SVJL",
+    "number": "017"
+  },
+  {
+    "card_id": "45820",
+    "card_name": "ボウルタウン",
+    "card_code": "SVJL 020/021",
+    "usage_count": 25,
+    "expansion": "SVJL",
+    "number": "020"
+  },
+  {
+    "card_id": "45833",
+    "card_name": "ハイパーボール",
+    "card_code": "SVJP 012/019",
+    "usage_count": 25,
+    "expansion": "SVJP",
+    "number": "012"
+  },
+  {
+    "card_id": "27615",
+    "card_name": "ハイパーボール",
+    "card_code": "BKR 011/018",
+    "usage_count": 24,
+    "expansion": "BKR",
+    "number": "011"
+  },
+  {
+    "card_id": "33184",
+    "card_name": "ネストボール",
+    "card_code": "SMB 001/018",
+    "usage_count": 24,
+    "expansion": "SMB",
+    "number": "001"
+  },
+  {
+    "card_id": "36190",
+    "card_name": "ポケギア3.0",
+    "card_code": "SM9a 045/055",
+    "usage_count": 24,
+    "expansion": "SM9a",
+    "number": "045"
+  },
+  {
+    "card_id": "37477",
+    "card_name": "基本鋼エネルギー",
+    "card_code": "SM12a 209/173",
+    "usage_count": 24,
+    "expansion": "SM12a",
+    "number": "209"
+  },
+  {
+    "card_id": "45330",
+    "card_name": "ナンジャモ",
+    "card_code": "SVHK 042/053",
+    "usage_count": 24,
+    "expansion": "SVHK",
+    "number": "042"
+  },
+  {
+    "card_id": "45337",
+    "card_name": "ボウルタウン",
+    "card_code": "SVHK 049/053",
+    "usage_count": 24,
+    "expansion": "SVHK",
+    "number": "049"
+  },
+  {
+    "card_id": "45340",
+    "card_name": "リバーサルエネルギー",
+    "card_code": "SVHK 052/053",
+    "usage_count": 24,
+    "expansion": "SVHK",
+    "number": "052"
+  },
+  {
+    "card_id": "31442",
+    "card_name": "すごいつりざお",
+    "card_code": "SNPo 005/010",
+    "usage_count": 23,
+    "expansion": "SNPo",
+    "number": "005"
+  },
+  {
+    "card_id": "31847",
+    "card_name": "ハイパーボール",
+    "card_code": "XYH 015/026",
+    "usage_count": 23,
+    "expansion": "XYH",
+    "number": "015"
+  },
+  {
+    "card_id": "35141",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SMH 112/131",
+    "usage_count": 23,
+    "expansion": "SMH",
+    "number": "112"
+  },
+  {
+    "card_id": "36612",
+    "card_name": "ハイパーボール",
+    "card_code": "SMJ 018/035",
+    "usage_count": 23,
+    "expansion": "SMJ",
+    "number": "018"
+  },
+  {
+    "card_id": "27825",
+    "card_name": "ふしぎなアメ",
+    "card_code": "BW4-B 065/069",
+    "usage_count": 22,
+    "expansion": "BW4-B",
+    "number": "065"
+  },
+  {
+    "card_id": "35737",
+    "card_name": "ジャッジマン",
+    "card_code": "SM7a 066/060",
+    "usage_count": 22,
+    "expansion": "SM7a",
+    "number": "066"
+  },
+  {
+    "card_id": "4103",
+    "card_name": "基本炎エネルギー",
+    "card_code": "WCP 104/108",
+    "usage_count": 22,
+    "expansion": "WCP",
+    "number": "104"
+  },
+  {
+    "card_id": "45333",
+    "card_name": "ペパー",
+    "card_code": "SVHK 045/053",
+    "usage_count": 22,
+    "expansion": "SVHK",
+    "number": "045"
+  },
+  {
+    "card_id": "41803",
+    "card_name": "博士の研究",
+    "card_code": "S10b 082/071",
+    "usage_count": 21,
+    "expansion": "S10b",
+    "number": "082"
+  },
+  {
+    "card_id": "44948",
+    "card_name": "ミライドンex",
+    "card_code": "SV1V 106/078",
+    "usage_count": 21,
+    "expansion": "SV1V",
+    "number": "106"
+  },
+  {
+    "card_id": "44968",
+    "card_name": "リバーサルエネルギー",
+    "card_code": "SV3a 092/062",
+    "usage_count": 21,
+    "expansion": "SV3a",
+    "number": "092"
+  },
+  {
+    "card_id": "45144",
+    "card_name": "ミライドンex",
+    "card_code": "SV4a 358/190",
+    "usage_count": 21,
+    "expansion": "SV4a",
+    "number": "358"
+  },
+  {
+    "card_id": "47863",
+    "card_name": "シャリタツ",
+    "card_code": "MA 004/043",
+    "usage_count": 21,
+    "expansion": "MA",
+    "number": "004"
+  },
+  {
+    "card_id": "47882",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "MA 023/043",
+    "usage_count": 21,
+    "expansion": "MA",
+    "number": "023"
+  },
+  {
+    "card_id": "36401",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SM10 082/095",
+    "usage_count": 20,
+    "expansion": "SM10",
+    "number": "082"
+  },
+  {
+    "card_id": "45813",
+    "card_name": "ハイパーボール",
+    "card_code": "SVJL 013/021",
+    "usage_count": 20,
+    "expansion": "SVJL",
+    "number": "013"
+  },
+  {
+    "card_id": "47883",
+    "card_name": "むしとりセット",
+    "card_code": "MA 024/043",
+    "usage_count": 20,
+    "expansion": "MA",
+    "number": "024"
+  },
+  {
+    "card_id": "47886",
+    "card_name": "カウンターゲイン",
+    "card_code": "MA 027/043",
+    "usage_count": 20,
+    "expansion": "MA",
+    "number": "027"
+  },
+  {
+    "card_id": "35922",
+    "card_name": "ハイパーボール",
+    "card_code": "SMI 025/038",
+    "usage_count": 19,
+    "expansion": "SMI",
+    "number": "025"
+  },
+  {
+    "card_id": "36198",
+    "card_name": "改造ハンマー",
+    "card_code": "SM9a 053/055",
+    "usage_count": 19,
+    "expansion": "SM9a",
+    "number": "053"
+  },
+  {
+    "card_id": "37569",
+    "card_name": "げんきのハチマキ",
+    "card_code": "SA 019/024",
+    "usage_count": 19,
+    "expansion": "SA",
+    "number": "019"
+  },
+  {
+    "card_id": "39229",
+    "card_name": "ふうせん",
+    "card_code": "SF 017/033",
+    "usage_count": 19,
+    "expansion": "SF",
+    "number": "017"
+  },
+  {
+    "card_id": "39569",
+    "card_name": "エネルギー回収",
+    "card_code": "SGI 011/022",
+    "usage_count": 19,
+    "expansion": "SGI",
+    "number": "011"
+  },
+  {
+    "card_id": "45839",
+    "card_name": "ボスの指令",
+    "card_code": "SVJP 018/019",
+    "usage_count": 19,
+    "expansion": "SVJP",
+    "number": "018"
+  },
+  {
+    "card_id": "25395",
+    "card_name": "ふしぎなアメ",
+    "card_code": "Em 009/014",
+    "usage_count": 18,
+    "expansion": "Em",
+    "number": "009"
+  },
+  {
+    "card_id": "36444",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SMN 011/029",
+    "usage_count": 18,
+    "expansion": "SMN",
+    "number": "011"
+  },
+  {
+    "card_id": "4107",
+    "card_name": "基本闘エネルギー",
+    "card_code": "WCP 108/108",
+    "usage_count": 18,
+    "expansion": "WCP",
+    "number": "108"
+  },
+  {
+    "card_id": "46194",
+    "card_name": "すごいつりざお",
+    "card_code": "SVLS 011/022",
+    "usage_count": 18,
+    "expansion": "SVLS",
+    "number": "011"
+  },
+  {
+    "card_id": "30323",
+    "card_name": "ハイパーボール",
+    "card_code": "XYA 012/021",
+    "usage_count": 17,
+    "expansion": "XYA",
+    "number": "012"
+  },
+  {
+    "card_id": "34908",
+    "card_name": "エネルギーつけかえ",
+    "card_code": "SM6b 053/066",
+    "usage_count": 17,
+    "expansion": "SM6b",
+    "number": "053"
+  },
+  {
+    "card_id": "36439",
+    "card_name": "ともだちてちょう",
+    "card_code": "SMN 006/029",
+    "usage_count": 17,
+    "expansion": "SMN",
+    "number": "006"
+  },
+  {
+    "card_id": "37521",
+    "card_name": "げんきのハチマキ",
+    "card_code": "SA 019/023",
+    "usage_count": 17,
+    "expansion": "SA",
+    "number": "019"
+  },
+  {
+    "card_id": "43043",
+    "card_name": "ラルトス",
+    "card_code": "SV1S 083/078",
+    "usage_count": 17,
+    "expansion": "SV1S",
+    "number": "083"
+  },
+  {
+    "card_id": "44014",
+    "card_name": "学習装置",
+    "card_code": "WCS23 022/030",
+    "usage_count": 17,
+    "expansion": "WCS23",
+    "number": "022"
+  },
+  {
+    "card_id": "44475",
+    "card_name": "ストライク",
+    "card_code": "SVG 004/049",
+    "usage_count": 17,
+    "expansion": "SVG",
+    "number": "004"
+  },
+  {
+    "card_id": "45364",
+    "card_name": "すごいつりざお",
+    "card_code": "SVHM 023/053",
+    "usage_count": 17,
+    "expansion": "SVHM",
+    "number": "023"
+  },
+  {
+    "card_id": "45802",
+    "card_name": "リザード",
+    "card_code": "SVJL 002/021",
+    "usage_count": 17,
+    "expansion": "SVJL",
+    "number": "002"
+  },
+  {
+    "card_id": "46199",
+    "card_name": "ポケギア3.0",
+    "card_code": "SVLS 016/022",
+    "usage_count": 17,
+    "expansion": "SVLS",
+    "number": "016"
+  },
+  {
+    "card_id": "48247",
+    "card_name": "チコリータ",
+    "card_code": "M-P 001/M-P",
+    "usage_count": 17,
+    "expansion": "M-P",
+    "number": "001"
+  },
+  {
+    "card_id": "36240",
+    "card_name": "ネストボール",
+    "card_code": "SMK 017/031",
+    "usage_count": 16,
+    "expansion": "SMK",
+    "number": "017"
+  },
+  {
+    "card_id": "44505",
+    "card_name": "ハイパーボール",
+    "card_code": "SVG 034/049",
+    "usage_count": 16,
+    "expansion": "SVG",
+    "number": "034"
+  },
+  {
+    "card_id": "45394",
+    "card_name": "ルミナスエネルギー",
+    "card_code": "SVHM 053/053",
+    "usage_count": 16,
+    "expansion": "SVHM",
+    "number": "053"
+  },
+  {
+    "card_id": "45819",
+    "card_name": "ボスの指令",
+    "card_code": "SVJL 019/021",
+    "usage_count": 16,
+    "expansion": "SVJL",
+    "number": "019"
+  },
+  {
+    "card_id": "31822",
+    "card_name": "ハイパーボール",
+    "card_code": "XYG 010/019",
+    "usage_count": 15,
+    "expansion": "XYG",
+    "number": "010"
+  },
+  {
+    "card_id": "33381",
+    "card_name": "ネストボール",
+    "card_code": "SMC 012/021",
+    "usage_count": 15,
+    "expansion": "SMC",
+    "number": "012"
+  },
+  {
+    "card_id": "37470",
+    "card_name": "基本草エネルギー",
+    "card_code": "SM12a 202/173",
+    "usage_count": 15,
+    "expansion": "SM12a",
+    "number": "202"
+  },
+  {
+    "card_id": "4106",
+    "card_name": "基本超エネルギー",
+    "card_code": "WCP 107/108",
+    "usage_count": 15,
+    "expansion": "WCP",
+    "number": "107"
+  },
+  {
+    "card_id": "45311",
+    "card_name": "すごいつりざお",
+    "card_code": "SVHK 023/053",
+    "usage_count": 15,
+    "expansion": "SVHK",
+    "number": "023"
+  },
+  {
+    "card_id": "45315",
+    "card_name": "ネストボール",
+    "card_code": "SVHK 027/053",
+    "usage_count": 15,
+    "expansion": "SVHK",
+    "number": "027"
+  },
+  {
+    "card_id": "45378",
+    "card_name": "勇気のおまもり",
+    "card_code": "SVHM 037/053",
+    "usage_count": 15,
+    "expansion": "SVHM",
+    "number": "037"
+  },
+  {
+    "card_id": "45811",
+    "card_name": "すごいつりざお",
+    "card_code": "SVJL 011/021",
+    "usage_count": 15,
+    "expansion": "SVJL",
+    "number": "011"
+  },
+  {
+    "card_id": "31972",
+    "card_name": "ふしぎなアメ",
+    "card_code": "CP4 107/131",
+    "usage_count": 14,
+    "expansion": "CP4",
+    "number": "107"
+  },
+  {
+    "card_id": "33168",
+    "card_name": "ハイパーボール",
+    "card_code": "SMA 044/059",
+    "usage_count": 14,
+    "expansion": "SMA",
+    "number": "044"
+  },
+  {
+    "card_id": "39575",
+    "card_name": "博士の研究",
+    "card_code": "SGI 017/022",
+    "usage_count": 14,
+    "expansion": "SGI",
+    "number": "017"
+  },
+  {
+    "card_id": "4102",
+    "card_name": "基本草エネルギー",
+    "card_code": "WCP 103/108",
+    "usage_count": 14,
+    "expansion": "WCP",
+    "number": "103"
+  },
+  {
+    "card_id": "44970",
+    "card_name": "ゴージャスマント",
+    "card_code": "SV4K 094/066",
+    "usage_count": 14,
+    "expansion": "SV4K",
+    "number": "094"
+  },
+  {
+    "card_id": "45834",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SVJP 013/019",
+    "usage_count": 14,
+    "expansion": "SVJP",
+    "number": "013"
+  },
+  {
+    "card_id": "34436",
+    "card_name": "ともだちてちょう",
+    "card_code": "SM5S 054/066",
+    "usage_count": 13,
+    "expansion": "SM5S",
+    "number": "054"
+  },
+  {
+    "card_id": "35135",
+    "card_name": "エネルギーつけかえ",
+    "card_code": "SMH 106/131",
+    "usage_count": 13,
+    "expansion": "SMH",
+    "number": "106"
+  },
+  {
+    "card_id": "36860",
+    "card_name": "ポケギア3.0",
+    "card_code": "SMM 019/031",
+    "usage_count": 13,
+    "expansion": "SMM",
+    "number": "019"
+  },
+  {
+    "card_id": "36954",
+    "card_name": "エネルギー回収",
+    "card_code": "SM11a 050/064",
+    "usage_count": 13,
+    "expansion": "SM11a",
+    "number": "050"
+  },
+  {
+    "card_id": "37473",
+    "card_name": "基本雷エネルギー",
+    "card_code": "SM12a 205/173",
+    "usage_count": 13,
+    "expansion": "SM12a",
+    "number": "205"
+  },
+  {
+    "card_id": "43057",
+    "card_name": "ジニア",
+    "card_code": "SV1S 097/078",
+    "usage_count": 13,
+    "expansion": "SV1S",
+    "number": "097"
+  },
+  {
+    "card_id": "45814",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SVJL 014/021",
+    "usage_count": 13,
+    "expansion": "SVJL",
+    "number": "014"
+  },
+  {
+    "card_id": "31202",
+    "card_name": "ハイパーボール",
+    "card_code": "MMB-P 028/049",
+    "usage_count": 12,
+    "expansion": "MMB-P",
+    "number": "028"
+  },
+  {
+    "card_id": "33161",
+    "card_name": "エネルギーつけかえ",
+    "card_code": "SMA 037/059",
+    "usage_count": 12,
+    "expansion": "SMA",
+    "number": "037"
+  },
+  {
+    "card_id": "33167",
+    "card_name": "ネストボール",
+    "card_code": "SMA 043/059",
+    "usage_count": 12,
+    "expansion": "SMA",
+    "number": "043"
+  },
+  {
+    "card_id": "34516",
+    "card_name": "ネストボール",
+    "card_code": "SMF 002/020",
+    "usage_count": 12,
+    "expansion": "SMF",
+    "number": "002"
+  },
+  {
+    "card_id": "34910",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SM6b 055/066",
+    "usage_count": 12,
+    "expansion": "SM6b",
+    "number": "055"
+  },
+  {
+    "card_id": "36441",
+    "card_name": "ハイパーボール",
+    "card_code": "SMN 008/029",
+    "usage_count": 12,
+    "expansion": "SMN",
+    "number": "008"
+  },
+  {
+    "card_id": "36486",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SML 042/051",
+    "usage_count": 12,
+    "expansion": "SML",
+    "number": "042"
+  },
+  {
+    "card_id": "37972",
+    "card_name": "ツールスクラッパー",
+    "card_code": "S2 088/096",
+    "usage_count": 12,
+    "expansion": "S2",
+    "number": "088"
+  },
+  {
+    "card_id": "4105",
+    "card_name": "基本雷エネルギー",
+    "card_code": "WCP 106/108",
+    "usage_count": 12,
+    "expansion": "WCP",
+    "number": "106"
+  },
+  {
+    "card_id": "44009",
+    "card_name": "エネルギー転送",
+    "card_code": "WCS23 017/030",
+    "usage_count": 12,
+    "expansion": "WCS23",
+    "number": "017"
+  },
+  {
+    "card_id": "45316",
+    "card_name": "ハイパーボール",
+    "card_code": "SVHK 028/053",
+    "usage_count": 12,
+    "expansion": "SVHK",
+    "number": "028"
+  },
+  {
+    "card_id": "45323",
+    "card_name": "ブーストエナジー 古代",
+    "card_code": "SVHK 035/053",
+    "usage_count": 12,
+    "expansion": "SVHK",
+    "number": "035"
+  },
+  {
+    "card_id": "46201",
+    "card_name": "アカマツ",
+    "card_code": "SVLS 018/022",
+    "usage_count": 12,
+    "expansion": "SVLS",
+    "number": "018"
+  },
+  {
+    "card_id": "25119",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "L1-Bhg 064/070",
+    "usage_count": 11,
+    "expansion": "L1-Bhg",
+    "number": "064"
+  },
+  {
+    "card_id": "30567",
+    "card_name": "ハイパーボール",
+    "card_code": "XYB 008/018",
+    "usage_count": 11,
+    "expansion": "XYB",
+    "number": "008"
+  },
+  {
+    "card_id": "34367",
+    "card_name": "ネストボール",
+    "card_code": "SME 011/021",
+    "usage_count": 11,
+    "expansion": "SME",
+    "number": "011"
+  },
+  {
+    "card_id": "36961",
+    "card_name": "ジャッジマン",
+    "card_code": "SM11a 057/064",
+    "usage_count": 11,
+    "expansion": "SM11a",
+    "number": "057"
+  },
+  {
+    "card_id": "37333",
+    "card_name": "ポケギア3.0",
+    "card_code": "SM12a 129/173",
+    "usage_count": 11,
+    "expansion": "SM12a",
+    "number": "129"
+  },
+  {
+    "card_id": "37590",
+    "card_name": "ともだちてちょう",
+    "card_code": "SA 015/024",
+    "usage_count": 11,
+    "expansion": "SA",
+    "number": "015"
+  },
+  {
+    "card_id": "39551",
+    "card_name": "博士の研究",
+    "card_code": "SGG 014/019",
+    "usage_count": 11,
+    "expansion": "SGG",
+    "number": "014"
+  },
+  {
+    "card_id": "39553",
+    "card_name": "ボスの指令",
+    "card_code": "SGG 016/019",
+    "usage_count": 11,
+    "expansion": "SGG",
+    "number": "016"
+  },
+  {
+    "card_id": "4082",
+    "card_name": "エネルギーつけかえ",
+    "card_code": "WCP 083/108",
+    "usage_count": 11,
+    "expansion": "WCP",
+    "number": "083"
+  },
+  {
+    "card_id": "44517",
+    "card_name": "ボスの指令",
+    "card_code": "SVG 046/049",
+    "usage_count": 11,
+    "expansion": "SVG",
+    "number": "046"
+  },
+  {
+    "card_id": "45334",
+    "card_name": "ボスの指令",
+    "card_code": "SVHK 046/053",
+    "usage_count": 11,
+    "expansion": "SVHK",
+    "number": "046"
+  },
+  {
+    "card_id": "45341",
+    "card_name": "ルミナスエネルギー",
+    "card_code": "SVHK 053/053",
+    "usage_count": 11,
+    "expansion": "SVHK",
+    "number": "053"
+  },
+  {
+    "card_id": "47901",
+    "card_name": "イグニッションエネルギー",
+    "card_code": "MA 042/043",
+    "usage_count": 11,
+    "expansion": "MA",
+    "number": "042"
+  },
+  {
+    "card_id": "23018",
+    "card_name": "エネルギーつけかえ",
+    "card_code": "DPt3-Sg 009/016",
+    "usage_count": 10,
+    "expansion": "DPt3-Sg",
+    "number": "009"
+  },
+  {
+    "card_id": "25559",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "L2-Sh 012/019",
+    "usage_count": 10,
+    "expansion": "L2-Sh",
+    "number": "012"
+  },
+  {
+    "card_id": "27633",
+    "card_name": "ハイパーボール",
+    "card_code": "BKZ 011/018",
+    "usage_count": 10,
+    "expansion": "BKZ",
+    "number": "011"
+  },
+  {
+    "card_id": "30723",
+    "card_name": "ふしぎなアメ",
+    "card_code": "XY5-Bg 061/070",
+    "usage_count": 10,
+    "expansion": "XY5-Bg",
+    "number": "061"
+  },
+  {
+    "card_id": "34438",
+    "card_name": "ネストボール",
+    "card_code": "SM5S 056/066",
+    "usage_count": 10,
+    "expansion": "SM5S",
+    "number": "056"
+  },
+  {
+    "card_id": "36024",
+    "card_name": "ハイパーボール",
+    "card_code": "SM9 080/095",
+    "usage_count": 10,
+    "expansion": "SM9",
+    "number": "080"
+  },
+  {
+    "card_id": "37334",
+    "card_name": "ポケギア3.0",
+    "card_code": "SM12a 130/173",
+    "usage_count": 10,
+    "expansion": "SM12a",
+    "number": "130"
+  },
+  {
+    "card_id": "38377",
+    "card_name": "ふうせん",
+    "card_code": "SD 105/127",
+    "usage_count": 10,
+    "expansion": "SD",
+    "number": "105"
+  },
+  {
+    "card_id": "39577",
+    "card_name": "ボスの指令",
+    "card_code": "SGI 019/022",
+    "usage_count": 10,
+    "expansion": "SGI",
+    "number": "019"
+  },
+  {
+    "card_id": "43701",
+    "card_name": "ヒトカゲ",
+    "card_code": "SV-P 060/SV-P",
+    "usage_count": 10,
+    "expansion": "SV-P",
+    "number": "060"
+  },
+  {
+    "card_id": "44478",
+    "card_name": "ヒトカゲ",
+    "card_code": "SVG 007/049",
+    "usage_count": 10,
+    "expansion": "SVG",
+    "number": "007"
+  },
+  {
+    "card_id": "44503",
+    "card_name": "すごいつりざお",
+    "card_code": "SVG 032/049",
+    "usage_count": 10,
+    "expansion": "SVG",
+    "number": "032"
+  },
+  {
+    "card_id": "46217",
+    "card_name": "テラスタルオーブ",
+    "card_code": "SVLN 012/022",
+    "usage_count": 10,
+    "expansion": "SVLN",
+    "number": "012"
+  },
+  {
+    "card_id": "47197",
+    "card_name": "むしとりセット",
+    "card_code": "SVN 022/045",
+    "usage_count": 10,
+    "expansion": "SVN",
+    "number": "022"
+  },
+  {
+    "card_id": "31704",
+    "card_name": "すごいつりざお",
+    "card_code": "20th 054/072",
+    "usage_count": 9,
+    "expansion": "20th",
+    "number": "054"
+  },
+  {
+    "card_id": "33169",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SMA 045/059",
+    "usage_count": 9,
+    "expansion": "SMA",
+    "number": "045"
+  },
+  {
+    "card_id": "36400",
+    "card_name": "ハイパーボール",
+    "card_code": "SM10 081/095",
+    "usage_count": 9,
+    "expansion": "SM10",
+    "number": "081"
+  },
+  {
+    "card_id": "37472",
+    "card_name": "基本水エネルギー",
+    "card_code": "SM12a 204/173",
+    "usage_count": 9,
+    "expansion": "SM12a",
+    "number": "204"
+  },
+  {
+    "card_id": "44512",
+    "card_name": "ナンジャモ",
+    "card_code": "SVG 041/049",
+    "usage_count": 9,
+    "expansion": "SVG",
+    "number": "041"
+  },
+  {
+    "card_id": "44916",
+    "card_name": "博士の研究",
+    "card_code": "S10b 089/071",
+    "usage_count": 9,
+    "expansion": "S10b",
+    "number": "089"
+  },
+  {
+    "card_id": "46195",
+    "card_name": "テラスタルオーブ",
+    "card_code": "SVLS 012/022",
+    "usage_count": 9,
+    "expansion": "SVLS",
+    "number": "012"
+  },
+  {
+    "card_id": "47493",
+    "card_name": "ゴルダック",
+    "card_code": "SV-P 263/SV-P",
+    "usage_count": 9,
+    "expansion": "SV-P",
+    "number": "263"
+  },
+  {
+    "card_id": "28343",
+    "card_name": "ハイパーボール",
+    "card_code": "MDB 030/046",
+    "usage_count": 8,
+    "expansion": "MDB",
+    "number": "030"
+  },
+  {
+    "card_id": "28663",
+    "card_name": "ふしぎなアメ",
+    "card_code": "KK 010/018",
+    "usage_count": 8,
+    "expansion": "KK",
+    "number": "010"
+  },
+  {
+    "card_id": "30942",
+    "card_name": "ハイパーボール",
+    "card_code": "XYD 009/018",
+    "usage_count": 8,
+    "expansion": "XYD",
+    "number": "009"
+  },
+  {
+    "card_id": "32278",
+    "card_name": "エネルギー回収",
+    "card_code": "CP6 072/087",
+    "usage_count": 8,
+    "expansion": "CP6",
+    "number": "072"
+  },
+  {
+    "card_id": "33273",
+    "card_name": "改造ハンマー",
+    "card_code": "SM1p 044/051",
+    "usage_count": 8,
+    "expansion": "SM1p",
+    "number": "044"
+  },
+  {
+    "card_id": "34504",
+    "card_name": "ハイパーボール",
+    "card_code": "SM5M 056/066",
+    "usage_count": 8,
+    "expansion": "SM5M",
+    "number": "056"
+  },
+  {
+    "card_id": "34517",
+    "card_name": "ハイパーボール",
+    "card_code": "SMF 003/020",
+    "usage_count": 8,
+    "expansion": "SMF",
+    "number": "003"
+  },
+  {
+    "card_id": "40287",
+    "card_name": "ツールスクラッパー",
+    "card_code": "S8b 138/184",
+    "usage_count": 8,
+    "expansion": "S8b",
+    "number": "138"
+  },
+  {
+    "card_id": "43040",
+    "card_name": "グレンアルマ",
+    "card_code": "SV1S 080/078",
+    "usage_count": 8,
+    "expansion": "SV1S",
+    "number": "080"
+  },
+  {
+    "card_id": "43044",
+    "card_name": "キルリア",
+    "card_code": "SV1S 084/078",
+    "usage_count": 8,
+    "expansion": "SV1S",
+    "number": "084"
+  },
+  {
+    "card_id": "44504",
+    "card_name": "ネストボール",
+    "card_code": "SVG 033/049",
+    "usage_count": 8,
+    "expansion": "SVG",
+    "number": "033"
+  },
+  {
+    "card_id": "45325",
+    "card_name": "勇気のおまもり",
+    "card_code": "SVHK 037/053",
+    "usage_count": 8,
+    "expansion": "SVHK",
+    "number": "037"
+  },
+  {
+    "card_id": "46181",
+    "card_name": "テラパゴスex",
+    "card_code": "SV7 133/102",
+    "usage_count": 8,
+    "expansion": "SV7",
+    "number": "133"
+  },
+  {
+    "card_id": "47207",
+    "card_name": "スグリ",
+    "card_code": "SVN 032/045",
+    "usage_count": 8,
+    "expansion": "SVN",
+    "number": "032"
+  },
+  {
+    "card_id": "31705",
+    "card_name": "ハイパーボール",
+    "card_code": "20th 055/072",
+    "usage_count": 7,
+    "expansion": "20th",
+    "number": "055"
+  },
+  {
+    "card_id": "34602",
+    "card_name": "改造ハンマー",
+    "card_code": "SM5p 039/050",
+    "usage_count": 7,
+    "expansion": "SM5p",
+    "number": "039"
+  },
+  {
+    "card_id": "36025",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SM9 081/095",
+    "usage_count": 7,
+    "expansion": "SM9",
+    "number": "081"
+  },
+  {
+    "card_id": "37723",
+    "card_name": "ふしぎなアメ",
+    "card_code": "S1H 053/060",
+    "usage_count": 7,
+    "expansion": "S1H",
+    "number": "053"
+  },
+  {
+    "card_id": "38808",
+    "card_name": "ツールスクラッパー",
+    "card_code": "S4a 163/190",
+    "usage_count": 7,
+    "expansion": "S4a",
+    "number": "163"
+  },
+  {
+    "card_id": "43069",
+    "card_name": "ヤドン",
+    "card_code": "SV1V 082/078",
+    "usage_count": 7,
+    "expansion": "SV1V",
+    "number": "082"
+  },
+  {
+    "card_id": "45318",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SVHK 030/053",
+    "usage_count": 7,
+    "expansion": "SVHK",
+    "number": "030"
+  },
+  {
+    "card_id": "47196",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "SVN 021/045",
+    "usage_count": 7,
+    "expansion": "SVN",
+    "number": "021"
+  },
+  {
+    "card_id": "47872",
+    "card_name": "エレキジェネレーター",
+    "card_code": "MA 013/043",
+    "usage_count": 7,
+    "expansion": "MA",
+    "number": "013"
+  },
+  {
+    "card_id": "27955",
+    "card_name": "ツールスクラッパー",
+    "card_code": "BW5-Brn 048/050",
+    "usage_count": 6,
+    "expansion": "BW5-Brn",
+    "number": "048"
+  },
+  {
+    "card_id": "27985",
+    "card_name": "ハイパーボール",
+    "card_code": "GBR 010/015",
+    "usage_count": 6,
+    "expansion": "GBR",
+    "number": "010"
+  },
+  {
+    "card_id": "28399",
+    "card_name": "ハイパーボール",
+    "card_code": "BKW 010/018",
+    "usage_count": 6,
+    "expansion": "BKW",
+    "number": "010"
+  },
+  {
+    "card_id": "30322",
+    "card_name": "ともだちてちょう",
+    "card_code": "XYA 011/021",
+    "usage_count": 6,
+    "expansion": "XYA",
+    "number": "011"
+  },
+  {
+    "card_id": "31262",
+    "card_name": "ハイパーボール",
+    "card_code": "MMB-S 030/049",
+    "usage_count": 6,
+    "expansion": "MMB-S",
+    "number": "030"
+  },
+  {
+    "card_id": "32283",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "CP6 077/087",
+    "usage_count": 6,
+    "expansion": "CP6",
+    "number": "077"
+  },
+  {
+    "card_id": "33185",
+    "card_name": "ハイパーボール",
+    "card_code": "SMB 002/018",
+    "usage_count": 6,
+    "expansion": "SMB",
+    "number": "002"
+  },
+  {
+    "card_id": "35206",
+    "card_name": "エネルギーつけかえ",
+    "card_code": "SM7a 045/060",
+    "usage_count": 6,
+    "expansion": "SM7a",
+    "number": "045"
+  },
+  {
+    "card_id": "37537",
+    "card_name": "エネルギーつけかえ",
+    "card_code": "SA 011/023",
+    "usage_count": 6,
+    "expansion": "SA",
+    "number": "011"
+  },
+  {
+    "card_id": "37732",
+    "card_name": "エネルギーつけかえ",
+    "card_code": "SB 002/024",
+    "usage_count": 6,
+    "expansion": "SB",
+    "number": "002"
+  },
+  {
+    "card_id": "37735",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SB 005/024",
+    "usage_count": 6,
+    "expansion": "SB",
+    "number": "005"
+  },
+  {
+    "card_id": "38367",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SD 095/127",
+    "usage_count": 6,
+    "expansion": "SD",
+    "number": "095"
+  },
+  {
+    "card_id": "43067",
+    "card_name": "ノノクラゲ",
+    "card_code": "SV1V 080/078",
+    "usage_count": 6,
+    "expansion": "SV1V",
+    "number": "080"
+  },
+  {
+    "card_id": "44008",
+    "card_name": "エネルギー回収",
+    "card_code": "WCS23 016/030",
+    "usage_count": 6,
+    "expansion": "WCS23",
+    "number": "016"
+  },
+  {
+    "card_id": "44506",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SVG 035/049",
+    "usage_count": 6,
+    "expansion": "SVG",
+    "number": "035"
+  },
+  {
+    "card_id": "46210",
+    "card_name": "ニンフィアex",
+    "card_code": "SVLN 005/022",
+    "usage_count": 6,
+    "expansion": "SVLN",
+    "number": "005"
+  },
+  {
+    "card_id": "47201",
+    "card_name": "緊急ボード",
+    "card_code": "SVN 026/045",
+    "usage_count": 6,
+    "expansion": "SVN",
+    "number": "026"
+  },
+  {
+    "card_id": "48260",
+    "card_name": "リオル",
+    "card_code": "M-P 022/M-P",
+    "usage_count": 6,
+    "expansion": "M-P",
+    "number": "022"
+  },
+  {
+    "card_id": "30304",
+    "card_name": "せいなるはい",
+    "card_code": "XY2 073/080",
+    "usage_count": 5,
+    "expansion": "XY2",
+    "number": "073"
+  },
+  {
+    "card_id": "34060",
+    "card_name": "ハイパーボール",
+    "card_code": "SM3p 064/072",
+    "usage_count": 5,
+    "expansion": "SM3p",
+    "number": "064"
+  },
+  {
+    "card_id": "34369",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SME 013/021",
+    "usage_count": 5,
+    "expansion": "SME",
+    "number": "013"
+  },
+  {
+    "card_id": "34506",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SM5M 058/066",
+    "usage_count": 5,
+    "expansion": "SM5M",
+    "number": "058"
+  },
+  {
+    "card_id": "36241",
+    "card_name": "ハイパーボール",
+    "card_code": "SMK 018/031",
+    "usage_count": 5,
+    "expansion": "SMK",
+    "number": "018"
+  },
+  {
+    "card_id": "37669",
+    "card_name": "博士の研究",
+    "card_code": "S1W 059/060",
+    "usage_count": 5,
+    "expansion": "S1W",
+    "number": "059"
+  },
+  {
+    "card_id": "38357",
+    "card_name": "エネルギーつけかえ",
+    "card_code": "SD 085/127",
+    "usage_count": 5,
+    "expansion": "SD",
+    "number": "085"
+  },
+  {
+    "card_id": "41675",
+    "card_name": "博士の研究",
+    "card_code": "S8a-G 012/015",
+    "usage_count": 5,
+    "expansion": "S8a-G",
+    "number": "012"
+  },
+  {
+    "card_id": "44515",
+    "card_name": "博士の研究",
+    "card_code": "SVG 044/049",
+    "usage_count": 5,
+    "expansion": "SVG",
+    "number": "044"
+  },
+  {
+    "card_id": "45818",
+    "card_name": "博士の研究",
+    "card_code": "SVJL 018/021",
+    "usage_count": 5,
+    "expansion": "SVJL",
+    "number": "018"
+  },
+  {
+    "card_id": "46214",
+    "card_name": "イーブイ",
+    "card_code": "SVLN 009/022",
+    "usage_count": 5,
+    "expansion": "SVLN",
+    "number": "009"
+  },
+  {
+    "card_id": "46222",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "SVLN 017/022",
+    "usage_count": 5,
+    "expansion": "SVLN",
+    "number": "017"
+  },
+  {
+    "card_id": "47494",
+    "card_name": "ハバタクカミ",
+    "card_code": "SV-P 264/SV-P",
+    "usage_count": 5,
+    "expansion": "SV-P",
+    "number": "264"
+  },
+  {
+    "card_id": "47899",
+    "card_name": "ミツルの思いやり",
+    "card_code": "MA 040/043",
+    "usage_count": 5,
+    "expansion": "MA",
+    "number": "040"
+  },
+  {
+    "card_id": "24226",
+    "card_name": "エネルギー転送",
+    "card_code": "DPt4-B 078/090",
+    "usage_count": 4,
+    "expansion": "DPt4-B",
+    "number": "078"
+  },
+  {
+    "card_id": "25405",
+    "card_name": "ジャッジマン",
+    "card_code": "Em 014/014",
+    "usage_count": 4,
+    "expansion": "Em",
+    "number": "014"
+  },
+  {
+    "card_id": "25481",
+    "card_name": "ジャッジマン",
+    "card_code": "Br 011/011",
+    "usage_count": 4,
+    "expansion": "Br",
+    "number": "011"
+  },
+  {
+    "card_id": "27742",
+    "card_name": "エネルギーつけかえ",
+    "card_code": "HSPm 029/034",
+    "usage_count": 4,
+    "expansion": "HSPm",
+    "number": "029"
+  },
+  {
+    "card_id": "27967",
+    "card_name": "ハイパーボール",
+    "card_code": "SZD 010/015",
+    "usage_count": 4,
+    "expansion": "SZD",
+    "number": "010"
+  },
+  {
+    "card_id": "28379",
+    "card_name": "ハイパーボール",
+    "card_code": "BKB 010/018",
+    "usage_count": 4,
+    "expansion": "BKB",
+    "number": "010"
+  },
+  {
+    "card_id": "28661",
+    "card_name": "エネルギー回収",
+    "card_code": "KK 008/018",
+    "usage_count": 4,
+    "expansion": "KK",
+    "number": "008"
+  },
+  {
+    "card_id": "31707",
+    "card_name": "ふしぎなアメ",
+    "card_code": "20th 057/072",
+    "usage_count": 4,
+    "expansion": "20th",
+    "number": "057"
+  },
+  {
+    "card_id": "33160",
+    "card_name": "エネルギー回収",
+    "card_code": "SMA 036/059",
+    "usage_count": 4,
+    "expansion": "SMA",
+    "number": "036"
+  },
+  {
+    "card_id": "33186",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SMB 003/018",
+    "usage_count": 4,
+    "expansion": "SMB",
+    "number": "003"
+  },
+  {
+    "card_id": "34368",
+    "card_name": "ハイパーボール",
+    "card_code": "SME 012/021",
+    "usage_count": 4,
+    "expansion": "SME",
+    "number": "012"
+  },
+  {
+    "card_id": "35210",
+    "card_name": "ハイパーボール",
+    "card_code": "SM7a 049/060",
+    "usage_count": 4,
+    "expansion": "SM7a",
+    "number": "049"
+  },
+  {
+    "card_id": "35370",
+    "card_name": "ハイパーボール",
+    "card_code": "SM8 078/095",
+    "usage_count": 4,
+    "expansion": "SM8",
+    "number": "078"
+  },
+  {
+    "card_id": "37343",
+    "card_name": "カウンターゲイン",
+    "card_code": "SM12a 139/173",
+    "usage_count": 4,
+    "expansion": "SM12a",
+    "number": "139"
+  },
+  {
+    "card_id": "38358",
+    "card_name": "エネルギー転送",
+    "card_code": "SD 086/127",
+    "usage_count": 4,
+    "expansion": "SD",
+    "number": "086"
+  },
+  {
+    "card_id": "38368",
+    "card_name": "ポケギア3.0",
+    "card_code": "SD 096/127",
+    "usage_count": 4,
+    "expansion": "SD",
+    "number": "096"
+  },
+  {
+    "card_id": "38860",
+    "card_name": "博士の研究",
+    "card_code": "SEK 016/020",
+    "usage_count": 4,
+    "expansion": "SEK",
+    "number": "016"
+  },
+  {
+    "card_id": "38882",
+    "card_name": "ボスの指令",
+    "card_code": "SEF 018/021",
+    "usage_count": 4,
+    "expansion": "SEF",
+    "number": "018"
+  },
+  {
+    "card_id": "44010",
+    "card_name": "スーパーボール",
+    "card_code": "WCS23 018/030",
+    "usage_count": 4,
+    "expansion": "WCS23",
+    "number": "018"
+  },
+  {
+    "card_id": "44502",
+    "card_name": "スーパーエネルギー回収",
+    "card_code": "SVG 031/049",
+    "usage_count": 4,
+    "expansion": "SVG",
+    "number": "031"
+  },
+  {
+    "card_id": "45404",
+    "card_name": "ミライドン",
+    "card_code": "SV-P 151/SV-P",
+    "usage_count": 4,
+    "expansion": "SV-P",
+    "number": "151"
+  },
+  {
+    "card_id": "46186",
+    "card_name": "ホウオウ",
+    "card_code": "SVLS 003/022",
+    "usage_count": 4,
+    "expansion": "SVLS",
+    "number": "003"
+  },
+  {
+    "card_id": "47199",
+    "card_name": "カウンターゲイン",
+    "card_code": "SVN 024/045",
+    "usage_count": 4,
+    "expansion": "SVN",
+    "number": "024"
+  },
+  {
+    "card_id": "27060",
+    "card_name": "エネルギーつけかえ",
+    "card_code": "HSm 032/037",
+    "usage_count": 3,
+    "expansion": "HSm",
+    "number": "032"
+  },
+  {
+    "card_id": "27550",
+    "card_name": "学習装置",
+    "card_code": "BW3-Bp 050/052",
+    "usage_count": 3,
+    "expansion": "BW3-Bp",
+    "number": "050"
+  },
+  {
+    "card_id": "27552",
+    "card_name": "プリズムエネルギー",
+    "card_code": "BW3-Bp 052/052",
+    "usage_count": 3,
+    "expansion": "BW3-Bp",
+    "number": "052"
+  },
+  {
+    "card_id": "27726",
+    "card_name": "エネルギー回収",
+    "card_code": "HSPp 028/034",
+    "usage_count": 3,
+    "expansion": "HSPp",
+    "number": "028"
+  },
+  {
+    "card_id": "27855",
+    "card_name": "学習装置",
+    "card_code": "DS 020/020",
+    "usage_count": 3,
+    "expansion": "DS",
+    "number": "020"
+  },
+  {
+    "card_id": "28344",
+    "card_name": "ふしぎなアメ",
+    "card_code": "MDB 031/046",
+    "usage_count": 3,
+    "expansion": "MDB",
+    "number": "031"
+  },
+  {
+    "card_id": "28380",
+    "card_name": "ふしぎなアメ",
+    "card_code": "BKB 011/018",
+    "usage_count": 3,
+    "expansion": "BKB",
+    "number": "011"
+  },
+  {
+    "card_id": "31966",
+    "card_name": "改造ハンマー",
+    "card_code": "CP4 101/131",
+    "usage_count": 3,
+    "expansion": "CP4",
+    "number": "101"
+  },
+  {
+    "card_id": "33117",
+    "card_name": "エネルギー回収",
+    "card_code": "SM1M 053/060",
+    "usage_count": 3,
+    "expansion": "SM1M",
+    "number": "053"
+  },
+  {
+    "card_id": "33120",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "SM1M 056/060",
+    "usage_count": 3,
+    "expansion": "SM1M",
+    "number": "056"
+  },
+  {
+    "card_id": "34518",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SMF 004/020",
+    "usage_count": 3,
+    "expansion": "SMF",
+    "number": "004"
+  },
+  {
+    "card_id": "34626",
+    "card_name": "ネストボール",
+    "card_code": "SMG 002/041",
+    "usage_count": 3,
+    "expansion": "SMG",
+    "number": "002"
+  },
+  {
+    "card_id": "34627",
+    "card_name": "ハイパーボール",
+    "card_code": "SMG 003/041",
+    "usage_count": 3,
+    "expansion": "SMG",
+    "number": "003"
+  },
+  {
+    "card_id": "34914",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "SM6b 059/066",
+    "usage_count": 3,
+    "expansion": "SM6b",
+    "number": "059"
+  },
+  {
+    "card_id": "36536",
+    "card_name": "ジャッジマン",
+    "card_code": "SML 047/051",
+    "usage_count": 3,
+    "expansion": "SML",
+    "number": "047"
+  },
+  {
+    "card_id": "36609",
+    "card_name": "エネルギーつけかえ",
+    "card_code": "SMJ 015/035",
+    "usage_count": 3,
+    "expansion": "SMJ",
+    "number": "015"
+  },
+  {
+    "card_id": "36616",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "SMJ 022/035",
+    "usage_count": 3,
+    "expansion": "SMJ",
+    "number": "022"
+  },
+  {
+    "card_id": "36957",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "SM11a 053/064",
+    "usage_count": 3,
+    "expansion": "SM11a",
+    "number": "053"
+  },
+  {
+    "card_id": "37489",
+    "card_name": "エネルギー転送",
+    "card_code": "SA 011/023",
+    "usage_count": 3,
+    "expansion": "SA",
+    "number": "011"
+  },
+  {
+    "card_id": "37493",
+    "card_name": "ポケギア3.0",
+    "card_code": "SA 015/023",
+    "usage_count": 3,
+    "expansion": "SA",
+    "number": "015"
+  },
+  {
+    "card_id": "37513",
+    "card_name": "エネルギー転送",
+    "card_code": "SA 011/023",
+    "usage_count": 3,
+    "expansion": "SA",
+    "number": "011"
+  },
+  {
+    "card_id": "37538",
+    "card_name": "エネルギー転送",
+    "card_code": "SA 012/023",
+    "usage_count": 3,
+    "expansion": "SA",
+    "number": "012"
+  },
+  {
+    "card_id": "37731",
+    "card_name": "エネルギー回収",
+    "card_code": "SB 001/024",
+    "usage_count": 3,
+    "expansion": "SB",
+    "number": "001"
+  },
+  {
+    "card_id": "38385",
+    "card_name": "博士の研究",
+    "card_code": "SD 113/127",
+    "usage_count": 3,
+    "expansion": "SD",
+    "number": "113"
+  },
+  {
+    "card_id": "38878",
+    "card_name": "ポケギア3.0",
+    "card_code": "SEF 014/021",
+    "usage_count": 3,
+    "expansion": "SEF",
+    "number": "014"
+  },
+  {
+    "card_id": "43065",
+    "card_name": "ボタン",
+    "card_code": "SV1S 105/078",
+    "usage_count": 3,
+    "expansion": "SV1S",
+    "number": "105"
+  },
+  {
+    "card_id": "43306",
+    "card_name": "クヌギダマ",
+    "card_code": "SV-P 050/SV-P",
+    "usage_count": 3,
+    "expansion": "SV-P",
+    "number": "050"
+  },
+  {
+    "card_id": "43661",
+    "card_name": "デカヌチャンex",
+    "card_code": "SV2D 093/071",
+    "usage_count": 3,
+    "expansion": "SV2D",
+    "number": "093"
+  },
+  {
+    "card_id": "44012",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "WCS23 020/030",
+    "usage_count": 3,
+    "expansion": "WCS23",
+    "number": "020"
+  },
+  {
+    "card_id": "44522",
+    "card_name": "ヒトカゲ",
+    "card_code": "SVG 051/049",
+    "usage_count": 3,
+    "expansion": "SVG",
+    "number": "051"
+  },
+  {
+    "card_id": "44967",
+    "card_name": "ビーチコート",
+    "card_code": "SV3a 091/062",
+    "usage_count": 3,
+    "expansion": "SV3a",
+    "number": "091"
+  },
+  {
+    "card_id": "45384",
+    "card_name": "博士の研究",
+    "card_code": "SVHM 043/053",
+    "usage_count": 3,
+    "expansion": "SVHM",
+    "number": "043"
+  },
+  {
+    "card_id": "45838",
+    "card_name": "博士の研究",
+    "card_code": "SVJP 017/019",
+    "usage_count": 3,
+    "expansion": "SVJP",
+    "number": "017"
+  },
+  {
+    "card_id": "45840",
+    "card_name": "ビーチコート",
+    "card_code": "SVJP 019/019",
+    "usage_count": 3,
+    "expansion": "SVJP",
+    "number": "019"
+  },
+  {
+    "card_id": "46209",
+    "card_name": "マリルリ",
+    "card_code": "SVLN 004/022",
+    "usage_count": 3,
+    "expansion": "SVLN",
+    "number": "004"
+  },
+  {
+    "card_id": "48482",
+    "card_name": "エレズン",
+    "card_code": "M-P 047/M-P",
+    "usage_count": 3,
+    "expansion": "M-P",
+    "number": "047"
+  },
+  {
+    "card_id": "19248",
+    "card_name": "スーパーボール",
+    "card_code": "DPs-B 082/092",
+    "usage_count": 2,
+    "expansion": "DPs-B",
+    "number": "082"
+  },
+  {
+    "card_id": "21059",
+    "card_name": "エネルギーつけかえ",
+    "card_code": "DPt-EPp 009/013",
+    "usage_count": 2,
+    "expansion": "DPt-EPp",
+    "number": "009"
+  },
+  {
+    "card_id": "23047",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "DPt3-Sl 011/016",
+    "usage_count": 2,
+    "expansion": "DPt3-Sl",
+    "number": "011"
+  },
+  {
+    "card_id": "24026",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "DPt4-Sgf 014/017",
+    "usage_count": 2,
+    "expansion": "DPt4-Sgf",
+    "number": "014"
+  },
+  {
+    "card_id": "24057",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "DPt4-Slp 014/017",
+    "usage_count": 2,
+    "expansion": "DPt4-Slp",
+    "number": "014"
+  },
+  {
+    "card_id": "27148",
+    "card_name": "エネルギー回収",
+    "card_code": "BW1-Bb 048/053",
+    "usage_count": 2,
+    "expansion": "BW1-Bb",
+    "number": "048"
+  },
+  {
+    "card_id": "27226",
+    "card_name": "エネルギー転送",
+    "card_code": "BKv 008/014",
+    "usage_count": 2,
+    "expansion": "BKv",
+    "number": "008"
+  },
+  {
+    "card_id": "27228",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "BKv 010/014",
+    "usage_count": 2,
+    "expansion": "BKv",
+    "number": "010"
+  },
+  {
+    "card_id": "27240",
+    "card_name": "エネルギー転送",
+    "card_code": "BKt 008/014",
+    "usage_count": 2,
+    "expansion": "BKt",
+    "number": "008"
+  },
+  {
+    "card_id": "27254",
+    "card_name": "エネルギー転送",
+    "card_code": "BKc 008/014",
+    "usage_count": 2,
+    "expansion": "BKc",
+    "number": "008"
+  },
+  {
+    "card_id": "27678",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "BGSt 017/020",
+    "usage_count": 2,
+    "expansion": "BGSt",
+    "number": "017"
+  },
+  {
+    "card_id": "27823",
+    "card_name": "改造ハンマー",
+    "card_code": "BW4-B 063/069",
+    "usage_count": 2,
+    "expansion": "BW4-B",
+    "number": "063"
+  },
+  {
+    "card_id": "27986",
+    "card_name": "ふしぎなアメ",
+    "card_code": "GBR 011/015",
+    "usage_count": 2,
+    "expansion": "GBR",
+    "number": "011"
+  },
+  {
+    "card_id": "28400",
+    "card_name": "ふしぎなアメ",
+    "card_code": "BKW 011/018",
+    "usage_count": 2,
+    "expansion": "BKW",
+    "number": "011"
+  },
+  {
+    "card_id": "28767",
+    "card_name": "エネルギーつけかえ",
+    "card_code": "MG 009/016",
+    "usage_count": 2,
+    "expansion": "MG",
+    "number": "009"
+  },
+  {
+    "card_id": "30628",
+    "card_name": "ハイパーボール",
+    "card_code": "XYC 013/023",
+    "usage_count": 2,
+    "expansion": "XYC",
+    "number": "013"
+  },
+  {
+    "card_id": "31205",
+    "card_name": "ふしぎなアメ",
+    "card_code": "MMB-P 031/049",
+    "usage_count": 2,
+    "expansion": "MMB-P",
+    "number": "031"
+  },
+  {
+    "card_id": "33061",
+    "card_name": "学習装置",
+    "card_code": "SM1S 057/060",
+    "usage_count": 2,
+    "expansion": "SM1S",
+    "number": "057"
+  },
+  {
+    "card_id": "33382",
+    "card_name": "ハイパーボール",
+    "card_code": "SMC 013/021",
+    "usage_count": 2,
+    "expansion": "SMC",
+    "number": "013"
+  },
+  {
+    "card_id": "34318",
+    "card_name": "改造ハンマー",
+    "card_code": "SM4p 090/114",
+    "usage_count": 2,
+    "expansion": "SM4p",
+    "number": "090"
+  },
+  {
+    "card_id": "34753",
+    "card_name": "ハイパーボール",
+    "card_code": "SM6 079/094",
+    "usage_count": 2,
+    "expansion": "SM6",
+    "number": "079"
+  },
+  {
+    "card_id": "34761",
+    "card_name": "ジャッジマン",
+    "card_code": "SM6 087/094",
+    "usage_count": 2,
+    "expansion": "SM6",
+    "number": "087"
+  },
+  {
+    "card_id": "35005",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SM7 082/096",
+    "usage_count": 2,
+    "expansion": "SM7",
+    "number": "082"
+  },
+  {
+    "card_id": "35142",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "SMH 113/131",
+    "usage_count": 2,
+    "expansion": "SMH",
+    "number": "113"
+  },
+  {
+    "card_id": "35214",
+    "card_name": "カウンターゲイン",
+    "card_code": "SM7a 053/060",
+    "usage_count": 2,
+    "expansion": "SM7a",
+    "number": "053"
+  },
+  {
+    "card_id": "35371",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SM8 079/095",
+    "usage_count": 2,
+    "expansion": "SM8",
+    "number": "079"
+  },
+  {
+    "card_id": "36029",
+    "card_name": "ジャッジマン",
+    "card_code": "SM9 085/095",
+    "usage_count": 2,
+    "expansion": "SM9",
+    "number": "085"
+  },
+  {
+    "card_id": "36242",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "SMK 019/031",
+    "usage_count": 2,
+    "expansion": "SMK",
+    "number": "019"
+  },
+  {
+    "card_id": "36445",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "SMN 012/029",
+    "usage_count": 2,
+    "expansion": "SMN",
+    "number": "012"
+  },
+  {
+    "card_id": "36448",
+    "card_name": "カウンターゲイン",
+    "card_code": "SMN 015/029",
+    "usage_count": 2,
+    "expansion": "SMN",
+    "number": "015"
+  },
+  {
+    "card_id": "37736",
+    "card_name": "ポケギア3.0",
+    "card_code": "SB 006/024",
+    "usage_count": 2,
+    "expansion": "SB",
+    "number": "006"
+  },
+  {
+    "card_id": "37739",
+    "card_name": "博士の研究",
+    "card_code": "SB 009/024",
+    "usage_count": 2,
+    "expansion": "SB",
+    "number": "009"
+  },
+  {
+    "card_id": "38861",
+    "card_name": "ボスの指令",
+    "card_code": "SEK 017/020",
+    "usage_count": 2,
+    "expansion": "SEK",
+    "number": "017"
+  },
+  {
+    "card_id": "38880",
+    "card_name": "博士の研究",
+    "card_code": "SEF 016/021",
+    "usage_count": 2,
+    "expansion": "SEF",
+    "number": "016"
+  },
+  {
+    "card_id": "39223",
+    "card_name": "ツールスクラッパー",
+    "card_code": "SF 011/033",
+    "usage_count": 2,
+    "expansion": "SF",
+    "number": "011"
+  },
+  {
+    "card_id": "39224",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SF 012/033",
+    "usage_count": 2,
+    "expansion": "SF",
+    "number": "012"
+  },
+  {
+    "card_id": "39549",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "SGG 012/019",
+    "usage_count": 2,
+    "expansion": "SGG",
+    "number": "012"
+  },
+  {
+    "card_id": "39573",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "SGI 015/022",
+    "usage_count": 2,
+    "expansion": "SGI",
+    "number": "015"
+  },
+  {
+    "card_id": "4104",
+    "card_name": "基本水エネルギー",
+    "card_code": "WCP 105/108",
+    "usage_count": 2,
+    "expansion": "WCP",
+    "number": "105"
+  },
+  {
+    "card_id": "43660",
+    "card_name": "イーユイex",
+    "card_code": "SV2D 092/071",
+    "usage_count": 2,
+    "expansion": "SV2D",
+    "number": "092"
+  },
+  {
+    "card_id": "43677",
+    "card_name": "チオンジェンex",
+    "card_code": "SV2P 084/071",
+    "usage_count": 2,
+    "expansion": "SV2P",
+    "number": "084"
+  },
+  {
+    "card_id": "44211",
+    "card_name": "ケロマツ",
+    "card_code": "SV-P 073/SV-P",
+    "usage_count": 2,
+    "expansion": "SV-P",
+    "number": "073"
+  },
+  {
+    "card_id": "44516",
+    "card_name": "博士の研究",
+    "card_code": "SVG 045/049",
+    "usage_count": 2,
+    "expansion": "SVG",
+    "number": "045"
+  },
+  {
+    "card_id": "44969",
+    "card_name": "トドロクツキex",
+    "card_code": "SV4K 093/066",
+    "usage_count": 2,
+    "expansion": "SV4K",
+    "number": "093"
+  },
+  {
+    "card_id": "45332",
+    "card_name": "博士の研究",
+    "card_code": "SVHK 044/053",
+    "usage_count": 2,
+    "expansion": "SVHK",
+    "number": "044"
+  },
+  {
+    "card_id": "45366",
+    "card_name": "テクノレーダー",
+    "card_code": "SVHM 025/053",
+    "usage_count": 2,
+    "expansion": "SVHM",
+    "number": "025"
+  },
+  {
+    "card_id": "45376",
+    "card_name": "ブーストエナジー 未来",
+    "card_code": "SVHM 035/053",
+    "usage_count": 2,
+    "expansion": "SVHM",
+    "number": "035"
+  },
+  {
+    "card_id": "45690",
+    "card_name": "緊急ボード",
+    "card_code": "SV5a 095/066",
+    "usage_count": 2,
+    "expansion": "SV5a",
+    "number": "095"
+  },
+  {
+    "card_id": "45795",
+    "card_name": "ミミッキュ",
+    "card_code": "SV-P 156/SV-P",
+    "usage_count": 2,
+    "expansion": "SV-P",
+    "number": "156"
+  },
+  {
+    "card_id": "45826",
+    "card_name": "セゴール",
+    "card_code": "SVJP 005/019",
+    "usage_count": 2,
+    "expansion": "SVJP",
+    "number": "005"
+  },
+  {
+    "card_id": "46213",
+    "card_name": "ミミッキュ",
+    "card_code": "SVLN 008/022",
+    "usage_count": 2,
+    "expansion": "SVLN",
+    "number": "008"
+  },
+  {
+    "card_id": "47163",
+    "card_name": "ジュラルドン",
+    "card_code": "SV-P 195/SV-P",
+    "usage_count": 2,
+    "expansion": "SV-P",
+    "number": "195"
+  },
+  {
+    "card_id": "47167",
+    "card_name": "ナンジャモのカイデン",
+    "card_code": "SV-P 232/SV-P",
+    "usage_count": 2,
+    "expansion": "SV-P",
+    "number": "232"
+  },
+  {
+    "card_id": "47185",
+    "card_name": "エレキジェネレーター",
+    "card_code": "SVN 010/045",
+    "usage_count": 2,
+    "expansion": "SVN",
+    "number": "010"
+  },
+  {
+    "card_id": "19017",
+    "card_name": "エネルギーつけかえ",
+    "card_code": "DPs-Sg 009/014",
+    "usage_count": 1,
+    "expansion": "DPs-Sg",
+    "number": "009"
+  },
+  {
+    "card_id": "21019",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "DPt-EPg 011/013",
+    "usage_count": 1,
+    "expansion": "DPt-EPg",
+    "number": "011"
+  },
+  {
+    "card_id": "21060",
+    "card_name": "エネルギー転送",
+    "card_code": "DPt-EPp 010/013",
+    "usage_count": 1,
+    "expansion": "DPt-EPp",
+    "number": "010"
+  },
+  {
+    "card_id": "21061",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "DPt-EPp 011/013",
+    "usage_count": 1,
+    "expansion": "DPt-EPp",
+    "number": "011"
+  },
+  {
+    "card_id": "21543",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "DPt-GBna 013/014",
+    "usage_count": 1,
+    "expansion": "DPt-GBna",
+    "number": "013"
+  },
+  {
+    "card_id": "22054",
+    "card_name": "エネルギー転送",
+    "card_code": "DPt2-Se 011/018",
+    "usage_count": 1,
+    "expansion": "DPt2-Se",
+    "number": "011"
+  },
+  {
+    "card_id": "23046",
+    "card_name": "エネルギー転送",
+    "card_code": "DPt3-Sl 010/016",
+    "usage_count": 1,
+    "expansion": "DPt3-Sl",
+    "number": "010"
+  },
+  {
+    "card_id": "27041",
+    "card_name": "エネルギー回収",
+    "card_code": "HSp 031/037",
+    "usage_count": 1,
+    "expansion": "HSp",
+    "number": "031"
+  },
+  {
+    "card_id": "27207",
+    "card_name": "ポケモンキャッチャー",
+    "card_code": "BW1-Bw 052/053",
+    "usage_count": 1,
+    "expansion": "BW1-Bw",
+    "number": "052"
+  },
+  {
+    "card_id": "27229",
+    "card_name": "ポケモンキャッチャー",
+    "card_code": "BKv 011/014",
+    "usage_count": 1,
+    "expansion": "BKv",
+    "number": "011"
+  },
+  {
+    "card_id": "27255",
+    "card_name": "スーパーボール",
+    "card_code": "BKc 009/014",
+    "usage_count": 1,
+    "expansion": "BKc",
+    "number": "009"
+  },
+  {
+    "card_id": "27968",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SZD 011/015",
+    "usage_count": 1,
+    "expansion": "SZD",
+    "number": "011"
+  },
+  {
+    "card_id": "28014",
+    "card_name": "エネルギー転送",
+    "card_code": "KLD 009/015",
+    "usage_count": 1,
+    "expansion": "KLD",
+    "number": "009"
+  },
+  {
+    "card_id": "28067",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "HSZm 032/034",
+    "usage_count": 1,
+    "expansion": "HSZm",
+    "number": "032"
+  },
+  {
+    "card_id": "28381",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "BKB 012/018",
+    "usage_count": 1,
+    "expansion": "BKB",
+    "number": "012"
+  },
+  {
+    "card_id": "28664",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "KK 011/018",
+    "usage_count": 1,
+    "expansion": "KK",
+    "number": "011"
+  },
+  {
+    "card_id": "28769",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "MG 011/016",
+    "usage_count": 1,
+    "expansion": "MG",
+    "number": "011"
+  },
+  {
+    "card_id": "28785",
+    "card_name": "スーパーボール",
+    "card_code": "MG 010/016",
+    "usage_count": 1,
+    "expansion": "MG",
+    "number": "010"
+  },
+  {
+    "card_id": "30184",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "X30 010/014",
+    "usage_count": 1,
+    "expansion": "X30",
+    "number": "010"
+  },
+  {
+    "card_id": "30795",
+    "card_name": "学習装置",
+    "card_code": "XY5-Bt 063/070",
+    "usage_count": 1,
+    "expansion": "XY5-Bt",
+    "number": "063"
+  },
+  {
+    "card_id": "30943",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "XYD 010/018",
+    "usage_count": 1,
+    "expansion": "XYD",
+    "number": "010"
+  },
+  {
+    "card_id": "31446",
+    "card_name": "ジャッジマン",
+    "card_code": "SNPo 009/010",
+    "usage_count": 1,
+    "expansion": "SNPo",
+    "number": "009"
+  },
+  {
+    "card_id": "31698",
+    "card_name": "エネルギー回収",
+    "card_code": "20th 048/072",
+    "usage_count": 1,
+    "expansion": "20th",
+    "number": "048"
+  },
+  {
+    "card_id": "31715",
+    "card_name": "ジャッジマン",
+    "card_code": "20th 065/072",
+    "usage_count": 1,
+    "expansion": "20th",
+    "number": "065"
+  },
+  {
+    "card_id": "33057",
+    "card_name": "クラッシュハンマー",
+    "card_code": "SM1S 053/060",
+    "usage_count": 1,
+    "expansion": "SM1S",
+    "number": "053"
+  },
+  {
+    "card_id": "33272",
+    "card_name": "エネルギーリサイクル",
+    "card_code": "SM1p 043/051",
+    "usage_count": 1,
+    "expansion": "SM1p",
+    "number": "043"
+  },
+  {
+    "card_id": "34056",
+    "card_name": "エネルギー回収",
+    "card_code": "SM3p 060/072",
+    "usage_count": 1,
+    "expansion": "SM3p",
+    "number": "060"
+  },
+  {
+    "card_id": "34061",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "SM3p 065/072",
+    "usage_count": 1,
+    "expansion": "SM3p",
+    "number": "065"
+  },
+  {
+    "card_id": "34629",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SMG 005/041",
+    "usage_count": 1,
+    "expansion": "SMG",
+    "number": "005"
+  },
+  {
+    "card_id": "34754",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SM6 080/094",
+    "usage_count": 1,
+    "expansion": "SM6",
+    "number": "080"
+  },
+  {
+    "card_id": "35004",
+    "card_name": "ハイパーボール",
+    "card_code": "SM7 081/096",
+    "usage_count": 1,
+    "expansion": "SM7",
+    "number": "081"
+  },
+  {
+    "card_id": "35137",
+    "card_name": "クラッシュハンマー",
+    "card_code": "SMH 108/131",
+    "usage_count": 1,
+    "expansion": "SMH",
+    "number": "108"
+  },
+  {
+    "card_id": "35148",
+    "card_name": "ジャッジマン",
+    "card_code": "SMH 119/131",
+    "usage_count": 1,
+    "expansion": "SMH",
+    "number": "119"
+  },
+  {
+    "card_id": "35372",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "SM8 080/095",
+    "usage_count": 1,
+    "expansion": "SM8",
+    "number": "080"
+  },
+  {
+    "card_id": "35924",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "SMI 027/038",
+    "usage_count": 1,
+    "expansion": "SMI",
+    "number": "027"
+  },
+  {
+    "card_id": "36243",
+    "card_name": "ポケモンキャッチャー",
+    "card_code": "SMK 020/031",
+    "usage_count": 1,
+    "expansion": "SMK",
+    "number": "020"
+  },
+  {
+    "card_id": "36509",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "SML 043/051",
+    "usage_count": 1,
+    "expansion": "SML",
+    "number": "043"
+  },
+  {
+    "card_id": "37492",
+    "card_name": "スーパーボール",
+    "card_code": "SA 014/023",
+    "usage_count": 1,
+    "expansion": "SA",
+    "number": "014"
+  },
+  {
+    "card_id": "37497",
+    "card_name": "博士の研究",
+    "card_code": "SA 019/023",
+    "usage_count": 1,
+    "expansion": "SA",
+    "number": "019"
+  },
+  {
+    "card_id": "37517",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SA 015/023",
+    "usage_count": 1,
+    "expansion": "SA",
+    "number": "015"
+  },
+  {
+    "card_id": "37518",
+    "card_name": "ポケギア3.0",
+    "card_code": "SA 016/023",
+    "usage_count": 1,
+    "expansion": "SA",
+    "number": "016"
+  },
+  {
+    "card_id": "37563",
+    "card_name": "エネルギー転送",
+    "card_code": "SA 013/024",
+    "usage_count": 1,
+    "expansion": "SA",
+    "number": "013"
+  },
+  {
+    "card_id": "37565",
+    "card_name": "ポケギア3.0",
+    "card_code": "SA 015/024",
+    "usage_count": 1,
+    "expansion": "SA",
+    "number": "015"
+  },
+  {
+    "card_id": "37570",
+    "card_name": "博士の研究",
+    "card_code": "SA 020/024",
+    "usage_count": 1,
+    "expansion": "SA",
+    "number": "020"
+  },
+  {
+    "card_id": "38024",
+    "card_name": "ポケギア3.0",
+    "card_code": "SCS 013/021",
+    "usage_count": 1,
+    "expansion": "SCS",
+    "number": "013"
+  },
+  {
+    "card_id": "38044",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SCS 012/020",
+    "usage_count": 1,
+    "expansion": "SCS",
+    "number": "012"
+  },
+  {
+    "card_id": "38045",
+    "card_name": "ポケギア3.0",
+    "card_code": "SCS 013/020",
+    "usage_count": 1,
+    "expansion": "SCS",
+    "number": "013"
+  },
+  {
+    "card_id": "38365",
+    "card_name": "ツールスクラッパー",
+    "card_code": "SD 093/127",
+    "usage_count": 1,
+    "expansion": "SD",
+    "number": "093"
+  },
+  {
+    "card_id": "38470",
+    "card_name": "スーパーボール",
+    "card_code": "S3a 064/076",
+    "usage_count": 1,
+    "expansion": "S3a",
+    "number": "064"
+  },
+  {
+    "card_id": "38471",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "S3a 065/076",
+    "usage_count": 1,
+    "expansion": "S3a",
+    "number": "065"
+  },
+  {
+    "card_id": "38898",
+    "card_name": "ふしぎなアメ",
+    "card_code": "SC2 012/021",
+    "usage_count": 1,
+    "expansion": "SC2",
+    "number": "012"
+  },
+  {
+    "card_id": "38899",
+    "card_name": "ポケギア3.0",
+    "card_code": "SC2 013/021",
+    "usage_count": 1,
+    "expansion": "SC2",
+    "number": "013"
+  },
+  {
+    "card_id": "38903",
+    "card_name": "博士の研究",
+    "card_code": "SC2 017/021",
+    "usage_count": 1,
+    "expansion": "SC2",
+    "number": "017"
+  },
+  {
+    "card_id": "41671",
+    "card_name": "スーパーボール",
+    "card_code": "S8a-G 008/015",
+    "usage_count": 1,
+    "expansion": "S8a-G",
+    "number": "008"
+  },
+  {
+    "card_id": "41673",
+    "card_name": "ポケモンキャッチャー",
+    "card_code": "S8a-G 010/015",
+    "usage_count": 1,
+    "expansion": "S8a-G",
+    "number": "010"
+  },
+  {
+    "card_id": "43307",
+    "card_name": "セゴール",
+    "card_code": "SV-P 051/SV-P",
+    "usage_count": 1,
+    "expansion": "SV-P",
+    "number": "051"
+  },
+  {
+    "card_id": "43647",
+    "card_name": "バンギラス",
+    "card_code": "SV2D 079/071",
+    "usage_count": 1,
+    "expansion": "SV2D",
+    "number": "079"
+  },
+  {
+    "card_id": "43648",
+    "card_name": "タギングル",
+    "card_code": "SV2D 080/071",
+    "usage_count": 1,
+    "expansion": "SV2D",
+    "number": "080"
+  },
+  {
+    "card_id": "43652",
+    "card_name": "フォレトスex",
+    "card_code": "SV2D 084/071",
+    "usage_count": 1,
+    "expansion": "SV2D",
+    "number": "084"
+  },
+  {
+    "card_id": "43662",
+    "card_name": "ディンルーex",
+    "card_code": "SV2D 094/071",
+    "usage_count": 1,
+    "expansion": "SV2D",
+    "number": "094"
+  },
+  {
+    "card_id": "43666",
+    "card_name": "マリル",
+    "card_code": "SV2P 073/071",
+    "usage_count": 1,
+    "expansion": "SV2P",
+    "number": "073"
+  },
+  {
+    "card_id": "43670",
+    "card_name": "セグレイブ",
+    "card_code": "SV2P 077/071",
+    "usage_count": 1,
+    "expansion": "SV2P",
+    "number": "077"
+  },
+  {
+    "card_id": "43685",
+    "card_name": "チオンジェンex",
+    "card_code": "SV2P 092/071",
+    "usage_count": 1,
+    "expansion": "SV2P",
+    "number": "092"
+  },
+  {
+    "card_id": "43689",
+    "card_name": "ピーニャ",
+    "card_code": "SV2P 096/071",
+    "usage_count": 1,
+    "expansion": "SV2P",
+    "number": "096"
+  },
+  {
+    "card_id": "44013",
+    "card_name": "ポケモンキャッチャー",
+    "card_code": "WCS23 021/030",
+    "usage_count": 1,
+    "expansion": "WCS23",
+    "number": "021"
+  },
+  {
+    "card_id": "44016",
+    "card_name": "ジニア",
+    "card_code": "WCS23 024/030",
+    "usage_count": 1,
+    "expansion": "WCS23",
+    "number": "024"
+  },
+  {
+    "card_id": "44022",
+    "card_name": "博士の研究",
+    "card_code": "WCS23 030/030",
+    "usage_count": 1,
+    "expansion": "WCS23",
+    "number": "030"
+  },
+  {
+    "card_id": "44027",
+    "card_name": "スコヴィランex",
+    "card_code": "SV-P 089/SV-P",
+    "usage_count": 1,
+    "expansion": "SV-P",
+    "number": "089"
+  },
+  {
+    "card_id": "44472",
+    "card_name": "フシギダネ",
+    "card_code": "SVG 001/049",
+    "usage_count": 1,
+    "expansion": "SVG",
+    "number": "001"
+  },
+  {
+    "card_id": "44473",
+    "card_name": "フシギソウ",
+    "card_code": "SVG 002/049",
+    "usage_count": 1,
+    "expansion": "SVG",
+    "number": "002"
+  },
+  {
+    "card_id": "44479",
+    "card_name": "リザード",
+    "card_code": "SVG 008/049",
+    "usage_count": 1,
+    "expansion": "SVG",
+    "number": "008"
+  },
+  {
+    "card_id": "44484",
+    "card_name": "グレンアルマ",
+    "card_code": "SVG 013/049",
+    "usage_count": 1,
+    "expansion": "SVG",
+    "number": "013"
+  },
+  {
+    "card_id": "44518",
+    "card_name": "テーブルシティ",
+    "card_code": "SVG 047/049",
+    "usage_count": 1,
+    "expansion": "SVG",
+    "number": "047"
+  },
+  {
+    "card_id": "45143",
+    "card_name": "パオジアンex",
+    "card_code": "SV4a 357/190",
+    "usage_count": 1,
+    "expansion": "SV4a",
+    "number": "357"
+  },
+  {
+    "card_id": "45319",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "SVHK 031/053",
+    "usage_count": 1,
+    "expansion": "SVHK",
+    "number": "031"
+  },
+  {
+    "card_id": "45336",
+    "card_name": "ビーチコート",
+    "card_code": "SVHK 048/053",
+    "usage_count": 1,
+    "expansion": "SVHK",
+    "number": "048"
+  },
+  {
+    "card_id": "45372",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "SVHM 031/053",
+    "usage_count": 1,
+    "expansion": "SVHM",
+    "number": "031"
+  },
+  {
+    "card_id": "45375",
+    "card_name": "ガチガチバンド",
+    "card_code": "SVHM 034/053",
+    "usage_count": 1,
+    "expansion": "SVHM",
+    "number": "034"
+  },
+  {
+    "card_id": "45389",
+    "card_name": "ビーチコート",
+    "card_code": "SVHM 048/053",
+    "usage_count": 1,
+    "expansion": "SVHM",
+    "number": "048"
+  },
+  {
+    "card_id": "45571",
+    "card_name": "テツノカシラex",
+    "card_code": "SV5M 099/071",
+    "usage_count": 1,
+    "expansion": "SV5M",
+    "number": "099"
+  },
+  {
+    "card_id": "45825",
+    "card_name": "セビエ",
+    "card_code": "SVJP 004/019",
+    "usage_count": 1,
+    "expansion": "SVJP",
+    "number": "004"
+  },
+  {
+    "card_id": "45835",
+    "card_name": "ポケモンいれかえ",
+    "card_code": "SVJP 014/019",
+    "usage_count": 1,
+    "expansion": "SVJP",
+    "number": "014"
+  },
+  {
+    "card_id": "46304",
+    "card_name": "ハッサムex",
+    "card_code": "SV-P 210/SV-P",
+    "usage_count": 1,
+    "expansion": "SV-P",
+    "number": "210"
+  },
+  {
+    "card_id": "47165",
+    "card_name": "Nのゾロア",
+    "card_code": "SV-P 200/SV-P",
+    "usage_count": 1,
+    "expansion": "SV-P",
+    "number": "200"
+  },
+  {
+    "card_id": "47495",
+    "card_name": "ロケット団のガルーラex",
+    "card_code": "SV-P 265/SV-P",
+    "usage_count": 1,
+    "expansion": "SV-P",
+    "number": "265"
+  },
+  {
+    "card_id": "47725",
+    "card_name": "ビクティニ",
+    "card_code": "SV-P 288/SV-P",
+    "usage_count": 1,
+    "expansion": "SV-P",
+    "number": "288"
+  },
+  {
+    "card_id": "47887",
+    "card_name": "ガチガチバンド",
+    "card_code": "MA 028/043",
+    "usage_count": 1,
+    "expansion": "MA",
+    "number": "028"
+  }
+]
