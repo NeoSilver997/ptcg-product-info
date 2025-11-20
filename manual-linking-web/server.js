@@ -659,6 +659,7 @@ app.get('/api/calendar/deck/:deckId', (req, res) => {
             FROM deck_cards dc
             LEFT JOIN card_mappings cm ON dc.card_id = cm.event_card_id
             WHERE dc.deck_id = ?
+            group by dc.card_id
             ORDER BY dc.card_name
         `;
 
