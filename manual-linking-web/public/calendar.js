@@ -278,13 +278,19 @@ function renderDeckDetails(data) {
     // Group cards by type
     const cardsByType = {};
     data.cards.forEach(card => {
-        const type = card.card_type || '其他';
+        let type = card.card_type || '其他';
+        
+        // Combine energy types
+        if (type === '基本能量' || type === '特殊能量') {
+            type = '能量';
+        }
+        
         if (!cardsByType[type]) cardsByType[type] = [];
         cardsByType[type].push(card);
     });
     
     // Render cards by type
-    const typeOrder = ['寶可夢', '支援者', '物品卡', '競技場', '基本能量', '特殊能量', '其他'];
+    const typeOrder = ['寶可夢', '支援者', '物品卡', '競技場', '能量', '其他'];
     typeOrder.forEach(type => {
         if (!cardsByType[type] || cardsByType[type].length === 0) return;
         
@@ -300,11 +306,36 @@ function renderDeckDetails(data) {
         typeHeader.style.marginBottom = '10px';
         typeSection.appendChild(typeHeader);
         
-        cardsByType[type].forEach(card => {
+        // Sort Pokemon cards by HP and EX status
+        let sortedCards = [...cardsByType[type]];
+        if (type === '寶可夢') {
+            sortedCards.sort((a, b) => {
+                // EX cards first
+                const aIsEx = (a.chinese_name || a.card_name || '').toLowerCase().includes('ex');
+                const bIsEx = (b.chinese_name || b.card_name || '').toLowerCase().includes('ex');
+                if (aIsEx && !bIsEx) return -1;
+                if (!aIsEx && bIsEx) return 1;
+                
+                // Then by HP descending
+                const aHp = a.hp || 0;
+                const bHp = b.hp || 0;
+                return bHp - aHp;
+            });
+        }
+        
+        // Create a grid container for multiple columns
+        const cardGrid = document.createElement('div');
+        cardGrid.style.display = 'grid';
+        cardGrid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(140px, 1fr))';
+        cardGrid.style.gap = '10px';
+        cardGrid.style.marginTop = '10px';
+        
+        sortedCards.forEach(card => {
             const cardEntry = createCardEntry(card);
-            typeSection.appendChild(cardEntry);
+            cardGrid.appendChild(cardEntry);
         });
         
+        typeSection.appendChild(cardGrid);
         deckCards.appendChild(typeSection);
     });
 }
@@ -393,13 +424,18 @@ function renderSortedDeck(data) {
 function createCardEntry(card) {
     const entry = document.createElement('div');
     entry.className = 'card-entry';
+    entry.style.display = 'flex';
+    entry.style.flexDirection = 'column';
+    entry.style.alignItems = 'center';
+    entry.style.textAlign = 'center';
     
     // Add tooltip with full details
-    const tooltipText = `${card.chinese_name || card.card_name}\n日文: ${card.card_name}\n代碼: ${card.card_code || '無'}\n數量: ${card.quantity}`;
+    const tooltipText = `${card.chinese_name || card.card_name}\n日文: ${card.card_name}\n代碼: ${card.card_code || '無'}\n數量: ${card.quantity}${card.hp ? `\nHP: ${card.hp}` : ''}`;
     entry.title = tooltipText;
     
     // Card image
     const imageDiv = document.createElement('div');
+    imageDiv.style.position = 'relative';
     if (card.image_url) {
         const img = document.createElement('img');
         img.className = 'card-image';
@@ -424,34 +460,6 @@ function createCardEntry(card) {
         placeholder.title = tooltipText;
         imageDiv.appendChild(placeholder);
     }
-    entry.appendChild(imageDiv);
-    
-    // Card info
-    const info = document.createElement('div');
-    info.className = 'card-info';
-    
-    const chineseName = document.createElement('div');
-    chineseName.className = 'card-name';
-    chineseName.textContent = card.chinese_name || '⚠️ 未對應中文名';
-    chineseName.style.color = card.chinese_name ? '#2d3436' : '#d63031';
-    chineseName.title = tooltipText;
-    info.appendChild(chineseName);
-    
-    const meta = document.createElement('div');
-    meta.className = 'card-meta';
-    
-    // Add rarity badge if available
-    if (card.rarity) {
-        const rarityBadge = document.createElement('span');
-        rarityBadge.className = `card-rarity ${card.rarity}`;
-        rarityBadge.textContent = card.rarity;
-        rarityBadge.title = tooltipText;
-        meta.appendChild(rarityBadge);
-    }
-    
-    info.appendChild(meta);
-    
-    entry.appendChild(info);
     
     // Quantity (now overlaid on image)
     const quantity = document.createElement('div');
@@ -459,6 +467,48 @@ function createCardEntry(card) {
     quantity.textContent = card.quantity;
     quantity.title = tooltipText;
     imageDiv.appendChild(quantity);
+    
+    entry.appendChild(imageDiv);
+    
+    // Card name (now below image)
+    const chineseName = document.createElement('div');
+    chineseName.className = 'card-name';
+    chineseName.textContent = card.chinese_name || '⚠️ 未對應中文名';
+    chineseName.style.color = card.chinese_name ? '#2d3436' : '#d63031';
+    chineseName.style.fontSize = '0.8em';
+    chineseName.style.marginTop = '5px';
+    chineseName.style.maxWidth = '100%';
+    chineseName.style.wordWrap = 'break-word';
+    chineseName.title = tooltipText;
+    entry.appendChild(chineseName);
+    
+    // Add HP and EX indicator for Pokemon, or energy type for energy cards
+    if (card.card_type === '寶可夢' && (card.hp || card.chinese_name?.toLowerCase().includes('ex'))) {
+        const pokemonInfo = document.createElement('div');
+        pokemonInfo.style.fontSize = '0.7em';
+        pokemonInfo.style.color = '#666';
+        pokemonInfo.style.marginTop = '2px';
+        
+        let infoText = '';
+        if (card.hp) infoText += `HP: ${card.hp}`;
+        if (card.chinese_name?.toLowerCase().includes('ex')) {
+            if (infoText) infoText += ' ';
+            infoText += '⭐EX';
+        }
+        
+        if (infoText) {
+            pokemonInfo.textContent = infoText;
+            entry.appendChild(pokemonInfo);
+        }
+    } else if (card.card_type === '基本能量' || card.card_type === '特殊能量') {
+        // Show energy type indicator
+        const energyInfo = document.createElement('div');
+        energyInfo.style.fontSize = '0.7em';
+        energyInfo.style.color = card.card_type === '基本能量' ? '#00b894' : '#e17055';
+        energyInfo.style.marginTop = '2px';
+        energyInfo.textContent = card.card_type === '基本能量' ? '基本' : '特殊';
+        entry.appendChild(energyInfo);
+    }
     
     return entry;
 }
@@ -499,8 +549,7 @@ function getTypeIcon(type) {
         '支援者': '👤',
         '物品卡': '🎒',
         '競技場': '🏟️',
-        '基本能量': '💎',
-        '特殊能量': '✨',
+        '能量': '💎',
         '其他': '📦'
     };
     return icons[type] || '📋';

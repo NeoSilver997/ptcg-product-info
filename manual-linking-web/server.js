@@ -718,6 +718,17 @@ app.get('/api/calendar/deck/:deckId', (req, res) => {
                         if (!err && mainCardRow) {
                             card_type = mainCardRow.card_type;
                             image_url = mainCardRow.image_url;
+                            
+                            // Normalize card types to match frontend expectations
+                            const cardTypeMapping = {
+                                '基本能量卡': '基本能量',
+                                '特殊能量卡': '特殊能量',
+                                '支援者卡': '支援者',
+                                '競技場卡': '競技場',
+                                '寶可夢道具': '物品卡'
+                            };
+                            card_type = cardTypeMapping[card_type] || card_type || '其他';
+                            
                             // Convert external URL to local path if needed
                             if (image_url && image_url.startsWith('https://')) {
                                 const filename = image_url.split('/').pop();
