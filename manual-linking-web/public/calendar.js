@@ -394,6 +394,10 @@ function createCardEntry(card) {
     const entry = document.createElement('div');
     entry.className = 'card-entry';
     
+    // Add tooltip with full details
+    const tooltipText = `${card.chinese_name || card.card_name}\n日文: ${card.card_name}\n代碼: ${card.card_code || '無'}\n數量: ${card.quantity}`;
+    entry.title = tooltipText;
+    
     // Card image
     const imageDiv = document.createElement('div');
     if (card.image_url) {
@@ -401,14 +405,14 @@ function createCardEntry(card) {
         img.className = 'card-image';
         img.src = card.image_url;
         img.alt = card.chinese_name || card.card_name;
-        img.style.cursor = 'pointer';
+        img.title = tooltipText; // Add tooltip to image too
         img.onclick = () => window.open(card.image_url, '_blank');
         img.onerror = () => {
             img.style.display = 'none';
             const placeholder = document.createElement('div');
             placeholder.className = 'card-image no-image';
             placeholder.textContent = '無圖片';
-            placeholder.style.cursor = 'default';
+            placeholder.title = tooltipText;
             imageDiv.innerHTML = '';
             imageDiv.appendChild(placeholder);
         };
@@ -417,7 +421,7 @@ function createCardEntry(card) {
         const placeholder = document.createElement('div');
         placeholder.className = 'card-image no-image';
         placeholder.textContent = '無圖片';
-        placeholder.style.cursor = 'default';
+        placeholder.title = tooltipText;
         imageDiv.appendChild(placeholder);
     }
     entry.appendChild(imageDiv);
@@ -430,22 +434,18 @@ function createCardEntry(card) {
     chineseName.className = 'card-name';
     chineseName.textContent = card.chinese_name || '⚠️ 未對應中文名';
     chineseName.style.color = card.chinese_name ? '#2d3436' : '#d63031';
+    chineseName.title = tooltipText;
     info.appendChild(chineseName);
-    
-    const japaneseName = document.createElement('div');
-    japaneseName.className = 'card-name-jp';
-    japaneseName.textContent = `${getTypeIcon(card.card_type || '其他')} ${card.card_name}`;
-    info.appendChild(japaneseName);
     
     const meta = document.createElement('div');
     meta.className = 'card-meta';
-    meta.textContent = card.card_code || '無代碼';
     
     // Add rarity badge if available
     if (card.rarity) {
         const rarityBadge = document.createElement('span');
         rarityBadge.className = `card-rarity ${card.rarity}`;
         rarityBadge.textContent = card.rarity;
+        rarityBadge.title = tooltipText;
         meta.appendChild(rarityBadge);
     }
     
@@ -453,11 +453,12 @@ function createCardEntry(card) {
     
     entry.appendChild(info);
     
-    // Quantity
+    // Quantity (now overlaid on image)
     const quantity = document.createElement('div');
     quantity.className = 'card-quantity';
-    quantity.textContent = `×${card.quantity}`;
-    entry.appendChild(quantity);
+    quantity.textContent = card.quantity;
+    quantity.title = tooltipText;
+    imageDiv.appendChild(quantity);
     
     return entry;
 }
