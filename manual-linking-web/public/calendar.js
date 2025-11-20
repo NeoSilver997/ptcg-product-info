@@ -207,7 +207,8 @@ function createEventCard(event) {
         event.top_decks.slice(0, 8).forEach(deck => {
             const deckItem = document.createElement('div');
             deckItem.className = 'deck-item';
-            deckItem.textContent = `${deck.rank} - ${deck.key_card || deck.deck_id}`;
+            const displayName = deck.key_card_chinese || deck.key_card || deck.deck_id;
+            deckItem.textContent = `${deck.rank} - ${displayName}`;
             deckItem.style.cursor = 'pointer';
             deckItem.style.color = '#2d3436';
             deckItem.onclick = () => {

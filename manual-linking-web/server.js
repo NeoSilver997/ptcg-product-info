@@ -556,7 +556,7 @@ app.get('/api/calendar/events/:date', (req, res) => {
 
                 const top_decks = [];
 
-                // Process decks and get images
+                // Process decks and get images and Chinese names
                 let processedDecks = 0;
 
                 if (deckRows.length === 0) {
@@ -578,25 +578,30 @@ app.get('/api/calendar/events/:date', (req, res) => {
                     const main_card_id = deckRow.main_card_id;
 
                     if (main_card_id) {
-                        // Get image URL
-                        const imageQuery = 'SELECT c.image_url FROM cards c WHERE c.id = ?';
+                        // Get image URL and Chinese name
+                        const imageQuery = 'SELECT c.image_url, c.name FROM cards c WHERE c.id = ?';
 
                         mainDb.get(imageQuery, [main_card_id], (err, imageRow) => {
                             let key_card_image = null;
+                            let key_card_chinese = null;
 
-                            if (!err && imageRow && imageRow.image_url) {
-                                const image_url = imageRow.image_url;
-                                if (image_url && image_url.startsWith('https://')) {
-                                    key_card_image = `${CONFIG.IMAGE_BASE_URL}${CONFIG.IMAGE_PATH_PREFIX}${image_url.split('/').pop()}`;
-                                } else {
-                                    key_card_image = image_url;
+                            if (!err && imageRow) {
+                                if (imageRow.image_url) {
+                                    const image_url = imageRow.image_url;
+                                    if (image_url && image_url.startsWith('https://')) {
+                                        key_card_image = `${CONFIG.IMAGE_BASE_URL}${CONFIG.IMAGE_PATH_PREFIX}${image_url.split('/').pop()}`;
+                                    } else {
+                                        key_card_image = image_url;
+                                    }
                                 }
+                                key_card_chinese = imageRow.name;
                             }
 
                             top_decks.push({
                                 deck_id: deckRow.deck_id,
                                 rank: deckRow.rank,
                                 key_card: deckRow.key_card,
+                                key_card_chinese,
                                 key_card_image
                             });
 
@@ -610,6 +615,7 @@ app.get('/api/calendar/events/:date', (req, res) => {
                             deck_id: deckRow.deck_id,
                             rank: deckRow.rank,
                             key_card: deckRow.key_card,
+                            key_card_chinese: null,
                             key_card_image: null
                         });
 
