@@ -5,11 +5,30 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+
+// Load configuration
+let CONFIG;
+try {
+    CONFIG = require('./config.js');
+    console.log('📄 使用自定義配置檔案');
+} catch (err) {
+    // Use default configuration
+    CONFIG = {
+        IMAGE_BASE_URL: process.env.IMAGE_BASE_URL || 'http://localhost:3333',
+        IMAGE_PATH_PREFIX: '/cards/',
+        PORT: process.env.PORT || 3000,
+        DATABASES: {
+            EVENT_DB: '../ptcg_events.db',
+            MAIN_DB: '../../PokemonDBByjules/PTCG_CardDB_Tc/pokemon_cards.db'
+        }
+    };
+}
+
+const PORT = CONFIG.PORT;
 
 // Database paths
-const EVENT_DB = path.join(__dirname, '..', 'ptcg_events.db');
-const MAIN_DB = path.join(__dirname, '..', '..', 'PokemonDBByjules', 'PTCG_CardDB_Tc', 'pokemon_cards.db');
+const EVENT_DB = path.join(__dirname, CONFIG.DATABASES.EVENT_DB);
+const MAIN_DB = path.join(__dirname, CONFIG.DATABASES.MAIN_DB);
 
 let eventDb, mainDb;
 
@@ -568,7 +587,7 @@ app.get('/api/calendar/events/:date', (req, res) => {
                             if (!err && imageRow && imageRow.image_url) {
                                 const image_url = imageRow.image_url;
                                 if (image_url && image_url.startsWith('https://')) {
-                                    key_card_image = `/cards/${image_url.split('/').pop()}`;
+                                    key_card_image = `${CONFIG.IMAGE_BASE_URL}${CONFIG.IMAGE_PATH_PREFIX}${image_url.split('/').pop()}`;
                                 } else {
                                     key_card_image = image_url;
                                 }
@@ -702,7 +721,7 @@ app.get('/api/calendar/deck/:deckId', (req, res) => {
                             // Convert external URL to local path if needed
                             if (image_url && image_url.startsWith('https://')) {
                                 const filename = image_url.split('/').pop();
-                                image_url = `/cards/${filename}`;
+                                image_url = `${CONFIG.IMAGE_BASE_URL}${CONFIG.IMAGE_PATH_PREFIX}${filename}`;
                             }
                         }
 
@@ -777,6 +796,12 @@ initDatabases().then(() => {
         console.log('='.repeat(70));
         console.log(`\n✅ 伺服器啟動成功!`);
         console.log(`🌐 請在瀏覽器開啟: http://localhost:${PORT}`);
+        console.log(`🖼️  圖片伺服器: ${CONFIG.IMAGE_BASE_URL}`);
+        if (fs.existsSync('./config.js')) {
+            console.log(`⚙️  使用自定義配置: config.js`);
+        } else {
+            console.log(`⚙️  使用預設配置`);
+        }
         console.log(`\n💡 使用說明:`);
         console.log('   1. 左側選擇未對應的日文卡片');
         console.log('   2. 右側搜尋並選擇對應的中文卡片');
