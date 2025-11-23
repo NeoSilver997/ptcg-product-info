@@ -529,8 +529,14 @@ class GameSimulator:
             'reason': 'turn_limit'
         }
     
-    def run_simulations(self, num_games: int = 5) -> Dict:
-        """Run multiple game simulations and collect statistics."""
+    def run_simulations(self, num_games: int = 5, max_turns: int = 10) -> Dict:
+        """
+        Run multiple game simulations and collect statistics.
+        
+        Args:
+            num_games: Number of games to simulate
+            max_turns: Maximum turns per game
+        """
         results = {
             'games_played': num_games,
             'p1_wins': 0,
@@ -544,7 +550,7 @@ class GameSimulator:
         
         for i in range(num_games):
             logger.info(f"\n--- Game {i+1}/{num_games} ---")
-            result = self.simulate_game(max_turns=10)
+            result = self.simulate_game(max_turns=max_turns)
             results['details'].append(result)
             
             if result['winner'] == 1:

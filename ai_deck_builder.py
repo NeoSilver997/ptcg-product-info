@@ -18,6 +18,10 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+# Card categorization keywords (Japanese)
+ENERGY_KEYWORDS = ['エネルギー']
+TRAINER_KEYWORDS = ['博士', 'サポート', 'ボス', 'グッズ', 'スタジアム', 'ボール', 'いれかえ']
+
 
 class CardDatabase:
     """Manages card data and relationships from tournament database."""
@@ -166,9 +170,9 @@ class DeckAnalyzer:
         
         for card in cards:
             name = card['card_name']
-            if 'エネルギー' in name:
+            if any(keyword in name for keyword in ENERGY_KEYWORDS):
                 energy_cards.append(card)
-            elif any(keyword in name for keyword in ['博士', 'サポート', 'ボス', 'グッズ', 'スタジアム', 'ボール', 'いれかえ']):
+            elif any(keyword in name for keyword in TRAINER_KEYWORDS):
                 trainer_cards.append(card)
             else:
                 pokemon_cards.append(card)

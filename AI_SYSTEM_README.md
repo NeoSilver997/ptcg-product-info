@@ -42,10 +42,8 @@ git clone https://github.com/NeoSilver997/ptcg-product-info.git
 cd ptcg-product-info
 ```
 
-2. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+2. The AI system uses only Python standard library - no external dependencies needed!
+   (Optional: Install requirements.txt for web scraping features)
 
 3. The system works with the existing `ptcg_events.db` database that contains tournament data.
 
