@@ -1,0 +1,33 @@
+Pokemon TCG LLM Training Data Summary
+============================================================
+
+Generated: 2025-11-24T00:16:11.177407
+Output File: llm_training_data/ptcg_training_data_20251124_001611.json
+
+Dataset Statistics:
+  Total Examples: 16
+  Card Examples: 8
+  Rule Examples: 7
+  Strategy Examples: 1
+
+Example Categories:
+  game_rule: 7
+  Item: 3
+  Supporter: 2
+  Pokemon ex: 1
+  Pokemon: 1
+  Basic Energy: 1
+  other: 1
+
+============================================================
+This dataset can be used to fine-tune local LLMs like:
+  - Llama 2/3
+  - Mistral
+  - GPT-J
+  - Falcon
+
+Recommended Training:
+  1. Use instruction-following format
+  2. Train for 3-5 epochs
+  3. Use learning rate: 2e-5
+  4. Batch size: 4-8
