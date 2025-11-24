@@ -186,7 +186,7 @@ class PTCGCardDataExtractor:
             desc_parts.append("As an Item card, you can play multiple per turn.")
         elif category == 'Pokemon ex':
             desc_parts.append("As a Pokemon ex, this card gives up 2 Prize cards when knocked out.")
-        elif category.startswith('Basic Energy'):
+        elif category == 'Basic Energy':
             desc_parts.append("Basic Energy cards can be attached once per turn to power up Pokemon attacks.")
         
         return ' '.join(desc_parts)

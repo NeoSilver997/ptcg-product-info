@@ -93,8 +93,11 @@ class PTCGLLMWrapper:
             response = response[len(prompt):].strip()
             
             return response
+        except RuntimeError as e:
+            logger.error(f"Runtime error generating text: {e}")
+            return self._mock_generate(prompt)
         except Exception as e:
-            logger.error(f"Error generating text: {e}")
+            logger.error(f"Unexpected error generating text: {e}")
             return self._mock_generate(prompt)
     
     def _mock_generate(self, prompt: str) -> str:

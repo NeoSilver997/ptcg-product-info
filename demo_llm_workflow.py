@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 """
 Complete workflow demonstration for PTCG LLM Training System
 

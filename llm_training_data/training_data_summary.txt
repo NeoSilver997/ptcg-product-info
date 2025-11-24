@@ -1,8 +1,8 @@
 Pokemon TCG LLM Training Data Summary
 ============================================================
 
-Generated: 2025-11-24T00:18:41.862037
-Output File: llm_training_data/ptcg_training_data_20251124_001841.json
+Generated: 2025-11-24T00:20:41.003016
+Output File: llm_training_data/ptcg_training_data_20251124_002041.json
 
 Dataset Statistics:
   Total Examples: 16
