@@ -1,0 +1,89 @@
+# Requirements for PTCG LLM Training System
+
+## Core Requirements (already in requirements.txt)
+# requests>=2.31.0
+# beautifulsoup4>=4.12.0
+# lxml>=4.9.0
+# pandas>=2.0.0
+# selenium>=4.15.0
+
+## Optional: For LLM Training and Inference
+# Uncomment and install these if you plan to train local LLMs
+
+# HuggingFace Transformers (for training and inference)
+# transformers>=4.35.0
+# torch>=2.0.0  # or torch-cpu for CPU-only
+# accelerate>=0.24.0  # for multi-GPU and optimization
+# bitsandbytes>=0.41.0  # for 8-bit quantization
+# peft>=0.6.0  # for parameter-efficient fine-tuning (LoRA)
+
+# Dataset handling
+# datasets>=2.14.0
+
+# Training utilities
+# tensorboard>=2.14.0  # for training visualization
+# wandb>=0.15.0  # for experiment tracking (optional)
+
+# Model serving (optional)
+# fastapi>=0.104.0  # for API server
+# uvicorn>=0.24.0  # ASGI server
+
+## Installation Commands
+
+# Basic installation (already covered):
+# pip install -r requirements.txt
+
+# Full LLM training stack:
+# pip install transformers torch accelerate datasets tensorboard
+
+# For 8-bit training (saves memory):
+# pip install bitsandbytes
+
+# For LoRA fine-tuning (parameter-efficient):
+# pip install peft
+
+# GPU version of PyTorch (CUDA 11.8):
+# pip install torch --index-url https://download.pytorch.org/whl/cu118
+
+# CPU-only PyTorch (no GPU):
+# pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+## Alternative: LLaMA.cpp (CPU-friendly)
+# No Python dependencies needed!
+# Download from: https://github.com/ggerganov/llama.cpp
+# Compile and run directly
+
+## Alternative: Ollama (Easiest)
+# Download from: https://ollama.ai/
+# Run: ollama create ptcg-expert -f Modelfile
+
+## Recommended Setup for Different Use Cases
+
+# 1. Just using mock LLM (testing):
+#    pip install -r requirements.txt
+#    (No additional dependencies needed)
+
+# 2. Training small model (7B) with GPU:
+#    pip install transformers torch accelerate datasets tensorboard bitsandbytes peft
+
+# 3. Training large model (70B) with multi-GPU:
+#    pip install transformers torch accelerate datasets tensorboard deepspeed
+
+# 4. CPU-only inference:
+#    Use LLaMA.cpp or Ollama instead of transformers
+
+## Hardware Requirements
+
+# Training:
+#   - 7B model: 16GB+ VRAM (RTX 3090, 4090)
+#   - 13B model: 24GB+ VRAM (RTX 4090, A100)
+#   - 70B model: 80GB+ VRAM (A100 80GB)
+
+# Inference:
+#   - 7B model (4-bit): 4-6GB VRAM
+#   - 7B model (8-bit): 7-9GB VRAM
+#   - 7B model (16-bit): 14-16GB VRAM
+
+# CPU-only:
+#   - LLaMA.cpp: 8GB+ RAM
+#   - Ollama: 8GB+ RAM
