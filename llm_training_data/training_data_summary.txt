@@ -1,23 +1,31 @@
 Pokemon TCG LLM Training Data Summary
 ============================================================
 
-Generated: 2025-11-24T00:20:41.003016
-Output File: llm_training_data/ptcg_training_data_20251124_002041.json
+Generated: 2025-11-25T23:44:46.339074
+Output File: llm_training_data\ptcg_training_data_full_20251125_234446.json
 
 Dataset Statistics:
-  Total Examples: 16
-  Card Examples: 8
-  Rule Examples: 7
-  Strategy Examples: 1
+  Total Examples: 171
+  Card Examples: 100
+  Rule Examples: 19
+  Strategy Examples: 10
 
 Example Categories:
-  game_rule: 7
-  Item: 3
-  Supporter: 2
-  Pokemon ex: 1
-  Pokemon: 1
+  card_popular_decks: 50
+  Pokemon: 31
+  game_rule: 19
+  deck_card_role: 15
+  other: 10
+  deck_matchup: 9
+  deck_sideboard: 9
+  Pokemon ex: 7
+  Supporter: 5
+  Item: 4
+  deck_list: 3
+  deck_strategy: 3
+  deck_pilot: 3
+  Stadium: 2
   Basic Energy: 1
-  other: 1
 
 ============================================================
 This dataset can be used to fine-tune local LLMs like:

@@ -15,12 +15,25 @@ The LLM training system extracts knowledge from:
 ### 1. Generate Training Data
 
 ```bash
-python llm_training_data_generator.py
+# Generate a smaller sample for development
+python llm_training_data_generator.py --card-limit 100 --deck-limit 10
+
+# Generate a full dataset including all cards and decks (may be large)
+python llm_training_data_generator.py --include-all-cards --card-limit 0 --include-all-decks --deck-limit 0
+
+# Generate a full dataset for all cards but limited number of decks (faster)
+python llm_training_data_generator.py --include-all-cards --card-limit 0 --include-all-decks --deck-limit 50
 ```
 
 This creates:
 - `llm_training_data/ptcg_training_data_YYYYMMDD_HHMMSS.json` - Full dataset
 - `llm_training_data/training_data_summary.txt` - Summary report
+
+You can also include deck-level examples for many or all decks using the `--include-all-decks` flag. Use `--deck-limit` to limit the number of decks processed to avoid very large datasets:
+
+```bash
+python llm_training_data_generator.py --include-all-decks --deck-limit 200
+```
 
 ### 2. Training Data Format
 
@@ -36,6 +49,20 @@ The generated data uses instruction-following format:
     "category": "Pokemon ex",
     "deck_usage": 15
   }
+}
+```
+
+Deck-level examples include these additional metadata fields:
+
+```json
+{
+    "type": "deck_strategy" | "deck_list" | "deck_card_role",
+    "deck_id": "<deck_id>",
+    "player": "player_name",
+    "event": "event_title",
+    "date": "YYYY-MM-DD",
+    "card_name": "card_name",
+    "card_qty": 3
 }
 ```
 
