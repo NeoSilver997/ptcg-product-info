@@ -384,12 +384,22 @@ class EventDataImporter:
         
         for event_folder in sorted(event_folders):
             try:
-                if self.event_exists(event_folder.name.split('_', 1)[1] if '_' in event_folder.name else event_folder.name):
-                    logger.debug(f"Skipping already imported event: {event_folder.name}")
-                    skipped_count += 1
-                else:
-                    self.import_event(event_folder)
-                    imported_count += 1
+                # Check if event already exists by reading the JSON file
+                event_info_path = event_folder / 'event_info.json'
+                if event_info_path.exists():
+                    try:
+                        with open(event_info_path, 'r', encoding='utf-8') as f:
+                            event_data = json.load(f)
+                            event_id = event_data.get('event_id')
+                            if event_id and self.event_exists(event_id):
+                                logger.debug(f"Skipping already imported event: {event_id}")
+                                skipped_count += 1
+                                continue
+                    except Exception as e:
+                        logger.warning(f"Could not read event_id from {event_info_path}: {e}")
+                
+                self.import_event(event_folder)
+                imported_count += 1
             except Exception as e:
                 logger.error(f"Failed to import {event_folder.name}: {e}")
                 error_count += 1
@@ -529,5 +539,9 @@ def main():
         importer.close()
     
     logger.info("Import process completed")
+
+
+if __name__ == "__main__":
+    main()
 
 
