@@ -805,6 +805,256 @@ app.get('/api/calendar/deck/:deckId', (req, res) => {
     });
 });
 
+// YouTube API: Get video statistics
+app.get('/api/youtube/stats', (req, res) => {
+    const statsQueries = {
+        totalVideos: 'SELECT COUNT(*) as count FROM youtube_videos',
+        videosWithDecks: 'SELECT COUNT(*) as count FROM youtube_videos WHERE deck_code IS NOT NULL',
+        linkedDecks: 'SELECT COUNT(*) as count FROM youtube_deck_links WHERE deck_id IS NOT NULL',
+        uniqueChannels: 'SELECT COUNT(DISTINCT channel_id) as count FROM youtube_videos'
+    };
+
+    const stats = {};
+
+    const executeQuery = (key, query) => {
+        return new Promise((resolve, reject) => {
+            eventDb.get(query, [], (err, row) => {
+                if (err) {
+                    console.error(`Error getting ${key}:`, err);
+                    stats[key] = 0;
+                } else {
+                    stats[key] = row ? row.count : 0;
+                }
+                resolve();
+            });
+        });
+    };
+
+    Promise.all(Object.entries(statsQueries).map(([key, query]) => 
+        executeQuery(key, query)
+    )).then(() => {
+        res.json(stats);
+    }).catch(err => {
+        res.status(500).json({ error: err.message });
+    });
+});
+
+// YouTube API: Get recent videos with deck codes
+app.get('/api/youtube/videos', (req, res) => {
+    const limit = Math.min(parseInt(req.query.limit) || 50, 100);
+    const offset = parseInt(req.query.offset) || 0;
+
+    const query = `
+        SELECT 
+            yv.video_id,
+            yv.channel_name,
+            yv.title,
+            yv.description,
+            yv.published_at,
+            yv.thumbnail_url,
+            yv.view_count,
+            yv.like_count,
+            yv.deck_code,
+            ydl.deck_id as linked_deck_id
+        FROM youtube_videos yv
+        LEFT JOIN youtube_deck_links ydl ON yv.video_id = ydl.video_id
+        ORDER BY yv.published_at DESC
+        LIMIT ? OFFSET ?
+    `;
+
+    eventDb.all(query, [limit, offset], (err, rows) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+
+        const videos = rows.map(row => ({
+            video_id: row.video_id,
+            channel_name: row.channel_name,
+            title: row.title,
+            description: row.description,
+            published_at: row.published_at,
+            thumbnail_url: row.thumbnail_url,
+            view_count: row.view_count,
+            like_count: row.like_count,
+            deck_code: row.deck_code,
+            linked_deck_id: row.linked_deck_id,
+            video_url: `https://www.youtube.com/watch?v=${row.video_id}`
+        }));
+
+        res.json({ videos, count: videos.length, offset });
+    });
+});
+
+// YouTube API: Get videos with deck codes (filtered)
+app.get('/api/youtube/videos/with-decks', (req, res) => {
+    const limit = Math.min(parseInt(req.query.limit) || 50, 100);
+
+    const query = `
+        SELECT 
+            yv.video_id,
+            yv.channel_name,
+            yv.title,
+            yv.published_at,
+            yv.thumbnail_url,
+            yv.view_count,
+            yv.deck_code,
+            ydl.deck_id as linked_deck_id
+        FROM youtube_videos yv
+        LEFT JOIN youtube_deck_links ydl ON yv.video_id = ydl.video_id
+        WHERE yv.deck_code IS NOT NULL
+        ORDER BY yv.published_at DESC
+        LIMIT ?
+    `;
+
+    eventDb.all(query, [limit], (err, rows) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+
+        const videos = rows.map(row => ({
+            video_id: row.video_id,
+            channel_name: row.channel_name,
+            title: row.title,
+            published_at: row.published_at,
+            thumbnail_url: row.thumbnail_url,
+            view_count: row.view_count,
+            deck_code: row.deck_code,
+            linked_deck_id: row.linked_deck_id,
+            video_url: `https://www.youtube.com/watch?v=${row.video_id}`,
+            deck_url: row.deck_code ? 
+                `https://www.pokemon-card.com/deck/confirm.html/deckID/${row.deck_code}` : null
+        }));
+
+        res.json({ videos, count: videos.length });
+    });
+});
+
+// YouTube API: Get deck details for a video
+app.get('/api/youtube/video/:videoId/deck', (req, res) => {
+    const { videoId } = req.params;
+
+    // Get video and deck info
+    const videoQuery = `
+        SELECT 
+            yv.video_id,
+            yv.title,
+            yv.channel_name,
+            yv.deck_code,
+            ydl.deck_id
+        FROM youtube_videos yv
+        LEFT JOIN youtube_deck_links ydl ON yv.video_id = ydl.video_id
+        WHERE yv.video_id = ?
+    `;
+
+    eventDb.get(videoQuery, [videoId], (err, videoRow) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+
+        if (!videoRow) {
+            return res.status(404).json({ error: 'Video not found' });
+        }
+
+        if (!videoRow.deck_id) {
+            return res.json({
+                video: {
+                    video_id: videoRow.video_id,
+                    title: videoRow.title,
+                    channel_name: videoRow.channel_name,
+                    deck_code: videoRow.deck_code
+                },
+                deck: null,
+                cards: []
+            });
+        }
+
+        // Get deck cards
+        const deckQuery = `
+            SELECT 
+                d.deck_id,
+                d.rank,
+                d.deck_url
+            FROM decks d
+            WHERE d.deck_id = ?
+        `;
+
+        eventDb.get(deckQuery, [videoRow.deck_id], (err, deckRow) => {
+            if (err) {
+                res.status(500).json({ error: err.message });
+                return;
+            }
+
+            const cardQuery = `
+                SELECT 
+                    dc.card_name,
+                    dc.card_code,
+                    dc.quantity,
+                    cm.main_card_name as chinese_name,
+                    cm.main_card_id
+                FROM deck_cards dc
+                LEFT JOIN card_mappings cm ON dc.card_id = cm.event_card_id
+                WHERE dc.deck_id = ?
+                ORDER BY dc.card_name
+            `;
+
+            eventDb.all(cardQuery, [videoRow.deck_id], (err, cardRows) => {
+                if (err) {
+                    res.status(500).json({ error: err.message });
+                    return;
+                }
+
+                res.json({
+                    video: {
+                        video_id: videoRow.video_id,
+                        title: videoRow.title,
+                        channel_name: videoRow.channel_name,
+                        deck_code: videoRow.deck_code
+                    },
+                    deck: deckRow ? {
+                        deck_id: deckRow.deck_id,
+                        rank: deckRow.rank,
+                        deck_url: deckRow.deck_url
+                    } : null,
+                    cards: cardRows.map(row => ({
+                        card_name: row.card_name,
+                        card_code: row.card_code,
+                        quantity: row.quantity,
+                        chinese_name: row.chinese_name
+                    }))
+                });
+            });
+        });
+    });
+});
+
+// YouTube API: Get monitored channels
+app.get('/api/youtube/channels', (req, res) => {
+    const query = `
+        SELECT 
+            channel_id,
+            channel_name,
+            channel_url,
+            subscriber_count,
+            video_count,
+            is_monitored,
+            last_checked
+        FROM youtube_channels
+        ORDER BY subscriber_count DESC
+    `;
+
+    eventDb.all(query, [], (err, rows) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+
+        res.json({ channels: rows || [] });
+    });
+});
+
 // Start server
 initDatabases().then(() => {
     app.listen(PORT, () => {
@@ -823,6 +1073,9 @@ initDatabases().then(() => {
         console.log('   1. 左側選擇未對應的日文卡片');
         console.log('   2. 右側搜尋並選擇對應的中文卡片');
         console.log('   3. 點擊「建立對應連結」完成配對');
+        console.log(`\n🎬 YouTube 牌組影片 API:`);
+        console.log('   /api/youtube/videos - 查看所有影片');
+        console.log('   /api/youtube/videos/with-decks - 查看有牌組的影片');
         console.log(`\n⌨️  按 Ctrl+C 停止伺服器`);
         console.log('='.repeat(70));
     });

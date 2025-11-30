@@ -24,3 +24,16 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
 
 # Logging
 LOG_LEVEL = "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+
+# YouTube Scraper Settings
+YOUTUBE_API_KEY = None  # Set your YouTube Data API key here, or use YOUTUBE_API_KEY env var
+YOUTUBE_ENABLED = False  # Enable/disable YouTube scraping
+YOUTUBE_SEARCH_KEYWORDS = [
+    'ポケカ デッキ',  # Pokemon Card Deck
+    'ポケモンカード デッキ紹介',  # Pokemon Card Deck Introduction
+    'ポケカ 環境デッキ',  # Pokemon Card Meta Deck
+    'ポケカ デッキレシピ',  # Pokemon Card Deck Recipe
+    'PTCG deck profile',
+]
+YOUTUBE_DAYS_BACK = 7  # How many days back to search for videos
+YOUTUBE_MAX_RESULTS_PER_KEYWORD = 25  # Max results per search keyword
