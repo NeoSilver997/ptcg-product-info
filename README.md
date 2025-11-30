@@ -1,8 +1,41 @@
 # ptcg-product-info
 
-Download all PTCG (Pokémon Trading Card Game) related product information from official websites and export to CSV.
+Pokemon Trading Card Game (PTCG) data platform combining:
+- Product information scraping from official websites
+- Tournament data analysis and deck building
+- **AI-powered deck building with LLM training capabilities** ✨ NEW
 
-## Features
+## Features Overview
+
+### 🤖 LLM Training System ✨ NEW
+
+Train local Large Language Models to understand Pokemon TCG and build competitive decks!
+
+**Key Capabilities:**
+- Generate training data from 427+ tournaments and 5,640+ decks
+- Train models like Llama 2/3, Mistral, GPT-J, Falcon
+- LLM-powered deck building and optimization
+- Strategic gameplay suggestions
+- Tournament pattern analysis
+
+**Quick Start:**
+```bash
+# Generate training data
+python llm_training_data_generator.py
+
+# Test LLM integration (mock mode)
+python demo_llm_workflow.py
+
+# See complete guide
+cat LLM_TRAINING_GUIDE.md
+```
+
+📚 **Documentation:**
+- [LLM Training Guide](LLM_TRAINING_GUIDE.md) - Complete training tutorial
+- [LLM System README](LLM_SYSTEM_README.md) - Architecture and usage
+- [AI System Overview](AI_SYSTEM_README.md) - AI features
+
+---
 
 ### Product Information Scraper (`scraper.py`)
 

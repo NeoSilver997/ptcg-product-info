@@ -1,0 +1,41 @@
+Pokemon TCG LLM Training Data Summary
+============================================================
+
+Generated: 2025-11-25T23:44:46.339074
+Output File: llm_training_data\ptcg_training_data_full_20251125_234446.json
+
+Dataset Statistics:
+  Total Examples: 171
+  Card Examples: 100
+  Rule Examples: 19
+  Strategy Examples: 10
+
+Example Categories:
+  card_popular_decks: 50
+  Pokemon: 31
+  game_rule: 19
+  deck_card_role: 15
+  other: 10
+  deck_matchup: 9
+  deck_sideboard: 9
+  Pokemon ex: 7
+  Supporter: 5
+  Item: 4
+  deck_list: 3
+  deck_strategy: 3
+  deck_pilot: 3
+  Stadium: 2
+  Basic Energy: 1
+
+============================================================
+This dataset can be used to fine-tune local LLMs like:
+  - Llama 2/3
+  - Mistral
+  - GPT-J
+  - Falcon
+
+Recommended Training:
+  1. Use instruction-following format
+  2. Train for 3-5 epochs
+  3. Use learning rate: 2e-5
+  4. Batch size: 4-8

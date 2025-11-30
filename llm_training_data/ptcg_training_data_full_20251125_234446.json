@@ -1,0 +1,4101 @@
+{
+  "metadata": {
+    "generated_at": "2025-11-25T23:44:46.339074",
+    "total_examples": 171,
+    "card_examples": 100,
+    "rule_examples": 19,
+    "strategy_examples": 10,
+    "deck_examples": 42,
+    "source_database": "ptcg_events.db"
+  },
+  "examples": [
+    {
+      "instruction": "Which tournament decks commonly use ボウルタウン and why?",
+      "input": "Card: ボウルタウン | Recent decks: ゆき (); ユウツー (); コーガ (); olimar (); くろみつ ()",
+      "output": "Top decks using ボウルタウン: ゆき (); ユウツー (); コーガ (); olimar (); くろみつ (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ボウルタウン",
+        "card_code": "SVN 041/045",
+        "example_decks": [
+          {
+            "deck_id": "xYxx8a-PFqyUz-x8YxYc",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ゆき"
+          },
+          {
+            "deck_id": "888J8x-BuYG0j-xKYD8x",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ユウツー"
+          },
+          {
+            "deck_id": "vbV51V-eMhyfQ-Vkkfkk",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "コーガ"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ボウルタウン",
+      "input": "Card Code: SVN 041/045\nCategory: Stadium",
+      "output": "ボウルタウン is a Stadium card from the Pokemon Trading Card Game. Card code: SVN 041/045. This card appears in 3466 tournament decks. Players typically run 1.4 copies on average (range: 1-6). Recent tournament usage includes decks by ゆき.",
+      "metadata": {
+        "card_name": "ボウルタウン",
+        "card_code": "SVN 041/045",
+        "hp": null,
+        "category": "Stadium",
+        "deck_usage": 3466,
+        "avg_quantity": 1.4459691252144082,
+        "popular_decks": [
+          {
+            "deck_id": "YG8YYx-yDzL6A-cYc8D4",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "夢疾風"
+          },
+          {
+            "deck_id": "wFFFkb-tBOtG1-VkvVvv",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "虹南"
+          },
+          {
+            "deck_id": "vkkFFF-k8DLxX-vkvvfV",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "aoi"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use シークレットボックス and why?",
+      "input": "Card: シークレットボックス | Recent decks: D,gun (); ゆき (); くろみつ (); Spring (); ゆてぃまる ()",
+      "output": "Top decks using シークレットボックス: D,gun (); ゆき (); くろみつ (); Spring (); ゆてぃまる (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "シークレットボックス",
+        "card_code": "ACE SPEC",
+        "example_decks": [
+          {
+            "deck_id": "8KxcD4-tGXphU-4xY8Yx",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "D,gun"
+          },
+          {
+            "deck_id": "xYxx8a-PFqyUz-x8YxYc",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ゆき"
+          },
+          {
+            "deck_id": "8Ycxaa-0v23Ob-xxccYx",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "くろみつ"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: シークレットボックス",
+      "input": "Card Code: ACE SPEC\nCategory: Pokemon",
+      "output": "シークレットボックス is a Pokemon card from the Pokemon Trading Card Game. Card code: ACE SPEC. This card appears in 3206 tournament decks. Players typically run 1.0 copies on average (range: 1-4). Recent tournament usage includes decks by D,gun.",
+      "metadata": {
+        "card_name": "シークレットボックス",
+        "card_code": "ACE SPEC",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 3206,
+        "avg_quantity": 1.0015595757953837,
+        "popular_decks": [
+          {
+            "deck_id": "YG8YYx-yDzL6A-cYc8D4",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "夢疾風"
+          },
+          {
+            "deck_id": "pyyypS-cVbiG1-MXSEyX",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-05-04",
+            "player_name": "はる"
+          },
+          {
+            "deck_id": "c8YYDc-K6KgIO-D8Y8cD",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-05-04",
+            "player_name": "山本"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use マシマシラ and why?",
+      "input": "Card: マシマシラ | Recent decks: こぱたぷ (); D,gun (); ゆき (); くろみつ (); あびたろー ()",
+      "output": "Top decks using マシマシラ: こぱたぷ (); D,gun (); ゆき (); くろみつ (); あびたろー (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "マシマシラ",
+        "card_code": "SV6 107/101",
+        "example_decks": [
+          {
+            "deck_id": "MMyypM-aJWqrg-MM3XMS",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "こぱたぷ"
+          },
+          {
+            "deck_id": "8KxcD4-tGXphU-4xY8Yx",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "D,gun"
+          },
+          {
+            "deck_id": "xYxx8a-PFqyUz-x8YxYc",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ゆき"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: マシマシラ",
+      "input": "Card Code: SV6 107/101\nCategory: Pokemon",
+      "output": "マシマシラ is a Pokemon card from the Pokemon Trading Card Game. Card code: SV6 107/101. This card appears in 2949 tournament decks. Players typically run 2.4 copies on average (range: 1-6). Recent tournament usage includes decks by こぱたぷ.",
+      "metadata": {
+        "card_name": "マシマシラ",
+        "card_code": "SV6 107/101",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 2949,
+        "avg_quantity": 2.368938623262123,
+        "popular_decks": [
+          {
+            "deck_id": "c8YYDc-K6KgIO-D8Y8cD",
+            "total_quantity": 6,
+            "event_title": "",
+            "event_date": "2025-05-04",
+            "player_name": "山本"
+          },
+          {
+            "deck_id": "yyyyp2-4lBxOz-SMMMyp",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-10-12",
+            "player_name": "キング"
+          },
+          {
+            "deck_id": "yyppyp-AdnuMv-MSppy3",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-09-20",
+            "player_name": "akito"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use ラティアスex and why?",
+      "input": "Card: ラティアスex | Recent decks: しまねこ (); ビナ (); ボマバシ (); あるけ (); 人生、谷あり崖あり。 ()",
+      "output": "Top decks using ラティアスex: しまねこ (); ビナ (); ボマバシ (); あるけ (); 人生、谷あり崖あり。 (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ラティアスex",
+        "card_code": "SV7a 019/064",
+        "example_decks": [
+          {
+            "deck_id": "L9nLLn-MFS5AE-LNPHQQ",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "しまねこ"
+          },
+          {
+            "deck_id": "QQngLn-B3qcc1-igLLgg",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ビナ"
+          },
+          {
+            "deck_id": "FwdVk5-RB2ONS-vVVV1k",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ボマバシ"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ラティアスex",
+      "input": "Card Code: SV7a 019/064\nCategory: Pokemon ex",
+      "output": "ラティアスex is a Pokemon ex card from the Pokemon Trading Card Game. Card code: SV7a 019/064. This card appears in 2633 tournament decks. Players typically run 1.0 copies on average (range: 1-2). Recent tournament usage includes decks by しまねこ. As a Pokemon ex, this card gives up 2 Prize cards when knocked out.",
+      "metadata": {
+        "card_name": "ラティアスex",
+        "card_code": "SV7a 019/064",
+        "hp": null,
+        "category": "Pokemon ex",
+        "deck_usage": 2633,
+        "avg_quantity": 1.0186099506266617,
+        "popular_decks": [
+          {
+            "deck_id": "yM2pRp-GYWghv-SypSXS",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-05-04",
+            "player_name": "コルト"
+          },
+          {
+            "deck_id": "xcYxG8-KnkDal-JxYxcc",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-10-16",
+            "player_name": "eino"
+          },
+          {
+            "deck_id": "xcYJG8-8ruRp0-4cxccY",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-05-10",
+            "player_name": "アース"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use コダック and why?",
+      "input": "Card: コダック | Recent decks: はなしっくす (); カロン (); ゆてぃまる (); ボマバシ (); あるけ ()",
+      "output": "Top decks using コダック: はなしっくす (); カロン (); ゆてぃまる (); ボマバシ (); あるけ (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "コダック",
+        "card_code": "SV-P 262/SV-P",
+        "example_decks": [
+          {
+            "deck_id": "p3yMUM-6FpeQX-SpMppR",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "はなしっくす"
+          },
+          {
+            "deck_id": "vfkkVd-aClSAn-VVkkVd",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "カロン"
+          },
+          {
+            "deck_id": "YcxJcx-Yi4QXd-Dccx8a",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ゆてぃまる"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: コダック",
+      "input": "Card Code: SV-P 262/SV-P\nCategory: Pokemon",
+      "output": "コダック is a Pokemon card from the Pokemon Trading Card Game. Card code: SV-P 262/SV-P. This card appears in 2623 tournament decks. Players typically run 1.0 copies on average (range: 1-2). Recent tournament usage includes decks by はなしっくす.",
+      "metadata": {
+        "card_name": "コダック",
+        "card_code": "SV-P 262/SV-P",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 2623,
+        "avg_quantity": 1.0015249714067862,
+        "popular_decks": [
+          {
+            "deck_id": "gQNN6g-L01WY8-QQLnnH",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-05-10",
+            "player_name": "しょーご"
+          },
+          {
+            "deck_id": "dk5kFV-0RAwFv-vFvVFb",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-04-27",
+            "player_name": "ポチコナンキ"
+          },
+          {
+            "deck_id": "c8YKD4-OHJdz6-YKD88c",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-05-10",
+            "player_name": "たこ焼きversion2"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use ネストボール and why?",
+      "input": "Card: ネストボール | Recent decks: はなしっくす (); ダッジ (); みかん (); たわし14 (); キレイなパモ ()",
+      "output": "Top decks using ネストボール: はなしっくす (); ダッジ (); みかん (); たわし14 (); キレイなパモ (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ネストボール",
+        "card_code": "MA 019/043",
+        "example_decks": [
+          {
+            "deck_id": "p3yMUM-6FpeQX-SpMppR",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "はなしっくす"
+          },
+          {
+            "deck_id": "LLHQHg-5lcnRP-L6LnPn",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ダッジ"
+          },
+          {
+            "deck_id": "dkVFkv-jqYqr6-wkVvFV",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "みかん"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ネストボール",
+      "input": "Card Code: MA 019/043\nCategory: Item",
+      "output": "ネストボール is a Item card from the Pokemon Trading Card Game. Card code: MA 019/043. This card appears in 2608 tournament decks. Players typically run 2.4 copies on average (range: 1-8). Recent tournament usage includes decks by はなしっくす. As an Item card, you can play multiple per turn.",
+      "metadata": {
+        "card_name": "ネストボール",
+        "card_code": "MA 019/043",
+        "hp": null,
+        "category": "Item",
+        "deck_usage": 2608,
+        "avg_quantity": 2.435320584926884,
+        "popular_decks": [
+          {
+            "deck_id": "MpMp2p-0n0ROA-2ppyS2",
+            "total_quantity": 12,
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "太郎"
+          },
+          {
+            "deck_id": "FvVVkb-PoqCTh-5Vkf5v",
+            "total_quantity": 6,
+            "event_title": "",
+            "event_date": "2025-11-16",
+            "player_name": "アレク"
+          },
+          {
+            "deck_id": "yyMMSX-C9C4Qp-pMRySM",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-11-03",
+            "player_name": "SGRD"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use ナンジャモ and why?",
+      "input": "Card: ナンジャモ | Recent decks: ダッジ (); ユウツー (); みかん (); たわし14 (); ハヤセ ()",
+      "output": "Top decks using ナンジャモ: ダッジ (); ユウツー (); みかん (); たわし14 (); ハヤセ (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ナンジャモ",
+        "card_code": "MA 036/043",
+        "example_decks": [
+          {
+            "deck_id": "LLHQHg-5lcnRP-L6LnPn",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ダッジ"
+          },
+          {
+            "deck_id": "888J8x-BuYG0j-xKYD8x",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ユウツー"
+          },
+          {
+            "deck_id": "dkVFkv-jqYqr6-wkVvFV",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "みかん"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ナンジャモ",
+      "input": "Card Code: MA 036/043\nCategory: Supporter",
+      "output": "ナンジャモ is a Supporter card from the Pokemon Trading Card Game. Card code: MA 036/043. This card appears in 2545 tournament decks. Players typically run 2.6 copies on average (range: 1-6). Recent tournament usage includes decks by ダッジ. As a Supporter card, you can only play one per turn.",
+      "metadata": {
+        "card_name": "ナンジャモ",
+        "card_code": "MA 036/043",
+        "hp": null,
+        "category": "Supporter",
+        "deck_usage": 2545,
+        "avg_quantity": 2.563192058037419,
+        "popular_decks": [
+          {
+            "deck_id": "MpMp2p-0n0ROA-2ppyS2",
+            "total_quantity": 9,
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "太郎"
+          },
+          {
+            "deck_id": "yyyXSp-6PF6O8-SESM3S",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-09-18",
+            "player_name": "おーなか"
+          },
+          {
+            "deck_id": "yypySE-0mkoyW-ySpMMp",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-11-08",
+            "player_name": "ぬぬ"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use リーリエの決心 and why?",
+      "input": "Card: リーリエの決心 | Recent decks: はなしっくす (); D,gun (); ダッジ (); たわし14 (); たぁ ()",
+      "output": "Top decks using リーリエの決心: はなしっくす (); D,gun (); ダッジ (); たわし14 (); たぁ (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "リーリエの決心",
+        "card_code": "MBD 020/021",
+        "example_decks": [
+          {
+            "deck_id": "p3yMUM-6FpeQX-SpMppR",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "はなしっくす"
+          },
+          {
+            "deck_id": "8KxcD4-tGXphU-4xY8Yx",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "D,gun"
+          },
+          {
+            "deck_id": "LLHQHg-5lcnRP-L6LnPn",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ダッジ"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: リーリエの決心",
+      "input": "Card Code: MBD 020/021\nCategory: Pokemon",
+      "output": "リーリエの決心 is a Pokemon card from the Pokemon Trading Card Game. Card code: MBD 020/021. This card appears in 2540 tournament decks. Players typically run 3.1 copies on average (range: 1-8). Recent tournament usage includes decks by はなしっくす.",
+      "metadata": {
+        "card_name": "リーリエの決心",
+        "card_code": "MBD 020/021",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 2540,
+        "avg_quantity": 3.061596958174905,
+        "popular_decks": [
+          {
+            "deck_id": "YKc8a8-8QJk3G-8KccJc",
+            "total_quantity": 12,
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "dr_pika"
+          },
+          {
+            "deck_id": "yyyRUM-XX5Zeh-MSMMpM",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-11-16",
+            "player_name": "いくさん"
+          },
+          {
+            "deck_id": "yypySE-0mkoyW-ySpMMp",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-11-08",
+            "player_name": "ぬぬ"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use スボミー and why?",
+      "input": "Card: スボミー | Recent decks: ハタハタ (); しまねこ (); cosmic (); スギカズ (); だいき ()",
+      "output": "Top decks using スボミー: ハタハタ (); しまねこ (); cosmic (); スギカズ (); だいき (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "スボミー",
+        "card_code": "SV8a 001/187",
+        "example_decks": [
+          {
+            "deck_id": "x88xcx-0r5iVT-DaDxYc",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ハタハタ"
+          },
+          {
+            "deck_id": "L9nLLn-MFS5AE-LNPHQQ",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "しまねこ"
+          },
+          {
+            "deck_id": "VfV1V5-qNu3Iv-VvkF5v",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "cosmic"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: スボミー",
+      "input": "Card Code: SV8a 001/187\nCategory: Pokemon",
+      "output": "スボミー is a Pokemon card from the Pokemon Trading Card Game. Card code: SV8a 001/187. This card appears in 2513 tournament decks. Players typically run 1.4 copies on average (range: 1-8). Recent tournament usage includes decks by ハタハタ.",
+      "metadata": {
+        "card_name": "スボミー",
+        "card_code": "SV8a 001/187",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 2513,
+        "avg_quantity": 1.442101074413052,
+        "popular_decks": [
+          {
+            "deck_id": "YG8YYx-yDzL6A-cYc8D4",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "夢疾風"
+          },
+          {
+            "deck_id": "vkdkfv-QnFzgD-VFvFk5",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "ゲノチュー"
+          },
+          {
+            "deck_id": "pyyypS-cVbiG1-MXSEyX",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-05-04",
+            "player_name": "はる"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use 夜のタンカ and why?",
+      "input": "Card: 夜のタンカ | Recent decks: ♪lemone♪【レモネ】 (); ぷりちーやどん (); Spring (); ビナ (); あれまあれま ()",
+      "output": "Top decks using 夜のタンカ: ♪lemone♪【レモネ】 (); ぷりちーやどん (); Spring (); ビナ (); あれまあれま (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "夜のタンカ",
+        "card_code": "SV6a 056/064",
+        "example_decks": [
+          {
+            "deck_id": "2ESyXM-RLZGXU-2XyyMM",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "♪lemone♪【レモネ】"
+          },
+          {
+            "deck_id": "8Y4x8J-1dNFfF-axxaYx",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ぷりちーやどん"
+          },
+          {
+            "deck_id": "5vdVkF-CqpWrd-VF1FVv",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "Spring"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: 夜のタンカ",
+      "input": "Card Code: SV6a 056/064\nCategory: Pokemon",
+      "output": "夜のタンカ is a Pokemon card from the Pokemon Trading Card Game. Card code: SV6a 056/064. This card appears in 2388 tournament decks. Players typically run 2.1 copies on average (range: 1-6). Recent tournament usage includes decks by ♪lemone♪【レモネ】.",
+      "metadata": {
+        "card_name": "夜のタンカ",
+        "card_code": "SV6a 056/064",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 2388,
+        "avg_quantity": 2.0878626890069474,
+        "popular_decks": [
+          {
+            "deck_id": "cxYxYY-gqfMG7-Yc8cJx",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "ざるう丼"
+          },
+          {
+            "deck_id": "yM2pRp-GYWghv-SypSXS",
+            "total_quantity": 6,
+            "event_title": "",
+            "event_date": "2025-05-04",
+            "player_name": "コルト"
+          },
+          {
+            "deck_id": "vkkVfF-zxueuk-dfv5F5",
+            "total_quantity": 6,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "はやせん"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use ナンジャモ and why?",
+      "input": "Card: ナンジャモ | Recent decks: D,gun (); くろみつ (); ひつじ (); なかじー (); あびたろー ()",
+      "output": "Top decks using ナンジャモ: D,gun (); くろみつ (); ひつじ (); なかじー (); あびたろー (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ナンジャモ",
+        "card_code": "SV2D 091/071",
+        "example_decks": [
+          {
+            "deck_id": "8KxcD4-tGXphU-4xY8Yx",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "D,gun"
+          },
+          {
+            "deck_id": "8Ycxaa-0v23Ob-xxccYx",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "くろみつ"
+          },
+          {
+            "deck_id": "1kVdVf-VVEx3z-VF1Vkv",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ひつじ"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ナンジャモ",
+      "input": "Card Code: SV2D 091/071\nCategory: Supporter",
+      "output": "ナンジャモ is a Supporter card from the Pokemon Trading Card Game. Card code: SV2D 091/071. This card appears in 2352 tournament decks. Players typically run 2.6 copies on average (range: 1-12). Recent tournament usage includes decks by D,gun. As a Supporter card, you can only play one per turn.",
+      "metadata": {
+        "card_name": "ナンジャモ",
+        "card_code": "SV2D 091/071",
+        "hp": null,
+        "category": "Supporter",
+        "deck_usage": 2352,
+        "avg_quantity": 2.5671085335542667,
+        "popular_decks": [
+          {
+            "deck_id": "XSyMy2-LtFeFR-XpySp3",
+            "total_quantity": 16,
+            "event_title": "",
+            "event_date": "2025-11-16",
+            "player_name": "N"
+          },
+          {
+            "deck_id": "yS2ppM-Ia2FUT-pySyR2",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "ぱんち"
+          },
+          {
+            "deck_id": "vkkVfF-zxueuk-dfv5F5",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "はやせん"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use 夜のタンカ and why?",
+      "input": "Card: 夜のタンカ | Recent decks: dr_pika (); サカッシュ (); ぎん (); こーき (); じん太鼓 ()",
+      "output": "Top decks using 夜のタンカ: dr_pika (); サカッシュ (); ぎん (); こーき (); じん太鼓 (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "夜のタンカ",
+        "card_code": "SVN 023/045",
+        "example_decks": [
+          {
+            "deck_id": "YKc8a8-8QJk3G-8KccJc",
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "dr_pika"
+          },
+          {
+            "deck_id": "VVVVkk-UkeqYK-fkvb5w",
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "サカッシュ"
+          },
+          {
+            "deck_id": "GxJJcx-TI4JSH-8xYJ4x",
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "ぎん"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: 夜のタンカ",
+      "input": "Card Code: SVN 023/045\nCategory: Pokemon",
+      "output": "夜のタンカ is a Pokemon card from the Pokemon Trading Card Game. Card code: SVN 023/045. This card appears in 2315 tournament decks. Players typically run 2.1 copies on average (range: 1-6). Recent tournament usage includes decks by dr_pika.",
+      "metadata": {
+        "card_name": "夜のタンカ",
+        "card_code": "SVN 023/045",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 2315,
+        "avg_quantity": 2.1412262156448203,
+        "popular_decks": [
+          {
+            "deck_id": "gHLnLQ-gStz5V-LgPLNQ",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "もちこめさんの二番弟子"
+          },
+          {
+            "deck_id": "c8YKD4-OHJdz6-YKD88c",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-10",
+            "player_name": "たこ焼きversion2"
+          },
+          {
+            "deck_id": "YG8YYx-yDzL6A-cYc8D4",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "夢疾風"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use キチキギスex and why?",
+      "input": "Card: キチキギスex | Recent decks: ♪lemone♪【レモネ】 (); ペパ (); ユウツー (); しまねこ (); Spring ()",
+      "output": "Top decks using キチキギスex: ♪lemone♪【レモネ】 (); ペパ (); ユウツー (); しまねこ (); Spring (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "キチキギスex",
+        "card_code": "SV6a 038/064",
+        "example_decks": [
+          {
+            "deck_id": "2ESyXM-RLZGXU-2XyyMM",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "♪lemone♪【レモネ】"
+          },
+          {
+            "deck_id": "yEMMUX-RVjYWz-SEMMSU",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ペパ"
+          },
+          {
+            "deck_id": "888J8x-BuYG0j-xKYD8x",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ユウツー"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: キチキギスex",
+      "input": "Card Code: SV6a 038/064\nCategory: Pokemon ex",
+      "output": "キチキギスex is a Pokemon ex card from the Pokemon Trading Card Game. Card code: SV6a 038/064. This card appears in 2280 tournament decks. Players typically run 1.0 copies on average (range: 1-2). Recent tournament usage includes decks by ♪lemone♪【レモネ】. As a Pokemon ex, this card gives up 2 Prize cards when knocked out.",
+      "metadata": {
+        "card_name": "キチキギスex",
+        "card_code": "SV6a 038/064",
+        "hp": null,
+        "category": "Pokemon ex",
+        "deck_usage": 2280,
+        "avg_quantity": 1.0021929824561404,
+        "popular_decks": [
+          {
+            "deck_id": "yM2pRp-GYWghv-SypSXS",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-05-04",
+            "player_name": "コルト"
+          },
+          {
+            "deck_id": "kFkkbf-VXnFvi-vbFw5v",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-09-07",
+            "player_name": "ヒラノ"
+          },
+          {
+            "deck_id": "cc84Dc-Z9w0BC-8YxD4x",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-10-12",
+            "player_name": "ヨッシー"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use ペパー and why?",
+      "input": "Card: ペパー | Recent decks: こぱたぷ (); ゆき (); ユウツー (); キレイなパモ (); コーガ ()",
+      "output": "Top decks using ペパー: こぱたぷ (); ゆき (); ユウツー (); キレイなパモ (); コーガ (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ペパー",
+        "card_code": "MA 038/043",
+        "example_decks": [
+          {
+            "deck_id": "MMyypM-aJWqrg-MM3XMS",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "こぱたぷ"
+          },
+          {
+            "deck_id": "xYxx8a-PFqyUz-x8YxYc",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ゆき"
+          },
+          {
+            "deck_id": "888J8x-BuYG0j-xKYD8x",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ユウツー"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ペパー",
+      "input": "Card Code: MA 038/043\nCategory: Pokemon",
+      "output": "ペパー is a Pokemon card from the Pokemon Trading Card Game. Card code: MA 038/043. This card appears in 2216 tournament decks. Players typically run 3.4 copies on average (range: 1-4). Recent tournament usage includes decks by こぱたぷ.",
+      "metadata": {
+        "card_name": "ペパー",
+        "card_code": "MA 038/043",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 2216,
+        "avg_quantity": 3.384247171453438,
+        "popular_decks": [
+          {
+            "deck_id": "FvVVkb-PoqCTh-5Vkf5v",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-11-16",
+            "player_name": "アレク"
+          },
+          {
+            "deck_id": "yyyy33-aCZQ3t-Spy3Xp",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-09-10",
+            "player_name": "kazuki"
+          },
+          {
+            "deck_id": "yypEMM-FOa7fc-yEySpM",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-10-04",
+            "player_name": "だいヌオー"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use キチキギスex and why?",
+      "input": "Card: キチキギスex | Recent decks: アバベル (); トネ (); たぁ (); ばんぎ (); あびたろー ()",
+      "output": "Top decks using キチキギスex: アバベル (); トネ (); たぁ (); ばんぎ (); あびたろー (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "キチキギスex",
+        "card_code": "SV6a 081/064",
+        "example_decks": [
+          {
+            "deck_id": "VkVdVV-4XfdRT-v5VVk1",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "アバベル"
+          },
+          {
+            "deck_id": "EMyMMS-JNr0O2-ppSpUM",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "トネ"
+          },
+          {
+            "deck_id": "VVFkdw-Qaj4X7-VvVkVb",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "たぁ"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: キチキギスex",
+      "input": "Card Code: SV6a 081/064\nCategory: Pokemon ex",
+      "output": "キチキギスex is a Pokemon ex card from the Pokemon Trading Card Game. Card code: SV6a 081/064. This card appears in 2213 tournament decks. Players typically run 1.0 copies on average (range: 1-2). Recent tournament usage includes decks by アバベル. As a Pokemon ex, this card gives up 2 Prize cards when knocked out.",
+      "metadata": {
+        "card_name": "キチキギスex",
+        "card_code": "SV6a 081/064",
+        "hp": null,
+        "category": "Pokemon ex",
+        "deck_usage": 2213,
+        "avg_quantity": 1.0031631269769543,
+        "popular_decks": [
+          {
+            "deck_id": "yM22S3-yZ6Eig-MMySXX",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-11-15",
+            "player_name": "じんたん"
+          },
+          {
+            "deck_id": "pyyyyM-tjdogq-y2MS33",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-10-25",
+            "player_name": "ひるー"
+          },
+          {
+            "deck_id": "ppSMyy-ikLnJL-2M2ypE",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-11-08",
+            "player_name": "アルルゥ"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use フトゥー博士のシナリオ and why?",
+      "input": "Card: フトゥー博士のシナリオ | Recent decks: ダッジ (); みかん (); たわし14 (); コーガ (); ハヤセ ()",
+      "output": "Top decks using フトゥー博士のシナリオ: ダッジ (); みかん (); たわし14 (); コーガ (); ハヤセ (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "フトゥー博士のシナリオ",
+        "card_code": "SVN 036/045",
+        "example_decks": [
+          {
+            "deck_id": "LLHQHg-5lcnRP-L6LnPn",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ダッジ"
+          },
+          {
+            "deck_id": "dkVFkv-jqYqr6-wkVvFV",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "みかん"
+          },
+          {
+            "deck_id": "Fbw5V5-LY1lTj-VkVkVv",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "たわし14"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: フトゥー博士のシナリオ",
+      "input": "Card Code: SVN 036/045\nCategory: Supporter",
+      "output": "フトゥー博士のシナリオ is a Supporter card from the Pokemon Trading Card Game. Card code: SVN 036/045. This card appears in 2198 tournament decks. Players typically run 1.3 copies on average (range: 1-3). Recent tournament usage includes decks by ダッジ. As a Supporter card, you can only play one per turn.",
+      "metadata": {
+        "card_name": "フトゥー博士のシナリオ",
+        "card_code": "SVN 036/045",
+        "hp": null,
+        "category": "Supporter",
+        "deck_usage": 2198,
+        "avg_quantity": 1.2804712279111916,
+        "popular_decks": [
+          {
+            "deck_id": "c8YKD4-OHJdz6-YKD88c",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-05-10",
+            "player_name": "たこ焼きversion2"
+          },
+          {
+            "deck_id": "bvV5vv-wlDe74-FkwFkv",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "ともも"
+          },
+          {
+            "deck_id": "c8DDKD-MJmvAx-x4Y8D4",
+            "total_quantity": 3,
+            "event_title": "",
+            "event_date": "2025-04-20",
+            "player_name": "ポトフ"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use キチキギスex and why?",
+      "input": "Card: キチキギスex | Recent decks: くろみつ (); ひつじ (); なかじー (); とんん (); たる ()",
+      "output": "Top decks using キチキギスex: くろみつ (); ひつじ (); なかじー (); とんん (); たる (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "キチキギスex",
+        "card_code": "SV6a 089/064",
+        "example_decks": [
+          {
+            "deck_id": "8Ycxaa-0v23Ob-xxccYx",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "くろみつ"
+          },
+          {
+            "deck_id": "1kVdVf-VVEx3z-VF1Vkv",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ひつじ"
+          },
+          {
+            "deck_id": "2XpSyM-oh3dhu-pMMyEM",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "なかじー"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: キチキギスex",
+      "input": "Card Code: SV6a 089/064\nCategory: Pokemon ex",
+      "output": "キチキギスex is a Pokemon ex card from the Pokemon Trading Card Game. Card code: SV6a 089/064. This card appears in 2155 tournament decks. Players typically run 1.0 copies on average (range: 1-2). Recent tournament usage includes decks by くろみつ. As a Pokemon ex, this card gives up 2 Prize cards when knocked out.",
+      "metadata": {
+        "card_name": "キチキギスex",
+        "card_code": "SV6a 089/064",
+        "hp": null,
+        "category": "Pokemon ex",
+        "deck_usage": 2155,
+        "avg_quantity": 1.0041763341067285,
+        "popular_decks": [
+          {
+            "deck_id": "pRypSM-uR6Tqu-pMX2Sp",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-10-05",
+            "player_name": "ユウ"
+          },
+          {
+            "deck_id": "ccDY4x-gkbOni-488x48",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-04-27",
+            "player_name": "NAL"
+          },
+          {
+            "deck_id": "cDcc48-Zo72pK-K888JY",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-04-27",
+            "player_name": "zakkii"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use 大地の器 and why?",
+      "input": "Card: 大地の器 | Recent decks: こぱたぷ (); キレイなパモ (); コーガ (); ハヤセ (); olimar ()",
+      "output": "Top decks using 大地の器: こぱたぷ (); キレイなパモ (); コーガ (); ハヤセ (); olimar (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "大地の器",
+        "card_code": "MA 016/043",
+        "example_decks": [
+          {
+            "deck_id": "MMyypM-aJWqrg-MM3XMS",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "こぱたぷ"
+          },
+          {
+            "deck_id": "nNnQ6g-YMQULK-gLLgnL",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "キレイなパモ"
+          },
+          {
+            "deck_id": "vbV51V-eMhyfQ-Vkkfkk",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "コーガ"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: 大地の器",
+      "input": "Card Code: MA 016/043\nCategory: Pokemon",
+      "output": "大地の器 is a Pokemon card from the Pokemon Trading Card Game. Card code: MA 016/043. This card appears in 2131 tournament decks. Players typically run 2.2 copies on average (range: 1-4). Recent tournament usage includes decks by こぱたぷ.",
+      "metadata": {
+        "card_name": "大地の器",
+        "card_code": "MA 016/043",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 2131,
+        "avg_quantity": 2.2110091743119265,
+        "popular_decks": [
+          {
+            "deck_id": "FvVVkb-PoqCTh-5Vkf5v",
+            "total_quantity": 6,
+            "event_title": "",
+            "event_date": "2025-11-16",
+            "player_name": "アレク"
+          },
+          {
+            "deck_id": "ySMyyp-JPkmux-RyS3pp",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-09-11",
+            "player_name": "kurione"
+          },
+          {
+            "deck_id": "yMypMS-hmqeqq-yypXRy",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-10-13",
+            "player_name": "ちけ"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use カウンターキャッチャー and why?",
+      "input": "Card: カウンターキャッチャー | Recent decks: はなしっくす (); ダッジ (); ユウツー (); たぁ (); ばたっち ()",
+      "output": "Top decks using カウンターキャッチャー: はなしっくす (); ダッジ (); ユウツー (); たぁ (); ばたっち (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "カウンターキャッチャー",
+        "card_code": "MA 014/043",
+        "example_decks": [
+          {
+            "deck_id": "p3yMUM-6FpeQX-SpMppR",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "はなしっくす"
+          },
+          {
+            "deck_id": "LLHQHg-5lcnRP-L6LnPn",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ダッジ"
+          },
+          {
+            "deck_id": "888J8x-BuYG0j-xKYD8x",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ユウツー"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: カウンターキャッチャー",
+      "input": "Card Code: MA 014/043\nCategory: Pokemon",
+      "output": "カウンターキャッチャー is a Pokemon card from the Pokemon Trading Card Game. Card code: MA 014/043. This card appears in 2100 tournament decks. Players typically run 1.6 copies on average (range: 1-4). Recent tournament usage includes decks by はなしっくす.",
+      "metadata": {
+        "card_name": "カウンターキャッチャー",
+        "card_code": "MA 014/043",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 2100,
+        "avg_quantity": 1.6118143459915613,
+        "popular_decks": [
+          {
+            "deck_id": "ySSpR2-gha8WY-Sp2MpX",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-10-04",
+            "player_name": "あかだい"
+          },
+          {
+            "deck_id": "xYc84c-WLMr2r-G4cYJK",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-09-06",
+            "player_name": "ぐりとぐらと"
+          },
+          {
+            "deck_id": "vvkFVV-4o10Sq-bvFFk5",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-10-07",
+            "player_name": "わたあめ"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use ソルロック and why?",
+      "input": "Card: ソルロック | Recent decks: こぱたぷ (); アバベル (); ペパ (); ユウツー (); みかん ()",
+      "output": "Top decks using ソルロック: こぱたぷ (); アバベル (); ペパ (); ユウツー (); みかん (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ソルロック",
+        "card_code": "M1L 027/063",
+        "example_decks": [
+          {
+            "deck_id": "MMyypM-aJWqrg-MM3XMS",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "こぱたぷ"
+          },
+          {
+            "deck_id": "VkVdVV-4XfdRT-v5VVk1",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "アバベル"
+          },
+          {
+            "deck_id": "yEMMUX-RVjYWz-SEMMSU",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ペパ"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ソルロック",
+      "input": "Card Code: M1L 027/063\nCategory: Pokemon",
+      "output": "ソルロック is a Pokemon card from the Pokemon Trading Card Game. Card code: M1L 027/063. This card appears in 2083 tournament decks. Players typically run 2.2 copies on average (range: 1-3). Recent tournament usage includes decks by こぱたぷ.",
+      "metadata": {
+        "card_name": "ソルロック",
+        "card_code": "M1L 027/063",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 2083,
+        "avg_quantity": 2.242438790206433,
+        "popular_decks": [
+          {
+            "deck_id": "yyyMMS-GKKBju-SXXM2p",
+            "total_quantity": 3,
+            "event_title": "",
+            "event_date": "2025-10-12",
+            "player_name": "モコナ"
+          },
+          {
+            "deck_id": "yypSMM-mchdgy-MEpSMS",
+            "total_quantity": 3,
+            "event_title": "",
+            "event_date": "2025-11-03",
+            "player_name": "えいてぃ"
+          },
+          {
+            "deck_id": "yypMMM-40DoiS-pUSXXS",
+            "total_quantity": 3,
+            "event_title": "",
+            "event_date": "2025-10-11",
+            "player_name": "はる"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use ルナトーン and why?",
+      "input": "Card: ルナトーン | Recent decks: こぱたぷ (); アバベル (); ペパ (); ユウツー (); みかん ()",
+      "output": "Top decks using ルナトーン: こぱたぷ (); アバベル (); ペパ (); ユウツー (); みかん (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ルナトーン",
+        "card_code": "M1L 026/063",
+        "example_decks": [
+          {
+            "deck_id": "MMyypM-aJWqrg-MM3XMS",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "こぱたぷ"
+          },
+          {
+            "deck_id": "VkVdVV-4XfdRT-v5VVk1",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "アバベル"
+          },
+          {
+            "deck_id": "yEMMUX-RVjYWz-SEMMSU",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ペパ"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ルナトーン",
+      "input": "Card Code: M1L 026/063\nCategory: Pokemon",
+      "output": "ルナトーン is a Pokemon card from the Pokemon Trading Card Game. Card code: M1L 026/063. This card appears in 2083 tournament decks. Players typically run 2.0 copies on average (range: 1-3). Recent tournament usage includes decks by こぱたぷ.",
+      "metadata": {
+        "card_name": "ルナトーン",
+        "card_code": "M1L 026/063",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 2083,
+        "avg_quantity": 2.0014402304368697,
+        "popular_decks": [
+          {
+            "deck_id": "YcxYxc-2j3hp4-D8a88J",
+            "total_quantity": 3,
+            "event_title": "",
+            "event_date": "2025-10-12",
+            "player_name": "さく"
+          },
+          {
+            "deck_id": "LLgnQH-GhZjbp-Qg6niL",
+            "total_quantity": 3,
+            "event_title": "",
+            "event_date": "2025-11-09",
+            "player_name": "Ryota"
+          },
+          {
+            "deck_id": "8xYDxD-Hfxfqh-cx8x88",
+            "total_quantity": 3,
+            "event_title": "",
+            "event_date": "2025-10-12",
+            "player_name": "なゆ"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use 大地の器 and why?",
+      "input": "Card: 大地の器 | Recent decks: ユウツー (); カロン (); サカモン (); リィ。 (); ネケ ()",
+      "output": "Top decks using 大地の器: ユウツー (); カロン (); サカモン (); リィ。 (); ネケ (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "大地の器",
+        "card_code": "SVN 014/045",
+        "example_decks": [
+          {
+            "deck_id": "888J8x-BuYG0j-xKYD8x",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ユウツー"
+          },
+          {
+            "deck_id": "vfkkVd-aClSAn-VVkkVd",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "カロン"
+          },
+          {
+            "deck_id": "8x4x4x-wUvGy2-8GYJ8x",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "サカモン"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: 大地の器",
+      "input": "Card Code: SVN 014/045\nCategory: Pokemon",
+      "output": "大地の器 is a Pokemon card from the Pokemon Trading Card Game. Card code: SVN 014/045. This card appears in 2076 tournament decks. Players typically run 2.1 copies on average (range: 1-6). Recent tournament usage includes decks by ユウツー.",
+      "metadata": {
+        "card_name": "大地の器",
+        "card_code": "SVN 014/045",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 2076,
+        "avg_quantity": 2.144538606403013,
+        "popular_decks": [
+          {
+            "deck_id": "ySypMX-5b0MR0-pyUpSS",
+            "total_quantity": 6,
+            "event_title": "",
+            "event_date": "2025-05-10",
+            "player_name": "ポメ"
+          },
+          {
+            "deck_id": "gnQQnn-zUa4H2-LgHQgn",
+            "total_quantity": 6,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "アレク"
+          },
+          {
+            "deck_id": "gQPQng-XAHbRz-nLQgNn",
+            "total_quantity": 6,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "ばたーろーる"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use すごいつりざお and why?",
+      "input": "Card: すごいつりざお | Recent decks: ハヤセ (); たぁ (); カロン (); ゆてぃまる (); BCC ()",
+      "output": "Top decks using すごいつりざお: ハヤセ (); たぁ (); カロン (); ゆてぃまる (); BCC (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "すごいつりざお",
+        "card_code": "MA 015/043",
+        "example_decks": [
+          {
+            "deck_id": "vVVdfV-B7jy2N-1VVkVF",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ハヤセ"
+          },
+          {
+            "deck_id": "VVFkdw-Qaj4X7-VvVkVb",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "たぁ"
+          },
+          {
+            "deck_id": "vfkkVd-aClSAn-VVkkVd",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "カロン"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: すごいつりざお",
+      "input": "Card Code: MA 015/043\nCategory: Pokemon",
+      "output": "すごいつりざお is a Pokemon card from the Pokemon Trading Card Game. Card code: MA 015/043. This card appears in 2016 tournament decks. Players typically run 1.2 copies on average (range: 1-4). Recent tournament usage includes decks by ハヤセ.",
+      "metadata": {
+        "card_name": "すごいつりざお",
+        "card_code": "MA 015/043",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 2016,
+        "avg_quantity": 1.243083003952569,
+        "popular_decks": [
+          {
+            "deck_id": "8caxYc-NUPaWt-DJxxY8",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-11-09",
+            "player_name": "螺旋"
+          },
+          {
+            "deck_id": "ySUSMS-TWEMBk-ypMMSp",
+            "total_quantity": 3,
+            "event_title": "",
+            "event_date": "2025-10-18",
+            "player_name": "螺旋"
+          },
+          {
+            "deck_id": "gLQNQQ-3uB812-9NLgLn",
+            "total_quantity": 3,
+            "event_title": "",
+            "event_date": "2025-11-15",
+            "player_name": "ひょん"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use ネストボール and why?",
+      "input": "Card: ネストボール | Recent decks: ゆき (); すけいち (); ファイン (); 海月 凛 (); サカッシュ ()",
+      "output": "Top decks using ネストボール: ゆき (); すけいち (); ファイン (); 海月 凛 (); サカッシュ (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ネストボール",
+        "card_code": "SVN 017/045",
+        "example_decks": [
+          {
+            "deck_id": "xYxx8a-PFqyUz-x8YxYc",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ゆき"
+          },
+          {
+            "deck_id": "VFVV1V-ecdbA5-FvkkvV",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "すけいち"
+          },
+          {
+            "deck_id": "MyMMpS-MfoAJc-SXX3EM",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ファイン"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ネストボール",
+      "input": "Card Code: SVN 017/045\nCategory: Item",
+      "output": "ネストボール is a Item card from the Pokemon Trading Card Game. Card code: SVN 017/045. This card appears in 2006 tournament decks. Players typically run 2.9 copies on average (range: 1-4). Recent tournament usage includes decks by ゆき. As an Item card, you can play multiple per turn.",
+      "metadata": {
+        "card_name": "ネストボール",
+        "card_code": "SVN 017/045",
+        "hp": null,
+        "category": "Item",
+        "deck_usage": 2006,
+        "avg_quantity": 2.931219512195122,
+        "popular_decks": [
+          {
+            "deck_id": "py3pyS-JfxrWw-EpXSMp",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "たゆた"
+          },
+          {
+            "deck_id": "nQLgi6-66N5rf-nQgHnL",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "りんたろー"
+          },
+          {
+            "deck_id": "gnQQnn-zUa4H2-LgHQgn",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "アレク"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use ナンジャモ and why?",
+      "input": "Card: ナンジャモ | Recent decks: ゆき (); ばたっち (); ファイン (); きっころ (); ひみ ()",
+      "output": "Top decks using ナンジャモ: ゆき (); ばたっち (); ファイン (); きっころ (); ひみ (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ナンジャモ",
+        "card_code": "SVOD 014/018",
+        "example_decks": [
+          {
+            "deck_id": "xYxx8a-PFqyUz-x8YxYc",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ゆき"
+          },
+          {
+            "deck_id": "xYxGDc-M8Yzc1-G8xD8x",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ばたっち"
+          },
+          {
+            "deck_id": "MyMMpS-MfoAJc-SXX3EM",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ファイン"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ナンジャモ",
+      "input": "Card Code: SVOD 014/018\nCategory: Supporter",
+      "output": "ナンジャモ is a Supporter card from the Pokemon Trading Card Game. Card code: SVOD 014/018. This card appears in 1986 tournament decks. Players typically run 2.6 copies on average (range: 1-12). Recent tournament usage includes decks by ゆき. As a Supporter card, you can only play one per turn.",
+      "metadata": {
+        "card_name": "ナンジャモ",
+        "card_code": "SVOD 014/018",
+        "hp": null,
+        "category": "Supporter",
+        "deck_usage": 1986,
+        "avg_quantity": 2.5981308411214954,
+        "popular_decks": [
+          {
+            "deck_id": "YG8YYx-yDzL6A-cYc8D4",
+            "total_quantity": 16,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "夢疾風"
+          },
+          {
+            "deck_id": "vkkFFF-k8DLxX-vkvvfV",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "aoi"
+          },
+          {
+            "deck_id": "kvVvfk-5L6UMn-VfFfwF",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "タイヨー"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use カウンターキャッチャー and why?",
+      "input": "Card: カウンターキャッチャー | Recent decks: リィ。 (); dr_pika (); 海月 凛 (); じん太鼓 (); とーるん ()",
+      "output": "Top decks using カウンターキャッチャー: リィ。 (); dr_pika (); 海月 凛 (); じん太鼓 (); とーるん (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "カウンターキャッチャー",
+        "card_code": "SVN 011/045",
+        "example_decks": [
+          {
+            "deck_id": "MXpMXy-jVbeHK-2S3UMM",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "リィ。"
+          },
+          {
+            "deck_id": "YKc8a8-8QJk3G-8KccJc",
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "dr_pika"
+          },
+          {
+            "deck_id": "MEypyS-GODhLM-MMpEEM",
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "海月 凛"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: カウンターキャッチャー",
+      "input": "Card Code: SVN 011/045\nCategory: Pokemon",
+      "output": "カウンターキャッチャー is a Pokemon card from the Pokemon Trading Card Game. Card code: SVN 011/045. This card appears in 1981 tournament decks. Players typically run 1.7 copies on average (range: 1-9). Recent tournament usage includes decks by リィ。.",
+      "metadata": {
+        "card_name": "カウンターキャッチャー",
+        "card_code": "SVN 011/045",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 1981,
+        "avg_quantity": 1.6972704714640199,
+        "popular_decks": [
+          {
+            "deck_id": "YG8YYx-yDzL6A-cYc8D4",
+            "total_quantity": 12,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "夢疾風"
+          },
+          {
+            "deck_id": "YKc8a8-8QJk3G-8KccJc",
+            "total_quantity": 9,
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "dr_pika"
+          },
+          {
+            "deck_id": "vkkFFF-k8DLxX-vkvvfV",
+            "total_quantity": 6,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "aoi"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use マシマシラ and why?",
+      "input": "Card: マシマシラ | Recent decks: Spring (); ゆてぃまる (); ボマバシ (); あるけ (); 人生、谷あり崖あり。 ()",
+      "output": "Top decks using マシマシラ: Spring (); ゆてぃまる (); ボマバシ (); あるけ (); 人生、谷あり崖あり。 (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "マシマシラ",
+        "card_code": "SV8a 075/187",
+        "example_decks": [
+          {
+            "deck_id": "5vdVkF-CqpWrd-VF1FVv",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "Spring"
+          },
+          {
+            "deck_id": "YcxJcx-Yi4QXd-Dccx8a",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ゆてぃまる"
+          },
+          {
+            "deck_id": "FwdVk5-RB2ONS-vVVV1k",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ボマバシ"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: マシマシラ",
+      "input": "Card Code: SV8a 075/187\nCategory: Pokemon",
+      "output": "マシマシラ is a Pokemon card from the Pokemon Trading Card Game. Card code: SV8a 075/187. This card appears in 1929 tournament decks. Players typically run 2.2 copies on average (range: 1-12). Recent tournament usage includes decks by Spring.",
+      "metadata": {
+        "card_name": "マシマシラ",
+        "card_code": "SV8a 075/187",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 1929,
+        "avg_quantity": 2.177293934681182,
+        "popular_decks": [
+          {
+            "deck_id": "YG8YYx-yDzL6A-cYc8D4",
+            "total_quantity": 12,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "夢疾風"
+          },
+          {
+            "deck_id": "848ac4-ldh4mx-Y8xY8Y",
+            "total_quantity": 6,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "ひいらぎ"
+          },
+          {
+            "deck_id": "yppSyM-kVn5Ml-Mp3yyR",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-10-19",
+            "player_name": "ずんだもち"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use コレクレー and why?",
+      "input": "Card: コレクレー | Recent decks: ユウツー (); キレイなパモ (); コーガ (); ハヤセ (); olimar ()",
+      "output": "Top decks using コレクレー: ユウツー (); キレイなパモ (); コーガ (); ハヤセ (); olimar (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "コレクレー",
+        "card_code": "SV7a 024/064",
+        "example_decks": [
+          {
+            "deck_id": "888J8x-BuYG0j-xKYD8x",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ユウツー"
+          },
+          {
+            "deck_id": "nNnQ6g-YMQULK-gLLgnL",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "キレイなパモ"
+          },
+          {
+            "deck_id": "vbV51V-eMhyfQ-Vkkfkk",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "コーガ"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: コレクレー",
+      "input": "Card Code: SV7a 024/064\nCategory: Pokemon",
+      "output": "コレクレー is a Pokemon card from the Pokemon Trading Card Game. Card code: SV7a 024/064. This card appears in 1854 tournament decks. Players typically run 3.3 copies on average (range: 1-4). Recent tournament usage includes decks by ユウツー.",
+      "metadata": {
+        "card_name": "コレクレー",
+        "card_code": "SV7a 024/064",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 1854,
+        "avg_quantity": 3.307982740021575,
+        "popular_decks": [
+          {
+            "deck_id": "yyyMMS-GKKBju-SXXM2p",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-10-12",
+            "player_name": "モコナ"
+          },
+          {
+            "deck_id": "yyXXMS-nkejbg-EMppMp",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-10-13",
+            "player_name": "SATA"
+          },
+          {
+            "deck_id": "yyMMSX-C9C4Qp-pMRySM",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-11-03",
+            "player_name": "SGRD"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use なかよしポフィン and why?",
+      "input": "Card: なかよしポフィン | Recent decks: はなしっくす (); キレイなパモ (); ハタハタ (); olimar (); あや ()",
+      "output": "Top decks using なかよしポフィン: はなしっくす (); キレイなパモ (); ハタハタ (); olimar (); あや (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "なかよしポフィン",
+        "card_code": "MBD 010/021",
+        "example_decks": [
+          {
+            "deck_id": "p3yMUM-6FpeQX-SpMppR",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "はなしっくす"
+          },
+          {
+            "deck_id": "nNnQ6g-YMQULK-gLLgnL",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "キレイなパモ"
+          },
+          {
+            "deck_id": "x88xcx-0r5iVT-DaDxYc",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ハタハタ"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: なかよしポフィン",
+      "input": "Card Code: MBD 010/021\nCategory: Pokemon",
+      "output": "なかよしポフィン is a Pokemon card from the Pokemon Trading Card Game. Card code: MBD 010/021. This card appears in 1819 tournament decks. Players typically run 2.7 copies on average (range: 1-4). Recent tournament usage includes decks by はなしっくす.",
+      "metadata": {
+        "card_name": "なかよしポフィン",
+        "card_code": "MBD 010/021",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 1819,
+        "avg_quantity": 2.725133689839572,
+        "popular_decks": [
+          {
+            "deck_id": "yyyXSp-6PF6O8-SESM3S",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-09-18",
+            "player_name": "おーなか"
+          },
+          {
+            "deck_id": "yypp2X-TmAqnP-SyR23X",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-09-23",
+            "player_name": "オートリ"
+          },
+          {
+            "deck_id": "yyUypy-kByC4m-RMMSSy",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-10-26",
+            "player_name": "まるた"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use ハイパーボール and why?",
+      "input": "Card: ハイパーボール | Recent decks: たわし14 (); ハヤセ (); すけいち (); ガリ (); たる ()",
+      "output": "Top decks using ハイパーボール: たわし14 (); ハヤセ (); すけいち (); ガリ (); たる (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ハイパーボール",
+        "card_code": "MBD 011/021",
+        "example_decks": [
+          {
+            "deck_id": "Fbw5V5-LY1lTj-VkVkVv",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "たわし14"
+          },
+          {
+            "deck_id": "vVVdfV-B7jy2N-1VVkVF",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ハヤセ"
+          },
+          {
+            "deck_id": "VFVV1V-ecdbA5-FvkkvV",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "すけいち"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ハイパーボール",
+      "input": "Card Code: MBD 011/021\nCategory: Item",
+      "output": "ハイパーボール is a Item card from the Pokemon Trading Card Game. Card code: MBD 011/021. This card appears in 1792 tournament decks. Players typically run 3.0 copies on average (range: 1-4). Recent tournament usage includes decks by たわし14. As an Item card, you can play multiple per turn.",
+      "metadata": {
+        "card_name": "ハイパーボール",
+        "card_code": "MBD 011/021",
+        "hp": null,
+        "category": "Item",
+        "deck_usage": 1792,
+        "avg_quantity": 2.9902912621359223,
+        "popular_decks": [
+          {
+            "deck_id": "yyyXSp-6PF6O8-SESM3S",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-09-18",
+            "player_name": "おーなか"
+          },
+          {
+            "deck_id": "yypp2X-TmAqnP-SyR23X",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-09-23",
+            "player_name": "オートリ"
+          },
+          {
+            "deck_id": "yyp2Ep-KWHXor-R2M3pS",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-09-07",
+            "player_name": "ひろくん"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use ボスの指令 and why?",
+      "input": "Card: ボスの指令 | Recent decks: ダッジ (); たわし14 (); キレイなパモ (); ハヤセ (); olimar ()",
+      "output": "Top decks using ボスの指令: ダッジ (); たわし14 (); キレイなパモ (); ハヤセ (); olimar (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ボスの指令",
+        "card_code": "MBD 019/021",
+        "example_decks": [
+          {
+            "deck_id": "LLHQHg-5lcnRP-L6LnPn",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ダッジ"
+          },
+          {
+            "deck_id": "Fbw5V5-LY1lTj-VkVkVv",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "たわし14"
+          },
+          {
+            "deck_id": "nNnQ6g-YMQULK-gLLgnL",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "キレイなパモ"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ボスの指令",
+      "input": "Card Code: MBD 019/021\nCategory: Supporter",
+      "output": "ボスの指令 is a Supporter card from the Pokemon Trading Card Game. Card code: MBD 019/021. This card appears in 1757 tournament decks. Players typically run 2.4 copies on average (range: 1-6). Recent tournament usage includes decks by ダッジ. As a Supporter card, you can only play one per turn.",
+      "metadata": {
+        "card_name": "ボスの指令",
+        "card_code": "MBD 019/021",
+        "hp": null,
+        "category": "Supporter",
+        "deck_usage": 1757,
+        "avg_quantity": 2.407119021134594,
+        "popular_decks": [
+          {
+            "deck_id": "MpMp2p-0n0ROA-2ppyS2",
+            "total_quantity": 9,
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "太郎"
+          },
+          {
+            "deck_id": "FvVVkb-PoqCTh-5Vkf5v",
+            "total_quantity": 6,
+            "event_title": "",
+            "event_date": "2025-11-16",
+            "player_name": "アレク"
+          },
+          {
+            "deck_id": "yyXXMS-nkejbg-EMppMp",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-10-13",
+            "player_name": "SATA"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use ヒカリ and why?",
+      "input": "Card: ヒカリ | Recent decks: はなしっくす (); ♪lemone♪【レモネ】 (); ハタハタ (); しまねこ (); ひつじ ()",
+      "output": "Top decks using ヒカリ: はなしっくす (); ♪lemone♪【レモネ】 (); ハタハタ (); しまねこ (); ひつじ (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ヒカリ",
+        "card_code": "M2 077/080",
+        "example_decks": [
+          {
+            "deck_id": "p3yMUM-6FpeQX-SpMppR",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "はなしっくす"
+          },
+          {
+            "deck_id": "2ESyXM-RLZGXU-2XyyMM",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "♪lemone♪【レモネ】"
+          },
+          {
+            "deck_id": "x88xcx-0r5iVT-DaDxYc",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ハタハタ"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ヒカリ",
+      "input": "Card Code: M2 077/080\nCategory: Pokemon",
+      "output": "ヒカリ is a Pokemon card from the Pokemon Trading Card Game. Card code: M2 077/080. This card appears in 1746 tournament decks. Players typically run 2.0 copies on average (range: 1-4). Recent tournament usage includes decks by はなしっくす.",
+      "metadata": {
+        "card_name": "ヒカリ",
+        "card_code": "M2 077/080",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 1746,
+        "avg_quantity": 1.9903354178510517,
+        "popular_decks": [
+          {
+            "deck_id": "YKc8a8-8QJk3G-8KccJc",
+            "total_quantity": 6,
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "dr_pika"
+          },
+          {
+            "deck_id": "yySRyM-y1m3P7-MXMySp",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-10-13",
+            "player_name": "オヤグマ"
+          },
+          {
+            "deck_id": "yyMpM2-PxewbR-XSpMRX",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-11-01",
+            "player_name": "ジョブジョン"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use ハイパーボール and why?",
+      "input": "Card: ハイパーボール | Recent decks: dr_pika (); サカッシュ (); いっちー (); まさ (); ちか ()",
+      "output": "Top decks using ハイパーボール: dr_pika (); サカッシュ (); いっちー (); まさ (); ちか (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ハイパーボール",
+        "card_code": "SVOD 011/018",
+        "example_decks": [
+          {
+            "deck_id": "YKc8a8-8QJk3G-8KccJc",
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "dr_pika"
+          },
+          {
+            "deck_id": "VVVVkk-UkeqYK-fkvb5w",
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "サカッシュ"
+          },
+          {
+            "deck_id": "Sp2MyM-r9vj5M-XMRMR3",
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "いっちー"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ハイパーボール",
+      "input": "Card Code: SVOD 011/018\nCategory: Item",
+      "output": "ハイパーボール is a Item card from the Pokemon Trading Card Game. Card code: SVOD 011/018. This card appears in 1740 tournament decks. Players typically run 3.1 copies on average (range: 1-8). Recent tournament usage includes decks by dr_pika. As an Item card, you can play multiple per turn.",
+      "metadata": {
+        "card_name": "ハイパーボール",
+        "card_code": "SVOD 011/018",
+        "hp": null,
+        "category": "Item",
+        "deck_usage": 1740,
+        "avg_quantity": 3.0746934225195095,
+        "popular_decks": [
+          {
+            "deck_id": "YKc8a8-8QJk3G-8KccJc",
+            "total_quantity": 12,
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "dr_pika"
+          },
+          {
+            "deck_id": "pyEpES-mfAjNC-pSpMUX",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-10",
+            "player_name": "きたきた"
+          },
+          {
+            "deck_id": "pppyMS-0wFxCi-XSyyX2",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "ぎし"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use キチキギスex and why?",
+      "input": "Card: キチキギスex | Recent decks: ぷりちーやどん (); ファイン (); dr_pika (); かわず (); ST ()",
+      "output": "Top decks using キチキギスex: ぷりちーやどん (); ファイン (); dr_pika (); かわず (); ST (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "キチキギスex",
+        "card_code": "SVN 002/045",
+        "example_decks": [
+          {
+            "deck_id": "8Y4x8J-1dNFfF-axxaYx",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ぷりちーやどん"
+          },
+          {
+            "deck_id": "MyMMpS-MfoAJc-SXX3EM",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ファイン"
+          },
+          {
+            "deck_id": "YKc8a8-8QJk3G-8KccJc",
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "dr_pika"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: キチキギスex",
+      "input": "Card Code: SVN 002/045\nCategory: Pokemon ex",
+      "output": "キチキギスex is a Pokemon ex card from the Pokemon Trading Card Game. Card code: SVN 002/045. This card appears in 1679 tournament decks. Players typically run 1.0 copies on average (range: 1-2). Recent tournament usage includes decks by ぷりちーやどん. As a Pokemon ex, this card gives up 2 Prize cards when knocked out.",
+      "metadata": {
+        "card_name": "キチキギスex",
+        "card_code": "SVN 002/045",
+        "hp": null,
+        "category": "Pokemon ex",
+        "deck_usage": 1679,
+        "avg_quantity": 1.0047647409172127,
+        "popular_decks": [
+          {
+            "deck_id": "xcYJG8-8ruRp0-4cxccY",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-05-10",
+            "player_name": "アース"
+          },
+          {
+            "deck_id": "gQNN6g-L01WY8-QQLnnH",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-05-10",
+            "player_name": "しょーご"
+          },
+          {
+            "deck_id": "gHLnLQ-gStz5V-LgPLNQ",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "もちこめさんの二番弟子"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use 大地の器 and why?",
+      "input": "Card: 大地の器 | Recent decks: ぷりちーやどん (); Spring (); ガリ (); サカッシュ (); ケイト ()",
+      "output": "Top decks using 大地の器: ぷりちーやどん (); Spring (); ガリ (); サカッシュ (); ケイト (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "大地の器",
+        "card_code": "SV4K 060/066",
+        "example_decks": [
+          {
+            "deck_id": "8Y4x8J-1dNFfF-axxaYx",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ぷりちーやどん"
+          },
+          {
+            "deck_id": "5vdVkF-CqpWrd-VF1FVv",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "Spring"
+          },
+          {
+            "deck_id": "Y8JxJJ-IozJfH-x8DYDx",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ガリ"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: 大地の器",
+      "input": "Card Code: SV4K 060/066\nCategory: Pokemon",
+      "output": "大地の器 is a Pokemon card from the Pokemon Trading Card Game. Card code: SV4K 060/066. This card appears in 1678 tournament decks. Players typically run 2.3 copies on average (range: 1-4). Recent tournament usage includes decks by ぷりちーやどん.",
+      "metadata": {
+        "card_name": "大地の器",
+        "card_code": "SV4K 060/066",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 1678,
+        "avg_quantity": 2.2962962962962963,
+        "popular_decks": [
+          {
+            "deck_id": "vvVFdF-PTIX6L-kVw5vv",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-10",
+            "player_name": "ど"
+          },
+          {
+            "deck_id": "vFkdkF-1UAa5t-fFFvvf",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-10",
+            "player_name": "Yui"
+          },
+          {
+            "deck_id": "vFV1Vv-PaZV1p-FffFkV",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-10",
+            "player_name": "おがたく"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use ファイトゴング and why?",
+      "input": "Card: ファイトゴング | Recent decks: こぱたぷ (); ペパ (); みかん (); コーガ (); ハヤセ ()",
+      "output": "Top decks using ファイトゴング: こぱたぷ (); ペパ (); みかん (); コーガ (); ハヤセ (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ファイトゴング",
+        "card_code": "M1L 059/063",
+        "example_decks": [
+          {
+            "deck_id": "MMyypM-aJWqrg-MM3XMS",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "こぱたぷ"
+          },
+          {
+            "deck_id": "yEMMUX-RVjYWz-SEMMSU",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ペパ"
+          },
+          {
+            "deck_id": "dkVFkv-jqYqr6-wkVvFV",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "みかん"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ファイトゴング",
+      "input": "Card Code: M1L 059/063\nCategory: Pokemon",
+      "output": "ファイトゴング is a Pokemon card from the Pokemon Trading Card Game. Card code: M1L 059/063. This card appears in 1602 tournament decks. Players typically run 3.2 copies on average (range: 1-4). Recent tournament usage includes decks by こぱたぷ.",
+      "metadata": {
+        "card_name": "ファイトゴング",
+        "card_code": "M1L 059/063",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 1602,
+        "avg_quantity": 3.248322147651007,
+        "popular_decks": [
+          {
+            "deck_id": "FvVVkb-PoqCTh-5Vkf5v",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-11-16",
+            "player_name": "アレク"
+          },
+          {
+            "deck_id": "yyyyMy-7X1nzw-MSMp3M",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-11-03",
+            "player_name": "ソラ"
+          },
+          {
+            "deck_id": "yyyMMS-GKKBju-SXXM2p",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-10-12",
+            "player_name": "モコナ"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use ペパー and why?",
+      "input": "Card: ペパー | Recent decks: たぁ (); くろみつ (); ばんぎ (); あびたろー (); まさお ()",
+      "output": "Top decks using ペパー: たぁ (); くろみつ (); ばんぎ (); あびたろー (); まさお (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ペパー",
+        "card_code": "SV1V 099/078",
+        "example_decks": [
+          {
+            "deck_id": "VVFkdw-Qaj4X7-VvVkVb",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "たぁ"
+          },
+          {
+            "deck_id": "8Ycxaa-0v23Ob-xxccYx",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "くろみつ"
+          },
+          {
+            "deck_id": "LLQNnL-ey6W1S-LinNgL",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ばんぎ"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ペパー",
+      "input": "Card Code: SV1V 099/078\nCategory: Pokemon",
+      "output": "ペパー is a Pokemon card from the Pokemon Trading Card Game. Card code: SV1V 099/078. This card appears in 1579 tournament decks. Players typically run 3.5 copies on average (range: 1-12). Recent tournament usage includes decks by たぁ.",
+      "metadata": {
+        "card_name": "ペパー",
+        "card_code": "SV1V 099/078",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 1579,
+        "avg_quantity": 3.474101157830591,
+        "popular_decks": [
+          {
+            "deck_id": "XSyMy2-LtFeFR-XpySp3",
+            "total_quantity": 16,
+            "event_title": "",
+            "event_date": "2025-11-16",
+            "player_name": "N"
+          },
+          {
+            "deck_id": "wVFFvF-SV76F9-vv1FVk",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "はやと"
+          },
+          {
+            "deck_id": "vkkVfF-zxueuk-dfv5F5",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "はやせん"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use 夜のタンカ and why?",
+      "input": "Card: 夜のタンカ | Recent decks: はなしっくす (); ダッジ (); たわし14 (); ガリ (); ゆてぃまる ()",
+      "output": "Top decks using 夜のタンカ: はなしっくす (); ダッジ (); たわし14 (); ガリ (); ゆてぃまる (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "夜のタンカ",
+        "card_code": "MBD 014/021",
+        "example_decks": [
+          {
+            "deck_id": "p3yMUM-6FpeQX-SpMppR",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "はなしっくす"
+          },
+          {
+            "deck_id": "LLHQHg-5lcnRP-L6LnPn",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ダッジ"
+          },
+          {
+            "deck_id": "Fbw5V5-LY1lTj-VkVkVv",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "たわし14"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: 夜のタンカ",
+      "input": "Card Code: MBD 014/021\nCategory: Pokemon",
+      "output": "夜のタンカ is a Pokemon card from the Pokemon Trading Card Game. Card code: MBD 014/021. This card appears in 1552 tournament decks. Players typically run 1.9 copies on average (range: 1-4). Recent tournament usage includes decks by はなしっくす.",
+      "metadata": {
+        "card_name": "夜のタンカ",
+        "card_code": "MBD 014/021",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 1552,
+        "avg_quantity": 1.9266750948166877,
+        "popular_decks": [
+          {
+            "deck_id": "ypUyyE-SOzyNV-Mp3S2p",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-09-28",
+            "player_name": "クルトンキング"
+          },
+          {
+            "deck_id": "xxY8xD-yNRFWC-Y8xY8x",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-11-16",
+            "player_name": "たぬえもん"
+          },
+          {
+            "deck_id": "xKcxYY-2XWbF0-DxccG8",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-11-03",
+            "player_name": "ニシ"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use キチキギスex and why?",
+      "input": "Card: キチキギスex | Recent decks: はなしっくす (); ダッジ (); キレイなパモ (); コーガ (); olimar ()",
+      "output": "Top decks using キチキギスex: はなしっくす (); ダッジ (); キレイなパモ (); コーガ (); olimar (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "キチキギスex",
+        "card_code": "MA 003/043",
+        "example_decks": [
+          {
+            "deck_id": "p3yMUM-6FpeQX-SpMppR",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "はなしっくす"
+          },
+          {
+            "deck_id": "LLHQHg-5lcnRP-L6LnPn",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ダッジ"
+          },
+          {
+            "deck_id": "nNnQ6g-YMQULK-gLLgnL",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "キレイなパモ"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: キチキギスex",
+      "input": "Card Code: MA 003/043\nCategory: Pokemon ex",
+      "output": "キチキギスex is a Pokemon ex card from the Pokemon Trading Card Game. Card code: MA 003/043. This card appears in 1551 tournament decks. Players typically run 1.0 copies on average (range: 1-2). Recent tournament usage includes decks by はなしっくす. As a Pokemon ex, this card gives up 2 Prize cards when knocked out.",
+      "metadata": {
+        "card_name": "キチキギスex",
+        "card_code": "MA 003/043",
+        "hp": null,
+        "category": "Pokemon ex",
+        "deck_usage": 1551,
+        "avg_quantity": 1.001934235976789,
+        "popular_decks": [
+          {
+            "deck_id": "xcYxG8-KnkDal-JxYxcc",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-10-16",
+            "player_name": "eino"
+          },
+          {
+            "deck_id": "MpMp2p-0n0ROA-2ppyS2",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "太郎"
+          },
+          {
+            "deck_id": "LQHLnH-fRlM6I-nggnii",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-10-19",
+            "player_name": "魁"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use ボウルタウン and why?",
+      "input": "Card: ボウルタウン | Recent decks: D,gun (); アバベル (); トネ (); たぁ (); なかじー ()",
+      "output": "Top decks using ボウルタウン: D,gun (); アバベル (); トネ (); たぁ (); なかじー (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ボウルタウン",
+        "card_code": "SV3 140/108",
+        "example_decks": [
+          {
+            "deck_id": "8KxcD4-tGXphU-4xY8Yx",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "D,gun"
+          },
+          {
+            "deck_id": "VkVdVV-4XfdRT-v5VVk1",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "アバベル"
+          },
+          {
+            "deck_id": "EMyMMS-JNr0O2-ppSpUM",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "トネ"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ボウルタウン",
+      "input": "Card Code: SV3 140/108\nCategory: Stadium",
+      "output": "ボウルタウン is a Stadium card from the Pokemon Trading Card Game. Card code: SV3 140/108. This card appears in 1538 tournament decks. Players typically run 1.5 copies on average (range: 1-4). Recent tournament usage includes decks by D,gun.",
+      "metadata": {
+        "card_name": "ボウルタウン",
+        "card_code": "SV3 140/108",
+        "hp": null,
+        "category": "Stadium",
+        "deck_usage": 1538,
+        "avg_quantity": 1.4642627173213136,
+        "popular_decks": [
+          {
+            "deck_id": "ngLiQN-hG486K-gggQQL",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "フェリス"
+          },
+          {
+            "deck_id": "kfvvvk-FA2MKc-vVFVVF",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "モロ"
+          },
+          {
+            "deck_id": "c8YYDc-K6KgIO-D8Y8cD",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-05-04",
+            "player_name": "山本"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use キチキギスex and why?",
+      "input": "Card: キチキギスex | Recent decks: たわし14 (); ハヤセ (); たいらー (); ザイ (); かとけん ()",
+      "output": "Top decks using キチキギスex: たわし14 (); ハヤセ (); たいらー (); ザイ (); かとけん (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "キチキギスex",
+        "card_code": "SV8a 104/187",
+        "example_decks": [
+          {
+            "deck_id": "Fbw5V5-LY1lTj-VkVkVv",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "たわし14"
+          },
+          {
+            "deck_id": "vVVdfV-B7jy2N-1VVkVF",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ハヤセ"
+          },
+          {
+            "deck_id": "ffdkVV-3wCyFF-dFFkVv",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "たいらー"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: キチキギスex",
+      "input": "Card Code: SV8a 104/187\nCategory: Pokemon ex",
+      "output": "キチキギスex is a Pokemon ex card from the Pokemon Trading Card Game. Card code: SV8a 104/187. This card appears in 1536 tournament decks. Players typically run 1.0 copies on average (range: 1-2). Recent tournament usage includes decks by たわし14. As a Pokemon ex, this card gives up 2 Prize cards when knocked out.",
+      "metadata": {
+        "card_name": "キチキギスex",
+        "card_code": "SV8a 104/187",
+        "hp": null,
+        "category": "Pokemon ex",
+        "deck_usage": 1536,
+        "avg_quantity": 1.0032552083333333,
+        "popular_decks": [
+          {
+            "deck_id": "ngQnnQ-8ZXHW2-NNnLH9",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-10-26",
+            "player_name": "なー"
+          },
+          {
+            "deck_id": "ngNQLL-a1hlQC-gggQig",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-10-11",
+            "player_name": "悶ちゃん"
+          },
+          {
+            "deck_id": "VvkkFk-Qjd27Q-5kkvvF",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-04-27",
+            "player_name": "ヤンボー"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use タケルライコ and why?",
+      "input": "Card: タケルライコ | Recent decks: すけいち (); たる (); みん (); 三木 (); テレサ ()",
+      "output": "Top decks using タケルライコ: すけいち (); たる (); みん (); 三木 (); テレサ (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "タケルライコ",
+        "card_code": "SV7 075/102",
+        "example_decks": [
+          {
+            "deck_id": "VFVV1V-ecdbA5-FvkkvV",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "すけいち"
+          },
+          {
+            "deck_id": "8DxYxx-nFiKGJ-J8KxYx",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "たる"
+          },
+          {
+            "deck_id": "fVVVFd-p7zBi7-wVkkvF",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "みん"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: タケルライコ",
+      "input": "Card Code: SV7 075/102\nCategory: Pokemon",
+      "output": "タケルライコ is a Pokemon card from the Pokemon Trading Card Game. Card code: SV7 075/102. This card appears in 1531 tournament decks. Players typically run 1.1 copies on average (range: 1-4). Recent tournament usage includes decks by すけいち.",
+      "metadata": {
+        "card_name": "タケルライコ",
+        "card_code": "SV7 075/102",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 1531,
+        "avg_quantity": 1.0822991508817765,
+        "popular_decks": [
+          {
+            "deck_id": "c8xxYc-3yMTeC-8Y8ax4",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-05-03",
+            "player_name": "アズマ"
+          },
+          {
+            "deck_id": "yy3ypp-kkb9J2-yXXS2S",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-05-10",
+            "player_name": "ゆーどー"
+          },
+          {
+            "deck_id": "yy3My2-12liNR-XMMRSS",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-11-15",
+            "player_name": "たかぱち"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use なかよしポフィン and why?",
+      "input": "Card: なかよしポフィン | Recent decks: ユウツー (); トネ (); かすり (); 谷崎 (); ショウ ()",
+      "output": "Top decks using なかよしポフィン: ユウツー (); トネ (); かすり (); 谷崎 (); ショウ (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "なかよしポフィン",
+        "card_code": "SV5K 063/071",
+        "example_decks": [
+          {
+            "deck_id": "888J8x-BuYG0j-xKYD8x",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ユウツー"
+          },
+          {
+            "deck_id": "EMyMMS-JNr0O2-ppSpUM",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "トネ"
+          },
+          {
+            "deck_id": "ngnLHQ-PquyQP-9NLLPL",
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "かすり"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: なかよしポフィン",
+      "input": "Card Code: SV5K 063/071\nCategory: Pokemon",
+      "output": "なかよしポフィン is a Pokemon card from the Pokemon Trading Card Game. Card code: SV5K 063/071. This card appears in 1515 tournament decks. Players typically run 3.1 copies on average (range: 1-4). Recent tournament usage includes decks by ユウツー.",
+      "metadata": {
+        "card_name": "なかよしポフィン",
+        "card_code": "SV5K 063/071",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 1515,
+        "avg_quantity": 3.0780645161290323,
+        "popular_decks": [
+          {
+            "deck_id": "wFFFkb-tBOtG1-VkvVvv",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "虹南"
+          },
+          {
+            "deck_id": "pS2SXy-RNzmqM-XpUpXy",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "カキフライ"
+          },
+          {
+            "deck_id": "gHLnLQ-gStz5V-LgPLNQ",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "もちこめさんの二番弟子"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use ペパー and why?",
+      "input": "Card: ペパー | Recent decks: カロン (); リィ。 (); 海月 凛 (); あまつ (); よよよ ()",
+      "output": "Top decks using ペパー: カロン (); リィ。 (); 海月 凛 (); あまつ (); よよよ (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ペパー",
+        "card_code": "SVN 037/045",
+        "example_decks": [
+          {
+            "deck_id": "vfkkVd-aClSAn-VVkkVd",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "カロン"
+          },
+          {
+            "deck_id": "MXpMXy-jVbeHK-2S3UMM",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "リィ。"
+          },
+          {
+            "deck_id": "MEypyS-GODhLM-MMpEEM",
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "海月 凛"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ペパー",
+      "input": "Card Code: SVN 037/045\nCategory: Pokemon",
+      "output": "ペパー is a Pokemon card from the Pokemon Trading Card Game. Card code: SVN 037/045. This card appears in 1506 tournament decks. Players typically run 3.7 copies on average (range: 1-12). Recent tournament usage includes decks by カロン.",
+      "metadata": {
+        "card_name": "ペパー",
+        "card_code": "SVN 037/045",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 1506,
+        "avg_quantity": 3.7076023391812867,
+        "popular_decks": [
+          {
+            "deck_id": "YG8YYx-yDzL6A-cYc8D4",
+            "total_quantity": 16,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "夢疾風"
+          },
+          {
+            "deck_id": "pyyypS-cVbiG1-MXSEyX",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-04",
+            "player_name": "はる"
+          },
+          {
+            "deck_id": "pppyMS-0wFxCi-XSyyX2",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "ぎし"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use ジャミングタワー and why?",
+      "input": "Card: ジャミングタワー | Recent decks: ペパ (); みかん (); cosmic (); スギカズ (); だいき ()",
+      "output": "Top decks using ジャミングタワー: ペパ (); みかん (); cosmic (); スギカズ (); だいき (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ジャミングタワー",
+        "card_code": "SVN 039/045",
+        "example_decks": [
+          {
+            "deck_id": "yEMMUX-RVjYWz-SEMMSU",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ペパ"
+          },
+          {
+            "deck_id": "dkVFkv-jqYqr6-wkVvFV",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "みかん"
+          },
+          {
+            "deck_id": "VfV1V5-qNu3Iv-VvkF5v",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "cosmic"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ジャミングタワー",
+      "input": "Card Code: SVN 039/045\nCategory: Pokemon",
+      "output": "ジャミングタワー is a Pokemon card from the Pokemon Trading Card Game. Card code: SVN 039/045. This card appears in 1497 tournament decks. Players typically run 1.4 copies on average (range: 1-4). Recent tournament usage includes decks by ペパ.",
+      "metadata": {
+        "card_name": "ジャミングタワー",
+        "card_code": "SVN 039/045",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 1497,
+        "avg_quantity": 1.4089709762532983,
+        "popular_decks": [
+          {
+            "deck_id": "bvV5vv-wlDe74-FkwFkv",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "ともも"
+          },
+          {
+            "deck_id": "acYxx4-ulK9uI-cDx8Yx",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "********************"
+          },
+          {
+            "deck_id": "Vvkvkk-cBlEmn-5vfkFk",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-10-26",
+            "player_name": "シャベル"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use スボミー and why?",
+      "input": "Card: スボミー | Recent decks: D,gun (); ゆき (); ゆてぃまる (); まさお (); リィ。 ()",
+      "output": "Top decks using スボミー: D,gun (); ゆき (); ゆてぃまる (); まさお (); リィ。 (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "スボミー",
+        "card_code": "SV8a 001/187",
+        "example_decks": [
+          {
+            "deck_id": "8KxcD4-tGXphU-4xY8Yx",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "D,gun"
+          },
+          {
+            "deck_id": "xYxx8a-PFqyUz-x8YxYc",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ゆき"
+          },
+          {
+            "deck_id": "YcxJcx-Yi4QXd-Dccx8a",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ゆてぃまる"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: スボミー",
+      "input": "Card Code: SV8a 001/187\nCategory: Pokemon",
+      "output": "スボミー is a Pokemon card from the Pokemon Trading Card Game. Card code: SV8a 001/187. This card appears in 1464 tournament decks. Players typically run 1.4 copies on average (range: 1-3). Recent tournament usage includes decks by D,gun.",
+      "metadata": {
+        "card_name": "スボミー",
+        "card_code": "SV8a 001/187",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 1464,
+        "avg_quantity": 1.4494535519125684,
+        "popular_decks": [
+          {
+            "deck_id": "yMpEM2-XrtClo-3p3pSp",
+            "total_quantity": 3,
+            "event_title": "",
+            "event_date": "2025-09-14",
+            "player_name": "げち"
+          },
+          {
+            "deck_id": "pXyMMp-LPkIX8-3pEySM",
+            "total_quantity": 3,
+            "event_title": "",
+            "event_date": "2025-11-03",
+            "player_name": "ミスターK"
+          },
+          {
+            "deck_id": "nnHgiQ-bpjwN7-gH6ng6",
+            "total_quantity": 3,
+            "event_title": "",
+            "event_date": "2025-04-29",
+            "player_name": "kou"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use アカマツ and why?",
+      "input": "Card: アカマツ | Recent decks: カロン (); ビナ (); サカモン (); ファイン (); ケイト ()",
+      "output": "Top decks using アカマツ: カロン (); ビナ (); サカモン (); ファイン (); ケイト (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "アカマツ",
+        "card_code": "SV8a 163/187",
+        "example_decks": [
+          {
+            "deck_id": "vfkkVd-aClSAn-VVkkVd",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "カロン"
+          },
+          {
+            "deck_id": "QQngLn-B3qcc1-igLLgg",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ビナ"
+          },
+          {
+            "deck_id": "8x4x4x-wUvGy2-8GYJ8x",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "サカモン"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: アカマツ",
+      "input": "Card Code: SV8a 163/187\nCategory: Pokemon",
+      "output": "アカマツ is a Pokemon card from the Pokemon Trading Card Game. Card code: SV8a 163/187. This card appears in 1450 tournament decks. Players typically run 2.2 copies on average (range: 1-4). Recent tournament usage includes decks by カロン.",
+      "metadata": {
+        "card_name": "アカマツ",
+        "card_code": "SV8a 163/187",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 1450,
+        "avg_quantity": 2.1737373737373735,
+        "popular_decks": [
+          {
+            "deck_id": "VdFVk5-eYvJ5x-vkFFVv",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "baran"
+          },
+          {
+            "deck_id": "LgLgQL-1tUznN-gQNnNg",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "ゆちゃ"
+          },
+          {
+            "deck_id": "DxcYcD-k2AHzg-888YYx",
+            "total_quantity": 8,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "Rた"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use ワザマシン エヴォリューション and why?",
+      "input": "Card: ワザマシン エヴォリューション | Recent decks: ばたっち (); 海月 凛 (); あまつ (); よよよ (); きっころ ()",
+      "output": "Top decks using ワザマシン エヴォリューション: ばたっち (); 海月 凛 (); あまつ (); よよよ (); きっころ (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "ワザマシン エヴォリューション",
+        "card_code": "SVN 029/045",
+        "example_decks": [
+          {
+            "deck_id": "xYxGDc-M8Yzc1-G8xD8x",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ばたっち"
+          },
+          {
+            "deck_id": "MEypyS-GODhLM-MMpEEM",
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "海月 凛"
+          },
+          {
+            "deck_id": "pSMMEM-DNLE9r-MSX2yE",
+            "event_title": "",
+            "event_date": "2025-11-17",
+            "player_name": "あまつ"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ワザマシン エヴォリューション",
+      "input": "Card Code: SVN 029/045\nCategory: Pokemon",
+      "output": "ワザマシン エヴォリューション is a Pokemon card from the Pokemon Trading Card Game. Card code: SVN 029/045. This card appears in 1426 tournament decks. Players typically run 1.6 copies on average (range: 1-4). Recent tournament usage includes decks by ばたっち.",
+      "metadata": {
+        "card_name": "ワザマシン エヴォリューション",
+        "card_code": "SVN 029/045",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 1426,
+        "avg_quantity": 1.6176066024759286,
+        "popular_decks": [
+          {
+            "deck_id": "vkkVfF-zxueuk-dfv5F5",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "はやせん"
+          },
+          {
+            "deck_id": "kvVvfk-5L6UMn-VfFfwF",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "タイヨー"
+          },
+          {
+            "deck_id": "kFFkvv-TN4OoA-ddVkFF",
+            "total_quantity": 4,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "常陸（ひたち）"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use プライムキャッチャー and why?",
+      "input": "Card: プライムキャッチャー | Recent decks: ♪lemone♪【レモネ】 (); ビナ (); みん (); そらねこ (); たいらー ()",
+      "output": "Top decks using プライムキャッチャー: ♪lemone♪【レモネ】 (); ビナ (); みん (); そらねこ (); たいらー (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "プライムキャッチャー",
+        "card_code": "ACE SPEC",
+        "example_decks": [
+          {
+            "deck_id": "2ESyXM-RLZGXU-2XyyMM",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "♪lemone♪【レモネ】"
+          },
+          {
+            "deck_id": "QQngLn-B3qcc1-igLLgg",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ビナ"
+          },
+          {
+            "deck_id": "fVVVFd-p7zBi7-wVkkvF",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "みん"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: プライムキャッチャー",
+      "input": "Card Code: ACE SPEC\nCategory: Pokemon",
+      "output": "プライムキャッチャー is a Pokemon card from the Pokemon Trading Card Game. Card code: ACE SPEC. This card appears in 1418 tournament decks. Players typically run 1.0 copies on average (range: 1-2). Recent tournament usage includes decks by ♪lemone♪【レモネ】.",
+      "metadata": {
+        "card_name": "プライムキャッチャー",
+        "card_code": "ACE SPEC",
+        "hp": null,
+        "category": "Pokemon",
+        "deck_usage": 1418,
+        "avg_quantity": 1.001410437235543,
+        "popular_decks": [
+          {
+            "deck_id": "c8xxYc-3yMTeC-8Y8ax4",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-05-03",
+            "player_name": "アズマ"
+          },
+          {
+            "deck_id": "EppMyS-S8LbIV-Sppypy",
+            "total_quantity": 2,
+            "event_title": "",
+            "event_date": "2025-05-10",
+            "player_name": "ツユリラ"
+          },
+          {
+            "deck_id": "yyyy2p-pPNPrJ-MSMpS2",
+            "total_quantity": 1,
+            "event_title": "",
+            "event_date": "2025-05-11",
+            "player_name": "S4"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Which tournament decks commonly use 基本炎エネルギー and why?",
+      "input": "Card: 基本炎エネルギー | Recent decks: ペパ (); ぷりちーやどん (); ファイン (); dr_pika (); あまつ ()",
+      "output": "Top decks using 基本炎エネルギー: ペパ (); ぷりちーやどん (); ファイン (); dr_pika (); あまつ (). Typically used for: search/attacker/tech depending on category.",
+      "metadata": {
+        "card_name": "基本炎エネルギー",
+        "card_code": "",
+        "example_decks": [
+          {
+            "deck_id": "yEMMUX-RVjYWz-SEMMSU",
+            "event_title": "",
+            "event_date": "2025-11-19",
+            "player_name": "ペパ"
+          },
+          {
+            "deck_id": "8Y4x8J-1dNFfF-axxaYx",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ぷりちーやどん"
+          },
+          {
+            "deck_id": "MyMMpS-MfoAJc-SXX3EM",
+            "event_title": "",
+            "event_date": "2025-11-18",
+            "player_name": "ファイン"
+          }
+        ],
+        "type": "card_popular_decks"
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: 基本炎エネルギー",
+      "input": "Card Code: \nCategory: Basic Energy",
+      "output": "基本炎エネルギー is a Basic Energy card from the Pokemon Trading Card Game. This card appears in 1402 tournament decks. Players typically run 4.2 copies on average (range: 1-25). Recent tournament usage includes decks by ペパ. Basic Energy cards can be attached once per turn to power up Pokemon attacks.",
+      "metadata": {
+        "card_name": "基本炎エネルギー",
+        "card_code": "",
+        "hp": null,
+        "category": "Basic Energy",
+        "deck_usage": 1402,
+        "avg_quantity": 4.20756062767475,
+        "popular_decks": [
+          {
+            "deck_id": "cYcxc8-9lrinj-cx44a8",
+            "total_quantity": 25,
+            "event_title": "",
+            "event_date": "2025-04-20",
+            "player_name": "福の神"
+          },
+          {
+            "deck_id": "vFkdkF-1UAa5t-fFFvvf",
+            "total_quantity": 18,
+            "event_title": "",
+            "event_date": "2025-05-10",
+            "player_name": "Yui"
+          },
+          {
+            "deck_id": "kkvf5v-cLfzhS-FVvFfd",
+            "total_quantity": 18,
+            "event_title": "",
+            "event_date": "2025-04-26",
+            "player_name": "はるま"
+          }
+        ]
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Deck Construction",
+      "input": "",
+      "output": "A Pokemon TCG deck must contain exactly 60 cards. You can have up to 4 copies of any card with the same name, except for Basic Energy cards (unlimited). Only 1 ACE SPEC card total per deck.\n\nExamples:\n- Valid: 4x Pikachu ex, 4x Hyper Ball, 15x Basic Lightning Energy, 1x ACE SPEC\n- Invalid: 5x Pikachu ex (exceeds 4-copy limit)\n- Invalid: 2 different ACE SPEC cards (only 1 ACE SPEC total per deck)",
+      "metadata": {
+        "topic": "Deck Construction",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Turn Structure",
+      "input": "",
+      "output": "Each turn consists of phases: Draw (draw 1 card), Main Phase (play Pokemon, attach Energy, play Trainers), Attack Phase (attack or end turn). Pokemon Check occurs at end of turn.\n\nExamples:\n- Turn 1: Draw → Play Pikachu to Bench → Attach Energy to Active → Play Supporter → Attack → Pokemon Check\n- You cannot attack on your first turn if you go first.\n- Cannot use Supporter cards on first player's first turn.",
+      "metadata": {
+        "topic": "Turn Structure",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Energy Attachment",
+      "input": "",
+      "output": "You can attach one Energy card from your hand to one of your Pokemon each turn. Energy remains attached after attacks. Special Energy cards provide additional effects beyond basic energy types.\n\nExamples:\n- Attach 1 Basic Lightning Energy to Pikachu ex\n- You cannot attach 2 Energy cards in one turn (unless a card effect allows it)\n- Energy attached to a Pokemon stays on it even after using an attack",
+      "metadata": {
+        "topic": "Energy Attachment",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Supporter Cards",
+      "input": "",
+      "output": "You can play only one Supporter card during your turn. Discard after use. Cannot use on first player's first turn.\n\nExamples:\n- Play Professor Research to draw 7 cards\n- You cannot play Boss Orders after playing Marnie in the same turn\n- Going first? Cannot use any Supporter on your very first turn",
+      "metadata": {
+        "topic": "Supporter Cards",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Prize Cards",
+      "input": "",
+      "output": "Win the game by taking all your Prize cards (usually 6). When you knock out an opponent Pokemon, take 1 Prize (2 for Pokemon ex, 3 for Pokemon VMAX). Setup: Place 6 Prize cards face-down at start.\n\nExamples:\n- Knock out Pikachu ex → Take 2 Prize cards\n- First player to take all 6 Prizes wins\n- Knock out Charizard VMAX → Take 3 Prize cards",
+      "metadata": {
+        "topic": "Prize Cards",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Bench Size",
+      "input": "",
+      "output": "You can have up to 5 Pokemon on your Bench at once. Some Stadium cards can modify this limit.\n\nExamples:\n- Valid: Active Pikachu + 5 Benched Pokemon\n- Invalid: Cannot play 6th Pokemon to Bench without discarding one\n- Zero Area stadium increases Bench to 8 if you have Tera Pokemon in play",
+      "metadata": {
+        "topic": "Bench Size",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Retreat Cost",
+      "input": "",
+      "output": "To retreat your Active Pokemon, discard Energy equal to its Retreat Cost and switch it with a Benched Pokemon. Can only retreat once per turn. Pokemon with no retreat cost marker retreat for free.\n\nExamples:\n- Pikachu ex has Retreat Cost 1: Discard 1 Energy to retreat\n- Free retreat: Pokemon with 0 Retreat Cost can switch for free\n- Cannot retreat if you have no Benched Pokemon or insufficient Energy",
+      "metadata": {
+        "topic": "Retreat Cost",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Abilities",
+      "input": "",
+      "output": "Some Pokemon have Abilities in addition to attacks. Two types: declared abilities (player chooses when to use) and automatic abilities (always active). Abilities work while Pokemon is in play unless specified otherwise.\n\nExamples:\n- Declared: \"Once during your turn, you may draw 2 cards\" (you choose timing)\n- Automatic: \"Your Pokemon take 20 less damage from attacks\" (always on)\n- Abilities stop working if Pokemon is Knocked Out or leaves play",
+      "metadata": {
+        "topic": "Abilities",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Evolution",
+      "input": "",
+      "output": "Can evolve by placing evolution card from hand onto eligible Pokemon (Active or Bench). Cannot evolve same turn Pokemon is played or already evolved. Cannot evolve on either player's first turn. Evolved Pokemon keeps damage counters and attached cards, but removes special states.\n\nExamples:\n- Turn 1: Play Charmander. Turn 2: Can evolve to Charmeleon\n- Invalid: Play Charmander and evolve to Charmeleon same turn\n- Evolution removes Poison, Paralysis, Sleep, Burn, Confusion\n- Damage counters and Energy stay on evolved Pokemon",
+      "metadata": {
+        "topic": "Evolution",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Placing Pokemon",
+      "input": "",
+      "output": "Can place Basic Pokemon from hand to Bench unlimited times per turn as long as Bench space available. Place one at a time.\n\nExamples:\n- Play Pikachu, Squirtle, and Charmander to Bench in one turn\n- Cannot place more than 5 Pokemon on Bench total\n- Evolution cards cannot be placed directly - must evolve existing Pokemon",
+      "metadata": {
+        "topic": "Placing Pokemon",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Item Cards",
+      "input": "",
+      "output": "Can use unlimited Item cards per turn. Discard after use. No restrictions on timing unless card text specifies.\n\nExamples:\n- Play Hyper Ball, then Energy Search, then Potion all in one turn\n- Item cards are marked \"You can play any number of Item cards during your turn\"",
+      "metadata": {
+        "topic": "Item Cards",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Stadium Cards",
+      "input": "",
+      "output": "Place one Stadium card per turn. Remains in play until replaced by another Stadium. Cannot play if same name Stadium already in play. Both players affected by Stadium effects.\n\nExamples:\n- Play Training Court stadium - both players can recover Energy\n- Opponent plays different Stadium - your Stadium is discarded\n- Cannot play Training Court if Training Court already in play",
+      "metadata": {
+        "topic": "Stadium Cards",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Damage Calculation Order",
+      "input": "",
+      "output": "Damage calculation follows specific order: Base damage → +X/-X damage → Weakness/Resistance → Defender effects (damage -X) → Attacker effects (damage +X). Different notation matters.\n\nExamples:\n- \"+30 damage\" is calculated in base damage step\n- \"Damage +30\" is applied after weakness/resistance calculation\n- Attack 50 damage vs Weakness ×2 → 100 damage before modifiers",
+      "metadata": {
+        "topic": "Damage Calculation Order",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Knocked Out (KO)",
+      "input": "",
+      "output": "Pokemon with damage ≥ HP is KO'd. Attacking player takes Prize cards. KO'd Pokemon and all attached cards go to discard. Replace Active Pokemon from Bench immediately.\n\nExamples:\n- Pikachu has 100 HP, takes 100 damage → Knocked Out\n- KO opponent's Active → Take Prize(s) → Opponent promotes Benched Pokemon\n- If no Benched Pokemon available when Active is KO'd → You lose",
+      "metadata": {
+        "topic": "Knocked Out (KO)",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Pokemon Check",
+      "input": "",
+      "output": "Occurs at end of each turn. Check all Pokemon for special conditions in order: Poison → Burn → Sleep → Paralysis. Also check Abilities and Trainer effects that trigger during Pokemon Check.\n\nExamples:\n- Poisoned Pokemon takes 10 damage (or modified amount)\n- Burned Pokemon: Flip coin, heads = no effect, tails = 20 damage\n- Sleeping Pokemon: Flip coin, heads = wake up\n- Paralyzed Pokemon: Remove Paralysis status",
+      "metadata": {
+        "topic": "Pokemon Check",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Win/Loss Conditions",
+      "input": "",
+      "output": "Win by: Taking all 6 Prize cards. Lose by: No Pokemon left on field, or cannot draw card at turn start due to empty deck.\n\nExamples:\n- Take your 6th Prize card → You win\n- Your Active Pokemon is KO'd and Bench is empty → You lose\n- Turn starts, deck is empty, cannot draw → You lose\n- Opponent cannot draw at turn start → You win",
+      "metadata": {
+        "topic": "Win/Loss Conditions",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Card Text Precedence",
+      "input": "",
+      "output": "Card text takes precedence over rulebook. \"Cannot do X\" effects override \"does X\" effects. If conflict, \"cannot\" wins.\n\nExamples:\n- Card says \"This Pokemon cannot retreat\" → Cannot retreat even with Switch card\n- Ability says \"Cannot be damaged\" beats attack that says \"Does 100 damage\"\n- Stadium says \"Players cannot play Item cards\" → No Items even if card allows it",
+      "metadata": {
+        "topic": "Card Text Precedence",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Effect Duration",
+      "input": "",
+      "output": "Effects with timing: \"During opponent's next turn\" lasts until that turn ends. \"During your next turn\" lasts until your next turn ends. \"Until end of turn\" expires at turn end.\n\nExamples:\n- \"During opponent's next turn, this Pokemon takes -30 damage\" → Lasts one opponent turn\n- \"Until end of your next turn\" → Lasts through your next full turn\n- \"At end of turn\" → Triggers after attack, before Pokemon Check",
+      "metadata": {
+        "topic": "Effect Duration",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Searching Deck",
+      "input": "",
+      "output": "When instructed to select from deck: Look at specified cards, choose required number. Must shuffle deck afterward unless specified otherwise. \"Look at X\" means view face-down cards then return them face-down.\n\nExamples:\n- \"Search your deck for a Pokemon\" → Look through deck, take Pokemon, shuffle\n- \"Look at top 7 cards\" → View them, return face-down unless taking any\n- Some cards like Pokegear specify no shuffle required",
+      "metadata": {
+        "topic": "Searching Deck",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Analyze this Pokemon TCG tournament deck and explain its strategy",
+      "input": "Tournament: \nPlayer: こぱたぷ\nRank: 1位\n\nPokemon:\n  1x ふうせん\n  1x カウンターゲイン\n  2x ガチグマ アカツキ\n  1x シャリタツ\n  3x ソルロック\n  1x テツノツツミ\n  1x ハッサク\n  4x ファイトゴング\n  1x プレシャスキャリー\n  4x ペパー\n  1x ボタン\n  3x ポケギア3.0\n  3x マシマシラ\n  2x リベンジパンチ\n  3x リーリエの決心\n  2x ルナトーン\n  2x ワザマシン エナジーターボ\n  4x 夜のタンカ\n  1x 大地の器\n  3x 災いの雪山\n\nTrainer Cards:\n  1x ネストボール\n  2x ボスの指令\n\nEnergy:\n  1x エネルギーつけかえ\n  2x スーパーエネルギー回収\n  4x 基本悪エネルギー\n  7x 基本闘エネルギー",
+      "output": "The deck runs 43 Pokemon cards, providing unusual consistency. It uses 1 different search cards (ネストボール) to find Pokemon quickly. With 14 Energy cards, the deck ensures consistent energy attachment. This deck performed well at , demonstrating its competitive viability.",
+      "metadata": {
+        "deck_id": "MMyypM-aJWqrg-MM3XMS",
+        "player": "こぱたぷ",
+        "event": "",
+        "date": "2025-11-19"
+      }
+    },
+    {
+      "instruction": "Analyze this Pokemon TCG tournament deck and explain its strategy",
+      "input": "Tournament: \nPlayer: はなしっくす\nRank: 2位\n\nPokemon:\n  1x キチキギスex\n  1x せいなるはい\n  4x なかよしポフィン\n  3x ふしぎなアメ\n  1x カウンターキャッチャー\n  4x ケーシィ\n  1x コダック\n  1x ゴルダック\n  1x シェイミ\n  1x スピンロトム\n  3x トウコ\n  4x ノココッチ\n  4x ノコッチ\n  3x バトルコロシアム\n  2x ヒカリ\n  4x フーディン\n  4x ユンゲラー\n  1x リップ\n  3x リーリエの決心\n  2x ワンダーパッチ\n  1x 夜のタンカ\n  1x 改造ハンマー\n\nTrainer Cards:\n  2x ネストボール\n  3x ボスの指令\n\nEnergy:\n  1x リッチエネルギー\n  4x 基本超エネルギー",
+      "output": "This deck's primary attacker is キチキギスex, featuring 1 copies for consistency. The deck runs 50 Pokemon cards, providing unusual consistency. It uses 1 different search cards (ネストボール) to find Pokemon quickly. With 5 Energy cards, the deck ensures consistent energy attachment. This deck performed well at , demonstrating its competitive viability.",
+      "metadata": {
+        "deck_id": "p3yMUM-6FpeQX-SpMppR",
+        "player": "はなしっくす",
+        "event": "",
+        "date": "2025-11-19"
+      }
+    },
+    {
+      "instruction": "Analyze this Pokemon TCG tournament deck and explain its strategy",
+      "input": "Tournament: \nPlayer: D,gun\nRank: 3位\n\nPokemon:\n  1x ガチグマ アカツキex\n  2x マリィのオーロンゲex\n  1x すごいつりざお\n  2x なかよしポフィン\n  1x ふうせん\n  1x ふしぎなアメ\n  2x カウンターキャッチャー\n  1x シェイミ\n  1x シャリタツ\n  1x シークレットボックス\n  3x スパイクタウンジム\n  1x スボミー\n  4x ナンジャモ\n  4x ペパー\n  1x ボウルタウン\n  4x マシマシラ\n  2x マリィのギモー\n  3x マリィのベロバー\n  2x ユキメノコ\n  3x ユキワラシ\n  4x リーリエの決心\n  2x ワザマシン エヴォリューション\n  1x ワザマシン デヴォリューション\n  2x 夜のタンカ\n\nTrainer Cards:\n  1x ハイパーボール\n  1x ボスの指令\n\nEnergy:\n  9x 基本悪エネルギー",
+      "output": "This deck's primary attacker is ガチグマ アカツキex, featuring 1 copies for consistency. The deck runs 49 Pokemon cards, providing unusual consistency. It uses 1 different search cards (ハイパーボール) to find Pokemon quickly. With 9 Energy cards, the deck ensures consistent energy attachment. This deck performed well at , demonstrating its competitive viability.",
+      "metadata": {
+        "deck_id": "8KxcD4-tGXphU-4xY8Yx",
+        "player": "D,gun",
+        "event": "",
+        "date": "2025-11-19"
+      }
+    },
+    {
+      "instruction": "Analyze this Pokemon TCG tournament deck and explain its strategy",
+      "input": "Tournament: \nPlayer: アバベル\nRank: 3位\n\nPokemon:\n  1x キチキギスex\n  3x メガルカリオex\n  1x げんきのハチマキ\n  2x ふうせん\n  1x グラビティーマウンテン\n  1x シャリタツ\n  3x ソルロック\n  1x タウンデパート\n  3x ナンジャモ\n  2x ハリテヤマ\n  4x パワープロテイン\n  4x ファイトゴング\n  1x ボウルタウン\n  1x マキシマムベルト\n  2x マクノシタ\n  3x リオル\n  4x リーリエの決心\n  2x ルナトーン\n  3x 夜のタンカ\n\nTrainer Cards:\n  1x ネストボール\n  4x ハイパーボール\n  2x フトゥー博士のシナリオ\n  2x ボスの指令\n\nEnergy:\n  9x 基本闘エネルギー",
+      "output": "This deck's primary attacker is キチキギスex, featuring 1 copies for consistency. The deck runs 42 Pokemon cards, providing unusual consistency. It uses 2 different search cards (ネストボール, ハイパーボール) to find Pokemon quickly. With 9 Energy cards, the deck ensures consistent energy attachment. This deck performed well at , demonstrating its competitive viability.",
+      "metadata": {
+        "deck_id": "VkVdVV-4XfdRT-v5VVk1",
+        "player": "アバベル",
+        "event": "",
+        "date": "2025-11-19"
+      }
+    },
+    {
+      "instruction": "Analyze this Pokemon TCG tournament deck and explain its strategy",
+      "input": "Tournament: \nPlayer: ♪lemone♪【レモネ】\nRank: 5位\n\nPokemon:\n  1x オーガポン いどのめんex\n  1x キチキギスex\n  1x テラパゴスex\n  1x ピジョットex\n  2x リザードンex\n  2x すごいつりざお\n  1x ともだちてちょう\n  4x なかよしポフィン\n  4x ふしぎなアメ\n  1x カウンターキャッチャー\n  1x ジャミングタワー\n  1x スグリ\n  2x スピンロトム\n  2x ゼロの大空洞\n  2x テラスタルオーブ\n  1x トウコ\n  2x ナンジャモ\n  2x ヒカリ\n  3x ヒトカゲ\n  1x ファイヤー\n  1x ブライア\n  1x プライムキャッチャー\n  3x ホーホー\n  1x ポッポ\n  1x ヨノワール\n  1x ヨマワル\n  3x ヨルノズク\n  1x リザード\n  1x 夜のタンカ\n\nTrainer Cards:\n  3x ネストボール\n  1x ハイパーボール\n  1x フトゥー博士のシナリオ\n  1x ボスの指令\n\nEnergy:\n  1x ルミナスエネルギー\n  5x 基本炎エネルギー",
+      "output": "This deck's primary attacker is オーガポン いどのめんex, featuring 1 copies for consistency. The deck runs 48 Pokemon cards, providing unusual consistency. It uses 2 different search cards (ネストボール, ハイパーボール) to find Pokemon quickly. With 6 Energy cards, the deck ensures consistent energy attachment. This deck performed well at , demonstrating its competitive viability.",
+      "metadata": {
+        "deck_id": "2ESyXM-RLZGXU-2XyyMM",
+        "player": "♪lemone♪【レモネ】",
+        "event": "",
+        "date": "2025-11-19"
+      }
+    },
+    {
+      "instruction": "Analyze this Pokemon TCG tournament deck and explain its strategy",
+      "input": "Tournament: \nPlayer: ダッジ\nRank: 5位\n\nPokemon:\n  3x オーガポン みどりのめんex\n  1x キチキギスex\n  1x ミュウex\n  2x メガフシギバナex\n  1x つりざおMAX\n  4x むしとりセット\n  1x カウンターキャッチャー\n  1x ゲノセクト\n  2x チコリータ\n  4x ナンジャモ\n  1x ノノクラゲ\n  2x フシギソウ\n  2x フシギダネ\n  2x ベイリーフ\n  2x メガニウム\n  1x リククラゲ\n  4x リーリエの決心\n  1x レジギガス\n  2x 夜のタンカ\n  3x 活力の森\n\nTrainer Cards:\n  3x ネストボール\n  4x ハイパーボール\n  1x フトゥー博士のシナリオ\n  2x ボスの指令\n\nEnergy:\n  10x 基本草エネルギー",
+      "output": "This deck's primary attacker is オーガポン みどりのめんex, featuring 3 copies for consistency. The deck runs 40 Pokemon cards, providing unusual consistency. It uses 2 different search cards (ネストボール, ハイパーボール) to find Pokemon quickly. With 10 Energy cards, the deck ensures consistent energy attachment. This deck performed well at , demonstrating its competitive viability.",
+      "metadata": {
+        "deck_id": "LLHQHg-5lcnRP-L6LnPn",
+        "player": "ダッジ",
+        "event": "",
+        "date": "2025-11-19"
+      }
+    },
+    {
+      "instruction": "Analyze this Pokemon TCG tournament deck and explain its strategy",
+      "input": "Tournament: \nPlayer: ゆき\nRank: 5位\n\nPokemon:\n  1x ガチグマ アカツキex\n  2x マリィのオーロンゲex\n  2x なかよしポフィン\n  1x ふうせん\n  1x ふしぎなアメ\n  2x カウンターキャッチャー\n  1x シャリタツ\n  1x シークレットボックス\n  2x スパイクタウンジム\n  1x スボミー\n  1x テツノツツミ\n  4x ナンジャモ\n  4x ペパー\n  1x ボウルタウン\n  4x マシマシラ\n  2x マリィのギモー\n  3x マリィのベロバー\n  2x ユキメノコ\n  3x ユキワラシ\n  3x リーリエの決心\n  2x ワザマシン エヴォリューション\n  1x ワザマシン デヴォリューション\n  3x 夜のタンカ\n\nTrainer Cards:\n  1x ネストボール\n  1x ハイパーボール\n  2x ボスの指令\n\nEnergy:\n  9x 基本悪エネルギー",
+      "output": "This deck's primary attacker is ガチグマ アカツキex, featuring 1 copies for consistency. The deck runs 47 Pokemon cards, providing unusual consistency. It uses 2 different search cards (ネストボール, ハイパーボール) to find Pokemon quickly. With 9 Energy cards, the deck ensures consistent energy attachment. This deck performed well at , demonstrating its competitive viability.",
+      "metadata": {
+        "deck_id": "xYxx8a-PFqyUz-x8YxYc",
+        "player": "ゆき",
+        "event": "",
+        "date": "2025-11-19"
+      }
+    },
+    {
+      "instruction": "Analyze this Pokemon TCG tournament deck and explain its strategy",
+      "input": "Tournament: \nPlayer: ペパ\nRank: 5位\n\nPokemon:\n  1x イキリンコex\n  1x キチキギスex\n  3x ソウブレイズex\n  1x すごいつりざお\n  1x ともだちてちょう\n  3x カルボウ\n  1x カルボウ\n  1x ジャミングタワー\n  4x ゼイユ\n  2x ソルロック\n  1x パーフェクトミキサー\n  2x ファイトゴング\n  1x ブライア\n  2x ルナトーン\n  2x 夜のタンカ\n  2x 大地の器\n\nTrainer Cards:\n  4x ネストボール\n  4x ハイパーボール\n  1x フトゥー博士のシナリオ\n  3x ボスの指令\n  1x 博士の研究\n\nEnergy:\n  3x ジェットエネルギー\n  6x 基本炎エネルギー\n  10x 基本闘エネルギー",
+      "output": "This deck's primary attacker is イキリンコex, featuring 1 copies for consistency. The deck runs 28 Pokemon cards, providing unusual consistency. It uses 2 different search cards (ネストボール, ハイパーボール) to find Pokemon quickly. With 19 Energy cards, the deck ensures consistent energy attachment. This deck performed well at , demonstrating its competitive viability.",
+      "metadata": {
+        "deck_id": "yEMMUX-RVjYWz-SEMMSU",
+        "player": "ペパ",
+        "event": "",
+        "date": "2025-11-19"
+      }
+    },
+    {
+      "instruction": "Analyze this Pokemon TCG tournament deck and explain its strategy",
+      "input": "Tournament: \nPlayer: ユウツー\nRank: 9位\n\nPokemon:\n  1x キチキギスex\n  1x ゲノセクトex\n  4x サーフゴーex\n  2x なかよしポフィン\n  2x ふうせん\n  1x カウンターキャッチャー\n  4x コレクレー\n  1x サバイブギプス\n  1x スイレンのお世話\n  3x ソルロック\n  2x ナンジャモ\n  4x ファイトゴング\n  4x ペパー\n  2x ボウルタウン\n  2x ルナトーン\n  3x 大地の器\n\nTrainer Cards:\n  2x ネストボール\n  2x フトゥー博士のシナリオ\n  3x ボスの指令\n\nEnergy:\n  4x スーパーエネルギー回収\n  1x ミストエネルギー\n  3x 基本鋼エネルギー\n  8x 基本闘エネルギー",
+      "output": "This deck's primary attacker is キチキギスex, featuring 1 copies for consistency. The deck runs 37 Pokemon cards, providing unusual consistency. It uses 1 different search cards (ネストボール) to find Pokemon quickly. With 16 Energy cards, the deck ensures consistent energy attachment. This deck performed well at , demonstrating its competitive viability.",
+      "metadata": {
+        "deck_id": "888J8x-BuYG0j-xKYD8x",
+        "player": "ユウツー",
+        "event": "",
+        "date": "2025-11-19"
+      }
+    },
+    {
+      "instruction": "Analyze this Pokemon TCG tournament deck and explain its strategy",
+      "input": "Tournament: \nPlayer: みかん\nRank: 9位\n\nPokemon:\n  3x メガルカリオex\n  2x ふうせん\n  1x ジャミングタワー\n  2x ソルロック\n  3x ナンジャモ\n  2x ハリテヤマ\n  4x パワープロテイン\n  4x ファイトゴング\n  1x プライムキャッチャー\n  2x マクノシタ\n  3x リオル\n  4x リーリエの決心\n  2x ルナトーン\n  2x レッスンスタジオ\n  3x 夜のタンカ\n  1x 学習装置\n\nTrainer Cards:\n  2x ネストボール\n  4x ハイパーボール\n  2x フトゥー博士のシナリオ\n  1x ボスの指令\n  2x 博士の研究\n\nEnergy:\n  1x リバーサルエネルギー\n  9x 基本闘エネルギー",
+      "output": "This deck's primary attacker is メガルカリオex, featuring 3 copies for consistency. The deck runs 39 Pokemon cards, providing unusual consistency. It uses 2 different search cards (ネストボール, ハイパーボール) to find Pokemon quickly. With 10 Energy cards, the deck ensures consistent energy attachment. This deck performed well at , demonstrating its competitive viability.",
+      "metadata": {
+        "deck_id": "dkVFkv-jqYqr6-wkVvFV",
+        "player": "みかん",
+        "event": "",
+        "date": "2025-11-19"
+      }
+    },
+    {
+      "instruction": "Provide a tournament deck list with counts and categories",
+      "input": "Tournament: \nPlayer: えるぜ\nRank: 3位\n\nPokemon:\n  1x イキリンコex\n  1x キチキギスex\n  3x ソウブレイズex\n  1x ともだちてちょう\n  1x カルボウ\n  3x カルボウ\n  4x ゼイユ\n  2x ソルロック\n  1x ナンジャモ\n  1x ヒーローマント\n  3x ファイトゴング\n  1x ブライア\n  1x モグリュー\n  2x ルナトーン\n  3x 夜のタンカ\n  1x 大地の器\n\nTrainer Cards:\n  3x ネストボール\n  4x ハイパーボール\n  1x フトゥー博士のシナリオ\n  3x ボスの指令\n  1x 博士の研究\n\nEnergy:\n  2x ジェットエネルギー\n  6x 基本炎エネルギー\n  11x 基本闘エネルギー",
+      "output": "Tournament: \nPlayer: えるぜ\nRank: 3位\n\nPokemon:\n  1x イキリンコex\n  1x キチキギスex\n  3x ソウブレイズex\n  1x ともだちてちょう\n  1x カルボウ\n  3x カルボウ\n  4x ゼイユ\n  2x ソルロック\n  1x ナンジャモ\n  1x ヒーローマント\n  3x ファイトゴング\n  1x ブライア\n  1x モグリュー\n  2x ルナトーン\n  3x 夜のタンカ\n  1x 大地の器\n\nTrainer Cards:\n  3x ネストボール\n  4x ハイパーボール\n  1x フトゥー博士のシナリオ\n  3x ボスの指令\n  1x 博士の研究\n\nEnergy:\n  2x ジェットエネルギー\n  6x 基本炎エネルギー\n  11x 基本闘エネルギー",
+      "metadata": {
+        "deck_id": "g6nn9n-QuAd4t-LLQLgN",
+        "player": "えるぜ",
+        "event": "",
+        "date": "2025-11-16",
+        "type": "deck_list"
+      }
+    },
+    {
+      "instruction": "Analyze this Pokemon TCG tournament deck and explain its strategy",
+      "input": "Tournament: \nPlayer: えるぜ\nRank: 3位\n\nPokemon:\n  1x イキリンコex\n  1x キチキギスex\n  3x ソウブレイズex\n  1x ともだちてちょう\n  1x カルボウ\n  3x カルボウ\n  4x ゼイユ\n  2x ソルロック\n  1x ナンジャモ\n  1x ヒーローマント\n  3x ファイトゴング\n  1x ブライア\n  1x モグリュー\n  2x ルナトーン\n  3x 夜のタンカ\n  1x 大地の器\n\nTrainer Cards:\n  3x ネストボール\n  4x ハイパーボール\n  1x フトゥー博士のシナリオ\n  3x ボスの指令\n  1x 博士の研究\n\nEnergy:\n  2x ジェットエネルギー\n  6x 基本炎エネルギー\n  11x 基本闘エネルギー",
+      "output": "This deck's primary attacker is イキリンコex, featuring 1 copies for consistency. The deck runs 29 Pokemon cards, providing unusual consistency. It uses 2 different search cards (ネストボール, ハイパーボール) to find Pokemon quickly. With 19 Energy cards, the deck ensures consistent energy attachment. This deck performed well at , demonstrating its competitive viability.",
+      "metadata": {
+        "deck_id": "g6nn9n-QuAd4t-LLQLgN",
+        "player": "えるぜ",
+        "event": "",
+        "date": "2025-11-16",
+        "type": "deck_strategy"
+      }
+    },
+    {
+      "instruction": "What role does \"イキリンコex\" play in this deck? (e.g., win condition, search, tech, consistency)",
+      "input": "Deck:  | Player: えるぜ\nCard: イキリンコex | Qty: 1",
+      "output": "Role: Core/attacker or tech; role varies by deck build.",
+      "metadata": {
+        "deck_id": "g6nn9n-QuAd4t-LLQLgN",
+        "player": "えるぜ",
+        "event": "",
+        "card_name": "イキリンコex",
+        "card_qty": 1,
+        "type": "deck_card_role"
+      }
+    },
+    {
+      "instruction": "What role does \"キチキギスex\" play in this deck? (e.g., win condition, search, tech, consistency)",
+      "input": "Deck:  | Player: えるぜ\nCard: キチキギスex | Qty: 1",
+      "output": "Role: Core/attacker or tech; role varies by deck build.",
+      "metadata": {
+        "deck_id": "g6nn9n-QuAd4t-LLQLgN",
+        "player": "えるぜ",
+        "event": "",
+        "card_name": "キチキギスex",
+        "card_qty": 1,
+        "type": "deck_card_role"
+      }
+    },
+    {
+      "instruction": "What role does \"ソウブレイズex\" play in this deck? (e.g., win condition, search, tech, consistency)",
+      "input": "Deck:  | Player: えるぜ\nCard: ソウブレイズex | Qty: 3",
+      "output": "Role: Core/attacker or tech; role varies by deck build.",
+      "metadata": {
+        "deck_id": "g6nn9n-QuAd4t-LLQLgN",
+        "player": "えるぜ",
+        "event": "",
+        "card_name": "ソウブレイズex",
+        "card_qty": 3,
+        "type": "deck_card_role"
+      }
+    },
+    {
+      "instruction": "What role does \"ともだちてちょう\" play in this deck? (e.g., win condition, search, tech, consistency)",
+      "input": "Deck:  | Player: えるぜ\nCard: ともだちてちょう | Qty: 1",
+      "output": "Role: Core/attacker or tech; role varies by deck build.",
+      "metadata": {
+        "deck_id": "g6nn9n-QuAd4t-LLQLgN",
+        "player": "えるぜ",
+        "event": "",
+        "card_name": "ともだちてちょう",
+        "card_qty": 1,
+        "type": "deck_card_role"
+      }
+    },
+    {
+      "instruction": "What role does \"カルボウ\" play in this deck? (e.g., win condition, search, tech, consistency)",
+      "input": "Deck:  | Player: えるぜ\nCard: カルボウ | Qty: 1",
+      "output": "Role: Core/attacker or tech; role varies by deck build.",
+      "metadata": {
+        "deck_id": "g6nn9n-QuAd4t-LLQLgN",
+        "player": "えるぜ",
+        "event": "",
+        "card_name": "カルボウ",
+        "card_qty": 1,
+        "type": "deck_card_role"
+      }
+    },
+    {
+      "instruction": "How does this deck match up against the specified opponent archetype and what adjustments should be made?",
+      "input": "Deck:  by えるぜ | Opponent archetype: Aggro",
+      "output": "Against Aggro, this deck is strong in X and weak in Y. Key techs: A, B. Play priority: mulligan, early attach, etc.",
+      "metadata": {
+        "type": "deck_matchup",
+        "deck_id": "g6nn9n-QuAd4t-LLQLgN",
+        "opponent_archetype": "Aggro",
+        "player": "えるぜ",
+        "event": ""
+      }
+    },
+    {
+      "instruction": "How does this deck match up against the specified opponent archetype and what adjustments should be made?",
+      "input": "Deck:  by えるぜ | Opponent archetype: Control",
+      "output": "Against Control, this deck is strong in X and weak in Y. Key techs: A, B. Play priority: mulligan, early attach, etc.",
+      "metadata": {
+        "type": "deck_matchup",
+        "deck_id": "g6nn9n-QuAd4t-LLQLgN",
+        "opponent_archetype": "Control",
+        "player": "えるぜ",
+        "event": ""
+      }
+    },
+    {
+      "instruction": "How does this deck match up against the specified opponent archetype and what adjustments should be made?",
+      "input": "Deck:  by えるぜ | Opponent archetype: Item-based",
+      "output": "Against Item-based, this deck is strong in X and weak in Y. Key techs: A, B. Play priority: mulligan, early attach, etc.",
+      "metadata": {
+        "type": "deck_matchup",
+        "deck_id": "g6nn9n-QuAd4t-LLQLgN",
+        "opponent_archetype": "Item-based",
+        "player": "えるぜ",
+        "event": ""
+      }
+    },
+    {
+      "instruction": "What tech cards or sideboard choices should this deck include against the specified opponent archetype?",
+      "input": "Deck:  | Opponent archetype: Aggro",
+      "output": "Use tech cards like X, Y, Z to address Aggro. Consider swapping A for B in certain matchups.",
+      "metadata": {
+        "type": "deck_sideboard",
+        "deck_id": "g6nn9n-QuAd4t-LLQLgN",
+        "opponent_archetype": "Aggro",
+        "player": "えるぜ"
+      }
+    },
+    {
+      "instruction": "What tech cards or sideboard choices should this deck include against the specified opponent archetype?",
+      "input": "Deck:  | Opponent archetype: Control",
+      "output": "Use tech cards like X, Y, Z to address Control. Consider swapping A for B in certain matchups.",
+      "metadata": {
+        "type": "deck_sideboard",
+        "deck_id": "g6nn9n-QuAd4t-LLQLgN",
+        "opponent_archetype": "Control",
+        "player": "えるぜ"
+      }
+    },
+    {
+      "instruction": "What tech cards or sideboard choices should this deck include against the specified opponent archetype?",
+      "input": "Deck:  | Opponent archetype: Item-based",
+      "output": "Use tech cards like X, Y, Z to address Item-based. Consider swapping A for B in certain matchups.",
+      "metadata": {
+        "type": "deck_sideboard",
+        "deck_id": "g6nn9n-QuAd4t-LLQLgN",
+        "opponent_archetype": "Item-based",
+        "player": "えるぜ"
+      }
+    },
+    {
+      "instruction": "How should I pilot this deck during a match? Include mulligan policy, first turn plays, and mid-late game win conditions.",
+      "input": "Tournament: \nPlayer: えるぜ\nRank: 3位\n\nPokemon:\n  1x イキリンコex\n  1x キチキギスex\n  3x ソウブレイズex\n  1x ともだちてちょう\n  1x カルボウ\n  3x カルボウ\n  4x ゼイユ\n  2x ソルロック\n  1x ナンジャモ\n  1x ヒーローマント\n  3x ファイトゴング\n  1x ブライア\n  1x モグリュー\n  2x ルナトーン\n  3x 夜のタンカ\n  1x 大地の器\n\nTrainer Cards:\n  3x ネストボール\n  4x ハイパーボール\n  1x フトゥー博士のシナリオ\n  3x ボスの指令\n  1x 博士の研究\n\nEnergy:\n  2x ジェットエネルギー\n  6x 基本炎エネルギー\n  11x 基本闘エネルギー",
+      "output": "Mulligan if you do not have a Basic attacker or enough search cards. On first turn: attach energy to your main attacker if possible and use search cards to establish board. Save Boss's Orders for forced KO or to target a bench swap. In mid-game, focus on prize trading and energy efficiency.",
+      "metadata": {
+        "type": "deck_pilot",
+        "deck_id": "g6nn9n-QuAd4t-LLQLgN",
+        "player": "えるぜ",
+        "event": ""
+      }
+    },
+    {
+      "instruction": "Provide a tournament deck list with counts and categories",
+      "input": "Tournament: \nPlayer: アレク\nRank: 3位\n\nPokemon:\n  1x キチキギスex\n  1x ゲノセクトex\n  4x サーフゴーex\n  1x げんきのハチマキ\n  1x げんきのハチマキ\n  1x すごいつりざお\n  1x すごいつりざお\n  1x なかよしポフィン\n  1x なかよしポフィン\n  2x ふうせん\n  2x ふうせん\n  3x コレクレー\n  1x コレクレー\n  1x スイレンのお世話\n  1x スイレンのお世話\n  3x ソルロック\n  1x ピクニックバスケット\n  1x ピクニックバスケット\n  4x ファイトゴング\n  4x ファイトゴング\n  1x プライムキャッチャー\n  4x ペパー\n  4x ペパー\n  1x ホップのウッウ\n  2x ボウルタウン\n  2x ボウルタウン\n  2x ルナトーン\n  3x 大地の器\n  3x 大地の器\n  1x 暗号マニアの解読\n  1x 暗号マニアの解読\n\nTrainer Cards:\n  3x ネストボール\n  3x ネストボール\n  1x フトゥー博士のシナリオ\n  1x フトゥー博士のシナリオ\n  3x ボスの指令\n  3x ボスの指令\n\nEnergy:\n  4x スーパーエネルギー回収\n  4x スーパーエネルギー回収\n  3x 基本鋼エネルギー\n  8x 基本闘エネルギー",
+      "output": "Tournament: \nPlayer: アレク\nRank: 3位\n\nPokemon:\n  1x キチキギスex\n  1x ゲノセクトex\n  4x サーフゴーex\n  1x げんきのハチマキ\n  1x げんきのハチマキ\n  1x すごいつりざお\n  1x すごいつりざお\n  1x なかよしポフィン\n  1x なかよしポフィン\n  2x ふうせん\n  2x ふうせん\n  3x コレクレー\n  1x コレクレー\n  1x スイレンのお世話\n  1x スイレンのお世話\n  3x ソルロック\n  1x ピクニックバスケット\n  1x ピクニックバスケット\n  4x ファイトゴング\n  4x ファイトゴング\n  1x プライムキャッチャー\n  4x ペパー\n  4x ペパー\n  1x ホップのウッウ\n  2x ボウルタウン\n  2x ボウルタウン\n  2x ルナトーン\n  3x 大地の器\n  3x 大地の器\n  1x 暗号マニアの解読\n  1x 暗号マニアの解読\n\nTrainer Cards:\n  3x ネストボール\n  3x ネストボール\n  1x フトゥー博士のシナリオ\n  1x フトゥー博士のシナリオ\n  3x ボスの指令\n  3x ボスの指令\n\nEnergy:\n  4x スーパーエネルギー回収\n  4x スーパーエネルギー回収\n  3x 基本鋼エネルギー\n  8x 基本闘エネルギー",
+      "metadata": {
+        "deck_id": "FvVVkb-PoqCTh-5Vkf5v",
+        "player": "アレク",
+        "event": "",
+        "date": "2025-11-16",
+        "type": "deck_list"
+      }
+    },
+    {
+      "instruction": "Analyze this Pokemon TCG tournament deck and explain its strategy",
+      "input": "Tournament: \nPlayer: アレク\nRank: 3位\n\nPokemon:\n  1x キチキギスex\n  1x ゲノセクトex\n  4x サーフゴーex\n  1x げんきのハチマキ\n  1x げんきのハチマキ\n  1x すごいつりざお\n  1x すごいつりざお\n  1x なかよしポフィン\n  1x なかよしポフィン\n  2x ふうせん\n  2x ふうせん\n  3x コレクレー\n  1x コレクレー\n  1x スイレンのお世話\n  1x スイレンのお世話\n  3x ソルロック\n  1x ピクニックバスケット\n  1x ピクニックバスケット\n  4x ファイトゴング\n  4x ファイトゴング\n  1x プライムキャッチャー\n  4x ペパー\n  4x ペパー\n  1x ホップのウッウ\n  2x ボウルタウン\n  2x ボウルタウン\n  2x ルナトーン\n  3x 大地の器\n  3x 大地の器\n  1x 暗号マニアの解読\n  1x 暗号マニアの解読\n\nTrainer Cards:\n  3x ネストボール\n  3x ネストボール\n  1x フトゥー博士のシナリオ\n  1x フトゥー博士のシナリオ\n  3x ボスの指令\n  3x ボスの指令\n\nEnergy:\n  4x スーパーエネルギー回収\n  4x スーパーエネルギー回収\n  3x 基本鋼エネルギー\n  8x 基本闘エネルギー",
+      "output": "This deck's primary attacker is キチキギスex, featuring 1 copies for consistency. The deck runs 59 Pokemon cards, providing unusual consistency. It uses 2 different search cards (ネストボール, ネストボール) to find Pokemon quickly. With 19 Energy cards, the deck ensures consistent energy attachment. This deck performed well at , demonstrating its competitive viability.",
+      "metadata": {
+        "deck_id": "FvVVkb-PoqCTh-5Vkf5v",
+        "player": "アレク",
+        "event": "",
+        "date": "2025-11-16",
+        "type": "deck_strategy"
+      }
+    },
+    {
+      "instruction": "What role does \"キチキギスex\" play in this deck? (e.g., win condition, search, tech, consistency)",
+      "input": "Deck:  | Player: アレク\nCard: キチキギスex | Qty: 1",
+      "output": "Role: Core/attacker or tech; role varies by deck build.",
+      "metadata": {
+        "deck_id": "FvVVkb-PoqCTh-5Vkf5v",
+        "player": "アレク",
+        "event": "",
+        "card_name": "キチキギスex",
+        "card_qty": 1,
+        "type": "deck_card_role"
+      }
+    },
+    {
+      "instruction": "What role does \"ゲノセクトex\" play in this deck? (e.g., win condition, search, tech, consistency)",
+      "input": "Deck:  | Player: アレク\nCard: ゲノセクトex | Qty: 1",
+      "output": "Role: Core/attacker or tech; role varies by deck build.",
+      "metadata": {
+        "deck_id": "FvVVkb-PoqCTh-5Vkf5v",
+        "player": "アレク",
+        "event": "",
+        "card_name": "ゲノセクトex",
+        "card_qty": 1,
+        "type": "deck_card_role"
+      }
+    },
+    {
+      "instruction": "What role does \"サーフゴーex\" play in this deck? (e.g., win condition, search, tech, consistency)",
+      "input": "Deck:  | Player: アレク\nCard: サーフゴーex | Qty: 4",
+      "output": "Role: Core/attacker or tech; role varies by deck build.",
+      "metadata": {
+        "deck_id": "FvVVkb-PoqCTh-5Vkf5v",
+        "player": "アレク",
+        "event": "",
+        "card_name": "サーフゴーex",
+        "card_qty": 4,
+        "type": "deck_card_role"
+      }
+    },
+    {
+      "instruction": "What role does \"げんきのハチマキ\" play in this deck? (e.g., win condition, search, tech, consistency)",
+      "input": "Deck:  | Player: アレク\nCard: げんきのハチマキ | Qty: 1",
+      "output": "Role: Core/attacker or tech; role varies by deck build.",
+      "metadata": {
+        "deck_id": "FvVVkb-PoqCTh-5Vkf5v",
+        "player": "アレク",
+        "event": "",
+        "card_name": "げんきのハチマキ",
+        "card_qty": 1,
+        "type": "deck_card_role"
+      }
+    },
+    {
+      "instruction": "What role does \"げんきのハチマキ\" play in this deck? (e.g., win condition, search, tech, consistency)",
+      "input": "Deck:  | Player: アレク\nCard: げんきのハチマキ | Qty: 1",
+      "output": "Role: Core/attacker or tech; role varies by deck build.",
+      "metadata": {
+        "deck_id": "FvVVkb-PoqCTh-5Vkf5v",
+        "player": "アレク",
+        "event": "",
+        "card_name": "げんきのハチマキ",
+        "card_qty": 1,
+        "type": "deck_card_role"
+      }
+    },
+    {
+      "instruction": "How does this deck match up against the specified opponent archetype and what adjustments should be made?",
+      "input": "Deck:  by アレク | Opponent archetype: Aggro",
+      "output": "Against Aggro, this deck is strong in X and weak in Y. Key techs: A, B. Play priority: mulligan, early attach, etc.",
+      "metadata": {
+        "type": "deck_matchup",
+        "deck_id": "FvVVkb-PoqCTh-5Vkf5v",
+        "opponent_archetype": "Aggro",
+        "player": "アレク",
+        "event": ""
+      }
+    },
+    {
+      "instruction": "How does this deck match up against the specified opponent archetype and what adjustments should be made?",
+      "input": "Deck:  by アレク | Opponent archetype: Control",
+      "output": "Against Control, this deck is strong in X and weak in Y. Key techs: A, B. Play priority: mulligan, early attach, etc.",
+      "metadata": {
+        "type": "deck_matchup",
+        "deck_id": "FvVVkb-PoqCTh-5Vkf5v",
+        "opponent_archetype": "Control",
+        "player": "アレク",
+        "event": ""
+      }
+    },
+    {
+      "instruction": "How does this deck match up against the specified opponent archetype and what adjustments should be made?",
+      "input": "Deck:  by アレク | Opponent archetype: Item-based",
+      "output": "Against Item-based, this deck is strong in X and weak in Y. Key techs: A, B. Play priority: mulligan, early attach, etc.",
+      "metadata": {
+        "type": "deck_matchup",
+        "deck_id": "FvVVkb-PoqCTh-5Vkf5v",
+        "opponent_archetype": "Item-based",
+        "player": "アレク",
+        "event": ""
+      }
+    },
+    {
+      "instruction": "What tech cards or sideboard choices should this deck include against the specified opponent archetype?",
+      "input": "Deck:  | Opponent archetype: Aggro",
+      "output": "Use tech cards like X, Y, Z to address Aggro. Consider swapping A for B in certain matchups.",
+      "metadata": {
+        "type": "deck_sideboard",
+        "deck_id": "FvVVkb-PoqCTh-5Vkf5v",
+        "opponent_archetype": "Aggro",
+        "player": "アレク"
+      }
+    },
+    {
+      "instruction": "What tech cards or sideboard choices should this deck include against the specified opponent archetype?",
+      "input": "Deck:  | Opponent archetype: Control",
+      "output": "Use tech cards like X, Y, Z to address Control. Consider swapping A for B in certain matchups.",
+      "metadata": {
+        "type": "deck_sideboard",
+        "deck_id": "FvVVkb-PoqCTh-5Vkf5v",
+        "opponent_archetype": "Control",
+        "player": "アレク"
+      }
+    },
+    {
+      "instruction": "What tech cards or sideboard choices should this deck include against the specified opponent archetype?",
+      "input": "Deck:  | Opponent archetype: Item-based",
+      "output": "Use tech cards like X, Y, Z to address Item-based. Consider swapping A for B in certain matchups.",
+      "metadata": {
+        "type": "deck_sideboard",
+        "deck_id": "FvVVkb-PoqCTh-5Vkf5v",
+        "opponent_archetype": "Item-based",
+        "player": "アレク"
+      }
+    },
+    {
+      "instruction": "How should I pilot this deck during a match? Include mulligan policy, first turn plays, and mid-late game win conditions.",
+      "input": "Tournament: \nPlayer: アレク\nRank: 3位\n\nPokemon:\n  1x キチキギスex\n  1x ゲノセクトex\n  4x サーフゴーex\n  1x げんきのハチマキ\n  1x げんきのハチマキ\n  1x すごいつりざお\n  1x すごいつりざお\n  1x なかよしポフィン\n  1x なかよしポフィン\n  2x ふうせん\n  2x ふうせん\n  3x コレクレー\n  1x コレクレー\n  1x スイレンのお世話\n  1x スイレンのお世話\n  3x ソルロック\n  1x ピクニックバスケット\n  1x ピクニックバスケット\n  4x ファイトゴング\n  4x ファイトゴング\n  1x プライムキャッチャー\n  4x ペパー\n  4x ペパー\n  1x ホップのウッウ\n  2x ボウルタウン\n  2x ボウルタウン\n  2x ルナトーン\n  3x 大地の器\n  3x 大地の器\n  1x 暗号マニアの解読\n  1x 暗号マニアの解読\n\nTrainer Cards:\n  3x ネストボール\n  3x ネストボール\n  1x フトゥー博士のシナリオ\n  1x フトゥー博士のシナリオ\n  3x ボスの指令\n  3x ボスの指令\n\nEnergy:\n  4x スーパーエネルギー回収\n  4x スーパーエネルギー回収\n  3x 基本鋼エネルギー\n  8x 基本闘エネルギー",
+      "output": "Mulligan if you do not have a Basic attacker or enough search cards. On first turn: attach energy to your main attacker if possible and use search cards to establish board. Save Boss's Orders for forced KO or to target a bench swap. In mid-game, focus on prize trading and energy efficiency.",
+      "metadata": {
+        "type": "deck_pilot",
+        "deck_id": "FvVVkb-PoqCTh-5Vkf5v",
+        "player": "アレク",
+        "event": ""
+      }
+    },
+    {
+      "instruction": "Provide a tournament deck list with counts and categories",
+      "input": "Tournament: \nPlayer: チョコB\nRank: 2位\n\nPokemon:\n  1x キチキギスex\n  1x ゲノセクトex\n  4x サーフゴーex\n  1x なかよしポフィン\n  2x ふうせん\n  4x コレクレー\n  1x スイレンのお世話\n  3x ソルロック\n  1x ピクニックバスケット\n  4x ファイトゴング\n  1x プライムキャッチャー\n  4x ペパー\n  1x ホップのウッウ\n  2x ボウルタウン\n  2x ルナトーン\n  3x 大地の器\n  2x 暗号マニアの解読\n\nTrainer Cards:\n  3x ネストボール\n  1x フトゥー博士のシナリオ\n  4x ボスの指令\n\nEnergy:\n  4x スーパーエネルギー回収\n  3x 基本鋼エネルギー\n  8x 基本闘エネルギー",
+      "output": "Tournament: \nPlayer: チョコB\nRank: 2位\n\nPokemon:\n  1x キチキギスex\n  1x ゲノセクトex\n  4x サーフゴーex\n  1x なかよしポフィン\n  2x ふうせん\n  4x コレクレー\n  1x スイレンのお世話\n  3x ソルロック\n  1x ピクニックバスケット\n  4x ファイトゴング\n  1x プライムキャッチャー\n  4x ペパー\n  1x ホップのウッウ\n  2x ボウルタウン\n  2x ルナトーン\n  3x 大地の器\n  2x 暗号マニアの解読\n\nTrainer Cards:\n  3x ネストボール\n  1x フトゥー博士のシナリオ\n  4x ボスの指令\n\nEnergy:\n  4x スーパーエネルギー回収\n  3x 基本鋼エネルギー\n  8x 基本闘エネルギー",
+      "metadata": {
+        "deck_id": "xa84xY-KQ69Qu-Y8xxc4",
+        "player": "チョコB",
+        "event": "",
+        "date": "2025-11-16",
+        "type": "deck_list"
+      }
+    },
+    {
+      "instruction": "Analyze this Pokemon TCG tournament deck and explain its strategy",
+      "input": "Tournament: \nPlayer: チョコB\nRank: 2位\n\nPokemon:\n  1x キチキギスex\n  1x ゲノセクトex\n  4x サーフゴーex\n  1x なかよしポフィン\n  2x ふうせん\n  4x コレクレー\n  1x スイレンのお世話\n  3x ソルロック\n  1x ピクニックバスケット\n  4x ファイトゴング\n  1x プライムキャッチャー\n  4x ペパー\n  1x ホップのウッウ\n  2x ボウルタウン\n  2x ルナトーン\n  3x 大地の器\n  2x 暗号マニアの解読\n\nTrainer Cards:\n  3x ネストボール\n  1x フトゥー博士のシナリオ\n  4x ボスの指令\n\nEnergy:\n  4x スーパーエネルギー回収\n  3x 基本鋼エネルギー\n  8x 基本闘エネルギー",
+      "output": "This deck's primary attacker is キチキギスex, featuring 1 copies for consistency. The deck runs 37 Pokemon cards, providing unusual consistency. It uses 1 different search cards (ネストボール) to find Pokemon quickly. With 15 Energy cards, the deck ensures consistent energy attachment. This deck performed well at , demonstrating its competitive viability.",
+      "metadata": {
+        "deck_id": "xa84xY-KQ69Qu-Y8xxc4",
+        "player": "チョコB",
+        "event": "",
+        "date": "2025-11-16",
+        "type": "deck_strategy"
+      }
+    },
+    {
+      "instruction": "What role does \"キチキギスex\" play in this deck? (e.g., win condition, search, tech, consistency)",
+      "input": "Deck:  | Player: チョコB\nCard: キチキギスex | Qty: 1",
+      "output": "Role: Core/attacker or tech; role varies by deck build.",
+      "metadata": {
+        "deck_id": "xa84xY-KQ69Qu-Y8xxc4",
+        "player": "チョコB",
+        "event": "",
+        "card_name": "キチキギスex",
+        "card_qty": 1,
+        "type": "deck_card_role"
+      }
+    },
+    {
+      "instruction": "What role does \"ゲノセクトex\" play in this deck? (e.g., win condition, search, tech, consistency)",
+      "input": "Deck:  | Player: チョコB\nCard: ゲノセクトex | Qty: 1",
+      "output": "Role: Core/attacker or tech; role varies by deck build.",
+      "metadata": {
+        "deck_id": "xa84xY-KQ69Qu-Y8xxc4",
+        "player": "チョコB",
+        "event": "",
+        "card_name": "ゲノセクトex",
+        "card_qty": 1,
+        "type": "deck_card_role"
+      }
+    },
+    {
+      "instruction": "What role does \"サーフゴーex\" play in this deck? (e.g., win condition, search, tech, consistency)",
+      "input": "Deck:  | Player: チョコB\nCard: サーフゴーex | Qty: 4",
+      "output": "Role: Core/attacker or tech; role varies by deck build.",
+      "metadata": {
+        "deck_id": "xa84xY-KQ69Qu-Y8xxc4",
+        "player": "チョコB",
+        "event": "",
+        "card_name": "サーフゴーex",
+        "card_qty": 4,
+        "type": "deck_card_role"
+      }
+    },
+    {
+      "instruction": "What role does \"なかよしポフィン\" play in this deck? (e.g., win condition, search, tech, consistency)",
+      "input": "Deck:  | Player: チョコB\nCard: なかよしポフィン | Qty: 1",
+      "output": "Role: Core/attacker or tech; role varies by deck build.",
+      "metadata": {
+        "deck_id": "xa84xY-KQ69Qu-Y8xxc4",
+        "player": "チョコB",
+        "event": "",
+        "card_name": "なかよしポフィン",
+        "card_qty": 1,
+        "type": "deck_card_role"
+      }
+    },
+    {
+      "instruction": "What role does \"ふうせん\" play in this deck? (e.g., win condition, search, tech, consistency)",
+      "input": "Deck:  | Player: チョコB\nCard: ふうせん | Qty: 2",
+      "output": "Role: Core/attacker or tech; role varies by deck build.",
+      "metadata": {
+        "deck_id": "xa84xY-KQ69Qu-Y8xxc4",
+        "player": "チョコB",
+        "event": "",
+        "card_name": "ふうせん",
+        "card_qty": 2,
+        "type": "deck_card_role"
+      }
+    },
+    {
+      "instruction": "How does this deck match up against the specified opponent archetype and what adjustments should be made?",
+      "input": "Deck:  by チョコB | Opponent archetype: Aggro",
+      "output": "Against Aggro, this deck is strong in X and weak in Y. Key techs: A, B. Play priority: mulligan, early attach, etc.",
+      "metadata": {
+        "type": "deck_matchup",
+        "deck_id": "xa84xY-KQ69Qu-Y8xxc4",
+        "opponent_archetype": "Aggro",
+        "player": "チョコB",
+        "event": ""
+      }
+    },
+    {
+      "instruction": "How does this deck match up against the specified opponent archetype and what adjustments should be made?",
+      "input": "Deck:  by チョコB | Opponent archetype: Control",
+      "output": "Against Control, this deck is strong in X and weak in Y. Key techs: A, B. Play priority: mulligan, early attach, etc.",
+      "metadata": {
+        "type": "deck_matchup",
+        "deck_id": "xa84xY-KQ69Qu-Y8xxc4",
+        "opponent_archetype": "Control",
+        "player": "チョコB",
+        "event": ""
+      }
+    },
+    {
+      "instruction": "How does this deck match up against the specified opponent archetype and what adjustments should be made?",
+      "input": "Deck:  by チョコB | Opponent archetype: Item-based",
+      "output": "Against Item-based, this deck is strong in X and weak in Y. Key techs: A, B. Play priority: mulligan, early attach, etc.",
+      "metadata": {
+        "type": "deck_matchup",
+        "deck_id": "xa84xY-KQ69Qu-Y8xxc4",
+        "opponent_archetype": "Item-based",
+        "player": "チョコB",
+        "event": ""
+      }
+    },
+    {
+      "instruction": "What tech cards or sideboard choices should this deck include against the specified opponent archetype?",
+      "input": "Deck:  | Opponent archetype: Aggro",
+      "output": "Use tech cards like X, Y, Z to address Aggro. Consider swapping A for B in certain matchups.",
+      "metadata": {
+        "type": "deck_sideboard",
+        "deck_id": "xa84xY-KQ69Qu-Y8xxc4",
+        "opponent_archetype": "Aggro",
+        "player": "チョコB"
+      }
+    },
+    {
+      "instruction": "What tech cards or sideboard choices should this deck include against the specified opponent archetype?",
+      "input": "Deck:  | Opponent archetype: Control",
+      "output": "Use tech cards like X, Y, Z to address Control. Consider swapping A for B in certain matchups.",
+      "metadata": {
+        "type": "deck_sideboard",
+        "deck_id": "xa84xY-KQ69Qu-Y8xxc4",
+        "opponent_archetype": "Control",
+        "player": "チョコB"
+      }
+    },
+    {
+      "instruction": "What tech cards or sideboard choices should this deck include against the specified opponent archetype?",
+      "input": "Deck:  | Opponent archetype: Item-based",
+      "output": "Use tech cards like X, Y, Z to address Item-based. Consider swapping A for B in certain matchups.",
+      "metadata": {
+        "type": "deck_sideboard",
+        "deck_id": "xa84xY-KQ69Qu-Y8xxc4",
+        "opponent_archetype": "Item-based",
+        "player": "チョコB"
+      }
+    },
+    {
+      "instruction": "How should I pilot this deck during a match? Include mulligan policy, first turn plays, and mid-late game win conditions.",
+      "input": "Tournament: \nPlayer: チョコB\nRank: 2位\n\nPokemon:\n  1x キチキギスex\n  1x ゲノセクトex\n  4x サーフゴーex\n  1x なかよしポフィン\n  2x ふうせん\n  4x コレクレー\n  1x スイレンのお世話\n  3x ソルロック\n  1x ピクニックバスケット\n  4x ファイトゴング\n  1x プライムキャッチャー\n  4x ペパー\n  1x ホップのウッウ\n  2x ボウルタウン\n  2x ルナトーン\n  3x 大地の器\n  2x 暗号マニアの解読\n\nTrainer Cards:\n  3x ネストボール\n  1x フトゥー博士のシナリオ\n  4x ボスの指令\n\nEnergy:\n  4x スーパーエネルギー回収\n  3x 基本鋼エネルギー\n  8x 基本闘エネルギー",
+      "output": "Mulligan if you do not have a Basic attacker or enough search cards. On first turn: attach energy to your main attacker if possible and use search cards to establish board. Save Boss's Orders for forced KO or to target a bench swap. In mid-game, focus on prize trading and energy efficiency.",
+      "metadata": {
+        "type": "deck_pilot",
+        "deck_id": "xa84xY-KQ69Qu-Y8xxc4",
+        "player": "チョコB",
+        "event": ""
+      }
+    }
+  ]
+}

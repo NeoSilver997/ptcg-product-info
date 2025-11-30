@@ -1,0 +1,182 @@
+{
+  "metadata": {
+    "generated_at": "2025-11-24T00:20:41.003016",
+    "total_examples": 16,
+    "card_examples": 8,
+    "rule_examples": 7,
+    "strategy_examples": 1,
+    "source_database": "ptcg_events.db"
+  },
+  "examples": [
+    {
+      "instruction": "Describe the Pokemon TCG card: ナンジャモ",
+      "input": "Card Code: SV8a 161/187\nCategory: Supporter",
+      "output": "ナンジャモ is a Supporter card from the Pokemon Trading Card Game. Card code: SV8a 161/187. This card appears in 1 tournament decks. Players typically run 4.0 copies on average (range: 4-4). This card commonly appears with: 基本雷エネルギー, ボスの指令, ポケモンいれかえ, ネストボール, ハイパーボール. Recent tournament usage includes decks by TestPlayer. As a Supporter card, you can only play one per turn.",
+      "metadata": {
+        "card_name": "ナンジャモ",
+        "card_code": "SV8a 161/187",
+        "category": "Supporter",
+        "deck_usage": 1,
+        "avg_quantity": 4.0
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ネストボール",
+      "input": "Card Code: SV8a 151/187\nCategory: Item",
+      "output": "ネストボール is a Item card from the Pokemon Trading Card Game. Card code: SV8a 151/187. This card appears in 1 tournament decks. Players typically run 4.0 copies on average (range: 4-4). This card commonly appears with: 基本雷エネルギー, ナンジャモ, ボスの指令, ポケモンいれかえ, ハイパーボール. Recent tournament usage includes decks by TestPlayer. As an Item card, you can play multiple per turn.",
+      "metadata": {
+        "card_name": "ネストボール",
+        "card_code": "SV8a 151/187",
+        "category": "Item",
+        "deck_usage": 1,
+        "avg_quantity": 4.0
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ハイパーボール",
+      "input": "Card Code: SV8a 150/187\nCategory: Item",
+      "output": "ハイパーボール is a Item card from the Pokemon Trading Card Game. Card code: SV8a 150/187. This card appears in 1 tournament decks. Players typically run 4.0 copies on average (range: 4-4). This card commonly appears with: 基本雷エネルギー, ナンジャモ, ボスの指令, ポケモンいれかえ, ネストボール. Recent tournament usage includes decks by TestPlayer. As an Item card, you can play multiple per turn.",
+      "metadata": {
+        "card_name": "ハイパーボール",
+        "card_code": "SV8a 150/187",
+        "category": "Item",
+        "deck_usage": 1,
+        "avg_quantity": 4.0
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ピカチュウex",
+      "input": "Card Code: SV8a 001/187\nCategory: Pokemon ex",
+      "output": "ピカチュウex is a Pokemon ex card from the Pokemon Trading Card Game. Card code: SV8a 001/187. This card appears in 1 tournament decks. Players typically run 2.0 copies on average (range: 2-2). This card commonly appears with: 基本雷エネルギー, ナンジャモ, ボスの指令, ポケモンいれかえ, ネストボール. Recent tournament usage includes decks by TestPlayer. As a Pokemon ex, this card gives up 2 Prize cards when knocked out.",
+      "metadata": {
+        "card_name": "ピカチュウex",
+        "card_code": "SV8a 001/187",
+        "category": "Pokemon ex",
+        "deck_usage": 1,
+        "avg_quantity": 2.0
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ボスの指令",
+      "input": "Card Code: SV8a 160/187\nCategory: Supporter",
+      "output": "ボスの指令 is a Supporter card from the Pokemon Trading Card Game. Card code: SV8a 160/187. This card appears in 1 tournament decks. Players typically run 4.0 copies on average (range: 4-4). This card commonly appears with: 基本雷エネルギー, ナンジャモ, ポケモンいれかえ, ネストボール, ハイパーボール. Recent tournament usage includes decks by TestPlayer. As a Supporter card, you can only play one per turn.",
+      "metadata": {
+        "card_name": "ボスの指令",
+        "card_code": "SV8a 160/187",
+        "category": "Supporter",
+        "deck_usage": 1,
+        "avg_quantity": 4.0
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ポケモンいれかえ",
+      "input": "Card Code: SV8a 152/187\nCategory: Item",
+      "output": "ポケモンいれかえ is a Item card from the Pokemon Trading Card Game. Card code: SV8a 152/187. This card appears in 1 tournament decks. Players typically run 3.0 copies on average (range: 3-3). This card commonly appears with: 基本雷エネルギー, ナンジャモ, ボスの指令, ネストボール, ハイパーボール. Recent tournament usage includes decks by TestPlayer. As an Item card, you can play multiple per turn.",
+      "metadata": {
+        "card_name": "ポケモンいれかえ",
+        "card_code": "SV8a 152/187",
+        "category": "Item",
+        "deck_usage": 1,
+        "avg_quantity": 3.0
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: ライチュウ",
+      "input": "Card Code: SV8a 002/187\nCategory: Pokemon",
+      "output": "ライチュウ is a Pokemon card from the Pokemon Trading Card Game. Card code: SV8a 002/187. This card appears in 1 tournament decks. Players typically run 2.0 copies on average (range: 2-2). This card commonly appears with: 基本雷エネルギー, ナンジャモ, ボスの指令, ポケモンいれかえ, ネストボール. Recent tournament usage includes decks by TestPlayer.",
+      "metadata": {
+        "card_name": "ライチュウ",
+        "card_code": "SV8a 002/187",
+        "category": "Pokemon",
+        "deck_usage": 1,
+        "avg_quantity": 2.0
+      }
+    },
+    {
+      "instruction": "Describe the Pokemon TCG card: 基本雷エネルギー",
+      "input": "Card Code: \nCategory: Basic Energy",
+      "output": "基本雷エネルギー is a Basic Energy card from the Pokemon Trading Card Game. This card appears in 1 tournament decks. Players typically run 15.0 copies on average (range: 15-15). This card commonly appears with: ナンジャモ, ボスの指令, ポケモンいれかえ, ネストボール, ハイパーボール. Recent tournament usage includes decks by TestPlayer. Basic Energy cards can be attached once per turn to power up Pokemon attacks.",
+      "metadata": {
+        "card_name": "基本雷エネルギー",
+        "card_code": "",
+        "category": "Basic Energy",
+        "deck_usage": 1,
+        "avg_quantity": 15.0
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Deck Construction",
+      "input": "",
+      "output": "A Pokemon TCG deck must contain exactly 60 cards. You can have up to 4 copies of any card with the same name, except for Basic Energy cards.\n\nExamples:\n- Valid: 4x Pikachu ex, 4x Hyper Ball, 15x Basic Lightning Energy\n- Invalid: 5x Pikachu ex (exceeds 4-copy limit)",
+      "metadata": {
+        "topic": "Deck Construction",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Turn Structure",
+      "input": "",
+      "output": "Each turn consists of phases: Draw (draw 1 card), Main Phase (play Pokemon, attach Energy, play Trainers), Attack Phase (attack or end turn).\n\nExamples:\n- Turn 1: Draw → Play Pikachu to Bench → Attach Energy to Active → Play Supporter → Attack\n- You cannot attack on your first turn if you go first.",
+      "metadata": {
+        "topic": "Turn Structure",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Energy Attachment",
+      "input": "",
+      "output": "You can attach one Energy card from your hand to one of your Pokemon each turn.\n\nExamples:\n- Attach 1 Basic Lightning Energy to Pikachu ex\n- You cannot attach 2 Energy cards in one turn (unless a card effect allows it)",
+      "metadata": {
+        "topic": "Energy Attachment",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Supporter Cards",
+      "input": "",
+      "output": "You can play only one Supporter card during your turn.\n\nExamples:\n- Play Professor Research to draw 7 cards\n- You cannot play Boss Orders after playing Marnie in the same turn",
+      "metadata": {
+        "topic": "Supporter Cards",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Prize Cards",
+      "input": "",
+      "output": "Win the game by taking all your Prize cards (usually 6). When you knock out an opponent Pokemon, take 1 Prize (2 for Pokemon ex, 3 for Pokemon VMAX).\n\nExamples:\n- Knock out Pikachu ex → Take 2 Prize cards\n- First player to take all 6 Prizes wins",
+      "metadata": {
+        "topic": "Prize Cards",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Bench Size",
+      "input": "",
+      "output": "You can have up to 5 Pokemon on your Bench at once.\n\nExamples:\n- Valid: Active Pikachu + 5 Benched Pokemon\n- Invalid: Cannot play 6th Pokemon to Bench without discarding one",
+      "metadata": {
+        "topic": "Bench Size",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Explain the Pokemon TCG rule: Retreat Cost",
+      "input": "",
+      "output": "To retreat your Active Pokemon, discard Energy equal to its Retreat Cost and switch it with a Benched Pokemon.\n\nExamples:\n- Pikachu ex has Retreat Cost 1: Discard 1 Energy to retreat\n- Free retreat: Pokemon with 0 Retreat Cost can switch for free",
+      "metadata": {
+        "topic": "Retreat Cost",
+        "type": "game_rule"
+      }
+    },
+    {
+      "instruction": "Analyze this Pokemon TCG tournament deck and explain its strategy",
+      "input": "Tournament: City Championship\nPlayer: TestPlayer\nRank: 1位\n\nPokemon:\n  2x ピカチュウex\n  4x ナンジャモ\n  2x ライチュウ\n\nTrainer Cards:\n  4x ネストボール\n  4x ハイパーボール\n  4x ボスの指令\n  3x ポケモンいれかえ\n\nEnergy:\n  15x 基本雷エネルギー",
+      "output": "This deck's primary attacker is ピカチュウex, featuring 2 copies for consistency. The deck runs 8 Pokemon cards, providing unusual consistency. It uses 2 different search cards (ネストボール, ハイパーボール) to find Pokemon quickly. With 15 Energy cards, the deck ensures consistent energy attachment. This deck performed well at City Championship, demonstrating its competitive viability.",
+      "metadata": {
+        "deck_id": "deck_001",
+        "player": "TestPlayer",
+        "event": "City Championship",
+        "date": "2025-11-01"
+      }
+    }
+  ]
+}
