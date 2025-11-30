@@ -171,7 +171,7 @@ class YouTubeDeckScraper:
                     'type': 'video',
                     'maxResults': max_results,
                     'order': 'date',  # Get newest first
-                    'relevanceLanguage': 'ja',  # Japanese content priority
+                    'regionCode': 'JP',  # Target Japanese region
                 }
                 
                 if published_after:
@@ -583,12 +583,14 @@ class YouTubeDeckScraper:
                     if video['video_id'] in details:
                         video.update(details[video['video_id']])
                     
-                    # Check for deck codes in full description
-                    if 'description' in details.get(video['video_id'], {}):
-                        full_desc = details[video['video_id']]['description']
-                        deck_codes = self.extract_deck_codes(full_desc)
-                        if deck_codes and 'deck_code' not in video:
-                            video['deck_code'] = deck_codes[0]
+                    # Check for deck codes in full description only if not already found
+                    # The search API returns truncated descriptions, so we need the full one
+                    if 'deck_code' not in video:
+                        full_desc = details.get(video['video_id'], {}).get('description', '')
+                        if full_desc:
+                            deck_codes = self.extract_deck_codes(full_desc)
+                            if deck_codes:
+                                video['deck_code'] = deck_codes[0]
             
             # Count deck codes
             stats['deck_codes_found'] = sum(1 for v in videos if v.get('deck_code'))

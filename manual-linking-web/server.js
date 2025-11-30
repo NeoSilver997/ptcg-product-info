@@ -1073,7 +1073,9 @@ initDatabases().then(() => {
         console.log('   1. 左側選擇未對應的日文卡片');
         console.log('   2. 右側搜尋並選擇對應的中文卡片');
         console.log('   3. 點擊「建立對應連結」完成配對');
-        console.log('   4. 🎬 訪問 /api/youtube/videos 查看 YouTube 牌組影片');
+        console.log(`\n🎬 YouTube 牌組影片 API:`);
+        console.log('   /api/youtube/videos - 查看所有影片');
+        console.log('   /api/youtube/videos/with-decks - 查看有牌組的影片');
         console.log(`\n⌨️  按 Ctrl+C 停止伺服器`);
         console.log('='.repeat(70));
     });
